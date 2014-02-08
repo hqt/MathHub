@@ -16,152 +16,123 @@ namespace MathHub.Service.Problems
 {
     public class ProblemCommandService : IProblemCommandService
     {
+
+        #region Constructor
         MathHubModelContainer ctx;
         IRepository<Problem> problemRepository;
         IRepository<Comment> commentRepository;
         IRepository<Reply> replyRepository;
+        IRepository<PostTag> postTagRepository;
+        IRepository<Tag> tagRepository;
 
         public ProblemCommandService(
             IMathHubDbContext MathHubDbContext,
             IRepository<Problem> problemRepository,
             IRepository<Comment> commentRepository,
-            IRepository<Reply> replyRepository
+            IRepository<Reply> replyRepository,
+            IRepository<PostTag> postTagRepository,
+            IRepository<Tag> tagRepository
             )
         {
             this.ctx = MathHubDbContext.GetDbContext();
             this.problemRepository = problemRepository;
             this.replyRepository = replyRepository;
             this.commentRepository = commentRepository;
-        }
+            this.postTagRepository = postTagRepository;
+            this.tagRepository = tagRepository;
+        } 
+        #endregion
 
-        public bool UpdateProblem(Problem problem)
+        #region Add
+        public bool AddProblem(Entity.Entity.Problem problem)
         {
-            //if (problem == null) {
-            //    throw new ArgumentException("Cannot add a null entity");
-            //}
-
-            ////MathHubModelContainer ctx = new MathHubModelContainer();
-            ////ctx.Configuration.LazyLoadingEnabled = false;
-            ////ctx.Configuration.ProxyCreationEnabled = false;
-
-            //DbEntityEntry attachtedEntrys = ctx.Entry(problem);
-            //// Find Currently Entity Entry in Context
-            //DbEntityEntry entry = ctx.Entry<Post>(problem);
-
-            //// if does not attatch yet.
-            //if (entry.State == EntityState.Detached)
-            //{
-            //    // new entity here is wrapped by proxy
-            //    Problem attachedProblem = ctx.Set<Problem>().Find(problem.Id);
-            //    if (attachedProblem != null)
-            //    {
-            //        // get curently DBEntityEntry with AttachedProblem
-            //        DbEntityEntry attachtedEntry = ctx.Entry(attachedProblem);
-            //        attachtedEntry.CurrentValues.SetValues(problem);
-            //        attachtedEntry.State = EntityState.Modified;
-            //    }
-            //    else
-            //    {
-            //        //entry.State = EntityState.Modified;
-            //        //entry.CurrentValues.SetValues(problem);
-            //        return false;
-            //    }
-            //}
-            //else
-            //{
-            //    // this entity has been attached to current context
-            //    entry.CurrentValues.SetValues(problem);
-            //    entry.State = EntityState.Modified;
-            //}
-
-            //ctx.SaveChanges();
-            //return true;
-            
-            problemRepository.Update(problem);
-            return true;
-        }
-
-        public Problem AddProblem(Entity.Entity.Problem problem)
-        {
-            //ctx.Posts.Attach(problem);
-            //ctx.Entry(problem).State = EntityState.Added;
-            //ctx.SaveChanges();
-            problemRepository.Insert(problem);
-            return problem;
+            return problemRepository.Insert(problem);
 
         }
 
-        public Problem AddCommentForProblem(int problemId, Comment comment)
+        public bool AddComment(int problemId, Comment comment)
         {
             comment.MainPostId = problemId;
-            commentRepository.Insert(comment);
-            return null;
+            return commentRepository.Insert(comment);
         }
 
-        public Problem AddReplyForProblem(int problemId, Reply reply)
+        public bool AddReply(int problemId, Reply reply)
         {
-            throw new NotImplementedException();
+            reply.MainPostId = problemId;
+            return replyRepository.Insert(reply);
+        }
+
+
+        public bool AddTag(int problemId, string name)
+        {
+            // find tag id
+            int tagId = ctx.Tags.Where(t => t.Name == name).Select(t => t.Id).FirstOrDefault();
+            // not exist this tag in system. ignore
+            if (tagId == 0) return false;
+            // create new post tag
+            PostTag postTag = new PostTag();
+            // check if current problem id exist in system or not
+            int assertProblemId = ctx.Posts.OfType<Problem>()
+                .Where(t => t.Id == problemId).Select(t => t.Id).FirstOrDefault();
+            if (assertProblemId == 0) return false;
+            // create new post tag
+            postTag.TagId = tagId;
+            postTag.MainPostId = problemId;
+            return postTagRepository.Insert(postTag);   
+        }
+
+        public bool AddListTag(int problemId, List<string> name)
+        {
+            throw new NotImplementedException();  
+        }
+        #endregion
+
+        #region Update
+        public bool UpdateProblem(Problem problem)
+        {
+            return problemRepository.Update(problem);
         }
 
         public bool UpdateComment(Comment comment)
         {
-            throw new NotImplementedException();
+            return commentRepository.Update(comment);
         }
 
         public bool UpdateReply(Reply reply)
         {
-            throw new NotImplementedException();
+            return replyRepository.Update(reply);
         }
+        #endregion
 
-        public bool DeleteCommentOfProblem(int problemId, Comment comment)
+        #region Delete
+        public bool DeleteComment(Comment comment)
         {
-            throw new NotImplementedException();
+            return commentRepository.Delete(comment);
         }
 
         public bool DeleteProblem(Problem problem)
         {
-            //if (problem == null)
-            //{
-            //    throw new ArgumentException("Cannot delete a null entity");
-            //}
-
-            //// MathHubModelContainer ctx = new MathHubModelContainer();
-            //// ctx.Configuration.LazyLoadingEnabled = false;
-            //// ctx.Configuration.ProxyCreationEnabled = false;
-
-            //DbEntityEntry attachtedEntrys = ctx.Entry(problem);
-            //// Find Currently Entity Entry in Context
-            //DbEntityEntry entry = ctx.Entry<Post>(problem);
-
-            //// if does not attatch yet.
-            //if (entry.State == EntityState.Detached)
-            //{
-            //    // new entity here is wrapped by proxy
-            //    Problem attachedProblem = ctx.Set<Problem>().Find(problem.Id);
-            //    if (attachedProblem != null)
-            //    {
-            //        // get curently DBEntityEntry with AttachedProblem
-            //        DbEntityEntry attachtedEntry = ctx.Entry(attachedProblem);
-            //        attachtedEntry.CurrentValues.SetValues(problem);
-            //        attachtedEntry.State = EntityState.Deleted;
-            //    }
-            //    else
-            //    {
-            //        return false;
-            //    }
-            //}
-            //else
-            //{
-            //    // this entity has been attached to current context
-            //    entry.CurrentValues.SetValues(problem);
-            //    entry.State = EntityState.Deleted;
-            //}
-
-            //// ctx.SaveChanges();
-            //return true;
-
             return problemRepository.Delete(problem);
         }
 
+        public bool DeleteTag(int postId, string tagName)
+        {
+            // find tag id
+            int tagId = ctx.Tags.Where(t => t.Name == tagName).Select(t => t.Id).FirstOrDefault();
+            // does not exist current tag in system
+            if (tagId == 0) return false;
+            // find post tag
+            PostTag postTag = ctx.PostTags.FirstOrDefault(t => t.TagId == tagId && t.MainPostId == postId);
+            // does not exist current post tag (because postId wrong ?)
+            if (postTag == null) return false;
+            // delete
+            return postTagRepository.Delete(postTag);
+        }
+
+        public bool DeleteReply(Reply reply)
+        {
+            return replyRepository.Delete(reply);
+        }
+        #endregion
     }
 }

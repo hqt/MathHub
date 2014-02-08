@@ -37,30 +37,29 @@ namespace MathHub.Framework.Infrastructure.Repository
 
         public virtual bool Insert(T entity)
         {
-            //try
-            //{
-            //    if (entity == null)
-            //        throw new ArgumentNullException("insert should not be null");
+            try
+            {
+                if (entity == null)
+                    throw new ArgumentNullException("insert should not be null");
 
-            //    this.Entities.Add(entity);
-            //    return true;
-            //}
-            //catch (DbEntityValidationException dbEx)
-            //{
-            //    var msg = string.Empty;
+                _ctx.Entry(entity).State = System.Data.EntityState.Added;
+                _ctx.Set<T>().Add(entity);
+                return Save();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                var msg = string.Empty;
 
-            //    foreach (var validationErrors in dbEx.EntityValidationErrors)
-            //        foreach (var validationError in validationErrors.ValidationErrors)
-            //            msg += string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage) + Environment.NewLine;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                        msg += string.Format("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage) + Environment.NewLine;
 
-            //    var fail = new Exception(msg, dbEx);
-            //    throw fail;
-            //    return false;
-            //}
+                var fail = new Exception(msg, dbEx);
+                throw fail;
+                return false;
+            }
 
-            _ctx.Entry(entity).State = System.Data.EntityState.Added;
-            _ctx.Set<T>().Add(entity);
-            return Save();
+            
         }
 
         public virtual bool Update(T entity)

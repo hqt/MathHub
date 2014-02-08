@@ -4,29 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MathHub.Entity.Entity;
+using MathHub.Core.Interfaces.MainPosts;
 
 namespace MathHub.Core.Interfaces.Problems
 {
-    public interface IProblemCommandService
+    public interface IProblemCommandService : IMainPostCommandService
     {
         /// <summary>
-        /// Insert Dal
+        /// Insert 
         /// </summary>
-        Problem AddProblem(Problem problem);
-        Problem AddCommentForProblem(int problemId, Comment comment);
-        Problem AddReplyForProblem(int problemId, Reply reply);
+        bool AddProblem(Problem problem);
+        
 
         /// <summary>
-        /// Update Dal
+        /// Update
         /// </summary>
-        Boolean    UpdateProblem(Problem problem);
-        Boolean    UpdateComment(Comment comment);
-        Boolean    UpdateReply(Reply reply);
+        bool UpdateProblem(Problem problem);
+       
 
         /// <summary>
-        /// Delete Dal
+        /// Delete
         /// </summary>
-        Boolean DeleteCommentOfProblem(int problemId, Comment comment);
-        Boolean DeleteProblem(Problem problem);
+        bool DeleteProblem(Problem problem);
     }
 }

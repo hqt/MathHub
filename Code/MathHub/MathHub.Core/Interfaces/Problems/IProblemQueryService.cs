@@ -1,4 +1,5 @@
-﻿using MathHub.Entity.Entity;
+﻿using MathHub.Core.Interfaces.MainPosts;
+using MathHub.Entity.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,10 @@ using System.Threading.Tasks;
 
 namespace MathHub.Core.Interfaces.Problems
 {
-    public interface IProblemQueryService
+    public interface IProblemQueryService : IMainPostQueryService
     {
-        List<Problem> GetAllProblem(int offSet, int limit);
+        IQueryable<Problem> GetAllProblem(int offSet, int limit);
         Problem GetProblemById(int id);
 
-        int GetProblemVoteUp(int id);
-        int GetProblemVoteDown(int id);
     }
 }

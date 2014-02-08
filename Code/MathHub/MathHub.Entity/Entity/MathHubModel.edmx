@@ -320,7 +320,6 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="PostId" Type="int" Nullable="false" />
     <Property Name="TagId" Type="int" Nullable="false" />
     <Property Name="MainPostId" Type="int" Nullable="false" />
   </EntityType>

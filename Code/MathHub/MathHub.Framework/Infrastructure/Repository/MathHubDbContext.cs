@@ -27,7 +27,8 @@ namespace MathHub.Framework.Infrastructure.Repository
         {
             ctx = new MathHubModelContainer();
             // config option for DBContext
-            // ctx.Configuration.LazyLoadingEnabled = false;
+            ctx.Configuration.LazyLoadingEnabled = false;
+            ctx.Configuration.ProxyCreationEnabled = false;
 
             // ctx.Configuration.LazyLoadingEnabled = true;
             // ctx.Configuration.ProxyCreationEnabled = true;

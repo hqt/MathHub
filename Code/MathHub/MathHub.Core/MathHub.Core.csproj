@@ -57,11 +57,10 @@
     <Compile Include="Interfaces\Blogs\IBlogQueryService.cs" />
     <Compile Include="Interfaces\Discussions\IDiscussionCommandService.cs" />
     <Compile Include="Interfaces\Discussions\IDiscussionQueryService.cs" />
+    <Compile Include="Interfaces\MainPosts\IMainPostCommandService.cs" />
     <Compile Include="Interfaces\MainPosts\IMainPostQueryService.cs" />
     <Compile Include="Interfaces\Problems\IProblemCommandService.cs" />
     <Compile Include="Interfaces\Problems\IProblemQueryService.cs" />
-    <Compile Include="Interfaces\Problems\IRProblemService.cs" />
-    <Compile Include="Interfaces\Problems\IWProblemService.cs" />
     <Compile Include="Interfaces\Repository\IDBContext.cs" />
     <Compile Include="Interfaces\Repository\IRepository.cs" />
     <Compile Include="Interfaces\Systems\IPermissionCommandService.cs" />
