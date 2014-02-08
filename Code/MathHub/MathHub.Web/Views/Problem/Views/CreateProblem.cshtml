@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "CreateProblem";
+    Layout = "~/Views/Problem/Layouts/_ProblemCreateLayout.cshtml";
+}
+
+<h2>CreateProblem</h2>
+<textarea placeholder="Describe your problem here"></textarea>
+<input type="submit" value="Post"/>
+@section RightPanel
+{
+    @Html.Action("ProblemPostGuide", new { controller = "CommonWidget" })
+}

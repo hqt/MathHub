@@ -1,0 +1,11 @@
+﻿@model Int32
+
+Answer Item @Model<br/>
+
+@{
+    List<int> comments = new List<int>();
+    comments.Add(1);
+    comments.Add(2);
+}
+
+<p style="margin-left: 15px">@Html.Partial("Partials/_CommentList", comments)</p>

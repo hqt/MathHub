@@ -1,0 +1,33 @@
+﻿*, *:after, *:before {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+header {
+    width: 100%;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+}
+footer {
+    background-color: whitesmoke;
+    width: 100%;
+    padding: 10px;
+}
+nav {
+    padding: 10px;
+}
+nav.leftpanel {
+    background-color: gainsboro;
+}
+nav.rightpanel {
+    background-color: gainsboro;
+}

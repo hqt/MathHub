@@ -1,0 +1,12 @@
+﻿@model MathHub.Models.DetailProblemViewModel
+
+<h3>Problem @Model.TestId</h3>
+This is a partial content (problem detail and comments)
+
+<h3>Comments</h3>
+@{
+    for (int i = 1; i <= 10; ++i )
+    {
+        @Html.Partial("Partials/_ProblemItem", i);
+    }
+}

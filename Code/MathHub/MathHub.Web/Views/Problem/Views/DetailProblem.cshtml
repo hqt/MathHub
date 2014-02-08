@@ -1,0 +1,52 @@
+﻿@model MathHub.Web.Models.DetailProblemViewModel
+@{
+    ViewBag.Title = "DetailProblem";
+    Layout = "~/Views/Problem/Layouts/_ProblemDetailLayout.cshtml";
+}
+
+<h2>DetailProblem: @Model.TestId</h2>
+
+<p>Problem content here.</p>
+
+<h3>Comments</h3>
+@{
+    List<int> comments = new List<int>();
+    comments.Add(1);
+    comments.Add(2);
+    comments.Add(3);
+    comments.Add(4);
+    comments.Add(5);
+    comments.Add(6);
+}
+
+@Html.Partial("Partials/_CommentList", comments)
+
+<h3>Answers</h3>
+
+@{
+    List<int> answers = new List<int>();
+    answers.Add(1);
+    answers.Add(2);
+    answers.Add(3);
+}
+
+@Html.Partial("Partials/_AnswerList", answers)
+
+
+<h3>Hints</h3>
+
+@{
+    List<int> hints = new List<int>();
+    hints.Add(1);
+    hints.Add(2);
+    hints.Add(3);
+}
+
+@Html.Partial("Partials/_HintList", hints)
+
+@section RightPanel
+{
+    @Html.Action("CreateProblemWidget", new { controller = "CommonWidget" })
+    <hr/>
+    Widgets here. You decide.
+}

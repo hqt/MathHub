@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "ListAllProblem";
+    Layout = "~/Views/Problem/Layouts/_ProblemListLayout.cshtml";
+}
+
+<h2>ListAllProblem</h2>
+These items are created by a loop of partial views:<br/>
+@{
+    for (int i = 1; i <= 10; ++i )
+    {
+        @Html.Partial("Partials/_ProblemItem", i);
+    }
+}
+
+
+
+@section LeftPanel
+{
+    @Html.Action("ProfileWidget", new { controller = "CommonWidget" })
+    <hr/>
+    @Html.Action("FavoriteTagWidget", new { controller = "CommonWidget" })
+    <hr/>
+    @Html.Action("GroupWidget", new { controller = "CommonWidget" })
+    <hr/>
+    @Html.Action("SubscriptionWidget", new { controller = "CommonWidget" })
+}
+
+@section RightPanel
+{
+    @Html.Action("CreateProblemWidget", new { controller = "CommonWidget" })
+    <hr/>
+    @Html.Action("MySubscriptionBlogsWidget", new { controller = "CommonWidget" })
+    <hr/>
+    @Html.Action("NewBlogsWidget", new { controller = "CommonWidget" })
+}

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5304c00760da427a9a64bac20cd0de96" Name="Diagram1" ZoomLevel="65" ShowGrid="false" DisplayType="true" >
+        <EntityTypeShape EntityType="MathHubModel.MainPost" Width="1.5" PointX="10.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MathHubModel.User" Width="1.5" PointX="20.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MathHubModel.Blog" Width="1.5" PointX="8.5" PointY="10.875" IsExpanded="true" />
+        <InheritanceConnector EntityType="MathHubModel.Blog" ManuallyRouted="true" >
+          <ConnectorPoint PointX="11" PointY="9.7398893229166656" />
+          <ConnectorPoint PointX="11" PointY="10.5" />
+          <ConnectorPoint PointX="9.25" PointY="10.5" />
+          <ConnectorPoint PointX="9.25" PointY="10.875" />
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="MathHubModel.Problem" Width="1.5" PointX="12.125" PointY="10.875" IsExpanded="true" />
+        <InheritanceConnector EntityType="MathHubModel.Problem" ManuallyRouted="true" >
+          <ConnectorPoint PointX="11" PointY="9.7398893229166656" />
+          <ConnectorPoint PointX="11" PointY="10.5" />
+          <ConnectorPoint PointX="12.875" PointY="10.5" />
+          <ConnectorPoint PointX="12.875" PointY="10.875" />
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="MathHubModel.Discussion" Width="1.5" PointX="10.25" PointY="10.875" IsExpanded="true" />
+        <InheritanceConnector EntityType="MathHubModel.Discussion" />
+        <EntityTypeShape EntityType="MathHubModel.Tag" Width="1.625" PointX="14.25" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="MathHubModel.TagUser" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MathHubModel.FavoriteTag" Width="1.5" PointX="16.25" PointY="8" IsExpanded="true" />
+        <AssociationConnector Association="MathHubModel.FavoriteTagTag" />
+        <AssociationConnector Association="MathHubModel.FavoriteTagUser" />
+        <EntityTypeShape EntityType="MathHubModel.PostTag" Width="1.5" PointX="12.375" PointY="8" IsExpanded="true" />
+        <AssociationConnector Association="MathHubModel.TagProblemTag" />
+        <EntityTypeShape EntityType="MathHubModel.Post" Width="1.625" PointX="8.375" PointY="3.625" IsExpanded="true" />
+        <InheritanceConnector EntityType="MathHubModel.MainPost" ManuallyRouted="false" >
+        </InheritanceConnector>
+        <InheritanceConnector EntityType="MathHubModel.Problem" />
+        <InheritanceConnector EntityType="MathHubModel.Discussion" />
+        <InheritanceConnector EntityType="MathHubModel.Blog" />
+        <AssociationConnector Association="MathHubModel.PostUser" />
+        <AssociationConnector Association="MathHubModel.MainPostPostTag" />
+        <EntityTypeShape EntityType="MathHubModel.Category" Width="1.75" PointX="6.5" PointY="13.875" IsExpanded="true" />
+        <AssociationConnector Association="MathHubModel.UserCategory" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="MathHubModel.CategoryCategory" />
+        <EntityTypeShape EntityType="MathHubModel.BlogProblem" Width="1.5" PointX="8.5" PointY="13.5" IsExpanded="true" />
+        <AssociationConnector Association="MathHubModel.BlogBlogProblem" />
+        <AssociationConnector Association="MathHubModel.ProblemBlogProblem" ManuallyRouted="true" >
+          <ConnectorPoint PointX="12.125" PointY="11.70543299201155" />
+          <ConnectorPoint PointX="11.75" PointY="12.84568359375" />
+          <ConnectorPoint PointX="11.75" PointY="13.125" />
+          <ConnectorPoint PointX="11.020833333333334" PointY="13.125" />
+          <ConnectorPoint PointX="10.854166666666666" PointY="13.125" />
+          <ConnectorPoint PointX="10.375" PointY="13.125" />
+          <ConnectorPoint PointX="10" PointY="13.5" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MathHubModel.DiscusstionProblem" Width="1.75" PointX="10.25" PointY="13.5" IsExpanded="true" />
+        <AssociationConnector Association="MathHubModel.ProblemDiscusstionProblem" />
+        <AssociationConnector Association="MathHubModel.DiscussionDiscusstionProblem" />
+        <EntityTypeShape EntityType="MathHubModel.FavoritePost" Width="1.5" PointX="18.375" PointY="6.5" />
+        <AssociationConnector Association="MathHubModel.UserFavoritePost" />
+        <AssociationConnector Association="MathHubModel.MainPostFavoritePost" />
+        <EntityTypeShape EntityType="MathHubModel.Invitation" Width="1.5" PointX="14.125" PointY="12.875" />
+        <AssociationConnector Association="MathHubModel.ProblemInvitation" />
+        <AssociationConnector Association="MathHubModel.UserInvitation" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MathHubModel.Reply" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <InheritanceConnector EntityType="MathHubModel.Reply" ManuallyRouted="false" >
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="MathHubModel.Comment" Width="1.5" PointX="8.125" PointY="7.375" />
+        <InheritanceConnector EntityType="MathHubModel.Comment" ManuallyRouted="false" >
+        </InheritanceConnector>
+        <AssociationConnector Association="MathHubModel.ReplyComment" />
+        <AssociationConnector Association="MathHubModel.MainPostComment" />
+        <EntityTypeShape EntityType="MathHubModel.ViewHit" Width="1.5" PointX="10.875" PointY="4.625" />
+        <AssociationConnector Association="MathHubModel.MainPostViewHit" />
+        <EntityTypeShape EntityType="MathHubModel.Report" Width="1.75" PointX="12.5" PointY="4.625" />
+        <AssociationConnector Association="MathHubModel.PostReport" ></AssociationConnector>
+        <EntityTypeShape EntityType="MathHubModel.ReportReason" Width="1.5" PointX="14.625" PointY="4.625" />
+        <AssociationConnector Association="MathHubModel.ReportReasonReport" />
+        <EntityTypeShape EntityType="MathHubModel.Vote" Width="1.5" PointX="16.25" PointY="4.625" />
+        <AssociationConnector Association="MathHubModel.PostVote" />
+        <AssociationConnector Association="MathHubModel.UserVote" />
+        <EntityTypeShape EntityType="MathHubModel.ScoreRule" Width="1.875" PointX="6.125" PointY="3.625" />
+        <EntityTypeShape EntityType="MathHubModel.Subscription" Width="1.625" PointX="18.25" PointY="8.75" />
+        <AssociationConnector Association="MathHubModel.UserSubscription" />
+        <AssociationConnector Association="MathHubModel.UserSubscription1" />
+        <AssociationConnector Association="MathHubModel.MainPostReply" />
+        <EntityTypeShape EntityType="MathHubModel.Role" Width="1.5" PointX="22.5" PointY="7.875" />
+        <EntityTypeShape EntityType="MathHubModel.Assessment" Width="1.5" PointX="22.5" PointY="5.25" />
+        <AssociationConnector Association="MathHubModel.RoleAssessment" />
+        <AssociationConnector Association="MathHubModel.UserAssessment" />
+        <EntityTypeShape EntityType="MathHubModel.Function" Width="1.875" PointX="24.5" PointY="5.375" />
+        <EntityTypeShape EntityType="MathHubModel.Permission" Width="1.5" PointX="24.5" PointY="8" />
+        <AssociationConnector Association="MathHubModel.RolePermission" />
+        <AssociationConnector Association="MathHubModel.FunctionPermission" />
+        <EntityTypeShape EntityType="MathHubModel.ScorePermission" Width="1.625" PointX="26.875" PointY="5.375" />
+        <AssociationConnector Association="MathHubModel.ScorePermissionFunction" />
+        <EntityTypeShape EntityType="MathHubModel.Medal" Width="1.5" PointX="16.25" PointY="12.875" />
+        <AssociationConnector Association="MathHubModel.MedalTag" />
+        <EntityTypeShape EntityType="MathHubModel.Reward" Width="1.5" PointX="18.375" PointY="12.875" />
+        <AssociationConnector Association="MathHubModel.UserReward" />
+        <AssociationConnector Association="MathHubModel.MedalReward" />
+        <EntityTypeShape EntityType="MathHubModel.Image" Width="1.5" PointX="20.625" PointY="15" />
+        <AssociationConnector Association="MathHubModel.ImageTag" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MathHubModel.Profile" Width="1.5" PointX="22.75" PointY="10.125" />
+        <EntityTypeShape EntityType="MathHubModel.Conversation" Width="1.5" PointX="26.5" PointY="10.375" />
+        <EntityTypeShape EntityType="MathHubModel.Attendance" Width="1.625" PointX="24.5" PointY="10.25" />
+        <AssociationConnector Association="MathHubModel.UserAttendance" />
+        <AssociationConnector Association="MathHubModel.ConversationAttendance" />
+        <EntityTypeShape EntityType="MathHubModel.Message" Width="1.5" PointX="26.5" PointY="12.375" />
+        <AssociationConnector Association="MathHubModel.AttendanceMessage" />
+        <EntityTypeShape EntityType="MathHubModel.Topic" Width="1.5" PointX="6.625" PointY="10.875" />
+        <AssociationConnector Association="MathHubModel.UserTopic" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MathHubModel.TopicEnrollment" Width="1.5" PointX="4.625" PointY="10.875" />
+        <AssociationConnector Association="MathHubModel.TopicTopicEnrollment" />
+        <AssociationConnector Association="MathHubModel.UserTopicEnrollment" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MathHubModel.BlogInTopic" Width="1.5" PointX="4.625" PointY="14" />
+        <AssociationConnector Association="MathHubModel.TopicBlogInTopic" />
+        <AssociationConnector Association="MathHubModel.BlogBlogInTopic" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="MathHubModel.CategoryBlog" ></AssociationConnector>
+        <EntityTypeShape EntityType="MathHubModel.Share" Width="1.5" PointX="18.375" PointY="4.125" />
+        <AssociationConnector Association="MathHubModel.UserShare" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="MathHubModel.MainPostShare" />
+        <AssociationConnector Association="MathHubModel.TopicReply" />
+        <EntityTypeShape EntityType="MathHubModel.StringResource" Width="1.5" PointX="4.375" PointY="3.625" />
+        <EntityTypeShape EntityType="MathHubModel.FollowPost" Width="1.5" PointX="20.25" PointY="5" />
+        <AssociationConnector Association="MathHubModel.UserFollow" />
+        <AssociationConnector Association="MathHubModel.PostFollow" />
+        <EntityTypeShape EntityType="MathHubModel.Activity" Width="2.625" PointX="22.5" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MathHubModel.LoginSession" Width="1.5" PointX="25.75" PointY="14.875" />
+        <AssociationConnector Association="MathHubModel.LoginSessionUser" />
+        <AssociationConnector Association="MathHubModel.ActivityUser" />
+        <AssociationConnector Association="MathHubModel.ProfileUser" />
+        <AssociationConnector Association="MathHubModel.ImageUser" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

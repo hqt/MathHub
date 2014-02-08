@@ -1,0 +1,17 @@
+﻿@{
+    Layout = null;
+}
+<div>
+    <div style="float: left; padding: 5px; margin-right: 10px; font-weight: bold; font-size: 16px;">
+        <a href="/" style="color: white !important">MathHub.VN</a>
+    </div>
+    <div style="float: left; padding: 5px; background-color: white; color: black">
+        @Html.ActionLink("Problem", "Index", new {controller = "Problem"}) 
+        / 
+        Discussion
+        / 
+        Blog
+    </div>
+    <div style="float: right">Login/Register</div>
+    <div style="clear: both"></div>
+</div>

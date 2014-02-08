@@ -1,0 +1,7 @@
+﻿@model List<Int32>
+@{
+    foreach(Int32 i in Model)
+    {
+        @Html.Partial("Partials/_CommentItem", i)
+    }
+}

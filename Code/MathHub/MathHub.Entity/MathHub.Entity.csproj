@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5AD7AC9-4817-4D94-8113-6DFC7EB0F273}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MathHub.Entity</RootNamespace>
+    <AssemblyName>MathHub.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\AccountModels.cs" />
+    <Compile Include="Entity\Activity.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Assessment.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Attendance.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Blog.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\BlogInTopic.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\BlogProblem.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Category.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Comment.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Conversation.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Discussion.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\DiscusstionProblem.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\FavoritePost.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\FavoriteTag.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\FollowPost.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Function.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Image.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Invitation.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\LoginSession.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\MainPost.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\MathHubModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MathHubModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\MathHubModel1.Designer.cs" />
+    <Compile Include="Entity\Medal.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\MedalEnum.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Message.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\MHModel.Context.cs" />
+    <Compile Include="Entity\MHModel.Context1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MHModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\MHModel.cs" />
+    <Compile Include="Entity\MHModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Permission.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Post.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PostTag.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Problem.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Profile.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Reply.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ReplyEnum.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Report.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ReportReason.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Reward.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Role.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ScorePermission.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ScoreRule.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Share.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\StringResource.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Subscription.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Tag.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Topic.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TopicEnrollment.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TopicPermissionEnum.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\User.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ViewHit.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Vote.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\VoteEnum.cs">
+      <DependentUpon>MHModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="CustomDDLGenerator\GenerateTSQL.Utility.ttinclude" />
+    <None Include="CustomDDLGenerator\SSDLToSQL10.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SSDLToSQL101.sql</LastGenOutput>
+    </None>
+    <EntityDeploy Include="Entity\MathHubModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MathHubModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entity\MathHubModel.edmx.diagram">
+      <DependentUpon>MathHubModel.edmx</DependentUpon>
+    </None>
+    <None Include="Entity\MHModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MHModel.Context1.cs</LastGenOutput>
+    </None>
+    <None Include="Entity\MHModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MHModel1.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CustomDDLGenerator\SSDLToSQL10.sql" />
+    <Content Include="CustomDDLGenerator\SSDLToSQL101.sql">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SSDLToSQL10.tt</DependentUpon>
+    </Content>
+    <Content Include="Entity\MathHubModel.edmx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

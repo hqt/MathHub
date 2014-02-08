@@ -1,0 +1,3335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MathHubModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MathHubModelStoreContainer">
+    <EntitySet Name="Users" EntityType="MathHubModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tags" EntityType="MathHubModel.Store.Tags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FavoriteTags" EntityType="MathHubModel.Store.FavoriteTags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PostTags" EntityType="MathHubModel.Store.PostTags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Posts" EntityType="MathHubModel.Store.Posts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categories" EntityType="MathHubModel.Store.Categories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BlogProblems" EntityType="MathHubModel.Store.BlogProblems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DiscusstionProblems" EntityType="MathHubModel.Store.DiscusstionProblems" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FavoritePosts" EntityType="MathHubModel.Store.FavoritePosts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Invitations" EntityType="MathHubModel.Store.Invitations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ViewHits" EntityType="MathHubModel.Store.ViewHits" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Reports" EntityType="MathHubModel.Store.Reports" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReportReasons" EntityType="MathHubModel.Store.ReportReasons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Votes" EntityType="MathHubModel.Store.Votes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ScoreRules" EntityType="MathHubModel.Store.ScoreRules" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Subscriptions" EntityType="MathHubModel.Store.Subscriptions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="MathHubModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Assessments" EntityType="MathHubModel.Store.Assessments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Functions" EntityType="MathHubModel.Store.Functions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Permissions" EntityType="MathHubModel.Store.Permissions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ScorePermissions" EntityType="MathHubModel.Store.ScorePermissions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Medals" EntityType="MathHubModel.Store.Medals" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Rewards" EntityType="MathHubModel.Store.Rewards" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Images" EntityType="MathHubModel.Store.Images" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Profiles" EntityType="MathHubModel.Store.Profiles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Conversations" EntityType="MathHubModel.Store.Conversations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Attendances" EntityType="MathHubModel.Store.Attendances" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Messages" EntityType="MathHubModel.Store.Messages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Topics" EntityType="MathHubModel.Store.Topics" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TopicEnrollments" EntityType="MathHubModel.Store.TopicEnrollments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BlogInTopics" EntityType="MathHubModel.Store.BlogInTopics" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Shares" EntityType="MathHubModel.Store.Shares" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StringResources" EntityType="MathHubModel.Store.StringResources" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FollowPosts" EntityType="MathHubModel.Store.FollowPosts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Activities" EntityType="MathHubModel.Store.Activities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="LoginSessions" EntityType="MathHubModel.Store.LoginSessions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Posts_MainPost" EntityType="MathHubModel.Store.Posts_MainPost" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Posts_Blog" EntityType="MathHubModel.Store.Posts_Blog" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Posts_Problem" EntityType="MathHubModel.Store.Posts_Problem" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Posts_Discussion" EntityType="MathHubModel.Store.Posts_Discussion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Posts_Reply" EntityType="MathHubModel.Store.Posts_Reply" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Posts_Comment" EntityType="MathHubModel.Store.Posts_Comment" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="TagUser" Association="MathHubModel.Store.TagUser">
+      <End Role="Tag" EntitySet="Tags" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FavoriteTagTag" Association="MathHubModel.Store.FavoriteTagTag">
+      <End Role="FavoriteTag" EntitySet="FavoriteTags" />
+      <End Role="Tag" EntitySet="Tags" />
+    </AssociationSet>
+    <AssociationSet Name="FavoriteTagUser" Association="MathHubModel.Store.FavoriteTagUser">
+      <End Role="FavoriteTag" EntitySet="FavoriteTags" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="TagProblemTag" Association="MathHubModel.Store.TagProblemTag">
+      <End Role="Tag" EntitySet="Tags" />
+      <End Role="ProblemTag" EntitySet="PostTags" />
+    </AssociationSet>
+    <AssociationSet Name="PostUser" Association="MathHubModel.Store.PostUser">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="MainPostPostTag" Association="MathHubModel.Store.MainPostPostTag">
+      <End Role="MainPost" EntitySet="Posts_MainPost" />
+      <End Role="PostTag" EntitySet="PostTags" />
+    </AssociationSet>
+    <AssociationSet Name="UserCategory" Association="MathHubModel.Store.UserCategory">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Category" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryCategory" Association="MathHubModel.Store.CategoryCategory">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Category1" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="BlogBlogProblem" Association="MathHubModel.Store.BlogBlogProblem">
+      <End Role="Blog" EntitySet="Posts_Blog" />
+      <End Role="BlogProblem" EntitySet="BlogProblems" />
+    </AssociationSet>
+    <AssociationSet Name="ProblemBlogProblem" Association="MathHubModel.Store.ProblemBlogProblem">
+      <End Role="Problem" EntitySet="Posts_Problem" />
+      <End Role="BlogProblem" EntitySet="BlogProblems" />
+    </AssociationSet>
+    <AssociationSet Name="ProblemDiscusstionProblem" Association="MathHubModel.Store.ProblemDiscusstionProblem">
+      <End Role="Problem" EntitySet="Posts_Problem" />
+      <End Role="DiscusstionProblem" EntitySet="DiscusstionProblems" />
+    </AssociationSet>
+    <AssociationSet Name="DiscussionDiscusstionProblem" Association="MathHubModel.Store.DiscussionDiscusstionProblem">
+      <End Role="Discussion" EntitySet="Posts_Discussion" />
+      <End Role="DiscusstionProblem" EntitySet="DiscusstionProblems" />
+    </AssociationSet>
+    <AssociationSet Name="UserFavoritePost" Association="MathHubModel.Store.UserFavoritePost">
+      <End Role="User" EntitySet="Users" />
+      <End Role="FavoritePost" EntitySet="FavoritePosts" />
+    </AssociationSet>
+    <AssociationSet Name="MainPostFavoritePost" Association="MathHubModel.Store.MainPostFavoritePost">
+      <End Role="MainPost" EntitySet="Posts_MainPost" />
+      <End Role="FavoritePost" EntitySet="FavoritePosts" />
+    </AssociationSet>
+    <AssociationSet Name="ProblemInvitation" Association="MathHubModel.Store.ProblemInvitation">
+      <End Role="Problem" EntitySet="Posts_Problem" />
+      <End Role="Invitation" EntitySet="Invitations" />
+    </AssociationSet>
+    <AssociationSet Name="UserInvitation" Association="MathHubModel.Store.UserInvitation">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Invitation" EntitySet="Invitations" />
+    </AssociationSet>
+    <AssociationSet Name="ReplyComment" Association="MathHubModel.Store.ReplyComment">
+      <End Role="Reply" EntitySet="Posts_Reply" />
+      <End Role="Comment" EntitySet="Posts_Comment" />
+    </AssociationSet>
+    <AssociationSet Name="MainPostComment" Association="MathHubModel.Store.MainPostComment">
+      <End Role="MainPost" EntitySet="Posts_MainPost" />
+      <End Role="Comment" EntitySet="Posts_Comment" />
+    </AssociationSet>
+    <AssociationSet Name="MainPostViewHit" Association="MathHubModel.Store.MainPostViewHit">
+      <End Role="MainPost" EntitySet="Posts_MainPost" />
+      <End Role="ViewHit" EntitySet="ViewHits" />
+    </AssociationSet>
+    <AssociationSet Name="PostReport" Association="MathHubModel.Store.PostReport">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="Report" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="ReportReasonReport" Association="MathHubModel.Store.ReportReasonReport">
+      <End Role="ReportReason" EntitySet="ReportReasons" />
+      <End Role="Report" EntitySet="Reports" />
+    </AssociationSet>
+    <AssociationSet Name="PostVote" Association="MathHubModel.Store.PostVote">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="Vote" EntitySet="Votes" />
+    </AssociationSet>
+    <AssociationSet Name="UserVote" Association="MathHubModel.Store.UserVote">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Vote" EntitySet="Votes" />
+    </AssociationSet>
+    <AssociationSet Name="UserSubscription" Association="MathHubModel.Store.UserSubscription">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Subscription" EntitySet="Subscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="UserSubscription1" Association="MathHubModel.Store.UserSubscription1">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Subscription" EntitySet="Subscriptions" />
+    </AssociationSet>
+    <AssociationSet Name="MainPostReply" Association="MathHubModel.Store.MainPostReply">
+      <End Role="MainPost" EntitySet="Posts_MainPost" />
+      <End Role="Reply" EntitySet="Posts_Reply" />
+    </AssociationSet>
+    <AssociationSet Name="RoleAssessment" Association="MathHubModel.Store.RoleAssessment">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="Assessment" EntitySet="Assessments" />
+    </AssociationSet>
+    <AssociationSet Name="UserAssessment" Association="MathHubModel.Store.UserAssessment">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Assessment" EntitySet="Assessments" />
+    </AssociationSet>
+    <AssociationSet Name="RolePermission" Association="MathHubModel.Store.RolePermission">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="Permission" EntitySet="Permissions" />
+    </AssociationSet>
+    <AssociationSet Name="FunctionPermission" Association="MathHubModel.Store.FunctionPermission">
+      <End Role="Function" EntitySet="Functions" />
+      <End Role="Permission" EntitySet="Permissions" />
+    </AssociationSet>
+    <AssociationSet Name="ScorePermissionFunction" Association="MathHubModel.Store.ScorePermissionFunction">
+      <End Role="ScorePermission" EntitySet="ScorePermissions" />
+      <End Role="Function" EntitySet="Functions" />
+    </AssociationSet>
+    <AssociationSet Name="MedalTag" Association="MathHubModel.Store.MedalTag">
+      <End Role="Medal" EntitySet="Medals" />
+      <End Role="Tag" EntitySet="Tags" />
+    </AssociationSet>
+    <AssociationSet Name="UserReward" Association="MathHubModel.Store.UserReward">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Reward" EntitySet="Rewards" />
+    </AssociationSet>
+    <AssociationSet Name="MedalReward" Association="MathHubModel.Store.MedalReward">
+      <End Role="Medal" EntitySet="Medals" />
+      <End Role="Reward" EntitySet="Rewards" />
+    </AssociationSet>
+    <AssociationSet Name="ImageTag" Association="MathHubModel.Store.ImageTag">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Tag" EntitySet="Tags" />
+    </AssociationSet>
+    <AssociationSet Name="UserAttendance" Association="MathHubModel.Store.UserAttendance">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Attendance" EntitySet="Attendances" />
+    </AssociationSet>
+    <AssociationSet Name="ConversationAttendance" Association="MathHubModel.Store.ConversationAttendance">
+      <End Role="Conversation" EntitySet="Conversations" />
+      <End Role="Attendance" EntitySet="Attendances" />
+    </AssociationSet>
+    <AssociationSet Name="AttendanceMessage" Association="MathHubModel.Store.AttendanceMessage">
+      <End Role="Attendance" EntitySet="Attendances" />
+      <End Role="Message" EntitySet="Messages" />
+    </AssociationSet>
+    <AssociationSet Name="UserTopic" Association="MathHubModel.Store.UserTopic">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Topic" EntitySet="Topics" />
+    </AssociationSet>
+    <AssociationSet Name="TopicTopicEnrollment" Association="MathHubModel.Store.TopicTopicEnrollment">
+      <End Role="Topic" EntitySet="Topics" />
+      <End Role="TopicEnrollment" EntitySet="TopicEnrollments" />
+    </AssociationSet>
+    <AssociationSet Name="UserTopicEnrollment" Association="MathHubModel.Store.UserTopicEnrollment">
+      <End Role="User" EntitySet="Users" />
+      <End Role="TopicEnrollment" EntitySet="TopicEnrollments" />
+    </AssociationSet>
+    <AssociationSet Name="TopicBlogInTopic" Association="MathHubModel.Store.TopicBlogInTopic">
+      <End Role="Topic" EntitySet="Topics" />
+      <End Role="BlogInTopic" EntitySet="BlogInTopics" />
+    </AssociationSet>
+    <AssociationSet Name="BlogBlogInTopic" Association="MathHubModel.Store.BlogBlogInTopic">
+      <End Role="Blog" EntitySet="Posts_Blog" />
+      <End Role="BlogInTopic" EntitySet="BlogInTopics" />
+    </AssociationSet>
+    <AssociationSet Name="CategoryBlog" Association="MathHubModel.Store.CategoryBlog">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Blog" EntitySet="Posts_Blog" />
+    </AssociationSet>
+    <AssociationSet Name="UserShare" Association="MathHubModel.Store.UserShare">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Share" EntitySet="Shares" />
+    </AssociationSet>
+    <AssociationSet Name="MainPostShare" Association="MathHubModel.Store.MainPostShare">
+      <End Role="MainPost" EntitySet="Posts_MainPost" />
+      <End Role="Share" EntitySet="Shares" />
+    </AssociationSet>
+    <AssociationSet Name="TopicReply" Association="MathHubModel.Store.TopicReply">
+      <End Role="Topic" EntitySet="Topics" />
+      <End Role="Reply" EntitySet="Posts_Reply" />
+    </AssociationSet>
+    <AssociationSet Name="UserFollow" Association="MathHubModel.Store.UserFollow">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Follow" EntitySet="FollowPosts" />
+    </AssociationSet>
+    <AssociationSet Name="PostFollow" Association="MathHubModel.Store.PostFollow">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="Follow" EntitySet="FollowPosts" />
+    </AssociationSet>
+    <AssociationSet Name="LoginSessionUser" Association="MathHubModel.Store.LoginSessionUser">
+      <End Role="LoginSession" EntitySet="LoginSessions" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="ActivityUser" Association="MathHubModel.Store.ActivityUser">
+      <End Role="Activity" EntitySet="Activities" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="ProfileUser" Association="MathHubModel.Store.ProfileUser">
+      <End Role="Profile" EntitySet="Profiles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="ImageUser" Association="MathHubModel.Store.ImageUser">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MainPost_inherits_Post" Association="MathHubModel.Store.FK_MainPost_inherits_Post">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="MainPost" EntitySet="Posts_MainPost" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Blog_inherits_MainPost" Association="MathHubModel.Store.FK_Blog_inherits_MainPost">
+      <End Role="MainPost" EntitySet="Posts_MainPost" />
+      <End Role="Blog" EntitySet="Posts_Blog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Problem_inherits_MainPost" Association="MathHubModel.Store.FK_Problem_inherits_MainPost">
+      <End Role="MainPost" EntitySet="Posts_MainPost" />
+      <End Role="Problem" EntitySet="Posts_Problem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Discussion_inherits_MainPost" Association="MathHubModel.Store.FK_Discussion_inherits_MainPost">
+      <End Role="MainPost" EntitySet="Posts_MainPost" />
+      <End Role="Discussion" EntitySet="Posts_Discussion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reply_inherits_Post" Association="MathHubModel.Store.FK_Reply_inherits_Post">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="Reply" EntitySet="Posts_Reply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_inherits_Post" Association="MathHubModel.Store.FK_Comment_inherits_Post">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="Comment" EntitySet="Posts_Comment" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Score" Type="int" Nullable="true" />
+    <Property Name="Avatar_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Tags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatorId" Type="int" Nullable="true" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="DateModified" Type="datetime" Nullable="false" />
+    <Property Name="Image_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="FavoriteTags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="TagId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PostTags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostId" Type="int" Nullable="false" />
+    <Property Name="TagId" Type="int" Nullable="false" />
+    <Property Name="MainPostId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Posts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="DateModified" Type="datetime" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="CreatorId" Type="int" Nullable="false" />
+    <Property Name="ParentCategoryId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="BlogProblems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BlogId" Type="int" Nullable="true" />
+    <Property Name="ProblemId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="DiscusstionProblems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProblemId" Type="int" Nullable="true" />
+    <Property Name="DiscussionId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="FavoritePosts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="MainPostId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Invitations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProblemId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ViewHits">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateRecord" Type="datetime" Nullable="false" />
+    <Property Name="Hits" Type="int" Nullable="false" />
+    <Property Name="MainPostId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reports">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostId" Type="int" Nullable="false" />
+    <Property Name="ReportReasonId" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="OtherReason" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ReportReasons">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Priority" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Votes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostId" Type="int" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Score" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ScoreRules">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="ProblemUpvote" Type="int" Nullable="false" />
+    <Property Name="ProblemDownvote" Type="int" Nullable="false" />
+    <Property Name="DefaultUpvote" Type="int" Nullable="false" />
+    <Property Name="DefaultDownvote" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subscriptions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="FollowingId" Type="int" Nullable="false" />
+    <Property Name="FollowerId" Type="int" Nullable="false" />
+    <Property Name="DateSeen" Type="datetime" Nullable="false" />
+    <Property Name="SubsProblem" Type="bit" Nullable="false" />
+    <Property Name="SubsBlog" Type="bit" Nullable="false" />
+    <Property Name="SubsDiscussion" Type="bit" Nullable="false" />
+    <Property Name="SubsShare" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Assessments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="DateCreated" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Functions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ScorePermissionId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Permissions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="FunctionId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ScorePermissions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Score" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Color" Type="nvarchar" Nullable="true" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Medals">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="TagId" Type="int" Nullable="true" />
+    <Property Name="Maximum" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rewards">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="MedalId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Images">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Url" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Profiles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Email" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="School" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Birthday" Type="datetime" Nullable="true" />
+    <Property Name="Website" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Location" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Facebook" Type="nvarchar" Nullable="true" MaxLength="250" />
+    <Property Name="Summary" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="View" Type="int" Nullable="true" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Conversations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Attendances">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateJoined" Type="datetime" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ConversationId" Type="int" Nullable="false" />
+    <Property Name="DateSeen" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Content" Type="nvarchar" Nullable="false" MaxLength="3000" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="AttendanceId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Topics">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CreatorId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TopicEnrollments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="TopicId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="DateSeen" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BlogInTopics">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="TopicId" Type="int" Nullable="false" />
+    <Property Name="BlogId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Shares">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="MainPostId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StringResources">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FollowPosts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="PostId" Type="int" Nullable="false" />
+    <Property Name="DateSeen" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Activities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LastSeenInvition" Type="datetime" Nullable="false" />
+    <Property Name="LastSeenSubcription" Type="datetime" Nullable="false" />
+    <Property Name="LastSeenReceivedMedal" Type="datetime" Nullable="false" />
+    <Property Name="LastPermissionGain" Type="datetime" Nullable="false" />
+    <Property Name="LastSeenPermissionGain" Type="datetime" Nullable="false" />
+    <Property Name="NewPasswordKey" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NewPasswordRequestedDate" Type="datetime" Nullable="false" />
+    <Property Name="NewEmail" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NewEmailKey" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastLogin" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastIp" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoginSessions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SessionKey" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IpAddress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Browser" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Posts_MainPost">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="250" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Posts_Blog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="CategoryId" Type="int" Nullable="true" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Posts_Problem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Posts_Discussion">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Posts_Reply">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="MainPostId" Type="int" Nullable="true" />
+    <Property Name="TopicId" Type="int" Nullable="true" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Posts_Comment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="ReplyId" Type="int" Nullable="true" />
+    <Property Name="MainPostId" Type="int" Nullable="true" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="TagUser">
+    <End Role="Tag" Type="MathHubModel.Store.Tags" Multiplicity="*" />
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tag">
+        <PropertyRef Name="CreatorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FavoriteTagTag">
+    <End Role="FavoriteTag" Type="MathHubModel.Store.FavoriteTags" Multiplicity="*" />
+    <End Role="Tag" Type="MathHubModel.Store.Tags" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Tag">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FavoriteTag">
+        <PropertyRef Name="TagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FavoriteTagUser">
+    <End Role="FavoriteTag" Type="MathHubModel.Store.FavoriteTags" Multiplicity="*" />
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FavoriteTag">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TagProblemTag">
+    <End Role="Tag" Type="MathHubModel.Store.Tags" Multiplicity="1" />
+    <End Role="ProblemTag" Type="MathHubModel.Store.PostTags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tag">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProblemTag">
+        <PropertyRef Name="TagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PostUser">
+    <End Role="Post" Type="MathHubModel.Store.Posts" Multiplicity="*" />
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MainPostPostTag">
+    <End Role="MainPost" Type="MathHubModel.Store.Posts_MainPost" Multiplicity="1" />
+    <End Role="PostTag" Type="MathHubModel.Store.PostTags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MainPost">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PostTag">
+        <PropertyRef Name="MainPostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserCategory">
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <End Role="Category" Type="MathHubModel.Store.Categories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="CreatorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryCategory">
+    <End Role="Category" Type="MathHubModel.Store.Categories" Multiplicity="0..1" />
+    <End Role="Category1" Type="MathHubModel.Store.Categories" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Category1">
+        <PropertyRef Name="ParentCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BlogBlogProblem">
+    <End Role="Blog" Type="MathHubModel.Store.Posts_Blog" Multiplicity="0..1" />
+    <End Role="BlogProblem" Type="MathHubModel.Store.BlogProblems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BlogProblem">
+        <PropertyRef Name="BlogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProblemBlogProblem">
+    <End Role="Problem" Type="MathHubModel.Store.Posts_Problem" Multiplicity="0..1" />
+    <End Role="BlogProblem" Type="MathHubModel.Store.BlogProblems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Problem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BlogProblem">
+        <PropertyRef Name="ProblemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProblemDiscusstionProblem">
+    <End Role="Problem" Type="MathHubModel.Store.Posts_Problem" Multiplicity="0..1" />
+    <End Role="DiscusstionProblem" Type="MathHubModel.Store.DiscusstionProblems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Problem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DiscusstionProblem">
+        <PropertyRef Name="ProblemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DiscussionDiscusstionProblem">
+    <End Role="Discussion" Type="MathHubModel.Store.Posts_Discussion" Multiplicity="0..1" />
+    <End Role="DiscusstionProblem" Type="MathHubModel.Store.DiscusstionProblems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Discussion">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DiscusstionProblem">
+        <PropertyRef Name="DiscussionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserFavoritePost">
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <End Role="FavoritePost" Type="MathHubModel.Store.FavoritePosts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FavoritePost">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MainPostFavoritePost">
+    <End Role="MainPost" Type="MathHubModel.Store.Posts_MainPost" Multiplicity="1" />
+    <End Role="FavoritePost" Type="MathHubModel.Store.FavoritePosts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MainPost">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FavoritePost">
+        <PropertyRef Name="MainPostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProblemInvitation">
+    <End Role="Problem" Type="MathHubModel.Store.Posts_Problem" Multiplicity="1" />
+    <End Role="Invitation" Type="MathHubModel.Store.Invitations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Problem">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Invitation">
+        <PropertyRef Name="ProblemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserInvitation">
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <End Role="Invitation" Type="MathHubModel.Store.Invitations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Invitation">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReplyComment">
+    <End Role="Reply" Type="MathHubModel.Store.Posts_Reply" Multiplicity="0..1" />
+    <End Role="Comment" Type="MathHubModel.Store.Posts_Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reply">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="ReplyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MainPostComment">
+    <End Role="MainPost" Type="MathHubModel.Store.Posts_MainPost" Multiplicity="0..1" />
+    <End Role="Comment" Type="MathHubModel.Store.Posts_Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MainPost">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="MainPostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MainPostViewHit">
+    <End Role="MainPost" Type="MathHubModel.Store.Posts_MainPost" Multiplicity="1" />
+    <End Role="ViewHit" Type="MathHubModel.Store.ViewHits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MainPost">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ViewHit">
+        <PropertyRef Name="MainPostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PostReport">
+    <End Role="Post" Type="MathHubModel.Store.Posts" Multiplicity="1" />
+    <End Role="Report" Type="MathHubModel.Store.Reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReportReasonReport">
+    <End Role="ReportReason" Type="MathHubModel.Store.ReportReasons" Multiplicity="1" />
+    <End Role="Report" Type="MathHubModel.Store.Reports" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReportReason">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Report">
+        <PropertyRef Name="ReportReasonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PostVote">
+    <End Role="Post" Type="MathHubModel.Store.Posts" Multiplicity="1" />
+    <End Role="Vote" Type="MathHubModel.Store.Votes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vote">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserVote">
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <End Role="Vote" Type="MathHubModel.Store.Votes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Vote">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserSubscription">
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <End Role="Subscription" Type="MathHubModel.Store.Subscriptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Subscription">
+        <PropertyRef Name="FollowingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserSubscription1">
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <End Role="Subscription" Type="MathHubModel.Store.Subscriptions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Subscription">
+        <PropertyRef Name="FollowerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MainPostReply">
+    <End Role="MainPost" Type="MathHubModel.Store.Posts_MainPost" Multiplicity="0..1" />
+    <End Role="Reply" Type="MathHubModel.Store.Posts_Reply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MainPost">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reply">
+        <PropertyRef Name="MainPostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleAssessment">
+    <End Role="Role" Type="MathHubModel.Store.Roles" Multiplicity="1" />
+    <End Role="Assessment" Type="MathHubModel.Store.Assessments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Assessment">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserAssessment">
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <End Role="Assessment" Type="MathHubModel.Store.Assessments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Assessment">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RolePermission">
+    <End Role="Role" Type="MathHubModel.Store.Roles" Multiplicity="1" />
+    <End Role="Permission" Type="MathHubModel.Store.Permissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Permission">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FunctionPermission">
+    <End Role="Function" Type="MathHubModel.Store.Functions" Multiplicity="1" />
+    <End Role="Permission" Type="MathHubModel.Store.Permissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Function">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Permission">
+        <PropertyRef Name="FunctionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ScorePermissionFunction">
+    <End Role="ScorePermission" Type="MathHubModel.Store.ScorePermissions" Multiplicity="1" />
+    <End Role="Function" Type="MathHubModel.Store.Functions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ScorePermission">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Function">
+        <PropertyRef Name="ScorePermissionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MedalTag">
+    <End Role="Medal" Type="MathHubModel.Store.Medals" Multiplicity="*" />
+    <End Role="Tag" Type="MathHubModel.Store.Tags" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Tag">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Medal">
+        <PropertyRef Name="TagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserReward">
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <End Role="Reward" Type="MathHubModel.Store.Rewards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reward">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MedalReward">
+    <End Role="Medal" Type="MathHubModel.Store.Medals" Multiplicity="1" />
+    <End Role="Reward" Type="MathHubModel.Store.Rewards" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medal">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reward">
+        <PropertyRef Name="MedalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ImageTag">
+    <End Role="Image" Type="MathHubModel.Store.Images" Multiplicity="0..1" />
+    <End Role="Tag" Type="MathHubModel.Store.Tags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Tag">
+        <PropertyRef Name="Image_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserAttendance">
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <End Role="Attendance" Type="MathHubModel.Store.Attendances" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Attendance">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ConversationAttendance">
+    <End Role="Conversation" Type="MathHubModel.Store.Conversations" Multiplicity="1" />
+    <End Role="Attendance" Type="MathHubModel.Store.Attendances" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Conversation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Attendance">
+        <PropertyRef Name="ConversationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AttendanceMessage">
+    <End Role="Attendance" Type="MathHubModel.Store.Attendances" Multiplicity="1" />
+    <End Role="Message" Type="MathHubModel.Store.Messages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Attendance">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Message">
+        <PropertyRef Name="AttendanceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserTopic">
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <End Role="Topic" Type="MathHubModel.Store.Topics" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Topic">
+        <PropertyRef Name="CreatorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TopicTopicEnrollment">
+    <End Role="Topic" Type="MathHubModel.Store.Topics" Multiplicity="1" />
+    <End Role="TopicEnrollment" Type="MathHubModel.Store.TopicEnrollments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topic">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TopicEnrollment">
+        <PropertyRef Name="TopicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserTopicEnrollment">
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <End Role="TopicEnrollment" Type="MathHubModel.Store.TopicEnrollments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TopicEnrollment">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TopicBlogInTopic">
+    <End Role="Topic" Type="MathHubModel.Store.Topics" Multiplicity="1" />
+    <End Role="BlogInTopic" Type="MathHubModel.Store.BlogInTopics" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topic">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BlogInTopic">
+        <PropertyRef Name="TopicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BlogBlogInTopic">
+    <End Role="Blog" Type="MathHubModel.Store.Posts_Blog" Multiplicity="1" />
+    <End Role="BlogInTopic" Type="MathHubModel.Store.BlogInTopics" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BlogInTopic">
+        <PropertyRef Name="BlogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CategoryBlog">
+    <End Role="Category" Type="MathHubModel.Store.Categories" Multiplicity="0..1" />
+    <End Role="Blog" Type="MathHubModel.Store.Posts_Blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserShare">
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <End Role="Share" Type="MathHubModel.Store.Shares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Share">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MainPostShare">
+    <End Role="MainPost" Type="MathHubModel.Store.Posts_MainPost" Multiplicity="1" />
+    <End Role="Share" Type="MathHubModel.Store.Shares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MainPost">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Share">
+        <PropertyRef Name="MainPostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TopicReply">
+    <End Role="Topic" Type="MathHubModel.Store.Topics" Multiplicity="0..1" />
+    <End Role="Reply" Type="MathHubModel.Store.Posts_Reply" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Topic">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reply">
+        <PropertyRef Name="TopicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserFollow">
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <End Role="Follow" Type="MathHubModel.Store.FollowPosts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Follow">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PostFollow">
+    <End Role="Post" Type="MathHubModel.Store.Posts" Multiplicity="1" />
+    <End Role="Follow" Type="MathHubModel.Store.FollowPosts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Follow">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LoginSessionUser">
+    <End Role="LoginSession" Type="MathHubModel.Store.LoginSessions" Multiplicity="*" />
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="LoginSession">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ActivityUser">
+    <End Role="Activity" Type="MathHubModel.Store.Activities" Multiplicity="*" />
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Activity">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProfileUser">
+    <End Role="Profile" Type="MathHubModel.Store.Profiles" Multiplicity="*" />
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Profile">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ImageUser">
+    <End Role="Image" Type="MathHubModel.Store.Images" Multiplicity="0..1" />
+    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Avatar_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MainPost_inherits_Post">
+    <End Role="Post" Type="MathHubModel.Store.Posts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MainPost" Type="MathHubModel.Store.Posts_MainPost" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MainPost">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Blog_inherits_MainPost">
+    <End Role="MainPost" Type="MathHubModel.Store.Posts_MainPost" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Blog" Type="MathHubModel.Store.Posts_Blog" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="MainPost">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Problem_inherits_MainPost">
+    <End Role="MainPost" Type="MathHubModel.Store.Posts_MainPost" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Problem" Type="MathHubModel.Store.Posts_Problem" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="MainPost">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Problem">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Discussion_inherits_MainPost">
+    <End Role="MainPost" Type="MathHubModel.Store.Posts_MainPost" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Discussion" Type="MathHubModel.Store.Posts_Discussion" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="MainPost">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Discussion">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reply_inherits_Post">
+    <End Role="Post" Type="MathHubModel.Store.Posts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Reply" Type="MathHubModel.Store.Posts_Reply" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reply">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_inherits_Post">
+    <End Role="Post" Type="MathHubModel.Store.Posts" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Comment" Type="MathHubModel.Store.Posts_Comment" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="MathHubModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="MathHubModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="MathHubModel.User"/>
+          <EntitySet Name="Tags" EntityType="MathHubModel.Tag" />
+          <AssociationSet Name="TagUser" Association="MathHubModel.TagUser">
+            <End Role="Tag" EntitySet="Tags" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="FavoriteTags" EntityType="MathHubModel.FavoriteTag" />
+          <AssociationSet Name="FavoriteTagTag" Association="MathHubModel.FavoriteTagTag">
+            <End Role="FavoriteTag" EntitySet="FavoriteTags" />
+            <End Role="Tag" EntitySet="Tags" />
+          </AssociationSet>
+          <AssociationSet Name="FavoriteTagUser" Association="MathHubModel.FavoriteTagUser">
+            <End Role="FavoriteTag" EntitySet="FavoriteTags" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="PostTags" EntityType="MathHubModel.PostTag" />
+          <AssociationSet Name="TagProblemTag" Association="MathHubModel.TagProblemTag">
+            <End Role="Tag" EntitySet="Tags" />
+            <End Role="ProblemTag" EntitySet="PostTags" />
+          </AssociationSet>
+          <EntitySet Name="Posts" EntityType="MathHubModel.Post"/>
+          <AssociationSet Name="PostUser" Association="MathHubModel.PostUser">
+            <End Role="Post" EntitySet="Posts" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="MainPostPostTag" Association="MathHubModel.MainPostPostTag">
+            <End Role="MainPost" EntitySet="Posts" />
+            <End Role="PostTag" EntitySet="PostTags" />
+          </AssociationSet>
+          <EntitySet Name="Categories" EntityType="MathHubModel.Category" />
+          <AssociationSet Name="UserCategory" Association="MathHubModel.UserCategory">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Category" EntitySet="Categories" />
+          </AssociationSet>
+          <AssociationSet Name="CategoryCategory" Association="MathHubModel.CategoryCategory">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Category1" EntitySet="Categories" />
+          </AssociationSet>
+          <EntitySet Name="BlogProblems" EntityType="MathHubModel.BlogProblem" />
+          <AssociationSet Name="BlogBlogProblem" Association="MathHubModel.BlogBlogProblem">
+            <End Role="Blog" EntitySet="Posts" />
+            <End Role="BlogProblem" EntitySet="BlogProblems" />
+          </AssociationSet>
+          <AssociationSet Name="ProblemBlogProblem" Association="MathHubModel.ProblemBlogProblem">
+            <End Role="Problem" EntitySet="Posts" />
+            <End Role="BlogProblem" EntitySet="BlogProblems" />
+          </AssociationSet>
+          <EntitySet Name="DiscusstionProblems" EntityType="MathHubModel.DiscusstionProblem" />
+          <AssociationSet Name="ProblemDiscusstionProblem" Association="MathHubModel.ProblemDiscusstionProblem">
+            <End Role="Problem" EntitySet="Posts" />
+            <End Role="DiscusstionProblem" EntitySet="DiscusstionProblems" />
+          </AssociationSet>
+          <AssociationSet Name="DiscussionDiscusstionProblem" Association="MathHubModel.DiscussionDiscusstionProblem">
+            <End Role="Discussion" EntitySet="Posts" />
+            <End Role="DiscusstionProblem" EntitySet="DiscusstionProblems" />
+          </AssociationSet>
+          <EntitySet Name="FavoritePosts" EntityType="MathHubModel.FavoritePost" />
+          <AssociationSet Name="UserFavoritePost" Association="MathHubModel.UserFavoritePost">
+            <End Role="User" EntitySet="Users" />
+            <End Role="FavoritePost" EntitySet="FavoritePosts" />
+          </AssociationSet>
+          <AssociationSet Name="MainPostFavoritePost" Association="MathHubModel.MainPostFavoritePost">
+            <End Role="MainPost" EntitySet="Posts" />
+            <End Role="FavoritePost" EntitySet="FavoritePosts" />
+          </AssociationSet>
+          <EntitySet Name="Invitations" EntityType="MathHubModel.Invitation" />
+          <AssociationSet Name="ProblemInvitation" Association="MathHubModel.ProblemInvitation">
+            <End Role="Problem" EntitySet="Posts" />
+            <End Role="Invitation" EntitySet="Invitations" />
+          </AssociationSet>
+          <AssociationSet Name="UserInvitation" Association="MathHubModel.UserInvitation">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Invitation" EntitySet="Invitations" />
+          </AssociationSet>
+          <AssociationSet Name="ReplyComment" Association="MathHubModel.ReplyComment">
+            <End Role="Reply" EntitySet="Posts" />
+            <End Role="Comment" EntitySet="Posts" />
+          </AssociationSet>
+          <AssociationSet Name="MainPostComment" Association="MathHubModel.MainPostComment">
+            <End Role="MainPost" EntitySet="Posts" />
+            <End Role="Comment" EntitySet="Posts" />
+          </AssociationSet>
+          <EntitySet Name="ViewHits" EntityType="MathHubModel.ViewHit" />
+          <AssociationSet Name="MainPostViewHit" Association="MathHubModel.MainPostViewHit">
+            <End Role="MainPost" EntitySet="Posts" />
+            <End Role="ViewHit" EntitySet="ViewHits" />
+          </AssociationSet>
+          <EntitySet Name="Reports" EntityType="MathHubModel.Report" />
+          <AssociationSet Name="PostReport" Association="MathHubModel.PostReport">
+            <End Role="Post" EntitySet="Posts" />
+            <End Role="Report" EntitySet="Reports" />
+          </AssociationSet>
+          <EntitySet Name="ReportReasons" EntityType="MathHubModel.ReportReason" />
+          <AssociationSet Name="ReportReasonReport" Association="MathHubModel.ReportReasonReport">
+            <End Role="ReportReason" EntitySet="ReportReasons" />
+            <End Role="Report" EntitySet="Reports" />
+          </AssociationSet>
+          <EntitySet Name="Votes" EntityType="MathHubModel.Vote" />
+          <AssociationSet Name="PostVote" Association="MathHubModel.PostVote">
+            <End Role="Post" EntitySet="Posts" />
+            <End Role="Vote" EntitySet="Votes" />
+          </AssociationSet>
+          <AssociationSet Name="UserVote" Association="MathHubModel.UserVote">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Vote" EntitySet="Votes" />
+          </AssociationSet>
+          <EntitySet Name="ScoreRules" EntityType="MathHubModel.ScoreRule" />
+          <EntitySet Name="Subscriptions" EntityType="MathHubModel.Subscription" />
+          <AssociationSet Name="UserSubscription" Association="MathHubModel.UserSubscription">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Subscription" EntitySet="Subscriptions" />
+          </AssociationSet>
+          <AssociationSet Name="UserSubscription1" Association="MathHubModel.UserSubscription1">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Subscription" EntitySet="Subscriptions" />
+          </AssociationSet>
+          <AssociationSet Name="MainPostReply" Association="MathHubModel.MainPostReply">
+            <End Role="MainPost" EntitySet="Posts" />
+            <End Role="Reply" EntitySet="Posts" />
+          </AssociationSet>
+          <EntitySet Name="Roles" EntityType="MathHubModel.Role" />
+          <EntitySet Name="Assessments" EntityType="MathHubModel.Assessment" />
+          <AssociationSet Name="RoleAssessment" Association="MathHubModel.RoleAssessment">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Assessment" EntitySet="Assessments" />
+          </AssociationSet>
+          <AssociationSet Name="UserAssessment" Association="MathHubModel.UserAssessment">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Assessment" EntitySet="Assessments" />
+          </AssociationSet>
+          <EntitySet Name="Functions" EntityType="MathHubModel.Function" />
+          <EntitySet Name="Permissions" EntityType="MathHubModel.Permission" />
+          <AssociationSet Name="RolePermission" Association="MathHubModel.RolePermission">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Permission" EntitySet="Permissions" />
+          </AssociationSet>
+          <AssociationSet Name="FunctionPermission" Association="MathHubModel.FunctionPermission">
+            <End Role="Function" EntitySet="Functions" />
+            <End Role="Permission" EntitySet="Permissions" />
+          </AssociationSet>
+          <EntitySet Name="ScorePermissions" EntityType="MathHubModel.ScorePermission" />
+          <AssociationSet Name="ScorePermissionFunction" Association="MathHubModel.ScorePermissionFunction">
+            <End Role="ScorePermission" EntitySet="ScorePermissions" />
+            <End Role="Function" EntitySet="Functions" />
+          </AssociationSet>
+          <EntitySet Name="Medals" EntityType="MathHubModel.Medal" />
+          <AssociationSet Name="MedalTag" Association="MathHubModel.MedalTag">
+            <End Role="Medal" EntitySet="Medals" />
+            <End Role="Tag" EntitySet="Tags" />
+          </AssociationSet>
+          <EntitySet Name="Rewards" EntityType="MathHubModel.Reward" />
+          <AssociationSet Name="UserReward" Association="MathHubModel.UserReward">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Reward" EntitySet="Rewards" />
+          </AssociationSet>
+          <AssociationSet Name="MedalReward" Association="MathHubModel.MedalReward">
+            <End Role="Medal" EntitySet="Medals" />
+            <End Role="Reward" EntitySet="Rewards" />
+          </AssociationSet>
+          <EntitySet Name="Images" EntityType="MathHubModel.Image" />
+          <AssociationSet Name="ImageTag" Association="MathHubModel.ImageTag">
+            <End Role="Image" EntitySet="Images" />
+            <End Role="Tag" EntitySet="Tags" />
+          </AssociationSet>
+          <EntitySet Name="Profiles" EntityType="MathHubModel.Profile" />
+          <EntitySet Name="Conversations" EntityType="MathHubModel.Conversation" />
+          <EntitySet Name="Attendances" EntityType="MathHubModel.Attendance" />
+          <AssociationSet Name="UserAttendance" Association="MathHubModel.UserAttendance">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Attendance" EntitySet="Attendances" />
+          </AssociationSet>
+          <AssociationSet Name="ConversationAttendance" Association="MathHubModel.ConversationAttendance">
+            <End Role="Conversation" EntitySet="Conversations" />
+            <End Role="Attendance" EntitySet="Attendances" />
+          </AssociationSet>
+          <EntitySet Name="Messages" EntityType="MathHubModel.Message" />
+          <AssociationSet Name="AttendanceMessage" Association="MathHubModel.AttendanceMessage">
+            <End Role="Attendance" EntitySet="Attendances" />
+            <End Role="Message" EntitySet="Messages" />
+          </AssociationSet>
+          <EntitySet Name="Topics" EntityType="MathHubModel.Topic" />
+          <AssociationSet Name="UserTopic" Association="MathHubModel.UserTopic">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Topic" EntitySet="Topics" />
+          </AssociationSet>
+          <EntitySet Name="TopicEnrollments" EntityType="MathHubModel.TopicEnrollment" />
+          <AssociationSet Name="TopicTopicEnrollment" Association="MathHubModel.TopicTopicEnrollment">
+            <End Role="Topic" EntitySet="Topics" />
+            <End Role="TopicEnrollment" EntitySet="TopicEnrollments" />
+          </AssociationSet>
+          <AssociationSet Name="UserTopicEnrollment" Association="MathHubModel.UserTopicEnrollment">
+            <End Role="User" EntitySet="Users" />
+            <End Role="TopicEnrollment" EntitySet="TopicEnrollments" />
+          </AssociationSet>
+          <EntitySet Name="BlogInTopics" EntityType="MathHubModel.BlogInTopic" />
+          <AssociationSet Name="TopicBlogInTopic" Association="MathHubModel.TopicBlogInTopic">
+            <End Role="Topic" EntitySet="Topics" />
+            <End Role="BlogInTopic" EntitySet="BlogInTopics" />
+          </AssociationSet>
+          <AssociationSet Name="BlogBlogInTopic" Association="MathHubModel.BlogBlogInTopic">
+            <End Role="Blog" EntitySet="Posts" />
+            <End Role="BlogInTopic" EntitySet="BlogInTopics" />
+          </AssociationSet>
+          <AssociationSet Name="CategoryBlog" Association="MathHubModel.CategoryBlog">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Blog" EntitySet="Posts" />
+          </AssociationSet>
+          <EntitySet Name="Shares" EntityType="MathHubModel.Share" />
+          <AssociationSet Name="UserShare" Association="MathHubModel.UserShare">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Share" EntitySet="Shares" />
+          </AssociationSet>
+          <AssociationSet Name="MainPostShare" Association="MathHubModel.MainPostShare">
+            <End Role="MainPost" EntitySet="Posts" />
+            <End Role="Share" EntitySet="Shares" />
+          </AssociationSet>
+          <AssociationSet Name="TopicReply" Association="MathHubModel.TopicReply">
+            <End Role="Topic" EntitySet="Topics" />
+            <End Role="Reply" EntitySet="Posts" />
+          </AssociationSet>
+          <EntitySet Name="StringResources" EntityType="MathHubModel.StringResource" />
+          <EntitySet Name="FollowPosts" EntityType="MathHubModel.FollowPost" />
+          <AssociationSet Name="UserFollow" Association="MathHubModel.UserFollow">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Follow" EntitySet="FollowPosts" />
+          </AssociationSet>
+          <AssociationSet Name="PostFollow" Association="MathHubModel.PostFollow">
+            <End Role="Post" EntitySet="Posts" />
+            <End Role="Follow" EntitySet="FollowPosts" />
+          </AssociationSet>
+          <EntitySet Name="Activities" EntityType="MathHubModel.Activity" />
+          <EntitySet Name="LoginSessions" EntityType="MathHubModel.LoginSession" />
+          <AssociationSet Name="LoginSessionUser" Association="MathHubModel.LoginSessionUser">
+            <End Role="LoginSession" EntitySet="LoginSessions" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="ActivityUser" Association="MathHubModel.ActivityUser">
+            <End Role="Activity" EntitySet="Activities" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="ProfileUser" Association="MathHubModel.ProfileUser">
+            <End Role="Profile" EntitySet="Profiles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="ImageUser" Association="MathHubModel.ImageUser">
+            <End Role="Image" EntitySet="Images" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="MainPost" Abstract="true" BaseType="MathHubModel.Post">
+          <NavigationProperty Name="PostTags" Relationship="MathHubModel.MainPostPostTag" FromRole="MainPost" ToRole="PostTag" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="250" />
+          <NavigationProperty Name="FavoritePosts" Relationship="MathHubModel.MainPostFavoritePost" FromRole="MainPost" ToRole="FavoritePost" />
+          <NavigationProperty Name="Comments" Relationship="MathHubModel.MainPostComment" FromRole="MainPost" ToRole="Comment" />
+          <NavigationProperty Name="ViewHits" Relationship="MathHubModel.MainPostViewHit" FromRole="MainPost" ToRole="ViewHit" />
+          <NavigationProperty Name="Replies" Relationship="MathHubModel.MainPostReply" FromRole="MainPost" ToRole="Reply" />
+          <NavigationProperty Name="Shares" Relationship="MathHubModel.MainPostShare" FromRole="MainPost" ToRole="Share" />
+        </EntityType>
+        <EntityType Name="User" Abstract="false" cg:TypeAccess="Public">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+          <NavigationProperty Name="Tags" Relationship="MathHubModel.TagUser" FromRole="User" ToRole="Tag" />
+          <NavigationProperty Name="FavoriteTags" Relationship="MathHubModel.FavoriteTagUser" FromRole="User" ToRole="FavoriteTag" />
+          <NavigationProperty Name="Posts" Relationship="MathHubModel.PostUser" FromRole="User" ToRole="Post" />
+          <NavigationProperty Name="Categories" Relationship="MathHubModel.UserCategory" FromRole="User" ToRole="Category" />
+          <NavigationProperty Name="FavoritePosts" Relationship="MathHubModel.UserFavoritePost" FromRole="User" ToRole="FavoritePost" />
+          <NavigationProperty Name="Invitations" Relationship="MathHubModel.UserInvitation" FromRole="User" ToRole="Invitation" />
+          <NavigationProperty Name="Votes" Relationship="MathHubModel.UserVote" FromRole="User" ToRole="Vote" />
+          <NavigationProperty Name="Followers" Relationship="MathHubModel.UserSubscription" FromRole="User" ToRole="Subscription" >
+            <Documentation>
+              <LongDescription>All users who have followed this user</LongDescription>
+            </Documentation>
+          </NavigationProperty>
+          <NavigationProperty Name="Followings" Relationship="MathHubModel.UserSubscription1" FromRole="User" ToRole="Subscription" >
+            <Documentation>
+              <LongDescription>All users who is followed by this user</LongDescription>
+            </Documentation>
+          </NavigationProperty>
+          <NavigationProperty Name="Assessments" Relationship="MathHubModel.UserAssessment" FromRole="User" ToRole="Assessment" />
+          <Property Type="Int32" Name="Score" Nullable="true" >
+            <Documentation>
+              <LongDescription>WARNING: this field is inconsistent</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Rewards" Relationship="MathHubModel.UserReward" FromRole="User" ToRole="Reward" />
+          <NavigationProperty Name="Attendances" Relationship="MathHubModel.UserAttendance" FromRole="User" ToRole="Attendance" />
+          <NavigationProperty Name="Topics" Relationship="MathHubModel.UserTopic" FromRole="User" ToRole="Topic" />
+          <NavigationProperty Name="TopicEnrollments" Relationship="MathHubModel.UserTopicEnrollment" FromRole="User" ToRole="TopicEnrollment" />
+          <NavigationProperty Name="Shares" Relationship="MathHubModel.UserShare" FromRole="User" ToRole="Share" />
+          <NavigationProperty Name="Follows" Relationship="MathHubModel.UserFollow" FromRole="User" ToRole="Follow" />
+          <NavigationProperty Name="LoginSession" Relationship="MathHubModel.LoginSessionUser" FromRole="User" ToRole="LoginSession" />
+          <NavigationProperty Name="Activity" Relationship="MathHubModel.ActivityUser" FromRole="User" ToRole="Activity" />
+          <NavigationProperty Name="Profile" Relationship="MathHubModel.ProfileUser" FromRole="User" ToRole="Profile" />
+          <NavigationProperty Name="Avatar" Relationship="MathHubModel.ImageUser" FromRole="User" ToRole="Image" />
+        </EntityType>
+        <EntityType Name="Blog" BaseType="MathHubModel.MainPost" >
+          <NavigationProperty Name="BlogProblems" Relationship="MathHubModel.BlogBlogProblem" FromRole="Blog" ToRole="BlogProblem" />
+          <NavigationProperty Name="BlogInTopics" Relationship="MathHubModel.BlogBlogInTopic" FromRole="Blog" ToRole="BlogInTopic" />
+          <NavigationProperty Name="Category" Relationship="MathHubModel.CategoryBlog" FromRole="Blog" ToRole="Category" />
+          <Property Type="Int32" Name="CategoryId" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Problem" BaseType="MathHubModel.MainPost" >
+          <NavigationProperty Name="BlogProblems" Relationship="MathHubModel.ProblemBlogProblem" FromRole="Problem" ToRole="BlogProblem" />
+          <NavigationProperty Name="DiscusstionProblems" Relationship="MathHubModel.ProblemDiscusstionProblem" FromRole="Problem" ToRole="DiscusstionProblem" />
+          <NavigationProperty Name="Invitations" Relationship="MathHubModel.ProblemInvitation" FromRole="Problem" ToRole="Invitation" />
+        </EntityType>
+        <EntityType Name="Discussion" BaseType="MathHubModel.MainPost" >
+          <NavigationProperty Name="DiscusstionProblems" Relationship="MathHubModel.DiscussionDiscusstionProblem" FromRole="Discussion" ToRole="DiscusstionProblem" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <NavigationProperty Name="Creator" Relationship="MathHubModel.TagUser" FromRole="Tag" ToRole="User" />
+          <Property Type="Int32" Name="CreatorId" Nullable="true" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <Property Type="DateTime" Name="DateModified" Nullable="false" />
+          <NavigationProperty Name="FavoriteTags" Relationship="MathHubModel.FavoriteTagTag" FromRole="Tag" ToRole="FavoriteTag" />
+          <NavigationProperty Name="ProblemTags" Relationship="MathHubModel.TagProblemTag" FromRole="Tag" ToRole="ProblemTag" />
+          <NavigationProperty Name="Medals" Relationship="MathHubModel.MedalTag" FromRole="Tag" ToRole="Medal" />
+          <NavigationProperty Name="Image" Relationship="MathHubModel.ImageTag" FromRole="Tag" ToRole="Image" />
+        </EntityType>
+        <Association Name="TagUser">
+          <End Type="MathHubModel.Tag" Role="Tag" Multiplicity="*" />
+          <End Type="MathHubModel.User" Role="User" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tag">
+              <PropertyRef Name="CreatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FavoriteTag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <NavigationProperty Name="Tag" Relationship="MathHubModel.FavoriteTagTag" FromRole="FavoriteTag" ToRole="Tag" />
+          <Property Type="Int32" Name="TagId" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.FavoriteTagUser" FromRole="FavoriteTag" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+        </EntityType>
+        <Association Name="FavoriteTagTag">
+          <End Type="MathHubModel.FavoriteTag" Role="FavoriteTag" Multiplicity="*" />
+          <End Type="MathHubModel.Tag" Role="Tag" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FavoriteTag">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FavoriteTagUser">
+          <End Type="MathHubModel.FavoriteTag" Role="FavoriteTag" Multiplicity="*" />
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FavoriteTag">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PostTag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PostId" Nullable="false" />
+          <NavigationProperty Name="Tag" Relationship="MathHubModel.TagProblemTag" FromRole="ProblemTag" ToRole="Tag" />
+          <Property Type="Int32" Name="TagId" Nullable="false" />
+          <NavigationProperty Name="MainPost" Relationship="MathHubModel.MainPostPostTag" FromRole="PostTag" ToRole="MainPost" />
+          <Property Type="Int32" Name="MainPostId" Nullable="false" />
+        </EntityType>
+        <Association Name="TagProblemTag">
+          <End Type="MathHubModel.Tag" Role="Tag" Multiplicity="1" />
+          <End Type="MathHubModel.PostTag" Role="ProblemTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProblemTag">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Post" cg:TypeAccess="Public" Abstract="false">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Content" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <Property Type="DateTime" Name="DateModified" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.PostUser" FromRole="Post" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <NavigationProperty Name="Reports" Relationship="MathHubModel.PostReport" FromRole="Post" ToRole="Report" />
+          <NavigationProperty Name="Votes" Relationship="MathHubModel.PostVote" FromRole="Post" ToRole="Vote" />
+          <NavigationProperty Name="Follows" Relationship="MathHubModel.PostFollow" FromRole="Post" ToRole="Follow" />
+        </EntityType>
+        <Association Name="PostUser">
+          <End Type="MathHubModel.Post" Role="Post" Multiplicity="*" />
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MainPostPostTag">
+          <End Type="MathHubModel.MainPost" Role="MainPost" Multiplicity="1" />
+          <End Type="MathHubModel.PostTag" Role="PostTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPost">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PostTag">
+              <PropertyRef Name="MainPostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.UserCategory" FromRole="Category" ToRole="User" />
+          <Property Type="Int32" Name="CreatorId" Nullable="false" />
+          <NavigationProperty Name="SubCategories" Relationship="MathHubModel.CategoryCategory" FromRole="Category" ToRole="Category1" />
+          <NavigationProperty Name="ParentCategory" Relationship="MathHubModel.CategoryCategory" FromRole="Category1" ToRole="Category" />
+          <Property Type="Int32" Name="ParentCategoryId" Nullable="true" />
+          <NavigationProperty Name="Blogs" Relationship="MathHubModel.CategoryBlog" FromRole="Category" ToRole="Blog" />
+        </EntityType>
+        <Association Name="UserCategory">
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+          <End Type="MathHubModel.Category" Role="Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Category">
+              <PropertyRef Name="CreatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CategoryCategory">
+          <End Type="MathHubModel.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="MathHubModel.Category" Role="Category1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Category1">
+              <PropertyRef Name="ParentCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="BlogProblem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Blog" Relationship="MathHubModel.BlogBlogProblem" FromRole="BlogProblem" ToRole="Blog" />
+          <Property Type="Int32" Name="BlogId" Nullable="true" />
+          <NavigationProperty Name="Problem" Relationship="MathHubModel.ProblemBlogProblem" FromRole="BlogProblem" ToRole="Problem" />
+          <Property Type="Int32" Name="ProblemId" Nullable="true" />
+        </EntityType>
+        <Association Name="BlogBlogProblem">
+          <End Type="MathHubModel.Blog" Role="Blog" Multiplicity="0..1" />
+          <End Type="MathHubModel.BlogProblem" Role="BlogProblem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blog">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BlogProblem">
+              <PropertyRef Name="BlogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProblemBlogProblem">
+          <End Type="MathHubModel.Problem" Role="Problem" Multiplicity="0..1" />
+          <End Type="MathHubModel.BlogProblem" Role="BlogProblem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Problem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BlogProblem">
+              <PropertyRef Name="ProblemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DiscusstionProblem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Problem" Relationship="MathHubModel.ProblemDiscusstionProblem" FromRole="DiscusstionProblem" ToRole="Problem" />
+          <Property Type="Int32" Name="ProblemId" Nullable="true" />
+          <NavigationProperty Name="Discussion" Relationship="MathHubModel.DiscussionDiscusstionProblem" FromRole="DiscusstionProblem" ToRole="Discussion" />
+          <Property Type="Int32" Name="DiscussionId" Nullable="true" />
+        </EntityType>
+        <Association Name="ProblemDiscusstionProblem">
+          <End Type="MathHubModel.Problem" Role="Problem" Multiplicity="0..1" />
+          <End Type="MathHubModel.DiscusstionProblem" Role="DiscusstionProblem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Problem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DiscusstionProblem">
+              <PropertyRef Name="ProblemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DiscussionDiscusstionProblem">
+          <End Type="MathHubModel.Discussion" Role="Discussion" Multiplicity="0..1" />
+          <End Type="MathHubModel.DiscusstionProblem" Role="DiscusstionProblem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Discussion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DiscusstionProblem">
+              <PropertyRef Name="DiscussionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="FavoritePost">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.UserFavoritePost" FromRole="FavoritePost" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <NavigationProperty Name="MainPost" Relationship="MathHubModel.MainPostFavoritePost" FromRole="FavoritePost" ToRole="MainPost" />
+          <Property Type="Int32" Name="MainPostId" Nullable="false" />
+        </EntityType>
+        <Association Name="UserFavoritePost">
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+          <End Type="MathHubModel.FavoritePost" Role="FavoritePost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FavoritePost">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MainPostFavoritePost">
+          <End Type="MathHubModel.MainPost" Role="MainPost" Multiplicity="1" />
+          <End Type="MathHubModel.FavoritePost" Role="FavoritePost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPost">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="FavoritePost">
+              <PropertyRef Name="MainPostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Invitation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Problem" Relationship="MathHubModel.ProblemInvitation" FromRole="Invitation" ToRole="Problem" />
+          <Property Type="Int32" Name="ProblemId" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.UserInvitation" FromRole="Invitation" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+        </EntityType>
+        <Association Name="ProblemInvitation">
+          <End Type="MathHubModel.Problem" Role="Problem" Multiplicity="1" />
+          <End Type="MathHubModel.Invitation" Role="Invitation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Problem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Invitation">
+              <PropertyRef Name="ProblemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserInvitation">
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+          <End Type="MathHubModel.Invitation" Role="Invitation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Invitation">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Reply" BaseType="MathHubModel.Post" Abstract="false" >
+          <Property Type="MathHubModel.ReplyEnum" Name="Type" Nullable="false" >
+            <Documentation>
+              <LongDescription>Type: Answer or Hint</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Comments" Relationship="MathHubModel.ReplyComment" FromRole="Reply" ToRole="Comment" />
+          <NavigationProperty Name="MainPost" Relationship="MathHubModel.MainPostReply" FromRole="Reply" ToRole="MainPost" />
+          <Property Type="Int32" Name="MainPostId" Nullable="true" />
+          <NavigationProperty Name="Topic" Relationship="MathHubModel.TopicReply" FromRole="Reply" ToRole="Topic" />
+          <Property Type="Int32" Name="TopicId" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Comment" BaseType="MathHubModel.Post" Abstract="false" >
+          <NavigationProperty Name="Reply" Relationship="MathHubModel.ReplyComment" FromRole="Comment" ToRole="Reply" />
+          <Property Type="Int32" Name="ReplyId" Nullable="true" />
+          <NavigationProperty Name="MainPost" Relationship="MathHubModel.MainPostComment" FromRole="Comment" ToRole="MainPost" />
+          <Property Type="Int32" Name="MainPostId" Nullable="true" />
+        </EntityType>
+        <EnumType Name="ReplyEnum">
+          <Member Name="ANSWER" Value="1" />
+          <Member Name="HINT" Value="2" />
+          <Member Name="DEFAULT" Value="0" />
+        </EnumType>
+        <Association Name="ReplyComment">
+          <End Type="MathHubModel.Reply" Role="Reply" Multiplicity="0..1" />
+          <End Type="MathHubModel.Comment" Role="Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reply">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="ReplyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MainPostComment">
+          <End Type="MathHubModel.MainPost" Role="MainPost" Multiplicity="0..1" />
+          <End Type="MathHubModel.Comment" Role="Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPost">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="MainPostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ViewHit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DateRecord" Nullable="false" />
+          <Property Type="Int32" Name="Hits" Nullable="false" />
+          <NavigationProperty Name="MainPost" Relationship="MathHubModel.MainPostViewHit" FromRole="ViewHit" ToRole="MainPost" />
+          <Property Type="Int32" Name="MainPostId" Nullable="false" />
+        </EntityType>
+        <Association Name="MainPostViewHit">
+          <End Type="MathHubModel.MainPost" Role="MainPost" Multiplicity="1" />
+          <End Type="MathHubModel.ViewHit" Role="ViewHit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPost">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ViewHit">
+              <PropertyRef Name="MainPostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Post" Relationship="MathHubModel.PostReport" FromRole="Report" ToRole="Post" />
+          <Property Type="Int32" Name="PostId" Nullable="false" />
+          <NavigationProperty Name="ReportReason" Relationship="MathHubModel.ReportReasonReport" FromRole="Report" ToRole="ReportReason" />
+          <Property Type="Int32" Name="ReportReasonId" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <Property Type="String" Name="OtherReason" Nullable="true" />
+        </EntityType>
+        <Association Name="PostReport">
+          <End Type="MathHubModel.Post" Role="Post" Multiplicity="1" />
+          <End Type="MathHubModel.Report" Role="Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="PostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ReportReason">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <NavigationProperty Name="Reports" Relationship="MathHubModel.ReportReasonReport" FromRole="ReportReason" ToRole="Report" />
+          <Property Type="Int32" Name="Priority" Nullable="false" />
+        </EntityType>
+        <Association Name="ReportReasonReport">
+          <End Type="MathHubModel.ReportReason" Role="ReportReason" Multiplicity="1" />
+          <End Type="MathHubModel.Report" Role="Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ReportReason">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Report">
+              <PropertyRef Name="ReportReasonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Vote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Post" Relationship="MathHubModel.PostVote" FromRole="Vote" ToRole="Post" />
+          <Property Type="Int32" Name="PostId" Nullable="false" />
+          <Property Type="MathHubModel.VoteEnum" Name="Type" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.UserVote" FromRole="Vote" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="Score" Nullable="false" />
+        </EntityType>
+        <Association Name="PostVote">
+          <End Type="MathHubModel.Post" Role="Post" Multiplicity="1" />
+          <End Type="MathHubModel.Vote" Role="Vote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vote">
+              <PropertyRef Name="PostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="VoteEnum" UnderlyingType="Int32">
+          <Member Name="UPVOTE" Value="1" />
+          <Member Name="DOWNVOTE" Value="2" />
+        </EnumType>
+        <Association Name="UserVote">
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+          <End Type="MathHubModel.Vote" Role="Vote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vote">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ScoreRule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <Property Type="Int32" Name="ProblemUpvote" Nullable="false" />
+          <Property Type="Int32" Name="ProblemDownvote" Nullable="false" />
+          <Property Type="Int32" Name="DefaultUpvote" Nullable="false" />
+          <Property Type="Int32" Name="DefaultDownvote" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subscription">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <NavigationProperty Name="Following" Relationship="MathHubModel.UserSubscription" FromRole="Subscription" ToRole="User" >
+            <Documentation>
+              <LongDescription>The one who is followed</LongDescription>
+            </Documentation>
+          </NavigationProperty>
+          <Property Type="Int32" Name="FollowingId" Nullable="false" >
+            <Documentation>
+              <LongDescription>The one who is followed</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Follower" Relationship="MathHubModel.UserSubscription1" FromRole="Subscription" ToRole="User" >
+            <Documentation>
+              <LongDescription>The one who follow other people</LongDescription>
+            </Documentation>
+          </NavigationProperty>
+          <Property Type="Int32" Name="FollowerId" Nullable="false" >
+            <Documentation>
+              <LongDescription>The one who follow other people</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="DateTime" Name="DateSeen" Nullable="false" >
+            <Documentation>
+              <LongDescription>Use Subscription.DateSeen and these value to count notifications:
+- Share.DateCreated
+- MainPost.DateCreated</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="Boolean" Name="SubsProblem" Nullable="false" />
+          <Property Type="Boolean" Name="SubsBlog" Nullable="false" />
+          <Property Type="Boolean" Name="SubsDiscussion" Nullable="false" />
+          <Property Type="Boolean" Name="SubsShare" Nullable="false" />
+        </EntityType>
+        <Association Name="UserSubscription">
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+          <End Type="MathHubModel.Subscription" Role="Subscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Subscription">
+              <PropertyRef Name="FollowingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserSubscription1">
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+          <End Type="MathHubModel.Subscription" Role="Subscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Subscription">
+              <PropertyRef Name="FollowerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MainPostReply">
+          <End Type="MathHubModel.MainPost" Role="MainPost" Multiplicity="0..1" />
+          <End Type="MathHubModel.Reply" Role="Reply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPost">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reply">
+              <PropertyRef Name="MainPostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+          <NavigationProperty Name="Assessments" Relationship="MathHubModel.RoleAssessment" FromRole="Role" ToRole="Assessment" />
+          <NavigationProperty Name="Permissions" Relationship="MathHubModel.RolePermission" FromRole="Role" ToRole="Permission" />
+        </EntityType>
+        <EntityType Name="Assessment">
+          <Documentation>
+            <LongDescription>Who keeps what role?</LongDescription>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Role" Relationship="MathHubModel.RoleAssessment" FromRole="Assessment" ToRole="Role" />
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.UserAssessment" FromRole="Assessment" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="String" Name="DateCreated" Nullable="false" />
+        </EntityType>
+        <Association Name="RoleAssessment">
+          <End Type="MathHubModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="MathHubModel.Assessment" Role="Assessment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assessment">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserAssessment">
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+          <End Type="MathHubModel.Assessment" Role="Assessment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Assessment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Function">
+          <Documentation>
+            <LongDescription>List of all functions that need authorizations</LongDescription>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <NavigationProperty Name="Permissions" Relationship="MathHubModel.FunctionPermission" FromRole="Function" ToRole="Permission" />
+          <NavigationProperty Name="ScorePermission" Relationship="MathHubModel.ScorePermissionFunction" FromRole="Function" ToRole="ScorePermission" />
+          <Property Type="Int32" Name="ScorePermissionId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Documentation>
+            <LongDescription>What can a role does?</LongDescription>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Role" Relationship="MathHubModel.RolePermission" FromRole="Permission" ToRole="Role" />
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <NavigationProperty Name="Function" Relationship="MathHubModel.FunctionPermission" FromRole="Permission" ToRole="Function" />
+          <Property Type="Int32" Name="FunctionId" Nullable="false" />
+        </EntityType>
+        <Association Name="RolePermission">
+          <End Type="MathHubModel.Role" Role="Role" Multiplicity="1" />
+          <End Type="MathHubModel.Permission" Role="Permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Permission">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FunctionPermission">
+          <End Type="MathHubModel.Function" Role="Function" Multiplicity="1" />
+          <End Type="MathHubModel.Permission" Role="Permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Function">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Permission">
+              <PropertyRef Name="FunctionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ScorePermission">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Score" Nullable="false" />
+          <NavigationProperty Name="Functions" Relationship="MathHubModel.ScorePermissionFunction" FromRole="ScorePermission" ToRole="Function" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="Color" MaxLength="10" Nullable="true" />
+        </EntityType>
+        <Association Name="ScorePermissionFunction">
+          <End Type="MathHubModel.ScorePermission" Role="ScorePermission" Multiplicity="1" />
+          <End Type="MathHubModel.Function" Role="Function" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScorePermission">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Function">
+              <PropertyRef Name="ScorePermissionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Medal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="MathHubModel.MedalEnum" Name="Type" Nullable="false" />
+          <NavigationProperty Name="Tag" Relationship="MathHubModel.MedalTag" FromRole="Medal" ToRole="Tag" />
+          <Property Type="Int32" Name="TagId" Nullable="true" />
+          <Property Type="Int32" Name="Maximum" Nullable="false" >
+            <Documentation>
+              <LongDescription>Maximum instance medal per user. Zero if infinity</LongDescription>
+            </Documentation>
+          </Property>
+          <NavigationProperty Name="Rewards" Relationship="MathHubModel.MedalReward" FromRole="Medal" ToRole="Reward" />
+        </EntityType>
+        <EnumType Name="MedalEnum">
+          <Member Name="BRONZE" Value="1" />
+          <Member Name="SILVER" Value="2" />
+          <Member Name="GOLD" Value="3" />
+        </EnumType>
+        <Association Name="MedalTag">
+          <End Type="MathHubModel.Medal" Role="Medal" Multiplicity="*" />
+          <End Type="MathHubModel.Tag" Role="Tag" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Medal">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Reward">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.UserReward" FromRole="Reward" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <NavigationProperty Name="Medal" Relationship="MathHubModel.MedalReward" FromRole="Reward" ToRole="Medal" />
+          <Property Type="Int32" Name="MedalId" Nullable="false" />
+        </EntityType>
+        <Association Name="UserReward">
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+          <End Type="MathHubModel.Reward" Role="Reward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reward">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MedalReward">
+          <End Type="MathHubModel.Medal" Role="Medal" Multiplicity="1" />
+          <End Type="MathHubModel.Reward" Role="Reward" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reward">
+              <PropertyRef Name="MedalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Url" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="true" />
+          <NavigationProperty Name="Tag" Relationship="MathHubModel.ImageTag" FromRole="Image" ToRole="Tag" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.ImageUser" FromRole="Image" ToRole="User" />
+        </EntityType>
+        <Association Name="ImageTag">
+          <End Type="MathHubModel.Image" Role="Image" Multiplicity="0..1" />
+          <End Type="MathHubModel.Tag" Role="Tag" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Type="String" Name="FullName" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="School" MaxLength="250" Nullable="true" />
+          <Property Type="DateTime" Name="Birthday" Nullable="true" />
+          <Property Type="String" Name="Website" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Location" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Facebook" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Summary" Nullable="true" />
+          <Property Type="Int32" Name="View" Nullable="true" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.ProfileUser" FromRole="Profile" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Conversation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="true" />
+          <NavigationProperty Name="Attendances" Relationship="MathHubModel.ConversationAttendance" FromRole="Conversation" ToRole="Attendance" />
+        </EntityType>
+        <EntityType Name="Attendance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DateJoined" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.UserAttendance" FromRole="Attendance" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <NavigationProperty Name="Conversation" Relationship="MathHubModel.ConversationAttendance" FromRole="Attendance" ToRole="Conversation" />
+          <Property Type="Int32" Name="ConversationId" Nullable="false" />
+          <NavigationProperty Name="Messages" Relationship="MathHubModel.AttendanceMessage" FromRole="Attendance" ToRole="Message" />
+          <Property Type="DateTime" Name="DateSeen" Nullable="true" >
+            <Documentation>
+              <LongDescription>The last time user has seen messages.</LongDescription>
+            </Documentation>
+          </Property>
+        </EntityType>
+        <Association Name="UserAttendance">
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+          <End Type="MathHubModel.Attendance" Role="Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ConversationAttendance">
+          <End Type="MathHubModel.Conversation" Role="Conversation" Multiplicity="1" />
+          <End Type="MathHubModel.Attendance" Role="Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Conversation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Attendance">
+              <PropertyRef Name="ConversationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Content" Nullable="false" MaxLength="3000" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <NavigationProperty Name="Attendance" Relationship="MathHubModel.AttendanceMessage" FromRole="Message" ToRole="Attendance" />
+          <Property Type="Int32" Name="AttendanceId" Nullable="false" />
+        </EntityType>
+        <Association Name="AttendanceMessage">
+          <End Type="MathHubModel.Attendance" Role="Attendance" Multiplicity="1" />
+          <End Type="MathHubModel.Message" Role="Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Attendance">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Message">
+              <PropertyRef Name="AttendanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Topic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <NavigationProperty Name="Creator" Relationship="MathHubModel.UserTopic" FromRole="Topic" ToRole="User" />
+          <Property Type="Int32" Name="CreatorId" Nullable="false" />
+          <NavigationProperty Name="TopicEnrollments" Relationship="MathHubModel.TopicTopicEnrollment" FromRole="Topic" ToRole="TopicEnrollment" />
+          <NavigationProperty Name="BlogInTopics" Relationship="MathHubModel.TopicBlogInTopic" FromRole="Topic" ToRole="BlogInTopic" />
+          <NavigationProperty Name="Replies" Relationship="MathHubModel.TopicReply" FromRole="Topic" ToRole="Reply" />
+        </EntityType>
+        <Association Name="UserTopic">
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+          <End Type="MathHubModel.Topic" Role="Topic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Topic">
+              <PropertyRef Name="CreatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TopicEnrollment">
+          <Documentation>
+            <LongDescription>who has permissioned to post on this topic</LongDescription>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <NavigationProperty Name="Topic" Relationship="MathHubModel.TopicTopicEnrollment" FromRole="TopicEnrollment" ToRole="Topic" />
+          <Property Type="Int32" Name="TopicId" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.UserTopicEnrollment" FromRole="TopicEnrollment" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="MathHubModel.TopicPermissionEnum" Name="Type" Nullable="false" />
+          <Property Type="DateTime" Name="DateSeen" Nullable="false" >
+            <Documentation>
+              <LongDescription>Use TopicEnrollment.DateSeen and BlogInTopic.DateCreated to know if user have seen the posts</LongDescription>
+            </Documentation>
+          </Property>
+        </EntityType>
+        <Association Name="TopicTopicEnrollment">
+          <End Type="MathHubModel.Topic" Role="Topic" Multiplicity="1" />
+          <End Type="MathHubModel.TopicEnrollment" Role="TopicEnrollment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Topic">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TopicEnrollment">
+              <PropertyRef Name="TopicId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserTopicEnrollment">
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+          <End Type="MathHubModel.TopicEnrollment" Role="TopicEnrollment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TopicEnrollment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EnumType Name="TopicPermissionEnum">
+          <Member Name="SUBSCRIBER" Value="1" />
+          <Member Name="AUTHOR" Value="2" />
+        </EnumType>
+        <EntityType Name="BlogInTopic">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <NavigationProperty Name="Topic" Relationship="MathHubModel.TopicBlogInTopic" FromRole="BlogInTopic" ToRole="Topic" />
+          <Property Type="Int32" Name="TopicId" Nullable="false" />
+          <NavigationProperty Name="Blog" Relationship="MathHubModel.BlogBlogInTopic" FromRole="BlogInTopic" ToRole="Blog" />
+          <Property Type="Int32" Name="BlogId" Nullable="false" />
+        </EntityType>
+        <Association Name="TopicBlogInTopic">
+          <End Type="MathHubModel.Topic" Role="Topic" Multiplicity="1" />
+          <End Type="MathHubModel.BlogInTopic" Role="BlogInTopic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Topic">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BlogInTopic">
+              <PropertyRef Name="TopicId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="BlogBlogInTopic">
+          <End Type="MathHubModel.Blog" Role="Blog" Multiplicity="1" />
+          <End Type="MathHubModel.BlogInTopic" Role="BlogInTopic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Blog">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BlogInTopic">
+              <PropertyRef Name="BlogId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CategoryBlog">
+          <End Type="MathHubModel.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="MathHubModel.Blog" Role="Blog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Blog">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Share">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.UserShare" FromRole="Share" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <NavigationProperty Name="MainPost" Relationship="MathHubModel.MainPostShare" FromRole="Share" ToRole="MainPost" />
+          <Property Type="Int32" Name="MainPostId" Nullable="false" />
+        </EntityType>
+        <Association Name="UserShare">
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+          <End Type="MathHubModel.Share" Role="Share" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Share">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MainPostShare">
+          <End Type="MathHubModel.MainPost" Role="MainPost" Multiplicity="1" />
+          <End Type="MathHubModel.Share" Role="Share" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MainPost">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Share">
+              <PropertyRef Name="MainPostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TopicReply">
+          <End Type="MathHubModel.Topic" Role="Topic" Multiplicity="0..1" />
+          <End Type="MathHubModel.Reply" Role="Reply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Topic">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Reply">
+              <PropertyRef Name="TopicId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="StringResource">
+          <Documentation>
+            <LongDescription>String for formatting</LongDescription>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="Value" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FollowPost">
+          <Documentation>
+            <LongDescription>1. Follow with MainPost : Allow all users follow MainPost.
+2. Follow with Reply : just only poster follow himself (so he can notify all comments post to his reply). (Unfollowable)
+3. Follow with Comment : Not Allowed.  
+4. Follow VoteUp/VoteDown : Track when S.O vote up/down. (Unfollowable)</LongDescription>
+          </Documentation>
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.UserFollow" FromRole="Follow" ToRole="User" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <NavigationProperty Name="Post" Relationship="MathHubModel.PostFollow" FromRole="Follow" ToRole="Post" />
+          <Property Type="Int32" Name="PostId" Nullable="false" />
+          <Property Type="DateTime" Name="DateSeen" Nullable="false" >
+            <Documentation>
+              <LongDescription>Use FollowPost.DateSeen and these values to know if there are new notifications:
+- Follow MainPost : Reply.DateCreated
+- Follow Reply : Comment.DateCreated
+- Follow Vote Up/Down for MainPost : MainPost.Votes.DateCreated
+- Follow Vote Up/Down for Reply : Reply.Votes.DateCreated
+- Follow Vote Up/Down for Comment : Reply.Votes.DateCreated</LongDescription>
+            </Documentation>
+          </Property>
+        </EntityType>
+        <Association Name="UserFollow">
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+          <End Type="MathHubModel.FollowPost" Role="Follow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Follow">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PostFollow">
+          <End Type="MathHubModel.Post" Role="Post" Multiplicity="1" />
+          <End Type="MathHubModel.FollowPost" Role="Follow" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Follow">
+              <PropertyRef Name="PostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="LastSeenInvition" Nullable="false" />
+          <Property Type="DateTime" Name="LastSeenSubcription" Nullable="false" />
+          <Property Type="DateTime" Name="LastSeenReceivedMedal" Nullable="false" />
+          <Property Type="DateTime" Name="LastPermissionGain" Nullable="false" />
+          <Property Type="DateTime" Name="LastSeenPermissionGain" Nullable="false" />
+          <Property Type="String" Name="NewPasswordKey" Nullable="false" >
+            <Documentation>
+              <LongDescription>Secret key to reset user password</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="DateTime" Name="NewPasswordRequestedDate" Nullable="false" >
+            <Documentation>
+              <LongDescription>Use this value to know if a reset password request have been expired</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="NewEmail" Nullable="false" >
+            <Documentation>
+              <LongDescription>New requested email address</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="NewEmailKey" Nullable="false" >
+            <Documentation>
+              <LongDescription>Secret key to reset user password</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Type="String" Name="LastLogin" Nullable="false" />
+          <Property Type="String" Name="LastIp" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.ActivityUser" FromRole="Activity" ToRole="User" />
+        </EntityType>
+        <EntityType Name="LoginSession">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SessionKey" Nullable="false" />
+          <Property Type="String" Name="IpAddress" Nullable="false" />
+          <Property Type="String" Name="Browser" Nullable="false" />
+          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="MathHubModel.LoginSessionUser" FromRole="LoginSession" ToRole="User" />
+        </EntityType>
+        <Association Name="LoginSessionUser">
+          <End Type="MathHubModel.LoginSession" Role="LoginSession" Multiplicity="1" />
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+        </Association>
+        <Association Name="ActivityUser">
+          <End Type="MathHubModel.Activity" Role="Activity" Multiplicity="0..1" />
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+        </Association>
+        <Association Name="ProfileUser">
+          <End Type="MathHubModel.Profile" Role="Profile" Multiplicity="0..1" />
+          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
+        </Association>
+        <Association Name="ImageUser">
+          <End Type="MathHubModel.Image" Role="Image" Multiplicity="0..1" />
+          <End Type="MathHubModel.User" Role="User" Multiplicity="0..1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MathHubModelStoreContainer" CdmEntityContainer="MathHubModelContainer">
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tags">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Tag)">
+        <MappingFragment StoreEntitySet="Tags">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatorId" ColumnName="CreatorId" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FavoriteTags">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.FavoriteTag)">
+        <MappingFragment StoreEntitySet="FavoriteTags">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PostTags">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.PostTag)">
+        <MappingFragment StoreEntitySet="PostTags">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+          <ScalarProperty Name="MainPostId" ColumnName="MainPostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Post)">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.MainPost)">
+        <MappingFragment StoreEntitySet="Posts_MainPost">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Blog)">
+        <MappingFragment StoreEntitySet="Posts_Blog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Problem)">
+        <MappingFragment StoreEntitySet="Posts_Problem">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Discussion)">
+        <MappingFragment StoreEntitySet="Posts_Discussion">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Reply)">
+        <MappingFragment StoreEntitySet="Posts_Reply">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="MainPostId" ColumnName="MainPostId" />
+          <ScalarProperty Name="TopicId" ColumnName="TopicId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Comment)">
+        <MappingFragment StoreEntitySet="Posts_Comment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ReplyId" ColumnName="ReplyId" />
+          <ScalarProperty Name="MainPostId" ColumnName="MainPostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Category)">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CreatorId" ColumnName="CreatorId" />
+          <ScalarProperty Name="ParentCategoryId" ColumnName="ParentCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlogProblems">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.BlogProblem)">
+        <MappingFragment StoreEntitySet="BlogProblems">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+          <ScalarProperty Name="ProblemId" ColumnName="ProblemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiscusstionProblems">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.DiscusstionProblem)">
+        <MappingFragment StoreEntitySet="DiscusstionProblems">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProblemId" ColumnName="ProblemId" />
+          <ScalarProperty Name="DiscussionId" ColumnName="DiscussionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FavoritePosts">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.FavoritePost)">
+        <MappingFragment StoreEntitySet="FavoritePosts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="MainPostId" ColumnName="MainPostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invitations">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Invitation)">
+        <MappingFragment StoreEntitySet="Invitations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProblemId" ColumnName="ProblemId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewHits">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.ViewHit)">
+        <MappingFragment StoreEntitySet="ViewHits">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateRecord" ColumnName="DateRecord" />
+          <ScalarProperty Name="Hits" ColumnName="Hits" />
+          <ScalarProperty Name="MainPostId" ColumnName="MainPostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reports">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Report)">
+        <MappingFragment StoreEntitySet="Reports">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="ReportReasonId" ColumnName="ReportReasonId" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="OtherReason" ColumnName="OtherReason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReportReasons">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.ReportReason)">
+        <MappingFragment StoreEntitySet="ReportReasons">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Votes">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Vote)">
+        <MappingFragment StoreEntitySet="Votes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScoreRules">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.ScoreRule)">
+        <MappingFragment StoreEntitySet="ScoreRules">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="ProblemUpvote" ColumnName="ProblemUpvote" />
+          <ScalarProperty Name="ProblemDownvote" ColumnName="ProblemDownvote" />
+          <ScalarProperty Name="DefaultUpvote" ColumnName="DefaultUpvote" />
+          <ScalarProperty Name="DefaultDownvote" ColumnName="DefaultDownvote" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subscriptions">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Subscription)">
+        <MappingFragment StoreEntitySet="Subscriptions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="FollowingId" ColumnName="FollowingId" />
+          <ScalarProperty Name="FollowerId" ColumnName="FollowerId" />
+          <ScalarProperty Name="DateSeen" ColumnName="DateSeen" />
+          <ScalarProperty Name="SubsProblem" ColumnName="SubsProblem" />
+          <ScalarProperty Name="SubsBlog" ColumnName="SubsBlog" />
+          <ScalarProperty Name="SubsDiscussion" ColumnName="SubsDiscussion" />
+          <ScalarProperty Name="SubsShare" ColumnName="SubsShare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Role)">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Assessments">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Assessment)">
+        <MappingFragment StoreEntitySet="Assessments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Functions">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Function)">
+        <MappingFragment StoreEntitySet="Functions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ScorePermissionId" ColumnName="ScorePermissionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permissions">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Permission)">
+        <MappingFragment StoreEntitySet="Permissions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="FunctionId" ColumnName="FunctionId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ScorePermissions">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.ScorePermission)">
+        <MappingFragment StoreEntitySet="ScorePermissions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Score" ColumnName="Score" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medals">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Medal)">
+        <MappingFragment StoreEntitySet="Medals">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+          <ScalarProperty Name="Maximum" ColumnName="Maximum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rewards">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Reward)">
+        <MappingFragment StoreEntitySet="Rewards">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="MedalId" ColumnName="MedalId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Image)">
+        <MappingFragment StoreEntitySet="Images">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profiles">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Profile)">
+        <MappingFragment StoreEntitySet="Profiles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="School" ColumnName="School" />
+          <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="Summary" ColumnName="Summary" />
+          <ScalarProperty Name="View" ColumnName="View" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conversations">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Conversation)">
+        <MappingFragment StoreEntitySet="Conversations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Attendances">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Attendance)">
+        <MappingFragment StoreEntitySet="Attendances">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateJoined" ColumnName="DateJoined" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ConversationId" ColumnName="ConversationId" />
+          <ScalarProperty Name="DateSeen" ColumnName="DateSeen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messages">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Message)">
+        <MappingFragment StoreEntitySet="Messages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="AttendanceId" ColumnName="AttendanceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Topics">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Topic)">
+        <MappingFragment StoreEntitySet="Topics">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatorId" ColumnName="CreatorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TopicEnrollments">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.TopicEnrollment)">
+        <MappingFragment StoreEntitySet="TopicEnrollments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="TopicId" ColumnName="TopicId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="DateSeen" ColumnName="DateSeen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlogInTopics">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.BlogInTopic)">
+        <MappingFragment StoreEntitySet="BlogInTopics">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="TopicId" ColumnName="TopicId" />
+          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shares">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Share)">
+        <MappingFragment StoreEntitySet="Shares">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="MainPostId" ColumnName="MainPostId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StringResources">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.StringResource)">
+        <MappingFragment StoreEntitySet="StringResources">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FollowPosts">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.FollowPost)">
+        <MappingFragment StoreEntitySet="FollowPosts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PostId" ColumnName="PostId" />
+          <ScalarProperty Name="DateSeen" ColumnName="DateSeen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Activities">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.Activity)">
+        <MappingFragment StoreEntitySet="Activities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="LastSeenInvition" ColumnName="LastSeenInvition" />
+          <ScalarProperty Name="LastSeenSubcription" ColumnName="LastSeenSubcription" />
+          <ScalarProperty Name="LastSeenReceivedMedal" ColumnName="LastSeenReceivedMedal" />
+          <ScalarProperty Name="LastPermissionGain" ColumnName="LastPermissionGain" />
+          <ScalarProperty Name="LastSeenPermissionGain" ColumnName="LastSeenPermissionGain" />
+          <ScalarProperty Name="NewPasswordKey" ColumnName="NewPasswordKey" />
+          <ScalarProperty Name="NewPasswordRequestedDate" ColumnName="NewPasswordRequestedDate" />
+          <ScalarProperty Name="NewEmail" ColumnName="NewEmail" />
+          <ScalarProperty Name="NewEmailKey" ColumnName="NewEmailKey" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+          <ScalarProperty Name="LastIp" ColumnName="LastIp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoginSessions">
+      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.LoginSession)">
+        <MappingFragment StoreEntitySet="LoginSessions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SessionKey" ColumnName="SessionKey" />
+          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+          <ScalarProperty Name="Browser" ColumnName="Browser" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ImageTag" TypeName="MathHubModel.ImageTag" StoreEntitySet="Tags">
+      <EndProperty Name="Image">
+        <ScalarProperty Name="Id" ColumnName="Image_Id" />
+      </EndProperty>
+      <EndProperty Name="Tag">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Image_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LoginSessionUser" TypeName="MathHubModel.LoginSessionUser" StoreEntitySet="LoginSessions">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="LoginSession">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ActivityUser" TypeName="MathHubModel.ActivityUser" StoreEntitySet="Activities">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Activity">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ProfileUser" TypeName="MathHubModel.ProfileUser" StoreEntitySet="Profiles">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="Profile">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ImageUser" TypeName="MathHubModel.ImageUser" StoreEntitySet="Users">
+      <EndProperty Name="Image">
+        <ScalarProperty Name="Id" ColumnName="Avatar_Id" />
+      </EndProperty>
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+      <Condition ColumnName="Avatar_Id" IsNull="false" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="DDLGenerationTemplate" Value="CustomDDLGenerator\SSDLToSQL10.tt" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

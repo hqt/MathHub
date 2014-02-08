@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{12B3A87F-6972-449C-8EEE-B61587ECCF33}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MathHub.Framework</RootNamespace>
+    <AssemblyName>MathHub.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\BaseController.cs" />
+    <Compile Include="Controller\StructureMapControllerFactory.cs" />
+    <Compile Include="Infrastructure\Authentication\FormAuthenticationService.cs" />
+    <Compile Include="Infrastructure\Authentication\MockupAuthenticationService.cs" />
+    <Compile Include="Infrastructure\AutoMapper\AutoMappedWrapper.cs" />
+    <Compile Include="Infrastructure\AutoMapper\AutoMapperConfiguration.cs" />
+    <Compile Include="Infrastructure\AutoMapper\BaseFormatter.cs" />
+    <Compile Include="Infrastructure\AutoMapper\BaseResolver.cs" />
+    <Compile Include="Infrastructure\AutoMapper\MathHubMapperProfile.cs" />
+    <Compile Include="Infrastructure\CustomRazorEngine.cs" />
+    <Compile Include="Infrastructure\Data\DataReaderExtension.cs" />
+    <Compile Include="Infrastructure\FormAuthenticationService.cs" />
+    <Compile Include="Infrastructure\Logger.cs" />
+    <Compile Include="Infrastructure\MockupAuthenticationService.cs" />
+    <Compile Include="Infrastructure\Pagination\CustomPagination.cs" />
+    <Compile Include="Infrastructure\Pagination\DelegatePagination.cs" />
+    <Compile Include="Infrastructure\Pagination\IPagination.cs" />
+    <Compile Include="Infrastructure\Pagination\LazyPagination.cs" />
+    <Compile Include="Infrastructure\Pagination\PaginationHelper.cs" />
+    <Compile Include="Infrastructure\Repository\GenericRepository.cs" />
+    <Compile Include="Infrastructure\Repository\MathHubDbContext.cs" />
+    <Compile Include="Infrastructure\RouteProvider.cs" />
+    <Compile Include="Infrastructure\Router\GenericRouteProvider.cs" />
+    <Compile Include="Infrastructure\Router\RouteProvider.cs" />
+    <Compile Include="Infrastructure\StructureMapControllerFactory.cs" />
+    <Compile Include="Infrastructure\StructureMap\StructureMapConfiguration.cs" />
+    <Compile Include="Infrastructure\StructureMap\StructureMapControllerFactory.cs" />
+    <Compile Include="Infrastructure\StructureMap\StructureMapServiceLocator.cs" />
+    <Compile Include="Infrastructure\ViewEngine\CustomRazorEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\DataUtils.cs" />
+    <Compile Include="Utils\EnumerableExtensions.cs" />
+    <Compile Include="Utils\Enumeration.cs" />
+    <Compile Include="Utils\FormatUtils.cs" />
+    <Compile Include="Utils\NameUtils.cs" />
+    <Compile Include="Utils\ReflectionUtils.cs" />
+    <Compile Include="Utils\SecurityUtils.cs" />
+    <Compile Include="Utils\StringUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="HTMLHelper\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

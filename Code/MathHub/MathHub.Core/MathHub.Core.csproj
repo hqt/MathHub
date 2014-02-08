@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69F5826B-6C30-4250-B51C-B4BDEAF178CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MathHub.Core</RootNamespace>
+    <AssemblyName>MathHub.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonViewModel\User\UserAvatarDetail.cs" />
+    <Compile Include="Config\Constant.cs" />
+    <Compile Include="Infrastructure\IAuthenticationService.cs" />
+    <Compile Include="Infrastructure\ILogger.cs" />
+    <Compile Include="Infrastructure\IRouteProvider.cs" />
+    <Compile Include="Infrastructure\Repository\CustomDBContext.cs" />
+    <Compile Include="Infrastructure\Repository\IMathHubDbContext.cs" />
+    <Compile Include="Interfaces\Blogs\IBlogCommandService.cs" />
+    <Compile Include="Interfaces\Blogs\IBlogQueryService.cs" />
+    <Compile Include="Interfaces\Discussions\IDiscussionCommandService.cs" />
+    <Compile Include="Interfaces\Discussions\IDiscussionQueryService.cs" />
+    <Compile Include="Interfaces\MainPosts\IMainPostQueryService.cs" />
+    <Compile Include="Interfaces\Problems\IProblemCommandService.cs" />
+    <Compile Include="Interfaces\Problems\IProblemQueryService.cs" />
+    <Compile Include="Interfaces\Problems\IRProblemService.cs" />
+    <Compile Include="Interfaces\Problems\IWProblemService.cs" />
+    <Compile Include="Interfaces\Repository\IDBContext.cs" />
+    <Compile Include="Interfaces\Repository\IRepository.cs" />
+    <Compile Include="Interfaces\Systems\IPermissionCommandService.cs" />
+    <Compile Include="Interfaces\Systems\IPermissionQueryService.cs" />
+    <Compile Include="Interfaces\Tags\ITagCommandService.cs" />
+    <Compile Include="Interfaces\Tags\ITagQueryService.cs" />
+    <Compile Include="Interfaces\Users\IUserCommandService.cs" />
+    <Compile Include="Interfaces\Users\IUserQueryService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
