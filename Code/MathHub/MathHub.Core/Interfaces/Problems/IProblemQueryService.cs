@@ -11,5 +11,8 @@ namespace MathHub.Core.Interfaces.Problems
     {
         List<Problem> GetAllProblem(int offSet, int limit);
         Problem GetProblemById(int id);
+
+        int GetProblemVoteUp(int id);
+        int GetProblemVoteDown(int id);
     }
 }

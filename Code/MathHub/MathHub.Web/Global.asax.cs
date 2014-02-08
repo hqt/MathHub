@@ -5,6 +5,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using StackExchange.Profiling;
 using StructureMap;
 using WebMatrix.WebData;
 
@@ -42,14 +43,14 @@ namespace MathHub.Web
         {
             if (Request.IsLocal)
             {
-                //MiniProfiler.Start();
+                MiniProfiler.Start();
             } 
         }
 
         protected void Application_EndRequest()
         {
             ObjectFactory.ReleaseAndDisposeAllHttpScopedObjects();
-            //MiniProfiler.Stop();
+            MiniProfiler.Stop();
         }
 
     }
