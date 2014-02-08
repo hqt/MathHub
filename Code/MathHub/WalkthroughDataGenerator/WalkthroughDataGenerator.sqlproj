@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>WalkthroughDataGenerator</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{8aeac309-fe95-493f-b033-3b25c75b01b2}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>WalkthroughDataGenerator</RootNamespace>
+    <AssemblyName>WalkthroughDataGenerator</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <GenerateCreateScript>False</GenerateCreateScript>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\Tags.sql" />
+    <Build Include="dbo\Tables\FavoriteTags.sql" />
+    <Build Include="dbo\Tables\PostTags.sql" />
+    <Build Include="dbo\Tables\Posts.sql" />
+    <Build Include="dbo\Tables\Categories.sql" />
+    <Build Include="dbo\Tables\BlogProblems.sql" />
+    <Build Include="dbo\Tables\DiscusstionProblems.sql" />
+    <Build Include="dbo\Tables\FavoritePosts.sql" />
+    <Build Include="dbo\Tables\Invitations.sql" />
+    <Build Include="dbo\Tables\ViewHits.sql" />
+    <Build Include="dbo\Tables\Reports.sql" />
+    <Build Include="dbo\Tables\ReportReasons.sql" />
+    <Build Include="dbo\Tables\Votes.sql" />
+    <Build Include="dbo\Tables\ScoreRules.sql" />
+    <Build Include="dbo\Tables\Subscriptions.sql" />
+    <Build Include="dbo\Tables\Roles.sql" />
+    <Build Include="dbo\Tables\Assessments.sql" />
+    <Build Include="dbo\Tables\Functions.sql" />
+    <Build Include="dbo\Tables\Permissions.sql" />
+    <Build Include="dbo\Tables\ScorePermissions.sql" />
+    <Build Include="dbo\Tables\Medals.sql" />
+    <Build Include="dbo\Tables\Rewards.sql" />
+    <Build Include="dbo\Tables\Images.sql" />
+    <Build Include="dbo\Tables\Profiles.sql" />
+    <Build Include="dbo\Tables\Conversations.sql" />
+    <Build Include="dbo\Tables\Attendances.sql" />
+    <Build Include="dbo\Tables\Messages.sql" />
+    <Build Include="dbo\Tables\Topics.sql" />
+    <Build Include="dbo\Tables\TopicEnrollments.sql" />
+    <Build Include="dbo\Tables\BlogInTopics.sql" />
+    <Build Include="dbo\Tables\Shares.sql" />
+    <Build Include="dbo\Tables\StringResources.sql" />
+    <Build Include="dbo\Tables\FollowPosts.sql" />
+    <Build Include="dbo\Tables\Activities.sql" />
+    <Build Include="dbo\Tables\LoginSessions.sql" />
+    <Build Include="dbo\Tables\Posts_MainPost.sql" />
+    <Build Include="dbo\Tables\Posts_Blog.sql" />
+    <Build Include="dbo\Tables\Posts_Problem.sql" />
+    <Build Include="dbo\Tables\Posts_Discussion.sql" />
+    <Build Include="dbo\Tables\Posts_Reply.sql" />
+    <Build Include="dbo\Tables\Posts_Comment.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+  </ItemGroup>
+</Project>

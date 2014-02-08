@@ -1,0 +1,10 @@
+FullName,Human,Full Name,True|True
+Email,Human,E-Mail Address (name@domain.tld)
+School,Text,Fixed Number of Words,2|2
+Birthday,Time,Date,29252|41678|3|False|yyyy-MM-dd|h:nn:ss
+Website,Text,Masked String,\w\w\w\.llllllll\-999\.\c\o\m
+Location,Human,Street Address
+Facebook,Text,Fixed Number of Words,2|2
+Summary,Text,Random Number of Words,20|100
+View,Numbers,Integer,0|1000
+User_Id,Numbers,Integer,0|1000

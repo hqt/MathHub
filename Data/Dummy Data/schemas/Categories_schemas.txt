@@ -1,0 +1,5 @@
+Name,Text,Random Number of Words,1|2
+Description,Text,Random Number of Words,5|8
+DateCreated,Time,Date,40210|41678|3|False|yyyy-MM-dd|h:nn:ss
+CreatorId,Numbers,Integer,1|1000
+ParentCategoryId,Text,Masked String,\N\U\L\L

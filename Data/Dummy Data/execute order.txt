@@ -1,0 +1,37 @@
+Make sure all indentity id is resetted!
+
+> Users_data.txt (replace 'NULL' with NULL)
+> Profiles_data.txt
+> Post_data.txt
+> Post_for_reply_data.txt
+> Post_for_comment_data.txt
+> Posts_MainPost_data.txt
+> Categories_data.txt (replace 'NULL')
+> Posts_Blog_data.txt
+> Posts_Discussion_data.txt
+> Posts_Problem_data.txt
+> Topics_data.txt
+> Posts_Reply_for_Topic_data.txt
+> Posts_Reply_for_BlogDis_data.txt
+> Posts_Reply_for_Problem_data.txt
+> Posts_Comment_for_MainPost.txt
+> Posts_Comment_for_Reply.txt
+> ViewHits_data.txt
+> Votes_data.txt
+> Tags_data.txt
+> PostTags_data.txt
+> FavoriteTags_data.txt
+> FavoritePosts_data.txt
+> BlogInTopics_data.txt
+> TopicEnrollments_data.txt
+> FollowPosts_data.txt
+> Subscriptions_data.txt
+> Medals_data.txt
+> Rewards_data.txt
+> ScorePermissions_data.txt
+> Functions_data.txt
+> Conversations_data.txt
+> Attendances_data.txt
+> Messages_data.txt
+> Role: add manually
+> Permissions_data.txt

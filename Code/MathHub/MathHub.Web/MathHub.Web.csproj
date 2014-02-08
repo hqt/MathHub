@@ -217,10 +217,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProblemVM\AnswerItemVM.cs" />
+    <Compile Include="Models\ProblemVM\AnswerListVM.cs" />
     <Compile Include="Models\ProblemVM\CommentItemVM.cs" />
+    <Compile Include="Models\ProblemVM\CreateProblemVM.cs" />
     <Compile Include="Models\ProblemVM\DetailProblemVM.cs" />
     <Compile Include="Models\ProblemVM\CommentListVM.cs" />
-    <Compile Include="Models\ProblemVM\ProblemListVM.cs" />
+    <Compile Include="Models\ProblemVM\HintItemVM.cs" />
+    <Compile Include="Models\ProblemVM\HintListVM.cs" />
+    <Compile Include="Models\ProblemVM\ListProblemVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -322,16 +327,16 @@
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
     <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
-    <Content Include="Views\CommonWidget\CreateProblemWidget.cshtml" />
-    <Content Include="Views\CommonWidget\FavoriteTagWidget.cshtml" />
-    <Content Include="Views\CommonWidget\FooterWidget.cshtml" />
-    <Content Include="Views\CommonWidget\GroupWidget.cshtml" />
-    <Content Include="Views\CommonWidget\HeaderWidget.cshtml" />
-    <Content Include="Views\CommonWidget\MySubscriptionBlogsWidget.cshtml" />
-    <Content Include="Views\CommonWidget\NewBlogsWidget.cshtml" />
-    <Content Include="Views\CommonWidget\ProblemPostGuide.cshtml" />
-    <Content Include="Views\CommonWidget\ProfileWidget.cshtml" />
-    <Content Include="Views\CommonWidget\SubscriptionWidget.cshtml" />
+    <Content Include="Views\CommonWidget\_PostProblemWidget.cshtml" />
+    <Content Include="Views\CommonWidget\_FavoriteTagWidget.cshtml" />
+    <Content Include="Views\CommonWidget\_FooterWidget.cshtml" />
+    <Content Include="Views\CommonWidget\_GroupWidget.cshtml" />
+    <Content Include="Views\CommonWidget\_HeaderWidget.cshtml" />
+    <Content Include="Views\CommonWidget\_MySubscriptionWidget.cshtml" />
+    <Content Include="Views\CommonWidget\_NewBlogWidget.cshtml" />
+    <Content Include="Views\CommonWidget\_ProblemPostGuide.cshtml" />
+    <Content Include="Views\CommonWidget\_ProfileWidget.cshtml" />
+    <Content Include="Views\CommonWidget\_SubscriptionWidget.cshtml" />
     <Content Include="Views\Problem\Layouts\_ProblemCreateLayout.cshtml" />
     <Content Include="Views\Problem\Layouts\_ProblemDetailLayout.cshtml" />
     <Content Include="Views\Problem\Layouts\_ProblemListLayout.cshtml" />
@@ -342,10 +347,13 @@
     <Content Include="Views\Problem\Partials\_HintItem.cshtml" />
     <Content Include="Views\Problem\Partials\_HintList.cshtml" />
     <Content Include="Views\Problem\Partials\_ProblemItem.cshtml" />
-    <Content Include="Views\Problem\Partials\_ProblemItemFull.cshtml" />
     <Content Include="Views\Problem\Views\CreateProblem.cshtml" />
     <Content Include="Views\Problem\Views\DetailProblem.cshtml" />
     <Content Include="Views\Problem\Views\ListAllProblem.cshtml" />
+    <Content Include="Views\CommonWidget\_RelatedTagWidget.cshtml" />
+    <Content Include="Views\CommonWidget\_SameAuthorWidget.cshtml" />
+    <Content Include="Views\CommonWidget\_RelatedBlogWidget.cshtml" />
+    <Content Include="Views\CommonWidget\_YourActivityWidget.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

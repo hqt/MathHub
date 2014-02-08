@@ -1,0 +1,8 @@
+DateCreated,Time,Date,40210|41678|3|False|yyyy-MM-dd|h:nn:ss
+FollowingId,Numbers,Integer,1|1000
+FollowerId,Numbers,Integer,1|1000
+DateSeen,Time,Date,40210|41678|0|False|yyyy-MM-dd|h:nn:ss
+SubsProblem,Set,From Fixed List,FALSE|TRUE
+SubsBlog,Set,From Fixed List,FALSE|TRUE
+SubsDiscussion,Set,From Fixed List,FALSE|TRUE
+SubsShare,Set,From Fixed List,FALSE|TRUE

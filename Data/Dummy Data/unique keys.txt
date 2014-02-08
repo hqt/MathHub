@@ -1,0 +1,6 @@
+Users.Username
+ViewHits.(DateRecord + MainPostId)
+Vote.(PostId + UserId)
+Tags.Name
+FavoriteTags.(TagId + UserId)
+BlogInTopics.(BlogId + TopicId)

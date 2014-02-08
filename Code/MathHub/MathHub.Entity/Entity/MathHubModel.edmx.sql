@@ -2,8 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
+<<<<<<< HEAD
 -- Date Created: 02/08/2014 10:45:45
 -- Generated from EDMX file: E:\Program\C#\MVC ASP.NET\Projects\MathHub.VN\MathHub\Code\MathHub\MathHub.Entity\Entity\MathHubModel.edmx
+=======
+-- Date Created: 02/08/2014 12:35:45
+-- Generated from EDMX file: G:\Github\MathHub\Code\MathHub\MathHub.Entity\Entity\MathHubModel.edmx
+>>>>>>> 6ba888bbb7e4d4826d300e966782ca385746ee25
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;

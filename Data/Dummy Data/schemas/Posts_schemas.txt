@@ -1,0 +1,4 @@
+Content,Text,Random Number of Words,10|200
+DateCreated,Time,Date,40210|41678|3|False|yyyy-MM-dd|h:nn:ss
+DateModified,Time,Date,40940|41678|3|False|yyyy-MM-dd|h:nn:ss
+UserId,Numbers,Integer,1|1000

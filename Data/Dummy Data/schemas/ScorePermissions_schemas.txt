@@ -1,0 +1,3 @@
+Score,Numbers,Integer,200|200000
+Title,Text,Random Number of Words,2|4
+Color,Text,Fixed-length String,6|6|True|True|False|False
