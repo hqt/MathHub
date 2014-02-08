@@ -10,53 +10,53 @@ namespace MathHub.Web.Controllers
     public class CommonWidgetController : Controller
     {
         public ActionResult HeaderWidget()
-        {
-            return View();
+        {           
+            return PartialView();
         }
 
         public ActionResult ProfileWidget()
         {
-            return View();
+            return PartialView();
         }
 
         public ActionResult FavoriteTagWidget()
         {
-            return View();
+            return PartialView();
         }
 
         public ActionResult GroupWidget()
         {
-            return View();
+            return PartialView();
         }
 
         public ActionResult SubscriptionWidget()
         {
-            return View();
+            return PartialView();
         }
 
         public ActionResult CreateProblemWidget()
         {
-            return View();
+            return PartialView();
         }
 
         public ActionResult MySubscriptionBlogsWidget()
         {
-            return View();
+            return PartialView();
         }
 
         public ActionResult NewBlogsWidget()
         {
-            return View();
+            return PartialView();
         }
 
         public ActionResult FooterWidget()
         {
-            return View();
+            return PartialView();
         }
 
         public ActionResult ProblemPostGuide()
         {
-            return View();
+            return PartialView();
         }
     }
 }
