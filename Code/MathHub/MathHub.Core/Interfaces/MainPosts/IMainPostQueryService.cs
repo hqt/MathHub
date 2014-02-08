@@ -13,14 +13,28 @@ namespace MathHub.Core.Interfaces.MainPosts
     /// </summary>
     public interface IMainPostQueryService
     {
-        List<Tag> GetAllMainPostTag(int postId);
-        List<String> GetAllMainPostTagName(int postId);
         /// <summary>
-        /// Get all MainPost Detail.
-        /// Include : ...
+        /// Tag
         /// </summary>
-        /// <param name="postId"></param>
-        /// <returns></returns>
-        MainPost GetMainPostDetail(int postId);
+        List<Tag> GetAllPostTag(int postId);
+        List<String> GetAllPostTagName(int postId);
+
+        /// <summary>
+        /// Comment
+        /// </summary>
+        IQueryable<Comment> GetAllComments(int postId);
+
+        /// <summary>
+        /// Vote
+        /// </summary>
+        int GetPostVoteUp(int postId);
+        int GetPostVoteDown(int postId);
+        Tuple<int, int> GetPostVote(int postId);
+
+        /// <summary>
+        /// Reply
+        /// </summary>
+        IQueryable<Reply> GetAllReply(int postId, ReplyEnum type);
+       
     }
 }

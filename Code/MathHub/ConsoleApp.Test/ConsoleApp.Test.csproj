@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="Problems\CommentTest.cs" />
     <Compile Include="Problems\ProblemTest.cs" />
+    <Compile Include="Problems\ReplyTest.cs" />
+    <Compile Include="Problems\TagTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StructureMapOfflineConfg.cs" />

@@ -39,7 +39,6 @@ namespace ConsoleApp.Test.Problems
             p.DateModified = DateTime.Now;
             p.UserId = 10;
             res = problemCommandService.AddProblem(p) != null ? true : false;
-            // problemRepository.Insert(p);
             Assert.IsTrue(res);
             Assert.IsTrue(p.Id > 0);
 

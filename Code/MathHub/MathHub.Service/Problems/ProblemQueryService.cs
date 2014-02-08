@@ -9,52 +9,84 @@ using System.Threading.Tasks;
 using MathHub.Core.Interfaces.Users;
 using MathHub.Core.CommonViewModel.User;
 using MathHub.Core.Infrastructure.Repository;
+using MathHub.Core.Interfaces.MainPosts;
 
 namespace MathHub.Service.Problems
 {
     public class ProblemQueryService : IProblemQueryService
     {
+        #region Constructor
         MathHubModelContainer ctx;
         IUserQueryService _userQueryService;
 
         public ProblemQueryService(
-            IMathHubDbContext mathHubDbContext, 
+            IMathHubDbContext mathHubDbContext,
             IUserQueryService userQueryService)
         {
+
             ctx = mathHubDbContext.GetDbContext();
             this._userQueryService = userQueryService;
-        }
+        } 
+        #endregion
 
 
-        public List<Problem> GetAllProblem(int offSet, int limit)
+        #region Problem
+        public IQueryable<Problem> GetAllProblem(int offSet, int limit)
         {
-            return ctx.Posts.OfType<Problem>().OrderBy(b => b.Id).Skip(offSet).Take(limit).ToList();
+            return ctx.Posts.OfType<Problem>().OrderBy(b => b.Id).Skip(offSet).Take(limit).AsQueryable();
         }
 
         public Problem GetProblemById(int id)
         {
-            //MathHubModelContainer ctx = new MathHubModelContainer();
             return ctx.Posts.OfType<Problem>().FirstOrDefault(t => t.Id == id);
+        } 
+        #endregion
+
+        #region Vote
+        public int GetPostVoteUp(int postId)
+        {
+            return ctx.Votes.Where(t => t.Type == VoteEnum.UPVOTE).Count(t => t.Post.Id == postId);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="p"></param>
-        /// <returns></returns>
-        public int GetProblemVoteUp(int p)
+        public int GetPostVoteDown(int postId)
         {
-            return 1;
+            return ctx.Votes.Where(t => t.Type == VoteEnum.UPVOTE).Count(t => t.Post.Id == postId);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public int GetProblemVoteDown(int id)
+        public Tuple<int, int> GetPostVote(int postId)
         {
-            return 2;
+            int voteUp = ctx.Votes.Where(t => t.Type == VoteEnum.UPVOTE).Count(t => t.Post.Id == postId);
+            int voteDown = ctx.Votes.Where(t => t.Type == VoteEnum.DOWNVOTE).Count(t => t.Post.Id == postId);
+            return new Tuple<int, int>(voteUp, voteDown);
+        } 
+        #endregion
+
+        #region Tag
+        public List<Tag> GetAllPostTag(int postId)
+        {
+            return ctx.PostTags.Include(t => t.Tag).Where(t => t.MainPostId == postId)
+                .Select(t => t.Tag).ToList();
         }
+
+        public List<string> GetAllPostTagName(int postId)
+        {
+            return ctx.PostTags.Include(t => t.Tag).Where(t => t.MainPostId == postId)
+               .Select(t => t.Tag.Name).ToList();
+        } 
+        #endregion
+
+        #region Comment
+        public IQueryable<Comment> GetAllComments(int postId)
+        {
+            return ctx.Posts.OfType<Comment>().Where(t => t.MainPostId == postId).AsQueryable();
+        } 
+        #endregion
+
+        #region Reply
+        public IQueryable<Reply> GetAllReply(int postId, ReplyEnum type)
+        {
+            return ctx.Posts.OfType<Reply>().Where(t => t.MainPostId == postId && t.Type == type);
+        } 
+        #endregion
     }
 }

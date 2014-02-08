@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MathHub.Service.Blogs
 {
-    public class BlogQueryService : IMainPostQueryService, IBlogQueryService
+    public class BlogQueryService : IBlogQueryService
     {
         MathHubModelContainer ctx;
         IRepository<Blog> blogRepository;
@@ -24,19 +24,6 @@ namespace MathHub.Service.Blogs
             this.blogRepository = blogRepository;
         }
 
-        public List<Tag> GetAllMainPostTag(int postId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> GetAllMainPostTagName(int postId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public MainPost GetMainPostDetail(int postId)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

@@ -4,6 +4,8 @@ using MathHub.Core.Interfaces.Problems;
 using MathHub.Entity.Entity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StructureMap;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace ConsoleApp.Test.Problems
 {
@@ -26,7 +28,6 @@ namespace ConsoleApp.Test.Problems
                 ObjectFactory.GetInstance<IRepository<Problem>>();
 
             bool res;
-
             // create test problem
             Problem problem = problemQueryService.GetProblemById(2);
 
@@ -36,29 +37,55 @@ namespace ConsoleApp.Test.Problems
             c.DateCreated = DateTime.Now;
             c.DateModified = DateTime.Now;
             c.UserId = 10;
-            res = problemCommandService.AddCommentForProblem(problem.Id, c) != null ? true : false;
-            // problemRepository.Insert(p);
-            // Assert.IsTrue(res);
+            res = problemCommandService.AddComment(problem.Id, c) != null ? true : false;
             Assert.IsTrue(c.Id > 0);
 
-            //// retrieve problem
-            //Problem np = problemQueryService.GetProblemById(p.Id);
-            //Assert.AreEqual(np.Title, p.Title);
-            //Assert.AreEqual(np.Content, np.Content);
+            // retrieve comment
+            // Get All Comments
+            IEnumerable<Comment> comments = problemQueryService.GetAllComments(problem.Id);
+            bool isExist = false;
+            foreach (Comment comment in comments)
+            {
+                if (comment.Id == c.Id && comment.Content == c.Content)
+                {
+                    isExist = true;
+                    break;
+                }
+            }
+            Assert.IsTrue(isExist);
 
-            //// update problem
-            //p.Title = "New Problem Title";
-            //p.Content = "New Content. Ya";
-            //res = problemCommandService.UpdateProblem(p);
-            //Problem nps = problemQueryService.GetProblemById(p.Id);
-            //Assert.AreEqual(p.Id, nps.Id);
-            //Assert.AreEqual(p.Title, np.Title);
-            //Assert.AreEqual(p.Content, nps.Content);
-            //Assert.AreEqual(p.Title, "New Problem Title");
+            // update comment
+            c.Content = "this is a very very hard comment";
+            c.DateModified = DateTime.Now;
+            res = problemCommandService.UpdateComment(c);
+            //test update
+            comments = problemQueryService.GetAllComments(problem.Id);
+            isExist = false;
+            foreach (Comment comment in comments)
+            {
+                if (comment.Id == c.Id && comment.Content == c.Content && DateTime.Compare(comment.DateModified, comment.DateCreated) > 0) 
+                {
+                    isExist = true;
+                    break;
+                }
+            }
+            Assert.IsTrue(isExist);
 
-            //// delete problem
-            //problemCommandService.DeleteProblem(np);
-            //Assert.IsNull(problemQueryService.GetProblemById(p.Id));
+            // delete problem
+            res = problemCommandService.DeleteComment(c);
+            Assert.IsTrue(res);
+            //test update
+            comments = problemQueryService.GetAllComments(problem.Id);
+            isExist = false;
+            foreach (Comment comment in comments)
+            {
+                if (comment.Id == c.Id)
+                {
+                    isExist = true;
+                    break;
+                }
+            }
+            Assert.IsFalse(isExist);
         }
    
     }

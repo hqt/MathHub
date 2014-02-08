@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MathHub.Service.Discussions
 {
-    public class DiscussionQueryService : IMainPostQueryService, IDiscussionQueryService
+    public class DiscussionQueryService : IDiscussionQueryService
     {
         MathHubModelContainer ctx;
         IRepository<Discussion> discussionRepository;
@@ -35,6 +35,22 @@ namespace MathHub.Service.Discussions
         }
 
         public MainPost GetMainPostDetail(int postId)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public int GetPostVoteUp(int postId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int GetPostVoteDown(int postId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Tuple<int, int> GetPostVote(int postId)
         {
             throw new NotImplementedException();
         }

@@ -68,11 +68,11 @@ namespace MathHub.Web.Controllers
             Mapper.CreateMap<Problem, DetailProblemVM>()
                 .ForMember(p => p.VoteUpNum, 
                         m => m.MapFrom(
-                        s => _problemQueryService.GetProblemVoteUp(s.Id)
+                        s => _problemQueryService.GetPostVoteUp(s.Id)
                     ))
                     .ForMember(p => p.VoteDownNum,
                         m => m.MapFrom(
-                        s => _problemQueryService.GetProblemVoteDown(s.Id)
+                        s => _problemQueryService.GetPostVoteDown(s.Id)
                     ));
 
             DetailProblemVM problemViewModel =

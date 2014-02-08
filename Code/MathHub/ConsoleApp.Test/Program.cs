@@ -49,6 +49,7 @@ namespace ConsoleApp.Test
             ProblemTest t = new ProblemTest();
             t.TestGeneralProblem();
 
+            Console.WriteLine("Finish Console Test");
             Console.ReadLine();
 
         }
