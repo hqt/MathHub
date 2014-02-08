@@ -49,8 +49,6 @@
     <Compile Include="Discussions\DiscussionQueryService.cs" />
     <Compile Include="Problems\ProblemCommandService.cs" />
     <Compile Include="Problems\ProblemQueryService.cs" />
-    <Compile Include="Problems\RProblemService.cs" />
-    <Compile Include="Problems\WProblemService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Systems\PermissionCommandService.cs" />
     <Compile Include="Systems\PermissionQueryService.cs" />

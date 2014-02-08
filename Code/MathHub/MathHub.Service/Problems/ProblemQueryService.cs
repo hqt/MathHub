@@ -18,10 +18,10 @@ namespace MathHub.Service.Problems
         IUserQueryService _userQueryService;
 
         public ProblemQueryService(
-            IMathHubDbContext MathHubDbContext, 
+            IMathHubDbContext mathHubDbContext, 
             IUserQueryService userQueryService)
         {
-            ctx = MathHubDbContext.GetDbContext();
+            ctx = mathHubDbContext.GetDbContext();
             this._userQueryService = userQueryService;
         }
 
@@ -37,12 +37,24 @@ namespace MathHub.Service.Problems
             return ctx.Posts.OfType<Problem>().FirstOrDefault(t => t.Id == id);
         }
 
-        
-        protected virtual void Dispose(bool disposing)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public int GetProblemVoteUp(int p)
         {
+            return 1;
         }
 
-
-       
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public int GetProblemVoteDown(int id)
+        {
+            return 2;
+        }
     }
 }

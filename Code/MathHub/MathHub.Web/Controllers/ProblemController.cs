@@ -1,11 +1,19 @@
 ﻿using System.Web.Mvc;
+using MathHub.Core.Interfaces.Problems;
+using MathHub.Entity.Entity;
 using MathHub.Framework.Controllers;
-using MathHub.Web.Models;
+using AutoMapper;
+using MathHub.Web.Models.ProblemVM;
 
 namespace MathHub.Web.Controllers
 {
     public class ProblemController : BaseController
     {
+        private IProblemQueryService _problemQueryService;
+        public ProblemController(IProblemQueryService problemQueryService)
+        {
+            _problemQueryService = problemQueryService;
+        }
         // GET /Problem
         public ActionResult Index()
         {
@@ -50,8 +58,28 @@ namespace MathHub.Web.Controllers
             {
                 return RedirectToAction("Index");
             }
-            return View("Views/DetailProblem", 
-                new DetailProblemViewModel((int) id));
+            
+            Problem targetProblem = _problemQueryService.GetProblemById((int) id);
+
+            User user = new User();
+            user.Username = "Dinh Quang Trung";
+            targetProblem.User = user;
+
+            Mapper.CreateMap<Problem, DetailProblemVM>()
+                .ForMember(p => p.VoteUpNum, 
+                        m => m.MapFrom(
+                        s => _problemQueryService.GetProblemVoteUp(s.Id)
+                    ))
+                    .ForMember(p => p.VoteDownNum,
+                        m => m.MapFrom(
+                        s => _problemQueryService.GetProblemVoteDown(s.Id)
+                    ));
+
+            DetailProblemVM problemViewModel =
+                Mapper.Map<Problem, DetailProblemVM>(targetProblem);
+
+
+            return View("Views/DetailProblem", problemViewModel);
         }
     }
 }

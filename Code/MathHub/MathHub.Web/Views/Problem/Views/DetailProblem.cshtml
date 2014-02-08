@@ -1,12 +1,12 @@
-﻿@model MathHub.Web.Models.DetailProblemViewModel
+﻿@model MathHub.Web.Models.ProblemVM.DetailProblemVM
 @{
     ViewBag.Title = "DetailProblem";
     Layout = "~/Views/Problem/Layouts/_ProblemDetailLayout.cshtml";
 }
 
-<h2>DetailProblem: @Model.TestId</h2>
+<h2>Detail Problem: @Model.Title ( @Model.VoteUpNum / @Model.VoteDownNum ) by @Model.UserUsername</h2>
 
-<p>Problem content here.</p>
+<p>@Model.Content</p>
 
 <h3>Comments</h3>
 @{
