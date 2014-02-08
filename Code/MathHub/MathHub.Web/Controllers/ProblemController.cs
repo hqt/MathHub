@@ -44,9 +44,9 @@ namespace MathHub.Web.Controllers
         // GET /Problem/Newest
         public ActionResult Newest()
         {
-            List<Problem> problems = _problemQueryService.GetAllProblem(Constant.DEFAULT_OFFSET, Constant.DEFAULT_PER_PAGE);
+            IQueryable<Problem> problems = _problemQueryService.GetAllProblem(Constant.DEFAULT_OFFSET, Constant.DEFAULT_PER_PAGE);
             ListProblemVM model = new ListProblemVM();
-            model.problems = problems.AsQueryable();
+            model.problems = problems;
             return View("Views/ListAllProblem", model);
         }
 
