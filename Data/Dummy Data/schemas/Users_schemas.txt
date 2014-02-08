@@ -1,0 +1,3 @@
+Username,Text,Masked String,llll\-llll\-999
+Score,Numbers,Integer,0|1000
+Avatar_Id,Text,Masked String,\N\U\L\L

@@ -1,0 +1,3 @@
+Content,Text,Random Number of Words,10|20
+DateCreated,Time,Date,41671|41678|3|False|yyyy-MM-dd|h:nn:ss
+AttendanceId,Numbers,Integer,1|300

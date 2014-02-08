@@ -1,0 +1,3 @@
+DateRecord,Time,Date,40210|41678|3|False|yyyy-MM-dd|h:nn:ss
+Hits,Numbers,Integer,0|1000
+MainPostId,Numbers,Integer,1|10000

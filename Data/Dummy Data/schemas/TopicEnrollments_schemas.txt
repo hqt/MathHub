@@ -1,0 +1,5 @@
+DateCreated,Time,Date,40210|41678|3|False|yyyy-MM-dd|h:nn:ss
+TopicId,Numbers,Integer,1|5000
+UserId,Numbers,Integer,1|1000
+Type,Numbers,Integer,1|2
+DateSeen,Time,Date,41671|41678|0|False|yyyy-MM-dd|h:nn:ss

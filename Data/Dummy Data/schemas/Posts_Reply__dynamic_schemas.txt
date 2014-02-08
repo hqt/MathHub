@@ -1,0 +1,4 @@
+Type,Numbers,Integer,1|2
+MainPostId,Numbers,Integer,5001|10000
+TopicId,Text,Masked String,\N\U\L\L
+Id,Numbers,Sequence,16001|0|1

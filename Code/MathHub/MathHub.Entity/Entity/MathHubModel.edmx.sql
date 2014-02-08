@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 02/08/2014 10:30:10
+-- Date Created: 02/08/2014 20:46:33
 -- Generated from EDMX file: E:\My Documents\Visual Studio 2012\MathHub.VN\Code\MathHub\MathHub.Entity\Entity\MathHubModel.edmx
 -- --------------------------------------------------
 
@@ -363,7 +363,6 @@ GO
 -- Creating table 'PostTags'
 CREATE TABLE [dbo].[PostTags] (
 	   [Id] int IDENTITY(1,1) NOT NULL,
-	   [PostId] int  NOT NULL,
 	   [TagId] int  NOT NULL,
 	   [MainPostId] int  NOT NULL
 );

@@ -1,0 +1,5 @@
+PostId,Numbers,Integer,1|30000
+Type,Numbers,Integer,1|2
+DateCreated,Time,Date,40210|41678|3|False|yyyy-MM-dd|h:nn:ss
+UserId,Numbers,Integer,1|1000
+Score,Set,From Fixed List,10|-10|-2|20|30|-5
