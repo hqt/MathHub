@@ -71,10 +71,14 @@ namespace MathHub.Service.Problems
             if (tagId == 0) return false;
             // create new post tag
             PostTag postTag = new PostTag();
+            // check if current problem id exist in system or not
+            int assertProblemId = ctx.Posts.OfType<Problem>()
+                .Where(t => t.Id == problemId).Select(t => t.Id).FirstOrDefault();
+            if (assertProblemId == 0) return false;
+            // create new post tag
             postTag.TagId = tagId;
             postTag.MainPostId = problemId;
             return postTagRepository.Insert(postTag);
-            
         }
 
         public bool AddListTag(int problemId, List<string> name)
@@ -115,8 +119,12 @@ namespace MathHub.Service.Problems
         {
             // find tag id
             int tagId = ctx.Tags.Where(t => t.Name == tagName).Select(t => t.Id).FirstOrDefault();
+            // does not exist current tag in system
+            if (tagId == 0) return false;
             // find post tag
             PostTag postTag = ctx.PostTags.FirstOrDefault(t => t.TagId == tagId && t.MainPostId == postId);
+            // does not exist current post tag (because postId wrong ?)
+            if (postTag == null) return false;
             // delete
             return postTagRepository.Delete(postTag);
         }
