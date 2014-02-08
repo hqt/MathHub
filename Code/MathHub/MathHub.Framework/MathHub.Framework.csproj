@@ -30,17 +30,40 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\BaseController.cs" />
-    <Compile Include="Controller\StructureMapControllerFactory.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Infrastructure\Authentication\FormAuthenticationService.cs" />
     <Compile Include="Infrastructure\Authentication\MockupAuthenticationService.cs" />
     <Compile Include="Infrastructure\AutoMapper\AutoMappedWrapper.cs" />
@@ -48,11 +71,8 @@
     <Compile Include="Infrastructure\AutoMapper\BaseFormatter.cs" />
     <Compile Include="Infrastructure\AutoMapper\BaseResolver.cs" />
     <Compile Include="Infrastructure\AutoMapper\MathHubMapperProfile.cs" />
-    <Compile Include="Infrastructure\CustomRazorEngine.cs" />
     <Compile Include="Infrastructure\Data\DataReaderExtension.cs" />
-    <Compile Include="Infrastructure\FormAuthenticationService.cs" />
     <Compile Include="Infrastructure\Logger.cs" />
-    <Compile Include="Infrastructure\MockupAuthenticationService.cs" />
     <Compile Include="Infrastructure\Pagination\CustomPagination.cs" />
     <Compile Include="Infrastructure\Pagination\DelegatePagination.cs" />
     <Compile Include="Infrastructure\Pagination\IPagination.cs" />
@@ -60,10 +80,8 @@
     <Compile Include="Infrastructure\Pagination\PaginationHelper.cs" />
     <Compile Include="Infrastructure\Repository\GenericRepository.cs" />
     <Compile Include="Infrastructure\Repository\MathHubDbContext.cs" />
-    <Compile Include="Infrastructure\RouteProvider.cs" />
     <Compile Include="Infrastructure\Router\GenericRouteProvider.cs" />
     <Compile Include="Infrastructure\Router\RouteProvider.cs" />
-    <Compile Include="Infrastructure\StructureMapControllerFactory.cs" />
     <Compile Include="Infrastructure\StructureMap\StructureMapConfiguration.cs" />
     <Compile Include="Infrastructure\StructureMap\StructureMapControllerFactory.cs" />
     <Compile Include="Infrastructure\StructureMap\StructureMapServiceLocator.cs" />
@@ -80,6 +98,29 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HTMLHelper\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll">
+      <Link>AutoMapper.Net4.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MathHub.Core\MathHub.Core.csproj">
+      <Project>{69f5826b-6c30-4250-b51c-b4bdeaf178cf}</Project>
+      <Name>MathHub.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MathHub.Entity\MathHub.Entity.csproj">
+      <Project>{a5ad7ac9-4817-4d94-8113-6dfc7eb0f273}</Project>
+      <Name>MathHub.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MathHub.Service\MathHub.Service.csproj">
+      <Project>{72774F48-7053-4668-BEB7-633F9B1E7B4E}</Project>
+      <Name>MathHub.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

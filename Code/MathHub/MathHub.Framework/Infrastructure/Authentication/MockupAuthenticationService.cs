@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Linq;
+using MathHub.Core.Infrastructure;
+using MathHub.Entity.Entity;
+using WebMatrix.WebData;
 
 namespace MathHub.Framework.Infrastructure.Authentication
 {
@@ -14,7 +18,7 @@ namespace MathHub.Framework.Infrastructure.Authentication
         public MockupAuthenticationService()
         {
             // temporary login with Thanh Hai User 
-            // user = ctx.Users.FirstOrDefault(t => t.Username.Equals(WebSecurity.CurrentUserName));
+             user = ctx.Users.FirstOrDefault(t => t.Username.Equals(WebSecurity.CurrentUserName));
         }
 
 

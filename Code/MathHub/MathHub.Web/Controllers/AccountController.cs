@@ -5,15 +5,12 @@ using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-//using DotNetOpenAuth.AspNet;
 using DotNetOpenAuth.AspNet;
 using MathHub.Core.Infrastructure;
 using MathHub.Entity.Entity;
-using MathHub.Web.Framework;
+using MathHub.Framework.Controllers;
 using Microsoft.Web.WebPages.OAuth;
 using WebMatrix.WebData;
-using MathHub.Filters;
-using MathHub.Web.Framework.Infrastructure;
 
 namespace MathHub.Web.Controllers
 {

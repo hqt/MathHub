@@ -1,7 +1,6 @@
 ﻿using MathHub.Core.Infrastructure.Interfaces.Repository;
 using MathHub.Core.Interfaces.Problems;
 using MathHub.Entity.Entity;
-using MathHub.Web.Framework.Infrastructure.StructureMap;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StructureMap;
 using System;

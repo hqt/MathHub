@@ -1,25 +1,14 @@
-﻿using MathHub.Controllers;
-using MathHub.Core.Infrastructure;
-using MathHub.Core.Interfaces.Problems;
-using MathHub.Core.Interfaces.Users;
-using MathHub.Services.Problems;
-using MathHub.Services.Users;
-using MathHub.Web.Framework.Infrastructure;
-using MathHub.Web.Framework.Infrastructure.StructureMap;
-using StackExchange.Profiling;
-using StructureMap;
-using StructureMap.Pipeline;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using MathHub.Framework.Infrastructure;
+using MathHub.Framework.Infrastructure.AutoMapper;
+using MathHub.Framework.Infrastructure.StructureMap;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using StructureMap;
 using WebMatrix.WebData;
 
-namespace MathHub
+namespace MathHub.Web
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
@@ -53,14 +42,14 @@ namespace MathHub
         {
             if (Request.IsLocal)
             {
-                MiniProfiler.Start();
+                //MiniProfiler.Start();
             } 
         }
 
         protected void Application_EndRequest()
         {
             ObjectFactory.ReleaseAndDisposeAllHttpScopedObjects();
-            MiniProfiler.Stop();
+            //MiniProfiler.Stop();
         }
 
     }

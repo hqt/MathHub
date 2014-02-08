@@ -1,6 +1,7 @@
 ﻿using System.Web.Mvc;
-using MathHub.Models;
-using MathHub.Web.Framework;
+using MathHub.Framework.Controllers;
+using MathHub.Web.Models;
+
 namespace MathHub.Web.Controllers
 {
     public class ProblemController : BaseController

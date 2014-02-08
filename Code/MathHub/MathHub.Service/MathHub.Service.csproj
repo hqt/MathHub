@@ -30,8 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +58,16 @@
     <Compile Include="Tags\TagQueryService.cs" />
     <Compile Include="Users\UserCommandService.cs" />
     <Compile Include="Users\UserQueryService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MathHub.Core\MathHub.Core.csproj">
+      <Project>{69f5826b-6c30-4250-b51c-b4bdeaf178cf}</Project>
+      <Name>MathHub.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MathHub.Entity\MathHub.Entity.csproj">
+      <Project>{a5ad7ac9-4817-4d94-8113-6dfc7eb0f273}</Project>
+      <Name>MathHub.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

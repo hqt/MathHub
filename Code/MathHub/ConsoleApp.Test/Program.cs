@@ -2,9 +2,7 @@
 using MathHub.Core.Infrastructure;
 using MathHub.Core.Infrastructure.Interfaces.Repository;
 using MathHub.Entity.Entity;
-using MathHub.Web.Framework.Infrastructure;
-using MathHub.Web.Framework.Infrastructure.StructureMap;
-using MathHub.Web.Framework.Utils;
+using MathHub.Framework.Utils;
 using StructureMap;
 using System;
 using System.Collections.Generic;

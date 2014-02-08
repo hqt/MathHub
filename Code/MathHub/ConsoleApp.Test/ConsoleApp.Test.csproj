@@ -32,6 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,6 +56,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MathHub.Core\MathHub.Core.csproj">
+      <Project>{69F5826B-6C30-4250-B51C-B4BDEAF178CF}</Project>
+      <Name>MathHub.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MathHub.Entity\MathHub.Entity.csproj">
+      <Project>{A5AD7AC9-4817-4D94-8113-6DFC7EB0F273}</Project>
+      <Name>MathHub.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MathHub.Framework\MathHub.Framework.csproj">
+      <Project>{12B3A87F-6972-449C-8EEE-B61587ECCF33}</Project>
+      <Name>MathHub.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MathHub.Service\MathHub.Service.csproj">
+      <Project>{72774F48-7053-4668-BEB7-633F9B1E7B4E}</Project>
+      <Name>MathHub.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

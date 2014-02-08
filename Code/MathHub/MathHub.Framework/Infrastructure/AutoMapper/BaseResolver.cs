@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using MathHub.Web.Framework.Utils;
+using MathHub.Framework.Utils;
 
 namespace MathHub.Framework.Infrastructure.AutoMapper
 {

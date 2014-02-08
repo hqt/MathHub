@@ -1,12 +1,8 @@
 ﻿using AutoMapper;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MathHub.Web.Framework.Utils;
 
-namespace MathHub.Framework.Infrastructure
+namespace MathHub.Framework.Infrastructure.AutoMapper
  {
     public class AutoMapperConfiguration
     {

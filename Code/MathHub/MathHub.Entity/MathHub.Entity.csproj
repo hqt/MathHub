@@ -30,7 +30,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
@@ -105,7 +109,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>MathHubModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Entity\MathHubModel1.Designer.cs" />
     <Compile Include="Entity\Medal.cs">
       <DependentUpon>MHModel.tt</DependentUpon>
     </Compile>
@@ -115,14 +118,12 @@
     <Compile Include="Entity\Message.cs">
       <DependentUpon>MHModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\MHModel.Context.cs" />
-    <Compile Include="Entity\MHModel.Context1.cs">
+    <Compile Include="Entity\MHModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MHModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\MHModel.cs" />
-    <Compile Include="Entity\MHModel1.cs">
+    <Compile Include="Entity\MHModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MHModel.tt</DependentUpon>
@@ -217,12 +218,15 @@
     </None>
     <None Include="Entity\MHModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MHModel.Context1.cs</LastGenOutput>
+      <LastGenOutput>MHModel.Context.cs</LastGenOutput>
+      <DependentUpon>MathHubModel.edmx</DependentUpon>
     </None>
     <None Include="Entity\MHModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MHModel1.cs</LastGenOutput>
+      <LastGenOutput>MHModel.cs</LastGenOutput>
+      <DependentUpon>MathHubModel.edmx</DependentUpon>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CustomDDLGenerator\SSDLToSQL10.sql" />
@@ -231,7 +235,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SSDLToSQL10.tt</DependentUpon>
     </Content>
-    <Content Include="Entity\MathHubModel.edmx.sql" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

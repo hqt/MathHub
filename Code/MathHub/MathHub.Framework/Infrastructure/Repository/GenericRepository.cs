@@ -1,7 +1,7 @@
 ﻿using MathHub.Core.Infrastructure.Interfaces.Repository;
 using MathHub.Core.Infrastructure.Repository;
 using MathHub.Entity.Entity;
-using MathHub.Web.Framework.Utils;
+using MathHub.Framework.Utils;
 using System;
 using System.Collections.Generic;
 using System.Data;

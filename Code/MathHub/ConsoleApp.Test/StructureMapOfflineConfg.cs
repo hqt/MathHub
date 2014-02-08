@@ -8,20 +8,16 @@ using MathHub.Core.Interfaces.Blogs;
 using MathHub.Core.Interfaces.Discussions;
 using MathHub.Core.Interfaces.Systems;
 using MathHub.Core.Interfaces.Tags;
-using MathHub.Services.Blogs;
-using MathHub.Services.Discussions;
-using MathHub.Services.Problems;
-using MathHub.Services.Systems;
-using MathHub.Services.Tags;
-using MathHub.Services.Users;
-using MathHub.Web.Framework.Infrastructure.Repository;
+using MathHub.Framework.Infrastructure;
+using MathHub.Framework.Infrastructure.Authentication;
+using MathHub.Framework.Infrastructure.Repository;
+using MathHub.Service.Blogs;
+using MathHub.Service.Discussions;
+using MathHub.Service.Problems;
+using MathHub.Service.Systems;
+using MathHub.Service.Tags;
+using MathHub.Service.Users;
 using StructureMap;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MathHub.Web.Framework.Infrastructure;
 
 namespace ConsoleApp.Test
 {

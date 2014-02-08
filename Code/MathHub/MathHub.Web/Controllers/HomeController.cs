@@ -1,8 +1,4 @@
-﻿using MathHub.Web.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using MathHub.Framework.Controllers;
 using System.Web.Mvc;
 
 namespace MathHub.Web.Controllers

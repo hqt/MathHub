@@ -1,4 +1,6 @@
 ﻿using System;
+using MathHub.Core.Infrastructure;
+using MathHub.Entity.Entity;
 
 namespace MathHub.Framework.Infrastructure.Authentication
 {

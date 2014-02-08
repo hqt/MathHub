@@ -1,11 +1,6 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MathHub.Framework.Infrastructure
+namespace MathHub.Framework.Infrastructure.AutoMapper
 {
     class MathHubMapperProfile : Profile
     {
