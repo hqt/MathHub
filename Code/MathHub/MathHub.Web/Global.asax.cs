@@ -5,7 +5,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using StackExchange.Profiling;
+//using StackExchange.Profiling;
 using StructureMap;
 using WebMatrix.WebData;
 
@@ -39,19 +39,19 @@ namespace MathHub.Web
             StructureMapConfiguration.Configure();
         }
 
-        protected void Application_StartRequest()
-        {
-            if (Request.IsLocal)
-            {
-                MiniProfiler.Start();
-            } 
-        }
+        //protected void Application_StartRequest()
+        //{
+        //    if (Request.IsLocal)
+        //    {
+        //        MiniProfiler.Start();
+        //    } 
+        //}
 
-        protected void Application_EndRequest()
-        {
-            ObjectFactory.ReleaseAndDisposeAllHttpScopedObjects();
-            MiniProfiler.Stop();
-        }
+        //protected void Application_EndRequest()
+        //{
+        //    ObjectFactory.ReleaseAndDisposeAllHttpScopedObjects();
+        //    MiniProfiler.Stop();
+        //}
 
     }
 }

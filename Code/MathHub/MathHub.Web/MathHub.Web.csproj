@@ -217,7 +217,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProblemVM\CommentItemVM.cs" />
     <Compile Include="Models\ProblemVM\DetailProblemVM.cs" />
+    <Compile Include="Models\ProblemVM\CommentListVM.cs" />
+    <Compile Include="Models\ProblemVM\ProblemListVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

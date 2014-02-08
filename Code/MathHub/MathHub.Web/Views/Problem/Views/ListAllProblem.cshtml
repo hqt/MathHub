@@ -1,14 +1,15 @@
-﻿@{
+﻿@using MathHub.Entity.Entity
+@model MathHub.Web.Models.ProblemVM.ProblemListVM
+@{
     ViewBag.Title = "ListAllProblem";
     Layout = "~/Views/Problem/Layouts/_ProblemListLayout.cshtml";
 }
-
 <h2>ListAllProblem</h2>
 These items are created by a loop of partial views:<br/>
 @{
-    for (int i = 1; i <= 10; ++i )
+    foreach (Problem problem in @Model.problems)
     {
-        @Html.Partial("Partials/_ProblemItem", i);
+        @Html.Partial("Partials/_ProblemItem", problem);
     }
 }
 

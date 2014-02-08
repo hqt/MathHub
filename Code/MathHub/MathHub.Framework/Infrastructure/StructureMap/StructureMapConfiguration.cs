@@ -36,7 +36,7 @@ namespace MathHub.Framework.Infrastructure.StructureMap
                 // interface Authentication should validate in one Session
                 cfg.For<IAuthenticationService>()
                     //.LifecycleIs(Lifecycles.GetLifecycle(InstanceScope.HttpSession))
-                    .Use<MockupAuthenticationService>();
+                    .Use<FormAuthenticationService>();
 
                 /** intialize all service interface with its implementation */
                 // blog

@@ -64,8 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Infrastructure\Authentication\FormAuthenticationService.cs" />
-    <Compile Include="Infrastructure\Authentication\MockupAuthenticationService.cs" />
     <Compile Include="Infrastructure\AutoMapper\AutoMappedWrapper.cs" />
     <Compile Include="Infrastructure\AutoMapper\AutoMapperConfiguration.cs" />
     <Compile Include="Infrastructure\AutoMapper\BaseFormatter.cs" />

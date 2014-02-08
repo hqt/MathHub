@@ -1,7 +1,8 @@
-﻿@model List<Int32>
+﻿@using MathHub.Entity.Entity
+@model ICollection<MathHub.Entity.Entity.Comment>
 @{
-    foreach(Int32 i in Model)
+    foreach(Comment comment in Model)
     {
-        @Html.Partial("Partials/_CommentItem", i)
+        @Html.Partial("Partials/_CommentItem", comment)
     }
 }
