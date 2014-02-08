@@ -78,12 +78,12 @@ namespace MathHub.Service.Problems
             // create new post tag
             postTag.TagId = tagId;
             postTag.MainPostId = problemId;
-            return postTagRepository.Insert(postTag);
+            return postTagRepository.Insert(postTag);   
         }
 
         public bool AddListTag(int problemId, List<string> name)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException();  
         }
         #endregion
 
