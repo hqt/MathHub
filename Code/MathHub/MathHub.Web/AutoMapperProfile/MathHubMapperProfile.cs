@@ -23,8 +23,13 @@ namespace MathHub.Web.AutoMapperProfile
             // Profile
             Mapper.CreateMap<User, ProfileWidgetVM>()
                 .ForMember(p => p.Medal,
-                m => m.MapFrom(
-                    s => ((IUserQueryService)null)));
+                    m => m.MapFrom(
+                    s => ((IUserQueryService)null).GetMedals(s.Id)
+                ))
+                .ForMember(p => p.Avatar,
+                    m => m.MapFrom(
+                    s => ((IUserQueryService)null).GetLoginUserAvatar()
+                ));
             
             // Problem
             Mapper.CreateMap<Problem, PreviewProblemVM>();

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5304c00760da427a9a64bac20cd0de96" Name="Diagram1" ZoomLevel="78" ShowGrid="false" DisplayType="true" >
+      <Diagram DiagramId="5304c00760da427a9a64bac20cd0de96" Name="Diagram1" ZoomLevel="67" ShowGrid="false" DisplayType="true" >
         <EntityTypeShape EntityType="MathHubModel.MainPost" Width="1.5" PointX="10.25" PointY="7.375" IsExpanded="true" />
         <EntityTypeShape EntityType="MathHubModel.User" Width="1.5" PointX="20.5" PointY="7.875" IsExpanded="true" />
         <EntityTypeShape EntityType="MathHubModel.Blog" Width="1.5" PointX="8.5" PointY="10.875" IsExpanded="true" />

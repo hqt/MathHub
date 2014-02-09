@@ -37,7 +37,13 @@ namespace MathHub.Service.Problems
         public Problem GetProblemById(int id)
         {
             return ctx.Posts.OfType<Problem>().FirstOrDefault(t => t.Id == id);
-        } 
+        }
+
+        public IEnumerable<Problem> GetProblemsByUserId(int userId, int limit)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         #region Vote

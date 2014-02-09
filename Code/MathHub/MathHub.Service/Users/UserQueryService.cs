@@ -68,7 +68,30 @@ namespace MathHub.Service.Users
         public IEnumerable<Tag> getLoginUserFavoriteTag()
         {
             return ctx.FavoriteTags.Where(t => t.UserId == _authenticationService.GetUserId()).Select(t => t.Tag).AsEnumerable();
-        } 
+        }
+
+        // Include Follower and Following
+        public IEnumerable<Subscription> GetLoginUserSubcriptions()
+        {
+            throw new NotImplementedException();
+        }
+
+        // Image Url
+        public string GetLoginUserAvatar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public User GetLoginUser()
+        {
+            throw new NotImplementedException();
+        }
+
+        public User GetUserById(int userId)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
 

@@ -1,5 +1,16 @@
-﻿@{
+﻿@using MathHub.Entity.Entity
+@model ICollection<Blog>
+@{
     Layout = null;
 }
 <h2>New Blogs</h2>
-New Blogs
+@*@foreach(Blog blog in Model)
+{
+    @Html.ActionLink(blog.Title,
+                 "Detail", new {controller = "Blog", id = blog.Id})<br/>
+}*@
+
+@foreach(Blog blog in Model)
+{
+    <p>@blog.Title</p>
+}

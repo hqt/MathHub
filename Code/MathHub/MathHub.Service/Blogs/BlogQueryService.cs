@@ -38,5 +38,15 @@ namespace MathHub.Service.Blogs
         {
             return ctx.Posts.OfType<Blog>().Where(b => b.UserId == userId);
         }
+
+        public IEnumerable<Blog> GetNewBlogs(int limit)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Blog> GetRelatedBlogsByProblemId(int problemId, int limit)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

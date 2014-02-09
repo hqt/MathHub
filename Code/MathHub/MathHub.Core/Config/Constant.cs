@@ -19,6 +19,7 @@ namespace MathHub.Core.Config
     {
         public const int DEFAULT_OFFSET = 0;
         public const int DEFAULT_PER_PAGE = 10;
+        public const int DEFAULT_PER_WIDGET = 5;
     }
 
     public static class RouteDefaults

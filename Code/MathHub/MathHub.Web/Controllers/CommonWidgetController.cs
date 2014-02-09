@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
+using MathHub.Core.Config;
 using MathHub.Core.Interfaces.Blogs;
+using MathHub.Core.Interfaces.Problems;
 using MathHub.Core.Interfaces.Users;
 using MathHub.Entity.Entity;
+using MathHub.Web.Models.CommonVM;
 using WebMatrix.WebData;
 
 namespace MathHub.Web.Controllers
@@ -15,11 +19,15 @@ namespace MathHub.Web.Controllers
     {
         private IUserQueryService _userQueryService;
         private IBlogQueryService _blogQueryService;
+        private IProblemQueryService _problemQueryService;
+
         public CommonWidgetController(IUserQueryService userQueryService
-                                      , IBlogQueryService blogQueryService)
+                                      , IBlogQueryService blogQueryService
+                                      , IProblemQueryService problemQueryService)
         {
             _userQueryService = userQueryService;
             _blogQueryService = blogQueryService;
+            _problemQueryService = problemQueryService;
         }
 
         public ActionResult HeaderWidget()
@@ -34,7 +42,7 @@ namespace MathHub.Web.Controllers
 
         public ActionResult FavoriteTagWidget()
         {
-            ICollection<Tag> tags = null;//_userQueryService.getLoginUserFavoriteTag().ToList();
+            ICollection<Tag> tags = _userQueryService.getLoginUserFavoriteTag().ToList();
             return PartialView("_FavoriteTagWidget", tags);
         }
 
@@ -45,13 +53,13 @@ namespace MathHub.Web.Controllers
 
         public ActionResult MySubscriptionWidget()
         {
-            ICollection<Subscription> subscriptions = null;
-            return PartialView("_MySubscriptionWidget", subscriptions);
+            
+            return PartialView("_MySubscriptionWidget");
         }
 
         public ActionResult NewBlogWidget()
         {
-            ICollection<Blog> blogs = null;
+            ICollection<Blog> blogs = _blogQueryService.GetNewBlogs(Constant.DEFAULT_PER_WIDGET).ToList();
             return PartialView("_NewBlogWidget", blogs);
         }
 
@@ -67,9 +75,10 @@ namespace MathHub.Web.Controllers
 
         public ActionResult ProfileWidget()
         {
-            //User user = _userQueryService.GetCurrentLoginUser();
+            User user = _userQueryService.GetLoginUser();
+            ProfileWidgetVM profileWidgetVm = Mapper.Map<User, ProfileWidgetVM>(user);
 
-            return PartialView("_ProfileWidget");
+            return PartialView("_ProfileWidget", profileWidgetVm);
         }
 
         public ActionResult RelatedBlogWidget()
@@ -82,14 +91,16 @@ namespace MathHub.Web.Controllers
             return PartialView("_RelatedTagWidget");
         }
 
-        public ActionResult SameAuthorWidget()
+        public ActionResult SameAuthorWidget(int id)
         {
-            return PartialView("_SameAuthorWidget");
+            ICollection<Problem> problems = _problemQueryService.GetProblemsByUserId(id, Constant.DEFAULT_PER_WIDGET).ToList();
+            return PartialView("_SameAuthorWidget", problems);
         }
 
         public ActionResult SubscriptionWidget()
         {
-            return PartialView("_SubscriptionWidget");
+            ICollection<Subscription> subscriptions = _userQueryService.GetLoginUserSubcriptions().ToList();
+            return PartialView("_SubscriptionWidget", subscriptions);
         }
 
         public ActionResult YourActivityWidget()
