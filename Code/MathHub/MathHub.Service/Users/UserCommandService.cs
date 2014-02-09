@@ -1,4 +1,6 @@
-﻿using MathHub.Core.Infrastructure.Repository;
+﻿using MathHub.Core.Infrastructure;
+using MathHub.Core.Infrastructure.Interfaces.Repository;
+using MathHub.Core.Infrastructure.Repository;
 using MathHub.Core.Interfaces.Users;
 using MathHub.Entity.Entity;
 using System;
@@ -11,27 +13,44 @@ namespace MathHub.Service.Users
 {
     public class UserCommandService : IUserCommandService
     {
+        #region Constructor
         MathHubModelContainer ctx;
+        IRepository<User> userRepository;
+        IRepository<Profile> profileRepository;
+        IRepository<Image> imageRepository;
+        IRepository<Activity> activityRepository;
+        ILogger logger;
 
         public UserCommandService(
-            IMathHubDbContext context)
+            IMathHubDbContext context,
+            IRepository<User> userRepository,
+            IRepository<Profile> profileRepository,
+            IRepository<Image> imageRepository,
+            IRepository<Activity> activityRepository,
+            ILogger logger)
         {
             this.ctx = context.GetDbContext();
+            this.userRepository = userRepository;
+            this.profileRepository = profileRepository;
+            this.imageRepository = imageRepository;
+            this.activityRepository = activityRepository;
+            this.logger = logger;
+        } 
+        #endregion
+
+        public bool InsertUser(User user, Profile profile, Image image)
+        {
+           return userRepository.Insert(user);
         }
 
-        public User InsertUser(User user, Profile profile, Image image)
+        public bool UpdateUser(User user)
         {
-            throw new NotImplementedException();
+            return userRepository.Update(user);
         }
 
-        public User UpdateUser(User user)
+        public bool DeleteUser(User user)
         {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteUser(User user)
-        {
-            throw new NotImplementedException();
+            return userRepository.Delete(user);
         }
     }
 }

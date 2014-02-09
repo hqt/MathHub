@@ -44,7 +44,7 @@ namespace MathHub.Web.Controllers
         // GET /Problem/Newest
         public ActionResult Newest()
         {
-            IQueryable<Problem> problems =
+            IEnumerable<Problem> problems =
                 _problemQueryService.GetAllProblem(
                 Constant.DEFAULT_OFFSET, Constant.DEFAULT_PER_PAGE).Where(t => t.User.Id == 784);
 

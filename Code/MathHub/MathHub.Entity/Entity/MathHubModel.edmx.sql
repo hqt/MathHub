@@ -1,7 +1,9 @@
 
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
--- -------------------------------------------------
+-- --------------------------------------------------
+-- Date Created: 02/09/2014 12:57:32
+-- Generated from EDMX file: E:\My Documents\Visual Studio 2012\MathHub.VN\Code\MathHub\MathHub.Entity\Entity\MathHubModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -162,9 +164,6 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_PostFollow]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[FollowPosts] DROP CONSTRAINT [FK_PostFollow];
 GO
-IF OBJECT_ID(N'[dbo].[FK_LoginSessionUser]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[LoginSessions] DROP CONSTRAINT [FK_LoginSessionUser];
-GO
 IF OBJECT_ID(N'[dbo].[FK_ActivityUser]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Activities] DROP CONSTRAINT [FK_ActivityUser];
 GO
@@ -301,9 +300,6 @@ IF OBJECT_ID(N'[dbo].[FollowPosts]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[Activities]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Activities];
-GO
-IF OBJECT_ID(N'[dbo].[LoginSessions]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[LoginSessions];
 GO
 IF OBJECT_ID(N'[dbo].[Posts_MainPost]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Posts_MainPost];
@@ -670,17 +666,6 @@ CREATE TABLE [dbo].[Activities] (
 );
 GO
 
--- Creating table 'LoginSessions'
-CREATE TABLE [dbo].[LoginSessions] (
-	   [Id] int IDENTITY(1,1) NOT NULL,
-	   [SessionKey] nvarchar(max)  NOT NULL,
-	   [IpAddress] nvarchar(max)  NOT NULL,
-	   [Browser] nvarchar(max)  NOT NULL,
-	   [DateCreated] datetime2  NOT NULL,
-	   [User_Id] int  NOT NULL
-);
-GO
-
 -- Creating table 'Posts_MainPost'
 CREATE TABLE [dbo].[Posts_MainPost] (
 	   [Title] nvarchar(250)  NOT NULL,
@@ -935,12 +920,6 @@ GO
 -- Creating primary key on [Id] in table 'Activities'
 ALTER TABLE [dbo].[Activities]
 ADD CONSTRAINT [PK_Activities]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [Id] in table 'LoginSessions'
-ALTER TABLE [dbo].[LoginSessions]
-ADD CONSTRAINT [PK_LoginSessions]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -1668,20 +1647,6 @@ ADD CONSTRAINT [FK_PostFollow]
 CREATE INDEX [IX_FK_PostFollow]
 ON [dbo].[FollowPosts]
     ([PostId]);
-GO
-
--- Creating foreign key on [User_Id] in table 'LoginSessions'
-ALTER TABLE [dbo].[LoginSessions]
-ADD CONSTRAINT [FK_LoginSessionUser]
-    FOREIGN KEY ([User_Id])
-    REFERENCES [dbo].[Users]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-
--- Creating non-clustered index for FOREIGN KEY 'FK_LoginSessionUser'
-CREATE INDEX [IX_FK_LoginSessionUser]
-ON [dbo].[LoginSessions]
-    ([User_Id]);
 GO
 
 -- Creating foreign key on [User_Id] in table 'Activities'

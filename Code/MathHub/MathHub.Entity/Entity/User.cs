@@ -54,7 +54,6 @@ namespace MathHub.Entity.Entity
         public virtual ICollection<TopicEnrollment> TopicEnrollments { get; set; }
         public virtual ICollection<Share> Shares { get; set; }
         public virtual ICollection<FollowPost> Follows { get; set; }
-        public virtual LoginSession LoginSession { get; set; }
         public virtual Activity Activity { get; set; }
         public virtual Profile Profile { get; set; }
         public virtual Image Avatar { get; set; }

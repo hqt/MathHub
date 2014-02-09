@@ -64,6 +64,8 @@ namespace MathHub.Framework.Infrastructure.Repository
 
         public virtual bool Update(T entity)
         {
+            DbEntityEntry c;
+            _ctx.SaveChanges();
             //try
             //{
             //    if (entity == null)

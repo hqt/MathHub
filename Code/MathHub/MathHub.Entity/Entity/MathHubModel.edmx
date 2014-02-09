@@ -41,7 +41,6 @@
     <EntitySet Name="StringResources" EntityType="MathHubModel.Store.StringResources" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="FollowPosts" EntityType="MathHubModel.Store.FollowPosts" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Activities" EntityType="MathHubModel.Store.Activities" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="LoginSessions" EntityType="MathHubModel.Store.LoginSessions" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Posts_MainPost" EntityType="MathHubModel.Store.Posts_MainPost" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Posts_Blog" EntityType="MathHubModel.Store.Posts_Blog" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Posts_Problem" EntityType="MathHubModel.Store.Posts_Problem" store:Type="Tables" Schema="dbo" />
@@ -243,10 +242,6 @@
     <AssociationSet Name="PostFollow" Association="MathHubModel.Store.PostFollow">
       <End Role="Post" EntitySet="Posts" />
       <End Role="Follow" EntitySet="FollowPosts" />
-    </AssociationSet>
-    <AssociationSet Name="LoginSessionUser" Association="MathHubModel.Store.LoginSessionUser">
-      <End Role="LoginSession" EntitySet="LoginSessions" />
-      <End Role="User" EntitySet="Users" />
     </AssociationSet>
     <AssociationSet Name="ActivityUser" Association="MathHubModel.Store.ActivityUser">
       <End Role="Activity" EntitySet="Activities" />
@@ -625,17 +620,6 @@
     <Property Name="NewEmailKey" Type="nvarchar(max)" Nullable="false" />
     <Property Name="LastLogin" Type="nvarchar(max)" Nullable="false" />
     <Property Name="LastIp" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="User_Id" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="LoginSessions">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="SessionKey" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="IpAddress" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Browser" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="DateCreated" Type="datetime" Nullable="false" />
     <Property Name="User_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Posts_MainPost">
@@ -1269,18 +1253,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="LoginSessionUser">
-    <End Role="LoginSession" Type="MathHubModel.Store.LoginSessions" Multiplicity="*" />
-    <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="LoginSession">
-        <PropertyRef Name="User_Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="ActivityUser">
     <End Role="Activity" Type="MathHubModel.Store.Activities" Multiplicity="*" />
     <End Role="User" Type="MathHubModel.Store.Users" Multiplicity="1" />
@@ -1637,11 +1609,6 @@
             <End Role="Follow" EntitySet="FollowPosts" />
           </AssociationSet>
           <EntitySet Name="Activities" EntityType="MathHubModel.Activity" />
-          <EntitySet Name="LoginSessions" EntityType="MathHubModel.LoginSession" />
-          <AssociationSet Name="LoginSessionUser" Association="MathHubModel.LoginSessionUser">
-            <End Role="LoginSession" EntitySet="LoginSessions" />
-            <End Role="User" EntitySet="Users" />
-          </AssociationSet>
           <AssociationSet Name="ActivityUser" Association="MathHubModel.ActivityUser">
             <End Role="Activity" EntitySet="Activities" />
             <End Role="User" EntitySet="Users" />
@@ -1699,7 +1666,6 @@
           <NavigationProperty Name="TopicEnrollments" Relationship="MathHubModel.UserTopicEnrollment" FromRole="User" ToRole="TopicEnrollment" />
           <NavigationProperty Name="Shares" Relationship="MathHubModel.UserShare" FromRole="User" ToRole="Share" />
           <NavigationProperty Name="Follows" Relationship="MathHubModel.UserFollow" FromRole="User" ToRole="Follow" />
-          <NavigationProperty Name="LoginSession" Relationship="MathHubModel.LoginSessionUser" FromRole="User" ToRole="LoginSession" />
           <NavigationProperty Name="Activity" Relationship="MathHubModel.ActivityUser" FromRole="User" ToRole="Activity" />
           <NavigationProperty Name="Profile" Relationship="MathHubModel.ProfileUser" FromRole="User" ToRole="Profile" />
           <NavigationProperty Name="Avatar" Relationship="MathHubModel.ImageUser" FromRole="User" ToRole="Image" />
@@ -2811,21 +2777,6 @@
           <Property Type="String" Name="LastIp" Nullable="false" />
           <NavigationProperty Name="User" Relationship="MathHubModel.ActivityUser" FromRole="Activity" ToRole="User" />
         </EntityType>
-        <EntityType Name="LoginSession">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="SessionKey" Nullable="false" />
-          <Property Type="String" Name="IpAddress" Nullable="false" />
-          <Property Type="String" Name="Browser" Nullable="false" />
-          <Property Type="DateTime" Name="DateCreated" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="MathHubModel.LoginSessionUser" FromRole="LoginSession" ToRole="User" />
-        </EntityType>
-        <Association Name="LoginSessionUser">
-          <End Type="MathHubModel.LoginSession" Role="LoginSession" Multiplicity="1" />
-          <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
-        </Association>
         <Association Name="ActivityUser">
           <End Type="MathHubModel.Activity" Role="Activity" Multiplicity="0..1" />
           <End Type="MathHubModel.User" Role="User" Multiplicity="1" />
@@ -3254,17 +3205,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="LoginSessions">
-      <EntityTypeMapping TypeName="IsTypeOf(MathHubModel.LoginSession)">
-        <MappingFragment StoreEntitySet="LoginSessions">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="SessionKey" ColumnName="SessionKey" />
-          <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
-          <ScalarProperty Name="Browser" ColumnName="Browser" />
-          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <AssociationSetMapping Name="ImageTag" TypeName="MathHubModel.ImageTag" StoreEntitySet="Tags">
       <EndProperty Name="Image">
         <ScalarProperty Name="Id" ColumnName="Image_Id" />
@@ -3273,14 +3213,6 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
       <Condition ColumnName="Image_Id" IsNull="false" />
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="LoginSessionUser" TypeName="MathHubModel.LoginSessionUser" StoreEntitySet="LoginSessions">
-      <EndProperty Name="User">
-        <ScalarProperty Name="Id" ColumnName="User_Id" />
-      </EndProperty>
-      <EndProperty Name="LoginSession">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
     </AssociationSetMapping>
     <AssociationSetMapping Name="ActivityUser" TypeName="MathHubModel.ActivityUser" StoreEntitySet="Activities">
       <EndProperty Name="User">
