@@ -8,6 +8,6 @@ namespace MathHub.Web.Models.ProblemVM
 {
     public class ListProblemVM
     {
-        public IQueryable<Problem> problems { get; set; } 
+        public IEnumerable<Problem> problems { get; set; } 
     }
 }

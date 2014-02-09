@@ -16,7 +16,7 @@ namespace ConsoleApp.Test.Problems
     {
           public TagTest()
         {
-            StructureMapOfflineConfg.Configure();
+            ProblemPreaparation.Preparation();
         }
 
         [TestMethod]
@@ -31,7 +31,7 @@ namespace ConsoleApp.Test.Problems
 
             bool res;
             // create test problem
-            Problem problem = problemQueryService.GetProblemById(2);
+            Problem problem = ProblemPreaparation.p;
 
             // create PostTag
             String title = "Combinatoric";
@@ -99,7 +99,7 @@ namespace ConsoleApp.Test.Problems
 
             bool res;
             // create test problem
-            Problem problem = problemQueryService.GetProblemById(2);
+            Problem problem = ProblemPreaparation.p;
 
             // create PostTag
             // i. wrong tag

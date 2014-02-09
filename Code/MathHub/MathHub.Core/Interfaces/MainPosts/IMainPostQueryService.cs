@@ -22,7 +22,7 @@ namespace MathHub.Core.Interfaces.MainPosts
         /// <summary>
         /// Comment
         /// </summary>
-        IQueryable<Comment> GetAllComments(int postId);
+        IEnumerable<Comment> GetAllComments(int postId);
 
         /// <summary>
         /// Vote
@@ -34,7 +34,7 @@ namespace MathHub.Core.Interfaces.MainPosts
         /// <summary>
         /// Reply
         /// </summary>
-        IQueryable<Reply> GetAllReply(int postId, ReplyEnum type);
+        IEnumerable<Reply> GetAllReply(int postId, ReplyEnum type);
        
     }
 }

@@ -9,8 +9,8 @@ namespace MathHub.Core.Interfaces.Users
 {
     public interface IUserCommandService
     {
-        User InsertUser(User user, Profile profile, Image image);
-        User UpdateUser(User user);
-        void DeleteUser(User user);
+        bool InsertUser(User user, Profile profile, Image image);
+        bool UpdateUser(User user);
+        bool DeleteUser(User user);
     }
 }

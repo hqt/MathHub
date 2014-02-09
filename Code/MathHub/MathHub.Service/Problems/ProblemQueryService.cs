@@ -31,9 +31,9 @@ namespace MathHub.Service.Problems
 
 
         #region Problem
-        public IQueryable<Problem> GetAllProblem(int offSet, int limit)
+        public IEnumerable<Problem> GetAllProblem(int offSet, int limit)
         {
-            return ctx.Posts.OfType<Problem>().OrderBy(b => b.Id).Skip(offSet).Take(limit).AsQueryable();
+            return ctx.Posts.OfType<Problem>().OrderBy(b => b.Id).Skip(offSet).Take(limit);
         }
 
         public Problem GetProblemById(int id)
@@ -64,26 +64,29 @@ namespace MathHub.Service.Problems
         #region Tag
         public List<Tag> GetAllPostTag(int postId)
         {
-            return ctx.PostTags.Include(t => t.Tag).Where(t => t.MainPostId == postId)
+            return ctx.PostTags
+                .Where(t => t.MainPostId == postId)
                 .Select(t => t.Tag).ToList();
         }
 
         public List<string> GetAllPostTagName(int postId)
         {
-            return ctx.PostTags.Include(t => t.Tag).Where(t => t.MainPostId == postId)
-               .Select(t => t.Tag.Name).ToList();
+            System.Data.Entity.Infrastructure.DbQuery c;
+            return ctx.PostTags
+                .Where(t => t.MainPostId == postId)
+                .Select(t => t.Tag.Name).ToList();
         } 
         #endregion
 
         #region Comment
-        public IQueryable<Comment> GetAllComments(int postId)
+        public IEnumerable<Comment> GetAllComments(int postId)
         {
-            return ctx.Posts.OfType<Comment>().Where(t => t.MainPostId == postId).AsQueryable();
+            return ctx.Posts.OfType<Comment>().Where(t => t.MainPostId == postId).AsEnumerable();
         } 
         #endregion
 
         #region Reply
-        public IQueryable<Reply> GetAllReply(int postId, ReplyEnum type)
+        public IEnumerable<Reply> GetAllReply(int postId, ReplyEnum type)
         {
             return ctx.Posts.OfType<Reply>().Where(t => t.MainPostId == postId && t.Type == type);
         } 

@@ -60,6 +60,5 @@ namespace MathHub.Entity.Entity
         public DbSet<StringResource> StringResources { get; set; }
         public DbSet<FollowPost> FollowPosts { get; set; }
         public DbSet<Activity> Activities { get; set; }
-        public DbSet<LoginSession> LoginSessions { get; set; }
     }
 }

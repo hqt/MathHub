@@ -9,8 +9,8 @@ namespace MathHub.Core.Interfaces.Tags
 {
     public interface ITagCommandService
     {
-        Tag CreateNewTag(Tag tag);
-        Tag EditTag(Tag tag);
-        Boolean RemoveTag(Tag tag);
+        bool CreateNewTag(Tag tag);
+        bool EditTag(Tag tag);
+        bool RemoveTag(Tag tag);
     }
 }

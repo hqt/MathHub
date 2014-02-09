@@ -1,4 +1,8 @@
-﻿using MathHub.Core.Interfaces.Tags;
+﻿using MathHub.Core.Infrastructure;
+using MathHub.Core.Infrastructure.Interfaces.Repository;
+using MathHub.Core.Infrastructure.Repository;
+using MathHub.Core.Interfaces.Tags;
+using MathHub.Entity.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,19 +13,36 @@ namespace MathHub.Service.Tags
 {
     public class TagCommandService : ITagCommandService 
     {
-        public Entity.Entity.Tag CreateNewTag(Entity.Entity.Tag tag)
+        #region Constructor
+        MathHubModelContainer ctx;
+        IRepository<Tag> tagRepository;
+        ILogger logger;
+
+        public TagCommandService(
+            IMathHubDbContext ctx,
+            IRepository<Tag> tagRepository,
+            ILogger logger)
         {
-            throw new NotImplementedException();
+            this.ctx = ctx.GetDbContext();
+            this.tagRepository = tagRepository;
+            this.logger = logger;
+        } 
+        #endregion
+
+
+        public bool CreateNewTag(Entity.Entity.Tag tag)
+        {
+            return tagRepository.Insert(tag);
         }
 
-        public Entity.Entity.Tag EditTag(Entity.Entity.Tag tag)
+        public bool EditTag(Entity.Entity.Tag tag)
         {
-            throw new NotImplementedException();
+            return tagRepository.Update(tag);
         }
 
         public bool RemoveTag(Entity.Entity.Tag tag)
         {
-            throw new NotImplementedException();
+            return tagRepository.Delete(tag);
         }
     }
 }

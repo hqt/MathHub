@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Problems\CommentTest.cs" />
+    <Compile Include="Problems\ProblemPreaparation.cs" />
     <Compile Include="Problems\ProblemTest.cs" />
     <Compile Include="Problems\ReplyTest.cs" />
     <Compile Include="Problems\TagTest.cs" />
