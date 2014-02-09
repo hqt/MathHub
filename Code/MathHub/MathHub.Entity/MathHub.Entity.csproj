@@ -98,9 +98,6 @@
     <Compile Include="Entity\Invitation.cs">
       <DependentUpon>MHModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\LoginSession.cs">
-      <DependentUpon>MHModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entity\MainPost.cs">
       <DependentUpon>MHModel.tt</DependentUpon>
     </Compile>

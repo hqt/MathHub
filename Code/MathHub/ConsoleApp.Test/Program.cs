@@ -46,13 +46,24 @@ namespace ConsoleApp.Test
             //logger.Error("Error", "This is a main error we have meet");
             //Console.ReadLine();
 
-            ProblemTest t = new ProblemTest();
-            t.TestGeneralProblem();
+            //ProblemTest t = new ProblemTest();
+            //t.TestGeneralProblem();
 
-            Console.WriteLine("Finish Console Test");
+            //Console.WriteLine("Finish Console Test");
+            //Console.ReadLine();
+
+            List<int> a = new List<int>();
+            a.Add(3);
+            a.Add(6);
+            List<String> b = a.Select(t => def()).ToList();
+            foreach(String c in b) {
+                Console.WriteLine(c);
+            }
             Console.ReadLine();
-
         }
+
+        public static String def() { return "thao"; }
+
 
         private static void TestReflectionAPI()
         {

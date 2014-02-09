@@ -1,4 +1,5 @@
-﻿using MathHub.Core.Infrastructure.Interfaces.Repository;
+﻿using MathHub.Core.Infrastructure;
+using MathHub.Core.Infrastructure.Interfaces.Repository;
 using MathHub.Core.Infrastructure.Repository;
 using MathHub.Core.Interfaces.Problems;
 using MathHub.Entity.Entity;
@@ -24,6 +25,7 @@ namespace MathHub.Service.Problems
         IRepository<Reply> replyRepository;
         IRepository<PostTag> postTagRepository;
         IRepository<Tag> tagRepository;
+        ILogger logger;
 
         public ProblemCommandService(
             IMathHubDbContext MathHubDbContext,
@@ -31,7 +33,8 @@ namespace MathHub.Service.Problems
             IRepository<Comment> commentRepository,
             IRepository<Reply> replyRepository,
             IRepository<PostTag> postTagRepository,
-            IRepository<Tag> tagRepository
+            IRepository<Tag> tagRepository,
+            ILogger logger
             )
         {
             this.ctx = MathHubDbContext.GetDbContext();
@@ -40,6 +43,7 @@ namespace MathHub.Service.Problems
             this.commentRepository = commentRepository;
             this.postTagRepository = postTagRepository;
             this.tagRepository = tagRepository;
+            this.logger = logger;
         } 
         #endregion
 

@@ -16,7 +16,7 @@ namespace ConsoleApp.Test.Problems
     {
          public ReplyTest()
         {
-            StructureMapOfflineConfg.Configure();
+            ProblemPreaparation.Preparation();
         }
 
         [TestMethod]
@@ -31,21 +31,21 @@ namespace ConsoleApp.Test.Problems
 
             bool res;
             // create test problem
-            Problem problem = problemQueryService.GetProblemById(2);
+            Problem problem = ProblemPreaparation.p;
 
             // create Reply
             Reply r = new Reply();
             r.Content = "this is an easy reply";
             r.DateCreated = DateTime.Now;
             r.DateModified = DateTime.Now;
-            r.UserId = 10;
+            r.UserId = problem.UserId;
             r.Type = ReplyEnum.ANSWER;
-            res = problemCommandService.AddReply(problem.Id, r) != null ? true : false;
+            res = problemCommandService.AddReply(problem.Id, r);
             Assert.IsTrue(r.Id > 0);
 
             // retrieve Reply
             // Get All replies
-            IQueryable<Reply> replies = problemQueryService.GetAllReply(problem.Id, ReplyEnum.ANSWER);
+            IEnumerable<Reply> replies = problemQueryService.GetAllReply(problem.Id, ReplyEnum.ANSWER);
             bool isExist = false;
             foreach (Reply reply in replies)
             {
@@ -89,6 +89,8 @@ namespace ConsoleApp.Test.Problems
                 }
             }
             Assert.IsFalse(isExist);
+
+            ProblemPreaparation.CleanUp();
         }
     }
 }

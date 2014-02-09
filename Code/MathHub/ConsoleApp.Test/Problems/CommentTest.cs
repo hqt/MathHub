@@ -14,7 +14,7 @@ namespace ConsoleApp.Test.Problems
     {
         public CommentTest()
         {
-            StructureMapOfflineConfg.Configure();
+            ProblemPreaparation.Preparation();
         }
 
         [TestMethod]
@@ -29,15 +29,16 @@ namespace ConsoleApp.Test.Problems
 
             bool res;
             // create test problem
-            Problem problem = problemQueryService.GetProblemById(2);
+            Problem problem = ProblemPreaparation.p;
 
             // create Comment
             Comment c = new Comment();
             c.Content = "this is an easy comment";
             c.DateCreated = DateTime.Now;
             c.DateModified = DateTime.Now;
-            c.UserId = 10;
-            res = problemCommandService.AddComment(problem.Id, c) != null ? true : false;
+            c.UserId = problem.UserId;
+            res = problemCommandService.AddComment(problem.Id, c);
+            Assert.IsTrue(res);
             Assert.IsTrue(c.Id > 0);
 
             // retrieve comment
@@ -86,6 +87,9 @@ namespace ConsoleApp.Test.Problems
                 }
             }
             Assert.IsFalse(isExist);
+
+            // End Test
+            ProblemPreaparation.CleanUp();
         }
    
     }

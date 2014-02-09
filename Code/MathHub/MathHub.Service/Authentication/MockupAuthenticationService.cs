@@ -18,10 +18,10 @@ namespace MathHub.Framework.Infrastructure.Authentication
         public MockupAuthenticationService()
         {
             // temporary login with Thanh Hai User
-            if (WebSecurity.IsAuthenticated)
-            {
-                user = ctx.Users.FirstOrDefault(t => t.Username.Equals(WebSecurity.CurrentUserName));
-            }
+            //if (WebSecurity.IsAuthenticated)
+            //{
+            //    user = ctx.Users.FirstOrDefault(t => t.Username.Equals(WebSecurity.CurrentUserName));
+            //}
         }
 
 

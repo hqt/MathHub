@@ -16,7 +16,7 @@ namespace ConsoleApp.Test.Problems
     {
         public ProblemTest()
         {
-            StructureMapOfflineConfg.Configure();
+            ProblemPreaparation.Preparation();
         }
 
         [TestMethod]
@@ -31,14 +31,16 @@ namespace ConsoleApp.Test.Problems
 
             bool res;
 
+            User u = ProblemPreaparation.u;
+
             // create problem
             Problem p = new Problem();
             p.Title = "Console Problem Test One";
             p.Content = "This is a hard hard problem";
             p.DateCreated = DateTime.Now;
             p.DateModified = DateTime.Now;
-            p.UserId = 10;
-            res = problemCommandService.AddProblem(p) != null ? true : false;
+            p.UserId = u.Id;
+            res = problemCommandService.AddProblem(p);
             Assert.IsTrue(res);
             Assert.IsTrue(p.Id > 0);
 
@@ -60,6 +62,8 @@ namespace ConsoleApp.Test.Problems
             // delete problem
             problemCommandService.DeleteProblem(np);
             Assert.IsNull(problemQueryService.GetProblemById(p.Id));
+
+            ProblemPreaparation.CleanUp();
         }
    
         [TestMethod]

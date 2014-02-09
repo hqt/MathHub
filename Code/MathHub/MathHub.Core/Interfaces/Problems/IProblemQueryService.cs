@@ -10,7 +10,7 @@ namespace MathHub.Core.Interfaces.Problems
 {
     public interface IProblemQueryService : IMainPostQueryService
     {
-        IQueryable<Problem> GetAllProblem(int offSet, int limit);
+        IEnumerable<Problem> GetAllProblem(int offSet, int limit);
         Problem GetProblemById(int id);
 
     }
