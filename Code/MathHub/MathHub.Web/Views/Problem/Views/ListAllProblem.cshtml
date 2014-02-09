@@ -1,5 +1,5 @@
-﻿@using MathHub.Entity.Entity
-@model MathHub.Web.Models.ProblemVM.ProblemListVM
+﻿@using MathHub.Web.Models.ProblemVM
+@model ICollection<PreviewProblemVM>
 @{
     ViewBag.Title = "ListAllProblem";
     Layout = "~/Views/Problem/Layouts/_ProblemListLayout.cshtml";
@@ -7,7 +7,8 @@
 <h2>ListAllProblem</h2>
 These items are created by a loop of partial views:<br/>
 @{
-    foreach (Problem problem in @Model.problems)
+    
+    foreach (PreviewProblemVM problem in Model)
     {
         @Html.Partial("Partials/_ProblemItem", problem);
     }
@@ -17,6 +18,7 @@ These items are created by a loop of partial views:<br/>
 
 @section LeftPanel
 {
+    
     @Html.Action("ProfileWidget", new { controller = "CommonWidget" })
     <hr/>
     @Html.Action("FavoriteTagWidget", new { controller = "CommonWidget" })
@@ -28,9 +30,9 @@ These items are created by a loop of partial views:<br/>
 
 @section RightPanel
 {
-    @Html.Action("CreateProblemWidget", new { controller = "CommonWidget" })
+    @Html.Action("PostProblemWidget", new { controller = "CommonWidget" })
     <hr/>
-    @Html.Action("MySubscriptionBlogsWidget", new { controller = "CommonWidget" })
+    @Html.Action("MySubscriptionWidget", new { controller = "CommonWidget" })
     <hr/>
-    @Html.Action("NewBlogsWidget", new { controller = "CommonWidget" })
+    @Html.Action("NewBlogWidget", new { controller = "CommonWidget" })
 }

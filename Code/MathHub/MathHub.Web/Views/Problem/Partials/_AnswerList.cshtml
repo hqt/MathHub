@@ -1,7 +1,7 @@
-﻿@model List<Int32>
+﻿@model MathHub.Web.Models.ProblemVM.AnswerListVM
 @{
-    foreach(Int32 i in Model)
+    foreach(MathHub.Web.Models.ProblemVM.AnswerItemVM answer in Model.answerItemVms)
     {
-        @Html.Partial("Partials/_AnswerItem", i);
+        @Html.Partial("Partials/_AnswerItem", answer);
     }
 }

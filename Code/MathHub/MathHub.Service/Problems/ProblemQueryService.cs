@@ -33,7 +33,8 @@ namespace MathHub.Service.Problems
         #region Problem
         public IQueryable<Problem> GetAllProblem(int offSet, int limit)
         {
-            return ctx.Posts.OfType<Problem>().OrderBy(b => b.Id).Skip(offSet).Take(limit).AsQueryable();
+            var a = ctx.Posts.OfType<Problem>().OrderBy(b => b.Id).Skip(offSet).Take(limit);
+            return a;
         }
 
         public Problem GetProblemById(int id)
