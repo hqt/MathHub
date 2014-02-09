@@ -7,5 +7,6 @@ namespace MathHub.Web.Models.ProblemVM
 {
     public class AnswerListVM
     {
+        public ICollection<AnswerItemVM> answerItemVms { get; set; } 
     }
 }

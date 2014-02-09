@@ -222,10 +222,10 @@
     <Compile Include="Models\ProblemVM\CommentItemVM.cs" />
     <Compile Include="Models\ProblemVM\CreateProblemVM.cs" />
     <Compile Include="Models\ProblemVM\DetailProblemVM.cs" />
-    <Compile Include="Models\ProblemVM\CommentListVM.cs" />
     <Compile Include="Models\ProblemVM\HintItemVM.cs" />
     <Compile Include="Models\ProblemVM\HintListVM.cs" />
-    <Compile Include="Models\ProblemVM\ListProblemVM.cs" />
+    <Compile Include="Models\CommonVM\UserInfoVM.cs" />
+    <Compile Include="Models\ProblemVM\PreviewProblemVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
-using MathHub.Entity.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using MathHub.Web.Models.CommonVM;
 
 namespace MathHub.Web.Models.ProblemVM
 {
-    public class DetailProblemVM
+    public class PreviewProblemVM
     {
         public int Id { get; set; }
         public string Content { get; set; }
@@ -21,17 +23,6 @@ namespace MathHub.Web.Models.ProblemVM
         public int AnswerNum { get; set; }
         public int HintNum { get; set; }
 
-        public ICollection<CommentItemVM> Comments { get; set; }
         public UserInfoVM UserInfo { get; set; }
-
-
-
-        //public Problem aa;
-        //public void a()
-        //{
-        //    aa.C
-        //}
-
-
     }
 }
