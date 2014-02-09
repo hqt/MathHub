@@ -1,0 +1,2 @@
+TagId,Numbers,Integer,1|1000
+MainPostId,Numbers,Integer,1|10000

@@ -1,0 +1,3 @@
+Name,Text,Random Number of Words,2|4
+Description,Text,Random Number of Words,5|10
+ScorePermissionId,Numbers,Integer,1|100
