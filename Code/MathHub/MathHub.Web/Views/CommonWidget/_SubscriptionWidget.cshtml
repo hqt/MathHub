@@ -1,5 +1,10 @@
-﻿@{
+﻿@using MathHub.Entity.Entity
+@model ICollection<Subscription>
+@{
     Layout = null;
 }
 <h2>Subscriptions</h2>
-Subscriptions
+@foreach(Subscription subscription in Model)
+{
+    <p>subscription.Following.Username</p>
+}

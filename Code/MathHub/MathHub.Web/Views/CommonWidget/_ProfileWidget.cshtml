@@ -1,5 +1,23 @@
-﻿@{
+﻿@model MathHub.Web.Models.CommonVM.ProfileWidgetVM
+@{
     Layout = null;
 }
 <h2>Profile</h2>
-Profile
+<h4>@Model.Username</h4>
+<img src="@Model.Avatar" />
+Score: @Model.Score 
+Medals: 
+@if(Model.Medal.Item1 >= 0)
+{
+<p>Gold: @Model.Medal.Item1</p> 
+}
+
+@if(Model.Medal.Item2 >= 0)
+{
+<p>Silver: @Model.Medal.Item2</p> 
+}
+
+@if(Model.Medal.Item3 >= 0)
+{
+<p>Copper: @Model.Medal.Item3</p> 
+}

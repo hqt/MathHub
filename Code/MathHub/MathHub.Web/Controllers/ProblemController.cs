@@ -48,9 +48,7 @@ namespace MathHub.Web.Controllers
                 _problemQueryService.GetAllProblem(
                 Constant.DEFAULT_OFFSET, Constant.DEFAULT_PER_PAGE).Where(t => t.User.Id == 784);
 
-            //problems.ToList();
-
-            Mapper.CreateMap<Problem, PreviewProblemVM>();
+            //problems.ToList();          
 
             ICollection<PreviewProblemVM> problemVms =
                 problems.AsEnumerable().Select(Mapper.Map<Problem, PreviewProblemVM>).ToList();
@@ -77,27 +75,6 @@ namespace MathHub.Web.Controllers
             Problem targetProblem = _problemQueryService.GetProblemById((int)id);
             targetProblem.Comments = _problemQueryService.GetAllComments(targetProblem.Id).ToList();
 
-            Mapper.CreateMap<Comment, CommentItemVM>();
-
-            //ICollection<CommentItemVM> commentItemVms =
-            //    targetProblem.Comments.AsEnumerable()
-            //    .Select(Mapper.Map<Comment, CommentItemVM>).ToList();
-
-
-            Mapper.CreateMap<Problem, DetailProblemVM>()
-                .ForMember(p => p.VoteUpNum,
-                        m => m.MapFrom(
-                        s => _problemQueryService.GetPostVoteUp(s.Id)
-                    ))
-                    .ForMember(p => p.VoteDownNum,
-                        m => m.MapFrom(
-                        s => _problemQueryService.GetPostVoteDown(s.Id)
-                    ))
-                    .ForMember(p => p.Comments,
-                        m => m.MapFrom(
-                        s => s.Comments.Select(Mapper.Map<Comment, CommentItemVM>)
-                    ));
-
             DetailProblemVM problemViewModel =
                 Mapper.Map<Problem, DetailProblemVM>(targetProblem);
 
@@ -106,14 +83,22 @@ namespace MathHub.Web.Controllers
         }
 
 
-        public ActionResult GetAnswer(int problemId)
+        public ActionResult Answer(int Id)
         {
-            return PartialView("Partials/_AnswerList");
+            IEnumerable<Reply> answers = _problemQueryService.GetAllReply(Id, ReplyEnum.ANSWER).AsEnumerable();
+
+           
+            ICollection<AnswerItemVM> answerItemVms = answers.Select(Mapper.Map<Reply, AnswerItemVM>).ToList();
+            return PartialView("Partials/_AnswerList", answerItemVms);
         }
 
-        public ActionResult GetHint(int problemId)
+        public ActionResult Hint(int Id)
         {
-            return PartialView("Partials/_HintList");
+            IEnumerable<Reply> hints = _problemQueryService.GetAllReply(Id, ReplyEnum.HINT).AsEnumerable();
+            
+            
+            ICollection<HintItemVM> hintItemVms = hints.Select(Mapper.Map<Reply, HintItemVM>).ToList();
+            return PartialView("Partials/_HintList", hintItemVms);
         }
     }
 }

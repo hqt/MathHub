@@ -1,1 +1,11 @@
-﻿
+﻿@using MathHub.Entity.Entity
+@model ICollection<Problem>
+@{
+    Layout = null;
+}
+<h2>Same Author's Problem</h2>
+@foreach(Problem problem in Model)
+{
+    @Html.ActionLink(problem.Title,
+                 "Detail", new {controller = "Problem", id = problem.Id})<br/>
+}

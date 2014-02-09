@@ -24,5 +24,15 @@ namespace MathHub.Core.Interfaces.Users
         /// </summary>
         IEnumerable<String> getLoginUserFavoriteTagName();
         IEnumerable<Tag> getLoginUserFavoriteTag();
+        IEnumerable<Subscription> GetLoginUserSubcriptions();
+        string GetLoginUserAvatar();
+        User GetLoginUser();
+
+        /// <summary>
+        /// User
+        /// </summary>
+        User GetUserById(int userId);
+
+        
     }
 }

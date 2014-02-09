@@ -1,5 +1,11 @@
-﻿@{
+﻿@using MathHub.Entity.Entity
+@model ICollection<Tag>
+@{
     Layout = null;
 }
+
 <h2>Favorite Tags</h2>
-Favorite tags
+@foreach(Tag tag in Model)
+{
+    <p>@tag.Name</p>
+}
