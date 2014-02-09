@@ -79,6 +79,7 @@ namespace MathHub.Service.Problems
         public IEnumerable<Comment> GetAllComments(int postId)
         {
             return ctx.Posts.OfType<Comment>().Where(t => t.MainPostId == postId).AsEnumerable();
+
         } 
         #endregion
 
