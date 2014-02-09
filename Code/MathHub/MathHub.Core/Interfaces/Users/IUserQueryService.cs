@@ -1,5 +1,4 @@
-﻿using MathHub.Core.CommonViewModel.User;
-using MathHub.Entity.Entity;
+﻿using MathHub.Entity.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,10 +9,20 @@ namespace MathHub.Core.Interfaces.Users
 {
     public interface IUserQueryService
     {
-        UserAvatarDetail GetUserAvatarById(int id);
-        UserAvatarDetail GetUserAvatarByPostId(int id);
-        Profile GetUserProfile(int id);
-        UserAvatarDetail GetCurrentLoginUser();
-        List<String> getLoginUserFavoriteTag();
+        /// <summary>
+        /// User
+        /// </summary>
+        Profile GetUserProfile(int userId);
+        Tuple<int, int, int> GetMedals(int userId);
+        IEnumerable<String> getUserFavoriteTagName(int userId);
+        IEnumerable<Tag> getUserFavoriteTag(int userId);
+
+
+
+        /// <summary>
+        /// Login User
+        /// </summary>
+        IEnumerable<String> getLoginUserFavoriteTagName();
+        IEnumerable<Tag> getLoginUserFavoriteTag();
     }
 }

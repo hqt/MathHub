@@ -1,43 +1,28 @@
 ﻿using MathHub.Core.Interfaces.Users;
-using MathHub.Core.CommonViewModel.User;
-using MathHub.Entity.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
 using MathHub.Core.Infrastructure;
 using MathHub.Core.Infrastructure.Repository;
+using MathHub.Entity.Entity;
 
 namespace MathHub.Service.Users
 {
     public class UserQueryService : IUserQueryService
     {
-         MathHubModelContainer ctx;
-         IAuthenticationService _authenticationService;
+        #region Constructor
+        MathHubModelContainer ctx;
+        IAuthenticationService _authenticationService;
 
-         public UserQueryService(
-             IMathHubDbContext MathHubDbContext, 
-             IAuthenticationService authenticationService)
+        public UserQueryService(
+            IMathHubDbContext MathHubDbContext,
+            IAuthenticationService authenticationService)
         {
             ctx = MathHubDbContext.GetDbContext();
             this._authenticationService = authenticationService;
-        }
-
-        public Core.CommonViewModel.User.UserAvatarDetail GetUserAvatarById(int id)
-        {
-            User user = ctx.Users.Include(t => t.Avatar).FirstOrDefault(t => t.Id == id);
-
-            UserAvatarDetail vm = new UserAvatarDetail();
-            vm.UserName = user.Username;
-            vm.UserTitle = "";
-            vm.UserScore = user.Score;
-            vm.UserAvatarLink = user.Avatar != null ? user.Avatar.Url : "";
-            vm.GoldMedalNum = ctx.Rewards.Where(t => t.UserId == user.Id).Where(t => t.Medal.Type == MedalEnum.GOLD).Count();
-            vm.SilverMedalNum = ctx.Rewards.Where(t => t.UserId == user.Id).Where(t => t.Medal.Type == MedalEnum.SILVER).Count();
-            vm.BronzeMedalNum = ctx.Rewards.Where(t => t.UserId == user.Id).Where(t => t.Medal.Type == MedalEnum.BRONZE).Count();
-
-            return vm;
-        }
+        } 
+        #endregion
 
         public String getTitleByScore(int score)
         {
@@ -52,32 +37,44 @@ namespace MathHub.Service.Users
             return null;
         }
 
-        public UserAvatarDetail GetCurrentLoginUser()
-        {
-            int userId = _authenticationService.GetUserId();
-            return GetUserAvatarById(userId);
-        }
-
-        public List<string> getLoginUserFavoriteTag()
-        {
-            int userId = _authenticationService.GetUserId();
-            if (userId == 0) return new List<string>();
-
-            return ctx.FavoriteTags.Include(t => t.Tag)
-                .Where(t => t.UserId == userId).Select(t => t.Tag.Name).ToList();
-        }
-
-        public UserAvatarDetail GetUserAvatarByPostId(int id)
-        {
-            UserAvatarDetail vm = new UserAvatarDetail();
-            int userId = ctx.Posts.Include(t => t.User)
-                .SingleOrDefault(t => t.Id == id).User.Id;
-            return GetUserAvatarById(userId);
-        }
-
+        #region Normal User
         public Profile GetUserProfile(int userId)
         {
-            return ctx.Profiles.Include(t => t.User).FirstOrDefault(t => t.User.Id == userId);
+            return ctx.Profiles.FirstOrDefault(t => t.User.Id == userId);
+        }
+
+
+        public Tuple<int, int, int> GetMedals(int userId)
+        {
+            int gold = ctx.Rewards.Where(t => t.UserId == userId).Where(t => t.Medal.Type == MedalEnum.GOLD).Count();
+            int silver = ctx.Rewards.Where(t => t.UserId == userId).Where(t => t.Medal.Type == MedalEnum.SILVER).Count();
+            int bronze = ctx.Rewards.Where(t => t.UserId == userId).Where(t => t.Medal.Type == MedalEnum.BRONZE).Count();
+            return new Tuple<int, int, int>(gold, silver, bronze);
+        }
+
+
+        public IEnumerable<string> getUserFavoriteTagName(int userId)
+        {
+            return ctx.FavoriteTags.Where(t => t.UserId == userId).Select(t => t.Tag.Name).AsEnumerable();
+        }
+
+        public IEnumerable<Tag> getUserFavoriteTag(int userId)
+        {
+            return ctx.FavoriteTags.Where(t => t.UserId == userId).Select(t => t.Tag).AsEnumerable();
+        } 
+        #endregion
+
+        #region Login User
+        public IEnumerable<Tag> getLoginUserFavoriteTag()
+        {
+            return ctx.FavoriteTags.Where(t => t.UserId == _authenticationService.GetUserId()).Select(t => t.Tag).AsEnumerable();
+        } 
+        #endregion
+
+
+        public IEnumerable<string> getLoginUserFavoriteTagName()
+        {
+            throw new NotImplementedException();
         }
     }
 }
