@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommonViewModel\User\UserAvatarDetail.cs" />
     <Compile Include="Config\Constant.cs" />
     <Compile Include="Infrastructure\IAuthenticationService.cs" />
     <Compile Include="Infrastructure\ILogger.cs" />

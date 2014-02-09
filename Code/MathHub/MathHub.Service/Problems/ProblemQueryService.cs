@@ -7,9 +7,7 @@ using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using MathHub.Core.Interfaces.Users;
-using MathHub.Core.CommonViewModel.User;
 using MathHub.Core.Infrastructure.Repository;
-using MathHub.Core.Interfaces.MainPosts;
 
 namespace MathHub.Service.Problems
 {
@@ -71,7 +69,6 @@ namespace MathHub.Service.Problems
 
         public List<string> GetAllPostTagName(int postId)
         {
-            System.Data.Entity.Infrastructure.DbQuery c;
             return ctx.PostTags
                 .Where(t => t.MainPostId == postId)
                 .Select(t => t.Tag.Name).ToList();

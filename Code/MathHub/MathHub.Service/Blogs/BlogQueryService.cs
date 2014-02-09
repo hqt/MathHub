@@ -24,6 +24,19 @@ namespace MathHub.Service.Blogs
             this.blogRepository = blogRepository;
         }
 
-       
+        public IEnumerable<Blog> GetAllBlogs(int offset, int limit)
+        {
+            return ctx.Posts.OfType<Blog>().OrderBy(b => b.Id).Skip(offset).Take(limit);
+        }
+
+        public Blog GetBlogById(int blogId)
+        {
+            return ctx.Posts.OfType<Blog>().FirstOrDefault(b => b.Id == blogId);
+        }
+
+        public IEnumerable<Blog> GetAllBlogsByUserId(int userId)
+        {
+            return ctx.Posts.OfType<Blog>().Where(b => b.UserId == userId);
+        }
     }
 }

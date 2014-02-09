@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using System;
 
 namespace MathHub.Framework.Infrastructure.AutoMapper
 {
@@ -9,7 +10,6 @@ namespace MathHub.Framework.Infrastructure.AutoMapper
         /// </summary>
         protected override void Configure()
         {
-
         }
     }
 }
