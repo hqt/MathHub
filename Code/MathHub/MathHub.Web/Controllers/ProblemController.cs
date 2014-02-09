@@ -44,10 +44,20 @@ namespace MathHub.Web.Controllers
         // GET /Problem/Newest
         public ActionResult Newest()
         {
-            IEnumerable<Problem> problems = _problemQueryService.GetAllProblem(Constant.DEFAULT_OFFSET, Constant.DEFAULT_PER_PAGE);
-            ListProblemVM model = new ListProblemVM();
-            model.problems = problems;
-            return View("Views/ListAllProblem", model);
+            IEnumerable<Problem> problems =
+                _problemQueryService.GetAllProblem(
+                Constant.DEFAULT_OFFSET, Constant.DEFAULT_PER_PAGE).Where(t => t.User.Id == 784);
+
+            //problems.ToList();
+
+            Mapper.CreateMap<Problem, PreviewProblemVM>();
+
+            ICollection<PreviewProblemVM> problemVms =
+                problems.AsEnumerable().Select(Mapper.Map<Problem, PreviewProblemVM>).ToList();
+
+
+
+            return View("Views/ListAllProblem", problemVms);
         }
 
         // GET /Problem/Create
@@ -65,26 +75,27 @@ namespace MathHub.Web.Controllers
                 return RedirectToAction("Index");
             }
             Problem targetProblem = _problemQueryService.GetProblemById((int)id);
-            User user = new User();
-            user.Username = "Dinh Quang Trung";
-            targetProblem.User = user;
-            
-            for (int i = 0; i < 10; i++)
-            {
-                Comment cm = new Comment();
-                cm.Content = "This is comment";
-                cm.User = user;
-                targetProblem.Comments.Add(cm);
-            }
-            
+            targetProblem.Comments = _problemQueryService.GetAllComments(targetProblem.Id).ToList();
+
+            Mapper.CreateMap<Comment, CommentItemVM>();
+
+            //ICollection<CommentItemVM> commentItemVms =
+            //    targetProblem.Comments.AsEnumerable()
+            //    .Select(Mapper.Map<Comment, CommentItemVM>).ToList();
+
+
             Mapper.CreateMap<Problem, DetailProblemVM>()
-                .ForMember(p => p.VoteUpNum, 
+                .ForMember(p => p.VoteUpNum,
                         m => m.MapFrom(
                         s => _problemQueryService.GetPostVoteUp(s.Id)
                     ))
                     .ForMember(p => p.VoteDownNum,
                         m => m.MapFrom(
                         s => _problemQueryService.GetPostVoteDown(s.Id)
+                    ))
+                    .ForMember(p => p.Comments,
+                        m => m.MapFrom(
+                        s => s.Comments.Select(Mapper.Map<Comment, CommentItemVM>)
                     ));
 
             DetailProblemVM problemViewModel =
@@ -92,6 +103,17 @@ namespace MathHub.Web.Controllers
 
 
             return View("Views/DetailProblem", problemViewModel);
+        }
+
+
+        public ActionResult GetAnswer(int problemId)
+        {
+            return PartialView("Partials/_AnswerList");
+        }
+
+        public ActionResult GetHint(int problemId)
+        {
+            return PartialView("Partials/_HintList");
         }
     }
 }

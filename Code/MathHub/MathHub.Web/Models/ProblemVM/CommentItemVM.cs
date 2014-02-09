@@ -7,18 +7,16 @@ namespace MathHub.Web.Models.ProblemVM
 {
    public class CommentItemVM
     {
-       public CommentItemVM(string content, string username)
-       {
-           Content = content;
-           UserUsername = username;
-       }
+
         public int Id { get; set; }
         public string Content { get; set; }
         public System.DateTime DateCreated { get; set; }
         public System.DateTime DateModified { get; set; }
         public int UserId { get; set; }
-        public int? ReplyId { get; set; }
-        public int? MainPostId { get; set; }
+        public Nullable<int> ReplyId { get; set; }
+        public Nullable<int> MainPostId { get; set; }
+
+        public int VoteUpNum { get; set; }
 
         public string UserUsername { get; set; }
     }

@@ -1,7 +1,7 @@
-﻿@using MathHub.Entity.Entity
-@model ICollection<MathHub.Entity.Entity.Comment>
+﻿@using MathHub.Web.Models.ProblemVM
+@model ICollection<CommentItemVM>
 @{
-    foreach(Comment comment in Model)
+    foreach(CommentItemVM comment in Model)
     {
         @Html.Partial("Partials/_CommentItem", comment)
     }
