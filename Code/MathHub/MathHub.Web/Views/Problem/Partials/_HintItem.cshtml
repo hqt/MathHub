@@ -1,10 +1,5 @@
-﻿@*@model Int32
+﻿@model MathHub.Web.Models.ProblemVM.HintItemVM
 
-Hint Item @Model<br/>
-@{
-    List<int> comments = new List<int>();
-    comments.Add(1);
-    comments.Add(2);
-}
+Hint Item @Model.Content<br/>
 
-<p style="margin-left: 15px">@Html.Partial("Partials/_CommentList", comments)</p>*@
+<p style="margin-left: 15px">@Html.Partial("Partials/_CommentList", Model.Comments)</p>

@@ -1,6 +1,6 @@
-﻿@model MathHub.Web.Models.ProblemVM.AnswerListVM
+﻿@model ICollection<MathHub.Web.Models.ProblemVM.AnswerItemVM>
 @{
-    foreach(MathHub.Web.Models.ProblemVM.AnswerItemVM answer in Model.answerItemVms)
+    foreach(MathHub.Web.Models.ProblemVM.AnswerItemVM answer in Model)
     {
         @Html.Partial("Partials/_AnswerItem", answer);
     }

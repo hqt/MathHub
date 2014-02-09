@@ -10,8 +10,9 @@ namespace MathHub.Framework.Infrastructure.AutoMapper
 
         public static void Configure()
         {
-            Mapper.Initialize(x  => 
-                x.AddProfile<MathHubMapperProfile>());
+
+            //Mapper.Initialize(x  => 
+            //    x.AddProfile<MathHubMapperProfile>());
 
             //Mapper.Initialize(x =>
             //{
