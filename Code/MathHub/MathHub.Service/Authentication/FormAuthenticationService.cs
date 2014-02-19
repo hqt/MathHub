@@ -11,7 +11,7 @@ namespace MathHub.Framework.Infrastructure.Authentication
     {
         
         /** Current Login User */
-        User user = new User();
+        User user;
         MathHubModelContainer ctx;
         
         public FormAuthenticationService(IMathHubDbContext mathHubDbContext)
@@ -42,13 +42,11 @@ namespace MathHub.Framework.Infrastructure.Authentication
 
         public Boolean SignIn(String username, String password, Boolean rememberMe)
         {
-            //user = ctx.Users.FirstOrDefault(t => t.Username.Equals(username));
             return WebSecurity.Login(username, password, persistCookie: rememberMe);
         }
 
         public bool SignIn(string username, string password)
         {
-            //user = ctx.Users.FirstOrDefault(t => t.Username.Equals(username));
             return WebSecurity.Login(username, password);
         }
 
@@ -59,8 +57,8 @@ namespace MathHub.Framework.Infrastructure.Authentication
 
         public void SignOut()
         {
-            user = new User();
             WebSecurity.Logout();
+            user = null;
         }
 
         public bool IsLogin()
@@ -76,6 +74,11 @@ namespace MathHub.Framework.Infrastructure.Authentication
         public int GetUserId()
         {
             return WebSecurity.CurrentUserId;
+        }
+
+        public User getUser()
+        {
+            return user;
         }
     }
 }

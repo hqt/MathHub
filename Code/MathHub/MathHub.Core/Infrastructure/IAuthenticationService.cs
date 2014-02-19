@@ -22,6 +22,7 @@ namespace MathHub.Core.Infrastructure
         void SignOut();
         Boolean IsLogin();
         String GetUserName();
+        User getUser();
         int GetUserId();
     }
 }
