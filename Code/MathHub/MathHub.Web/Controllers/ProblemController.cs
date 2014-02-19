@@ -45,15 +45,11 @@ namespace MathHub.Web.Controllers
         public ActionResult Newest()
         {
             IEnumerable<Problem> problems =
-                _problemQueryService.GetAllProblem(
-                Constant.DEFAULT_OFFSET, Constant.DEFAULT_PER_PAGE).Where(t => t.User.Id == 784);
-
-            //problems.ToList();          
+                _problemQueryService.GetNewestProblems(
+                Constant.DEFAULT_OFFSET, Constant.DEFAULT_PER_PAGE);
 
             ICollection<PreviewProblemVM> problemVms =
-                problems.AsEnumerable().Select(Mapper.Map<Problem, PreviewProblemVM>).ToList();
-
-
+                problems.Select(Mapper.Map<Problem, PreviewProblemVM>).ToList();
 
             return View("Views/ListAllProblem", problemVms);
         }

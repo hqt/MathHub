@@ -79,7 +79,7 @@ namespace MathHub.Service.Users
         // Image Url
         public string GetLoginUserAvatar()
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public User GetLoginUser()

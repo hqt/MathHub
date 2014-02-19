@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using System.Threading.Tasks;
 
 namespace MathHub.Service.Blogs
@@ -41,12 +42,7 @@ namespace MathHub.Service.Blogs
 
         public IEnumerable<Blog> GetNewBlogs(int limit)
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Blog> GetRelatedBlogsByProblemId(int problemId, int limit)
-        {
-            throw new NotImplementedException();
+            return ctx.Posts.OfType<Blog>().OrderByDescending(b => b.DateCreated).Take(limit);
         }
     }
 }

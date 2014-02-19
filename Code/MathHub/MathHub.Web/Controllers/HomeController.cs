@@ -16,8 +16,6 @@ namespace MathHub.Web.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            IQueryable<Comment> a = null;
-            a.Include(t => t.Id == 10);
             return Redirect("Problem");
         }
 
