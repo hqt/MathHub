@@ -70,10 +70,11 @@ namespace MathHub.Service.Users
             // if not login yet
             if (!_authenticationService.IsLogin()) return new List<Tag>();
             // if alreadly login
-            return ctx.FavoriteTags
-                .Where(t => t.UserId == _authenticationService.GetUserId())
-                .Select(t => t.Tag)
-                .AsEnumerable();
+            int id = _authenticationService.GetUserId();
+            IQueryable<Tag> res = ctx.FavoriteTags
+                .Where(t => t.UserId == id)
+                .Select(t => t.Tag);
+           return res;
         }
 
         // Include Follower and Following
