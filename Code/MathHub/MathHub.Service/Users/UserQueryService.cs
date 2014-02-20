@@ -67,13 +67,20 @@ namespace MathHub.Service.Users
         #region Login User
         public IEnumerable<Tag> getLoginUserFavoriteTag()
         {
-            return ctx.FavoriteTags.Where(t => t.UserId == _authenticationService.GetUserId()).Select(t => t.Tag).AsEnumerable();
+            // if not login yet
+            if (!_authenticationService.IsLogin()) return new List<Tag>();
+            // if alreadly login
+            return ctx.FavoriteTags
+                .Where(t => t.UserId == _authenticationService.GetUserId())
+                .Select(t => t.Tag)
+                .AsEnumerable();
         }
 
         // Include Follower and Following
         public IEnumerable<Subscription> GetLoginUserSubcriptions()
         {
-            throw new NotImplementedException();
+            if (!_authenticationService.IsLogin()) return new List<Subscription>();
+            return new List<Subscription>();
         }
 
         // Image Url
@@ -84,12 +91,12 @@ namespace MathHub.Service.Users
 
         public User GetLoginUser()
         {
-            throw new NotImplementedException();
+            return _authenticationService.getUser();
         }
 
         public User GetUserById(int userId)
         {
-            throw new NotImplementedException();
+            return ctx.Users.FirstOrDefault(u => u.Id == userId);
         }
 
         #endregion

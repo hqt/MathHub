@@ -13,15 +13,10 @@ namespace MathHub.Framework.Infrastructure.Authentication
     {
         /** Current Login User */
         User user = new User();
-        MathHubModelContainer ctx = new MathHubModelContainer();
 
         public MockupAuthenticationService()
         {
-            // temporary login with Thanh Hai User
-            //if (WebSecurity.IsAuthenticated)
-            //{
-            //    user = ctx.Users.FirstOrDefault(t => t.Username.Equals(WebSecurity.CurrentUserName));
-            //}
+
         }
 
 
@@ -76,6 +71,12 @@ namespace MathHub.Framework.Infrastructure.Authentication
         public int GetUserId()
         {
             return WebSecurity.GetUserId(user.Username);
+        }
+
+
+        public User getUser()
+        {
+            throw new NotImplementedException();
         }
     }
 }
