@@ -13,6 +13,5 @@ namespace MathHub.Core.Interfaces.Blogs
         Blog GetBlogById(int blogId);
         IEnumerable<Blog> GetAllBlogsByUserId(int userId);
         IEnumerable<Blog> GetNewBlogs(int limit);
-        IEnumerable<Blog> GetRelatedBlogsByProblemId(int problemId, int limit);
     }
 }

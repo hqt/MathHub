@@ -29,9 +29,9 @@ namespace MathHub.Service.Problems
 
 
         #region Problem
-        public IEnumerable<Problem> GetAllProblem(int offSet, int limit)
+        public IEnumerable<Problem> GetNewestProblems(int offSet, int limit)
         {
-            return ctx.Posts.OfType<Problem>().OrderBy(b => b.Id).Skip(offSet).Take(limit);
+            return ctx.Posts.OfType<Problem>().OrderByDescending(b => b.DateCreated).Skip(offSet).Take(limit);
         }
 
         public Problem GetProblemById(int id)
@@ -41,7 +41,7 @@ namespace MathHub.Service.Problems
 
         public IEnumerable<Problem> GetProblemsByUserId(int userId, int limit)
         {
-            throw new NotImplementedException();
+            return ctx.Posts.OfType<Problem>().Where(p => p.UserId == userId).Take(limit);
         }
 
         #endregion
@@ -85,6 +85,7 @@ namespace MathHub.Service.Problems
         public IEnumerable<Comment> GetAllComments(int postId)
         {
             return ctx.Posts.OfType<Comment>().Where(t => t.MainPostId == postId).AsEnumerable();
+
         } 
         #endregion
 
@@ -92,6 +93,17 @@ namespace MathHub.Service.Problems
         public IEnumerable<Reply> GetAllReply(int postId, ReplyEnum type)
         {
             return ctx.Posts.OfType<Reply>().Where(t => t.MainPostId == postId && t.Type == type);
+        } 
+        #endregion
+
+        #region Blog
+        public IEnumerable<Blog> GetRelatedBlogsByProblemId(int problemId, int limit)
+        {
+            return ctx.BlogProblems
+                .Where(b => b.ProblemId == problemId)
+                .OrderByDescending(b => b.Blog.DateCreated)
+                .Take(limit)
+                .Select(b => b.Blog);
         } 
         #endregion
     }

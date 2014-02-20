@@ -16,7 +16,6 @@ namespace MathHub.Web.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-           
             return Redirect("Problem");
         }
 
