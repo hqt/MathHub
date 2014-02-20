@@ -54,6 +54,8 @@ namespace MathHub.Web.Controllers
             return View("Views/ListAllProblem", problemVms);
         }
 
+
+        [Authorize]
         // GET /Problem/Create
         public ActionResult Create()
         {

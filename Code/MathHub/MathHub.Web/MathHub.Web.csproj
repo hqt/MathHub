@@ -219,6 +219,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CommonVM\ProfileWidgetVM.cs" />
+    <Compile Include="Models\CommonVM\UserInfoVM.cs" />
     <Compile Include="Models\ProblemVM\AnswerItemVM.cs" />
     <Compile Include="Models\ProblemVM\AnswerListVM.cs" />
     <Compile Include="Models\ProblemVM\CommentItemVM.cs" />
@@ -227,8 +228,6 @@
     <Compile Include="Models\ProblemVM\HintItemVM.cs" />
     <Compile Include="Models\ProblemVM\HintListVM.cs" />
     <Compile Include="Models\ProblemVM\PreviewProblemVM.cs" />
-    <Compile Include="Models\ProfileWidgetVM.cs" />
-    <Compile Include="Models\UserInfoVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -360,7 +359,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\CommonVM\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

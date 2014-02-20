@@ -2,11 +2,19 @@
 @{
     Layout = null;
 }
-<h2>Profile</h2>
-<h4>@Model.Username</h4>
-<img src="@Model.Avatar" />
-Score: @Model.Score 
-Medals: 
+
+@if(WebSecurity.IsAuthenticated)
+{
+    <div>
+    <h2>Profile</h2>
+    <h4>@Model.Username</h4>
+    <img src="@Model.Avatar" />
+    Score:
+    @Model.Score
+    Medals:
+    </div>
+}
+
 @*@if(Model.Medal.Item1 >= 0)
 {
 <p>Gold: @Model.Medal.Item1</p> 
