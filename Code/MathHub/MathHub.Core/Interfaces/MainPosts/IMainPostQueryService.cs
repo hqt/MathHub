@@ -35,7 +35,7 @@ namespace MathHub.Core.Interfaces.MainPosts
         /// <summary>
         /// Reply
         /// </summary>
-        IEnumerable<Reply> GetAllReply(int postId, ReplyEnum type);
+        IEnumerable<Reply> GetAllReplies(int postId, ReplyEnum type);
        
     }
 }

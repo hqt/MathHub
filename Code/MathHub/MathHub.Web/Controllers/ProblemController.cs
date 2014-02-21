@@ -83,7 +83,7 @@ namespace MathHub.Web.Controllers
 
         public ActionResult Answer(int Id)
         {
-            IEnumerable<Reply> answers = _problemQueryService.GetAllReply(Id, ReplyEnum.ANSWER).AsEnumerable();
+            IEnumerable<Reply> answers = _problemQueryService.GetAllReplies(Id, ReplyEnum.ANSWER).AsEnumerable();
 
            
             ICollection<AnswerItemVM> answerItemVms = answers.Select(Mapper.Map<Reply, AnswerItemVM>).ToList();
@@ -92,7 +92,7 @@ namespace MathHub.Web.Controllers
 
         public ActionResult Hint(int Id)
         {
-            IEnumerable<Reply> hints = _problemQueryService.GetAllReply(Id, ReplyEnum.HINT).AsEnumerable();
+            IEnumerable<Reply> hints = _problemQueryService.GetAllReplies(Id, ReplyEnum.HINT).AsEnumerable();
             
             
             ICollection<HintItemVM> hintItemVms = hints.Select(Mapper.Map<Reply, HintItemVM>).ToList();

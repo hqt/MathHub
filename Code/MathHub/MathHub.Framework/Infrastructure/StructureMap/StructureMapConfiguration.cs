@@ -2,6 +2,7 @@
 using MathHub.Core.Infrastructure.Interfaces.Repository;
 using MathHub.Core.Infrastructure.Repository;
 using MathHub.Core.Interfaces.Blogs;
+using MathHub.Core.Interfaces.Comments;
 using MathHub.Core.Interfaces.Discussions;
 using MathHub.Core.Interfaces.Problems;
 using MathHub.Core.Interfaces.Systems;
@@ -11,6 +12,7 @@ using MathHub.Entity.Entity;
 using MathHub.Framework.Infrastructure.Authentication;
 using MathHub.Framework.Infrastructure.Repository;
 using MathHub.Service.Blogs;
+using MathHub.Service.Comments;
 using MathHub.Service.Discussions;
 using MathHub.Service.Problems;
 using MathHub.Service.Systems;
@@ -57,6 +59,9 @@ namespace MathHub.Framework.Infrastructure.StructureMap
                 // user
                 cfg.For<IUserQueryService>().Use<UserQueryService>();
                 cfg.For<IUserCommandService>().Use<UserCommandService>();
+                // comment
+                cfg.For<ICommentQueryService>().Use<CommentQueryService>();
+                cfg.For<ICommentCommandService>().Use<CommentCommandService>();
 
                 /** infrastructure */
                 // using same Context for One Request
