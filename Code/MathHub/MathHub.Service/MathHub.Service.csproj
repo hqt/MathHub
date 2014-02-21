@@ -51,6 +51,8 @@
     <Compile Include="Authentication\MockupAuthenticationService.cs" />
     <Compile Include="Blogs\BlogCommandService.cs" />
     <Compile Include="Blogs\BlogQueryService.cs" />
+    <Compile Include="Comments\CommentCommandService.cs" />
+    <Compile Include="Comments\CommentQueryService.cs" />
     <Compile Include="Discussions\DiscussionCommandService.cs" />
     <Compile Include="Discussions\DiscussionQueryService.cs" />
     <Compile Include="MainPosts\MainPostQueryService.cs" />

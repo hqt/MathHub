@@ -45,7 +45,7 @@ namespace ConsoleApp.Test.Problems
 
             // retrieve Reply
             // Get All replies
-            IEnumerable<Reply> replies = problemQueryService.GetAllReply(problem.Id, ReplyEnum.ANSWER);
+            IEnumerable<Reply> replies = problemQueryService.GetAllReplies(problem.Id, ReplyEnum.ANSWER);
             bool isExist = false;
             foreach (Reply reply in replies)
             {
@@ -62,7 +62,7 @@ namespace ConsoleApp.Test.Problems
             r.DateModified = DateTime.Now;
             res = problemCommandService.UpdateReply(r);
             //test update
-            replies = problemQueryService.GetAllReply(problem.Id, ReplyEnum.ANSWER);
+            replies = problemQueryService.GetAllReplies(problem.Id, ReplyEnum.ANSWER);
             isExist = false;
             foreach (Reply reply in replies)
             {
@@ -78,7 +78,7 @@ namespace ConsoleApp.Test.Problems
             res = problemCommandService.DeleteReply(r);
             Assert.IsTrue(res);
             //test update
-            replies = problemQueryService.GetAllReply(problem.Id, ReplyEnum.ANSWER);
+            replies = problemQueryService.GetAllReplies(problem.Id, ReplyEnum.ANSWER);
             isExist = false;
             foreach (Reply reply in replies)
             {

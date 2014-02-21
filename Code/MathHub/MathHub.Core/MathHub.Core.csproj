@@ -54,6 +54,8 @@
     <Compile Include="Infrastructure\Repository\IMathHubDbContext.cs" />
     <Compile Include="Interfaces\Blogs\IBlogCommandService.cs" />
     <Compile Include="Interfaces\Blogs\IBlogQueryService.cs" />
+    <Compile Include="Interfaces\Comments\ICommentCommandService.cs" />
+    <Compile Include="Interfaces\Comments\ICommentQueryService.cs" />
     <Compile Include="Interfaces\Discussions\IDiscussionCommandService.cs" />
     <Compile Include="Interfaces\Discussions\IDiscussionQueryService.cs" />
     <Compile Include="Interfaces\MainPosts\IMainPostCommandService.cs" />

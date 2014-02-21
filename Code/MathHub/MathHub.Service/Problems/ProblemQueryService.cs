@@ -90,7 +90,7 @@ namespace MathHub.Service.Problems
         #endregion
 
         #region Reply
-        public IEnumerable<Reply> GetAllReply(int postId, ReplyEnum type)
+        public IEnumerable<Reply> GetAllReplies(int postId, ReplyEnum type)
         {
             return ctx.Posts.OfType<Reply>().Where(t => t.MainPostId == postId && t.Type == type);
         } 
