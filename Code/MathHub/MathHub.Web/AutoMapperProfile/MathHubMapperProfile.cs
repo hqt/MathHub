@@ -41,10 +41,6 @@ namespace MathHub.Web.AutoMapperProfile
                 .ForMember(p => p.VoteDownNum,
                     m => m.MapFrom(
                     s => ((IProblemQueryService)null).GetPostVoteDown(s.Id)
-                ))
-                .ForMember(p => p.Comments,
-                    m => m.MapFrom(
-                    s => s.Comments.Select(Mapper.Map<Comment, CommentItemVM>)
                 ));
 
             // Reply

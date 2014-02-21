@@ -7,6 +7,7 @@ using MathHub.Framework.Controllers;
 using AutoMapper;
 using MathHub.Web.Models.ProblemVM;
 using MathHub.Core.Config;
+using MathHub.Web.CustomAnnotation.ActionFilter;
 
 namespace MathHub.Web.Controllers
 {
@@ -80,23 +81,37 @@ namespace MathHub.Web.Controllers
             return View("Views/DetailProblem", problemViewModel);
         }
 
-
+        [AjaxCallAF]
         public ActionResult Answer(int Id)
         {
             IEnumerable<Reply> answers = _problemQueryService.GetAllReply(Id, ReplyEnum.ANSWER).AsEnumerable();
 
            
             ICollection<AnswerItemVM> answerItemVms = answers.Select(Mapper.Map<Reply, AnswerItemVM>).ToList();
-            return PartialView("Partials/_AnswerList", answerItemVms);
+            AnswerListVM answerListVm = new AnswerListVM();
+            answerListVm.AnswerItemVms = answerItemVms;
+            return PartialView("Partials/_AnswerList", answerListVm);
         }
 
+        [AjaxCallAF]
         public ActionResult Hint(int Id)
         {
             IEnumerable<Reply> hints = _problemQueryService.GetAllReply(Id, ReplyEnum.HINT).AsEnumerable();
-            
-            
+                        
             ICollection<HintItemVM> hintItemVms = hints.Select(Mapper.Map<Reply, HintItemVM>).ToList();
-            return PartialView("Partials/_HintList", hintItemVms);
+            HintListVM hintListVm = new HintListVM();
+            hintListVm.HintItemVms = hintItemVms;
+            return PartialView("Partials/_HintList", hintListVm);
         }
+
+        [AjaxCallAF]
+        public ActionResult Comment(int Id)
+        {
+
+            CommentListVM commentListVm = new CommentListVM();
+            return PartialView("Partials/_CommentList", commentListVm);
+        }
+
+
     }
 }
