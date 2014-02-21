@@ -35,9 +35,16 @@ namespace MathHub.Service.Blogs
             return ctx.Posts.OfType<Blog>().FirstOrDefault(b => b.Id == blogId);
         }
 
-        public IEnumerable<Blog> GetAllBlogsByUserId(int userId)
+        public IEnumerable<Blog> GetAllBlogsByUserId(int userId, int offset, int limit)
         {
-            return ctx.Posts.OfType<Blog>().Where(b => b.UserId == userId);
+            if (offset == 0 && limit == 0)
+            {
+                return ctx.Posts.OfType<Blog>().Where(b => b.UserId == userId);
+            }
+            else
+            {
+                return ctx.Posts.OfType<Blog>().Where(b => b.UserId == userId).Skip(offset).Take(limit);
+            }
         }
 
         public IEnumerable<Blog> GetNewBlogs(int limit)

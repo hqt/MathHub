@@ -49,6 +49,7 @@
       <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web" />
@@ -64,6 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="CustomAnnotation\BaseActionFilter.cs" />
+    <Compile Include="CustomAnnotation\BaseValidationAtrribute.cs" />
     <Compile Include="Infrastructure\AutoMapper\AutoMappedWrapper.cs" />
     <Compile Include="Infrastructure\AutoMapper\AutoMapperConfiguration.cs" />
     <Compile Include="Infrastructure\AutoMapper\BaseFormatter.cs" />

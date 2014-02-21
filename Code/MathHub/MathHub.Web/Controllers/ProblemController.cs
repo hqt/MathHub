@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using MathHub.Core.Interfaces.Problems;
@@ -7,6 +8,7 @@ using MathHub.Framework.Controllers;
 using AutoMapper;
 using MathHub.Web.Models.ProblemVM;
 using MathHub.Core.Config;
+using MathHub.Web.CustomAnnotation.ActionFilter;
 
 namespace MathHub.Web.Controllers
 {
@@ -71,7 +73,10 @@ namespace MathHub.Web.Controllers
                 return RedirectToAction("Index");
             }
             Problem targetProblem = _problemQueryService.GetProblemById((int)id);
-            targetProblem.Comments = _problemQueryService.GetAllComments(targetProblem.Id).ToList();
+            targetProblem.Comments = _problemQueryService.GetAllComments(
+                targetProblem.Id, 
+                Constant.DEFAULT_OFFSET, 
+                Constant.DEFAULT_PER_PAGE).ToList();
 
             DetailProblemVM problemViewModel =
                 Mapper.Map<Problem, DetailProblemVM>(targetProblem);
@@ -80,23 +85,48 @@ namespace MathHub.Web.Controllers
             return View("Views/DetailProblem", problemViewModel);
         }
 
-
+        [AjaxCallAF]
         public ActionResult Answer(int Id)
         {
-            IEnumerable<Reply> answers = _problemQueryService.GetAllReply(Id, ReplyEnum.ANSWER).AsEnumerable();
+<<<<<<< HEAD
+            IEnumerable<Reply> answers = _problemQueryService.GetAllReplies(Id, ReplyEnum.ANSWER).AsEnumerable();
 
            
+=======
+            IEnumerable<Reply> answers = _problemQueryService.GetAllReplies(Id, ReplyEnum.ANSWER).AsEnumerable();
+    
+>>>>>>> 80d48dd2057a17fb82b9687719691269c2a70cc4
             ICollection<AnswerItemVM> answerItemVms = answers.Select(Mapper.Map<Reply, AnswerItemVM>).ToList();
-            return PartialView("Partials/_AnswerList", answerItemVms);
+            AnswerListVM answerListVm = new AnswerListVM();
+            answerListVm.AnswerItemVms = answerItemVms;
+            return PartialView("Partials/_AnswerList", answerListVm);
         }
 
+        [AjaxCallAF]
         public ActionResult Hint(int Id)
         {
-            IEnumerable<Reply> hints = _problemQueryService.GetAllReply(Id, ReplyEnum.HINT).AsEnumerable();
+<<<<<<< HEAD
+            IEnumerable<Reply> hints = _problemQueryService.GetAllReplies(Id, ReplyEnum.HINT).AsEnumerable();
             
             
+=======
+            IEnumerable<Reply> hints = _problemQueryService.GetAllReplies(Id, ReplyEnum.HINT).AsEnumerable();
+
+>>>>>>> 80d48dd2057a17fb82b9687719691269c2a70cc4
             ICollection<HintItemVM> hintItemVms = hints.Select(Mapper.Map<Reply, HintItemVM>).ToList();
-            return PartialView("Partials/_HintList", hintItemVms);
+            HintListVM hintListVm = new HintListVM();
+            hintListVm.HintItemVms = hintItemVms;
+            return PartialView("Partials/_HintList", hintListVm);
         }
+
+        [AjaxCallAF]
+        public ActionResult Comment(int Id, int limit)
+        {
+            IEnumerable<Comment> comments = _problemQueryService.GetAllComments(Id);
+            CommentListVM commentListVm = new CommentListVM();
+            return PartialView("Partials/_CommentList", commentListVm);
+        }
+
+
     }
 }

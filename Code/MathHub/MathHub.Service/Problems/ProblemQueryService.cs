@@ -82,17 +82,38 @@ namespace MathHub.Service.Problems
         #endregion
 
         #region Comment
-        public IEnumerable<Comment> GetAllComments(int postId)
+        public IEnumerable<Comment> GetAllComments(int postId, int offset, int limit)
         {
-            return ctx.Posts.OfType<Comment>().Where(t => t.MainPostId == postId).AsEnumerable();
-
+            if (offset == 0 && limit == 0)
+            {
+                return ctx.Posts.OfType<Comment>().Where(t => t.MainPostId == postId).AsEnumerable();
+            }
+            else
+            {
+                return ctx.Posts
+                    .OfType<Comment>()
+                    .Where(t => t.MainPostId == postId)
+                    .Skip(offset).Take(limit)
+                    .AsEnumerable();
+            }
         } 
         #endregion
 
         #region Reply
-        public IEnumerable<Reply> GetAllReply(int postId, ReplyEnum type)
+        public IEnumerable<Reply> GetAllReplies(int postId, ReplyEnum type, int offset, int limit)
         {
-            return ctx.Posts.OfType<Reply>().Where(t => t.MainPostId == postId && t.Type == type);
+            if (offset == 0 && limit == 0)
+            {
+                return ctx.Posts.OfType<Reply>().Where(t => t.MainPostId == postId && t.Type == type);
+            }
+            else
+            {
+                return ctx.Posts
+                    .OfType<Reply>()
+                    .Where(t => t.MainPostId == postId && t.Type == type)
+                    .Skip(offset)
+                    .Take(limit);
+            }
         } 
         #endregion
 
@@ -106,5 +127,6 @@ namespace MathHub.Service.Problems
                 .Select(b => b.Blog);
         } 
         #endregion
+
     }
 }
