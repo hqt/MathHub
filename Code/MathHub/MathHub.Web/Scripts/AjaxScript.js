@@ -1,4 +1,6 @@
-﻿function getComment(postId, offet, limit) {
+﻿function getComment(postId, offset, limit) {
     var url = "/Comment/Index/";
-    jQuery.get(url, { Id}, function (data) {
+    $.get(url, { Id: postId, Offset: offset }, function(data) {
+        $("#problemComments").html(data);
+    });
 }
