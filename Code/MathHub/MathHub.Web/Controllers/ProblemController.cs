@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using MathHub.Core.Interfaces.Problems;
@@ -105,9 +106,9 @@ namespace MathHub.Web.Controllers
         }
 
         [AjaxCallAF]
-        public ActionResult Comment(int Id)
+        public ActionResult Comment(int Id, int limit)
         {
-
+            IEnumerable<Comment> comments = _problemQueryService.GetAllComments(Id);
             CommentListVM commentListVm = new CommentListVM();
             return PartialView("Partials/_CommentList", commentListVm);
         }
