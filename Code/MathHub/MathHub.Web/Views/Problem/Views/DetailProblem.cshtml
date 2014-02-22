@@ -27,7 +27,16 @@
 
 <h3>Comments</h3>
 <div id="problemComments"></div>
-<button onclick="getCommentAjax('problemComments',@Model.Id)">View more comments</button>
+@Html.Action("Comment","Problem", new {postId = Model.Id, offset = 5 })
+@if(Model.CommentNum > 5)
+{
+    <button onclick="showCommentOnClick('problemComments', @Model.Id, 'commentPostForm')">Add / Show @Model.CommentNum more comments</button>
+}else
+{
+    <button onclick="showElementById('commentPostForm')">Add comments</button>
+}
+
+@Html.Partial("Partials/_CommentPostForm")
 
 <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
 	<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">

@@ -1,6 +1,7 @@
 ﻿@model MathHub.Web.Models.ProblemVM.CommentPostVM
 
-    using (@Html.BeginForm("Comment", "Problem", FormMethod.Post, null))
+    using (@Html.BeginForm("Comment", "Problem", FormMethod.Post, 
+                            new { script = "display:none", id = "commentPostForm" }))
     {
         @Html.LabelFor(m => m.NewComment)
         @Html.TextAreaFor(m => m.NewComment)

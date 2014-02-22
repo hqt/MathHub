@@ -12,12 +12,11 @@ namespace MathHub.Web.Models.ProblemVM
         public System.DateTime DateCreated { get; set; }
         public System.DateTime DateModified { get; set; }
         public int UserId { get; set; }
+        public string UserUsername { get; set; }
+
         public int VoteUpNum { get; set; }
         public int VoteDownNum { get; set; }
         public int ReportNum { get; set; }
-        public string UserUsername { get; set; }
-
-
-        public CommentListVM Comments { get; set; }
+        public int CommentNum { get; set; }
     }
 }

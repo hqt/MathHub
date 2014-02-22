@@ -77,11 +77,7 @@ namespace MathHub.Web.Controllers
             {
                 return RedirectToAction("Index");
             }
-            Problem targetProblem = _problemQueryService.GetProblemById((int)id);
-            targetProblem.Comments = _problemQueryService.GetAllComments(
-                targetProblem.Id,
-                Constant.DEFAULT_OFFSET,
-                Constant.DEFAULT_PER_PAGE).ToList();
+            Problem targetProblem = _problemQueryService.GetProblemById((int)id);           
 
             // Map from Model to ViewModel
             DetailProblemVM problemViewModel =
@@ -147,7 +143,7 @@ namespace MathHub.Web.Controllers
         {
             //if()
             //_commentCommandService.AddCommentForPost()
-            //return ;
+            return false;
         }
 
     }
