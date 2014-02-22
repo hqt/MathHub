@@ -15,7 +15,7 @@ namespace MathHub.Web.Controllers
 {
     public class ProblemController : BaseController
     {
-        private IProblemQueryService _problemQueryService;
+        private readonly IProblemQueryService _problemQueryService;
         private ICommentCommandService _commentCommandService;
         public ProblemController(IProblemQueryService problemQueryService,
                                  ICommentCommandService commentCommandService)
@@ -123,10 +123,13 @@ namespace MathHub.Web.Controllers
         [AjaxCallAF]
         public ActionResult Comment(int postId, int offset)
         {
+            offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
+            int limit = offset < 0 ? int.MaxValue : Constant.DEFAULT_COMMENT_LOADING;
+
             IEnumerable<Comment> comments = _problemQueryService.GetAllComments(
                 postId,
                 offset,
-                Constant.DEFAULT_PER_PAGE
+                limit
                 );
 
            // Map list models to list viewmodels with lambda expression 

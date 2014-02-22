@@ -7,6 +7,6 @@ function hideElementById(id) {
 }
 
 function showCommentOnClick(showId, postId, formId) {
-    getCommentAjax(showId, postId);
+    getCommentAjax(showId, postId, -1);
     showElementById(formId);
 }
