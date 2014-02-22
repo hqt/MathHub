@@ -30,10 +30,14 @@ function postComment(formId, elementId, postId, offset) {
             success: function (data) {
                 if (data) {
                     getCommentAjax(elementId, postId, offset);
-                }
-            }
-        });
+                } else {
 
-    
+                }
+            }, 
+            error: function () {
+                
+            }
+            
+        });  
     return false;
 }

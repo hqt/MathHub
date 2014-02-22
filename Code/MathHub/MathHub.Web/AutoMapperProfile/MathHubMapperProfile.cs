@@ -44,16 +44,8 @@ namespace MathHub.Web.AutoMapperProfile
                 ));
 
             // Reply
-            Mapper.CreateMap<Reply, AnswerItemVM>()
-               .ForMember(p => p.Comments,
-                    m => m.MapFrom(
-                    s => s.Comments.Select(Mapper.Map<Comment, CommentItemVM>)
-                ));
-            Mapper.CreateMap<Reply, HintItemVM>()
-                .ForMember(p => p.Comments,
-                    m => m.MapFrom(
-                    s => s.Comments.Select(Mapper.Map<Comment, CommentItemVM>)
-                ));
+            Mapper.CreateMap<Reply, AnswerItemVM>();
+            Mapper.CreateMap<Reply, HintItemVM>();
         }
     }
 }

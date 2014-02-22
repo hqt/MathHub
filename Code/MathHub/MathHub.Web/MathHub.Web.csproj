@@ -223,12 +223,15 @@
     <Compile Include="Models\CommonVM\UserInfoVM.cs" />
     <Compile Include="Models\ProblemVM\AnswerItemVM.cs" />
     <Compile Include="Models\ProblemVM\AnswerListVM.cs" />
+    <Compile Include="Models\ProblemVM\AnswerPostVM.cs" />
     <Compile Include="Models\ProblemVM\CommentItemVM.cs" />
     <Compile Include="Models\ProblemVM\CommentListVM.cs" />
+    <Compile Include="Models\ProblemVM\CommentPostVM.cs" />
     <Compile Include="Models\ProblemVM\CreateProblemVM.cs" />
     <Compile Include="Models\ProblemVM\DetailProblemVM.cs" />
     <Compile Include="Models\ProblemVM\HintItemVM.cs" />
     <Compile Include="Models\ProblemVM\HintListVM.cs" />
+    <Compile Include="Models\ProblemVM\HintPostVM.cs" />
     <Compile Include="Models\ProblemVM\PreviewProblemVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -264,6 +267,7 @@
     <Content Include="Scripts\AjaxScript.js" />
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\MathHubScript.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -338,6 +342,15 @@
       <Project>{72774f48-7053-4668-beb7-633f9b1e7b4e}</Project>
       <Name>MathHub.Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Problem\Partials\_CommentPostForm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Problem\Partials\_AnswerPostForm.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Problem\Partials\_HintPostForm.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -15,6 +15,7 @@ namespace MathHub.Web.Controllers
 {
     public partial class ProblemController : BaseController
     {
+
         private IProblemQueryService _problemQueryService;
         private IProblemCommandService _problemCommandService;
         private ICommentCommandService _commentCommandService;
@@ -103,11 +104,7 @@ namespace MathHub.Web.Controllers
             {
                 return RedirectToAction("Index");
             }
-            Problem targetProblem = _problemQueryService.GetProblemById((int)id);
-            targetProblem.Comments = _problemQueryService.GetAllComments(
-                targetProblem.Id,
-                Constant.DEFAULT_OFFSET,
-                Constant.DEFAULT_PER_PAGE).ToList();
+            Problem targetProblem = _problemQueryService.GetProblemById((int)id);           
 
             // Map from Model to ViewModel
             DetailProblemVM problemViewModel =
@@ -153,10 +150,13 @@ namespace MathHub.Web.Controllers
         [AjaxCallAF]
         public virtual ActionResult Comment(int postId, int offset)
         {
+            offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
+            int limit = offset < 0 ? int.MaxValue : Constant.DEFAULT_COMMENT_LOADING;
+
             IEnumerable<Comment> comments = _problemQueryService.GetAllComments(
                 postId,
                 offset,
-                Constant.DEFAULT_PER_PAGE
+                limit
                 );
 
            // Map list models to list viewmodels with lambda expression 
@@ -173,7 +173,8 @@ namespace MathHub.Web.Controllers
         {
             //if()
             //_commentCommandService.AddCommentForPost()
-            return false ;
+
+            return false;
         }
 
     }
