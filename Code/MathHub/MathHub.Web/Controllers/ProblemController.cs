@@ -13,43 +13,49 @@ using MathHub.Web.CustomAnnotation.ActionFilter;
 
 namespace MathHub.Web.Controllers
 {
-    public class ProblemController : BaseController
+    public partial class ProblemController : BaseController
     {
-        private readonly IProblemQueryService _problemQueryService;
+
+        private IProblemQueryService _problemQueryService;
+        private IProblemCommandService _problemCommandService;
         private ICommentCommandService _commentCommandService;
-        public ProblemController(IProblemQueryService problemQueryService,
-                                 ICommentCommandService commentCommandService)
+
+        public ProblemController(
+            IProblemQueryService problemQueryService,
+            ICommentCommandService commentCommandService,
+            IProblemCommandService problemCommandService)
         {
             _problemQueryService = problemQueryService;
             _commentCommandService = commentCommandService;
+            _problemCommandService = problemCommandService;
         }
 
         // GET /Problem
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return RedirectToAction(MathHub.Core.Config.RouteDefaults.DEFAULT_PROBLEM_TAB);
         }
 
         // GET /Problem/Trending
-        public ActionResult Trending()
+        public virtual ActionResult Trending()
         {
             return View("Views/ListAllProblem");
         }
 
         // GET /Problem/Mytags
-        public ActionResult Mytags()
+        public virtual ActionResult Mytags()
         {
             return View("Views/ListAllProblem");
         }
 
         // GET /Problem/Unanswered
-        public ActionResult Unanswered()
+        public virtual ActionResult Unanswered()
         {
             return View("Views/ListAllProblem");
         }
 
         // GET /Problem/Newest
-        public ActionResult Newest()
+        public virtual ActionResult Newest()
         {
             IEnumerable<Problem> problems =
                 _problemQueryService.GetNewestProblems(
@@ -64,13 +70,34 @@ namespace MathHub.Web.Controllers
 
         [Authorize]
         // GET /Problem/Create
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             return View("Views/CreateProblem");
         }
 
+        // POST /Problem/Create
+        [Authorize]
+        [HttpPost]
+        public virtual ActionResult Create(int userId, string title, string content, List<string> tags)
+        {
+            Problem p = new Problem();
+            p.UserId = userId;
+            p.Title = title;
+            p.Content = content;
+
+            bool res = _problemCommandService.AddProblem(p);
+            if (!res)
+            {
+                return null;
+            }
+            else
+            {
+                return Detail(p.Id);
+            }
+        }
+
         // GET /Problem/Detail/1
-        public ActionResult Detail(int? id)
+        public virtual ActionResult Detail(int? id)
         {
             // ViewBag.Problem = _rproblemService.GetProblemById(id);
             if (!id.HasValue)
@@ -88,7 +115,7 @@ namespace MathHub.Web.Controllers
         }
 
         [AjaxCallAF]
-        public ActionResult Answer(int id, int offset)
+        public virtual ActionResult Answer(int id, int offset)
         {
             IEnumerable<Reply> answers = _problemQueryService.GetAllReplies(
                     id,
@@ -104,7 +131,7 @@ namespace MathHub.Web.Controllers
         }
 
         [AjaxCallAF]
-        public ActionResult Hint(int postId, int offset)
+        public virtual ActionResult Hint(int postId, int offset)
         {
             IEnumerable<Reply> hints = _problemQueryService.GetAllReplies(
                     postId,
@@ -121,7 +148,7 @@ namespace MathHub.Web.Controllers
         }
 
         [AjaxCallAF]
-        public ActionResult Comment(int postId, int offset)
+        public virtual ActionResult Comment(int postId, int offset)
         {
             offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
             int limit = offset < 0 ? int.MaxValue : Constant.DEFAULT_COMMENT_LOADING;

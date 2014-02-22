@@ -3,16 +3,24 @@
     Layout = "~/Views/Problem/Layouts/_ProblemCreateLayout.cshtml";
 }
 
-Title
-<input  id="title" name="title" type="text" 
-        maxlength="300" tabindex="100" data-min-length="15" data-max-length="150" 
-        autocomplete="off" style="opacity: 0.4; z-index: 1; position: relative;" /> <br />
+<form id="post-form" class="post-form" action="/problem/create" method="post">
 
-Question Content: <br />
-<textarea   id="wmd-input" class="wmd-input processed" name="post-text" 
-            cols="92" rows="15" tabindex="101" data-min-length="">
-</textarea> <br />
-<input type="submit" value="Post"/>
+    Title
+    <input  id="title" name="title" type="text" 
+            maxlength="300" tabindex="100" data-min-length="15" data-max-length="150" 
+            autocomplete="off" style="opacity: 0.4; z-index: 1; position: relative;" /> <br />
+
+    Question Content: <br />
+    <textarea   id="wmd-input" class="wmd-input processed" name="content" 
+                cols="92" rows="15" tabindex="101" data-min-length="">
+    </textarea> <br />
+
+    Tags: <br />
+    <input type="text" name="Tag" tabindex="103" style="width: 658px;">
+
+    <input type="submit" value="Post"/>
+
+</form>
 
 @section RightPanel
 {
