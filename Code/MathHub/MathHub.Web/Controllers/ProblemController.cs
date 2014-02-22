@@ -16,12 +16,17 @@ namespace MathHub.Web.Controllers
     public class ProblemController : BaseController
     {
         private IProblemQueryService _problemQueryService;
+        private IProblemCommandService _problemCommandService;
         private ICommentCommandService _commentCommandService;
-        public ProblemController(IProblemQueryService problemQueryService,
-                                 ICommentCommandService commentCommandService)
+
+        public ProblemController(
+            IProblemQueryService problemQueryService,
+            ICommentCommandService commentCommandService,
+            IProblemCommandService problemCommandService)
         {
             _problemQueryService = problemQueryService;
             _commentCommandService = commentCommandService;
+            _problemCommandService = problemCommandService;
         }
 
         // GET /Problem
@@ -67,6 +72,27 @@ namespace MathHub.Web.Controllers
         public ActionResult Create()
         {
             return View("Views/CreateProblem");
+        }
+
+        // POST /Problem/Create
+        [Authorize]
+        [HttpPost]
+        public ActionResult Create(int userId, string title, string content, List<string> tags)
+        {
+            Problem p = new Problem();
+            p.UserId = userId;
+            p.Title = title;
+            p.Content = content;
+
+            bool res = _problemCommandService.AddProblem(p);
+            if (!res)
+            {
+                return null;
+            }
+            else
+            {
+                return Detail(p.Id);
+            }
         }
 
         // GET /Problem/Detail/1
