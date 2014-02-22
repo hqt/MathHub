@@ -2,4 +2,6 @@
 
 Hint Item @Model.Content<br/>
 
-<p style="margin-left: 15px">@Html.Partial("Partials/_CommentList", Model.Comments)</p>
+<h3>Comments</h3>
+<div id="@Model.Id + 'Comments'"></div>
+<button onclick="getCommentAjax(@Model.Id + 'Comments',@Model.Id)">View more comments</button>

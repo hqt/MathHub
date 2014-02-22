@@ -1,0 +1,8 @@
+﻿@model MathHub.Web.Models.ProblemVM.CommentPostVM
+
+    using (@Html.BeginForm("Comment", "Problem", FormMethod.Post, null))
+    {
+        @Html.LabelFor(m => m.NewComment)
+        @Html.TextAreaFor(m => m.NewComment)
+        <input type="submit" name="addComment" value="Send"/>
+    }

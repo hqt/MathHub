@@ -19,6 +19,6 @@ namespace MathHub.Web.Models.ProblemVM
         public string UserUsername { get; set; }
                
 
-        public ICollection<CommentItemVM> Comments { get; set; }
+        public CommentListVM Comments { get; set; }
     }
 }

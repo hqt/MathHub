@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using MathHub.Core.Interfaces.Comments;
 using MathHub.Core.Interfaces.Problems;
 using MathHub.Entity.Entity;
 using MathHub.Framework.Controllers;
@@ -15,10 +16,14 @@ namespace MathHub.Web.Controllers
     public class ProblemController : BaseController
     {
         private IProblemQueryService _problemQueryService;
-        public ProblemController(IProblemQueryService problemQueryService)
+        private ICommentCommandService _commentCommandService;
+        public ProblemController(IProblemQueryService problemQueryService,
+                                 ICommentCommandService commentCommandService)
         {
             _problemQueryService = problemQueryService;
+            _commentCommandService = commentCommandService;
         }
+
         // GET /Problem
         public ActionResult Index()
         {
@@ -74,10 +79,11 @@ namespace MathHub.Web.Controllers
             }
             Problem targetProblem = _problemQueryService.GetProblemById((int)id);
             targetProblem.Comments = _problemQueryService.GetAllComments(
-                targetProblem.Id, 
-                Constant.DEFAULT_OFFSET, 
+                targetProblem.Id,
+                Constant.DEFAULT_OFFSET,
                 Constant.DEFAULT_PER_PAGE).ToList();
 
+            // Map from Model to ViewModel
             DetailProblemVM problemViewModel =
                 Mapper.Map<Problem, DetailProblemVM>(targetProblem);
 
@@ -86,16 +92,15 @@ namespace MathHub.Web.Controllers
         }
 
         [AjaxCallAF]
-        public ActionResult Answer(int Id)
+        public ActionResult Answer(int id, int offset)
         {
-<<<<<<< HEAD
-            IEnumerable<Reply> answers = _problemQueryService.GetAllReplies(Id, ReplyEnum.ANSWER).AsEnumerable();
+            IEnumerable<Reply> answers = _problemQueryService.GetAllReplies(
+                    id,
+                    ReplyEnum.ANSWER,
+                    offset,
+                    Constant.DEFAULT_PER_PAGE
+                ).AsEnumerable();
 
-           
-=======
-            IEnumerable<Reply> answers = _problemQueryService.GetAllReplies(Id, ReplyEnum.ANSWER).AsEnumerable();
-    
->>>>>>> 80d48dd2057a17fb82b9687719691269c2a70cc4
             ICollection<AnswerItemVM> answerItemVms = answers.Select(Mapper.Map<Reply, AnswerItemVM>).ToList();
             AnswerListVM answerListVm = new AnswerListVM();
             answerListVm.AnswerItemVms = answerItemVms;
@@ -103,16 +108,16 @@ namespace MathHub.Web.Controllers
         }
 
         [AjaxCallAF]
-        public ActionResult Hint(int Id)
+        public ActionResult Hint(int postId, int offset)
         {
-<<<<<<< HEAD
-            IEnumerable<Reply> hints = _problemQueryService.GetAllReplies(Id, ReplyEnum.HINT).AsEnumerable();
-            
-            
-=======
-            IEnumerable<Reply> hints = _problemQueryService.GetAllReplies(Id, ReplyEnum.HINT).AsEnumerable();
+            IEnumerable<Reply> hints = _problemQueryService.GetAllReplies(
+                    postId,
+                    ReplyEnum.HINT,
+                    offset,
+                    Constant.DEFAULT_PER_PAGE
+                ).AsEnumerable();
 
->>>>>>> 80d48dd2057a17fb82b9687719691269c2a70cc4
+            // Map list models to list viewmodels with lambda expression 
             ICollection<HintItemVM> hintItemVms = hints.Select(Mapper.Map<Reply, HintItemVM>).ToList();
             HintListVM hintListVm = new HintListVM();
             hintListVm.HintItemVms = hintItemVms;
@@ -120,13 +125,30 @@ namespace MathHub.Web.Controllers
         }
 
         [AjaxCallAF]
-        public ActionResult Comment(int Id, int limit)
+        public ActionResult Comment(int postId, int offset)
         {
-            IEnumerable<Comment> comments = _problemQueryService.GetAllComments(Id);
+            IEnumerable<Comment> comments = _problemQueryService.GetAllComments(
+                postId,
+                offset,
+                Constant.DEFAULT_PER_PAGE
+                );
+
+           // Map list models to list viewmodels with lambda expression 
+            ICollection<CommentItemVM> hintItemVms = comments.Select(Mapper.Map<Comment, CommentItemVM>).ToList();
+
             CommentListVM commentListVm = new CommentListVM();
+
+            commentListVm.CommentItemVms = hintItemVms;
             return PartialView("Partials/_CommentList", commentListVm);
         }
 
+        [AjaxCallAF]
+        public bool AddComment(int postId, string comment, string type)
+        {
+            //if()
+            //_commentCommandService.AddCommentForPost()
+            //return ;
+        }
 
     }
 }

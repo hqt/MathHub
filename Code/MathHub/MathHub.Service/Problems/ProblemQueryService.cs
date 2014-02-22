@@ -31,7 +31,10 @@ namespace MathHub.Service.Problems
         #region Problem
         public IEnumerable<Problem> GetNewestProblems(int offSet, int limit)
         {
-            return ctx.Posts.OfType<Problem>().OrderByDescending(b => b.DateCreated).Skip(offSet).Take(limit);
+            return ctx.Posts.OfType<Problem>()
+                .OrderByDescending(b => b.DateCreated)
+                .Skip(offSet)
+                .Take(limit);
         }
 
         public Problem GetProblemById(int id)
@@ -93,6 +96,7 @@ namespace MathHub.Service.Problems
                 return ctx.Posts
                     .OfType<Comment>()
                     .Where(t => t.MainPostId == postId)
+                    .OrderBy(t => t.DateCreated)
                     .Skip(offset).Take(limit)
                     .AsEnumerable();
             }
@@ -111,6 +115,7 @@ namespace MathHub.Service.Problems
                 return ctx.Posts
                     .OfType<Reply>()
                     .Where(t => t.MainPostId == postId && t.Type == type)
+                    .OrderBy(t => t.DateCreated)
                     .Skip(offset)
                     .Take(limit);
             }

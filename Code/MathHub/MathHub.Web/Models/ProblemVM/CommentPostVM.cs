@@ -6,8 +6,10 @@ using System.Web;
 
 namespace MathHub.Web.Models.ProblemVM
 {
-    public class CommentListVM
+    public class CommentPostVM
     {
-        public ICollection<CommentItemVM> CommentItemVms { get; set; }
+        [Required(ErrorMessage = "Comment cannot be empty.")]
+        [Display(Name = "Add your comment")]
+        public String NewComment { get; set; }
     }
 }
