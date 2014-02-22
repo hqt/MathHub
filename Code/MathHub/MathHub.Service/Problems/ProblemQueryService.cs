@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MathHub.Core.Interfaces.Users;
 using MathHub.Core.Infrastructure.Repository;
+using MathHub.Core.Config;
 
 namespace MathHub.Service.Problems
 {
@@ -87,20 +88,12 @@ namespace MathHub.Service.Problems
         #region Comment
         public IEnumerable<Comment> GetAllComments(int postId, int offset, int limit)
         {
-            if (offset == 0 && limit == 0)
-            {
-                return ctx.Posts.OfType<Comment>().Where(t => t.MainPostId == postId).AsEnumerable();
-            }
-            else
-            {
-                return ctx.Posts
-                    .OfType<Comment>()
-                    .Where(t => t.MainPostId == postId)
-                    .OrderBy(t => t.DateCreated)
-                    .Skip(offset).Take(limit)
-                    .AsEnumerable();
-            }
-        } 
+            return ctx.Posts
+               .OfType<Comment>()
+               .Where(t => t.MainPostId == postId)
+               .OrderBy(t => t.DateCreated)
+               .Skip(offset).Take(limit);
+        }
         #endregion
 
         #region Reply
@@ -162,5 +155,6 @@ namespace MathHub.Service.Problems
             return new Tuple<int, int, int>(comments, answers, hints);
         } 
         #endregion
+
     }
 }
