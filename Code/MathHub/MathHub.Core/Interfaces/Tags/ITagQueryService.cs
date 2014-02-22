@@ -9,7 +9,8 @@ namespace MathHub.Core.Interfaces.Tags
 {
     public interface ITagQueryService
     {
-        List<String> GetAllTagsOfUser(int id);
-        List<Tag> GetAllTagDetailOfUser(int id);
+        IEnumerable<String> GetAllTagsOfUser(int id);
+        IEnumerable<Tag> GetAllTagsDetailOfUser(int id);
+        IEnumerable<Tag> GetAllTagsStartWith(string str);
     }
 }
