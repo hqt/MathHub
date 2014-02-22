@@ -36,6 +36,14 @@ namespace MathHub.Core.Interfaces.MainPosts
         /// Reply
         /// </summary>
         IEnumerable<Reply> GetAllReplies(int postId, ReplyEnum type, int offset, int limit);
-       
+
+        /// <summary>
+        /// statistic : count all fields
+        /// </summary>
+
+        /** favorite - report - share */
+        Tuple<int, int, int> GetPostSocialReport(int postId);
+        /** comment - answer - hint */
+        Tuple<int, int, int> GetPostReplyReport(int postId);
     }
 }

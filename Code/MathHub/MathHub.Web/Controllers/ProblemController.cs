@@ -147,7 +147,7 @@ namespace MathHub.Web.Controllers
         {
             //if()
             //_commentCommandService.AddCommentForPost()
-            //return ;
+            return false ;
         }
 
     }
