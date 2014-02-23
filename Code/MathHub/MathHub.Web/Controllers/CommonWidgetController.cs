@@ -15,7 +15,7 @@ using WebMatrix.WebData;
 namespace MathHub.Web.Controllers
 {
     [ChildActionOnly]
-    public class CommonWidgetController : Controller
+    public partial class CommonWidgetController : Controller
     {
         private IUserQueryService _userQueryService;
         private IBlogQueryService _blogQueryService;
@@ -30,50 +30,50 @@ namespace MathHub.Web.Controllers
             _problemQueryService = problemQueryService;
         }
 
-        public ActionResult HeaderWidget()
+        public virtual ActionResult HeaderWidget()
         {
             return PartialView("_HeaderWidget");
         }
 
-        public ActionResult FooterWidget()
+        public virtual ActionResult FooterWidget()
         {
             return PartialView("_FooterWidget");
         }
 
-        public ActionResult FavoriteTagWidget()
+        public virtual ActionResult FavoriteTagWidget()
         {
             ICollection<Tag> tags = _userQueryService.getLoginUserFavoriteTag().ToList();
             return PartialView("_FavoriteTagWidget", tags);
         }
 
-        public ActionResult GroupWidget()
+        public virtual ActionResult GroupWidget()
         {
             return PartialView("_GroupWidget");
         }
 
-        public ActionResult MySubscriptionWidget()
+        public virtual ActionResult MySubscriptionWidget()
         {
             
             return PartialView("_MySubscriptionWidget");
         }
 
-        public ActionResult NewBlogWidget()
+        public virtual ActionResult NewBlogWidget()
         {
             ICollection<Blog> blogs = _blogQueryService.GetNewBlogs(Constant.DEFAULT_PER_WIDGET).ToList();
             return PartialView("_NewBlogWidget", blogs);
         }
 
-        public ActionResult PostProblemWidget()
+        public virtual ActionResult PostProblemWidget()
         {
             return PartialView("_PostProblemWidget");
         }
 
-        public ActionResult ProblemPostGuide()
+        public virtual ActionResult ProblemPostGuide()
         {
             return PartialView("_ProblemPostGuide");
         }
 
-        public ActionResult ProfileWidget()
+        public virtual ActionResult ProfileWidget()
         {
             User user = _userQueryService.GetLoginUser();
             ProfileWidgetVM profileWidgetVm = Mapper.Map<User, ProfileWidgetVM>(user);
@@ -81,29 +81,29 @@ namespace MathHub.Web.Controllers
             return PartialView("_ProfileWidget", profileWidgetVm);
         }
 
-        public ActionResult RelatedBlogWidget()
+        public virtual ActionResult RelatedBlogWidget()
         {
             return PartialView("_RelatedBlogWidget");
         }
 
-        public ActionResult RelatedTagWidget()
+        public virtual ActionResult RelatedTagWidget()
         {
             return PartialView("_RelatedTagWidget");
         }
 
-        public ActionResult SameAuthorWidget(int id)
+        public virtual ActionResult SameAuthorWidget(int id)
         {
             ICollection<Problem> problems = _problemQueryService.GetProblemsByUserId(id, Constant.DEFAULT_PER_WIDGET).ToList();
             return PartialView("_SameAuthorWidget", problems);
         }
 
-        public ActionResult SubscriptionWidget()
+        public virtual ActionResult SubscriptionWidget()
         {
             ICollection<Subscription> subscriptions = _userQueryService.GetLoginUserSubcriptions().ToList();
             return PartialView("_SubscriptionWidget", subscriptions);
         }
 
-        public ActionResult YourActivityWidget()
+        public virtual ActionResult YourActivityWidget()
         {
             return PartialView("_YourActivityWidget");
         }

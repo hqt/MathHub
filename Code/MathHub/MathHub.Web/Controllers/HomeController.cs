@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace MathHub.Web.Controllers
 {
-    public class HomeController : BaseController
+    public partial class HomeController : BaseController
     {
         
         /// <summary>
@@ -14,7 +14,7 @@ namespace MathHub.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return Redirect("Problem");
         }

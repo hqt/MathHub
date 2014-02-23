@@ -115,7 +115,6 @@ namespace MathHub.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Create
         {
-            public readonly string userId = "userId";
             public readonly string title = "title";
             public readonly string content = "content";
             public readonly string tags = "tags";
@@ -300,17 +299,16 @@ namespace MathHub.Web.Controllers
         }
 
         [NonAction]
-        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int userId, string title, string content, System.Collections.Generic.List<string> tags);
+        partial void CreateOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, string title, string content, System.Collections.Generic.List<string> tags);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Create(int userId, string title, string content, System.Collections.Generic.List<string> tags)
+        public override System.Web.Mvc.ActionResult Create(string title, string content, System.Collections.Generic.List<string> tags)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Create);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "userId", userId);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "title", title);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "content", content);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "tags", tags);
-            CreateOverride(callInfo, userId, title, content, tags);
+            CreateOverride(callInfo, title, content, tags);
             return callInfo;
         }
 
