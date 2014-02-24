@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -10,6 +11,7 @@ using AutoMapper;
 using MathHub.Web.Models.ProblemVM;
 using MathHub.Core.Config;
 using MathHub.Web.CustomAnnotation.ActionFilter;
+using WebMatrix.WebData;
 using MathHub.Core.Infrastructure;
 using System;
 
@@ -118,12 +120,14 @@ namespace MathHub.Web.Controllers
             {
                 return RedirectToAction("Index");
             }
-            Problem targetProblem = _problemQueryService.GetProblemById((int)id);           
+            Problem targetProblem = _problemQueryService.GetProblemById((int)id);
 
             // Map from Model to ViewModel
             DetailProblemVM problemViewModel =
                 Mapper.Map<Problem, DetailProblemVM>(targetProblem);
-
+            problemViewModel.CommentPostVm = new CommentPostVM();
+            problemViewModel.CommentPostVm.MainPostId = problemViewModel.Id;
+            problemViewModel.CommentPostVm.Type = "problem";
 
             return View("Views/DetailProblem", problemViewModel);
         }
@@ -173,7 +177,7 @@ namespace MathHub.Web.Controllers
                 limit
                 );
 
-           // Map list models to list viewmodels with lambda expression 
+            // Map list models to list viewmodels with lambda expression 
             ICollection<CommentItemVM> hintItemVms = comments.Select(Mapper.Map<Comment, CommentItemVM>).ToList();
 
             CommentListVM commentListVm = new CommentListVM();
@@ -182,14 +186,33 @@ namespace MathHub.Web.Controllers
             return PartialView("Partials/_CommentList", commentListVm);
         }
 
-        [AjaxCallAF]
-        public bool AddComment(int postId, string comment, string type)
+        
+        [Authorize]
+        public bool AddComment(CommentPostVM commentPostVm)
         {
-            //if()
-            //_commentCommandService.AddCommentForPost()
+            if (ModelState.IsValid)
+            {
+                Comment comment = new Comment();
+                comment.UserId = WebSecurity.CurrentUserId;
+                comment.DateCreated = DateTime.Now;
+                comment.Content = commentPostVm.Content;
 
+                switch (commentPostVm.Type)
+                {
+                    case "problem":
+                        //comment.MainPostId = commentPostVm.MainPostId;
+                        return _commentCommandService.AddCommentForPost((int)commentPostVm.MainPostId, comment);
+
+                    case "Reply":
+                        //comment.ReplyId = commentPostVm.ReplyId;
+                        return _commentCommandService.AddCommentForReply((int)comment.ReplyId, comment);
+
+                    default:
+                        return false;
+                }
+
+            }
             return false;
         }
-
     }
 }

@@ -27,7 +27,25 @@
 
 <h3>Comments</h3>
 <div id="problemComments"></div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        getCommentAjax("problemComments", @Model.Id, 0);
+    });
+</script>
+
+@if(Model.CommentNum > 5)
+{
+	<button onclick="showCommentOnClick('problemComments', @Model.Id, 'commentPostForm')">Add / Show @Model.CommentNum more comments</button>
+}else
+{
+	<button onclick="showElementById('commentPostForm')">Add comments</button>
+}
+
+@Html.Partial("Partials/_CommentPostForm", Model.CommentPostVm)
+
 <button onclick="getCommentAjax('problemComments',@Model.Id)">View more comments</button>
+
 
 <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
 	<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
@@ -54,7 +72,7 @@
 
 @section RightPanel
 {
-    @Html.Action("PostProblemWidget", new { controller = "CommonWidget" })
+    @Html.Action("PostProblemWidget", new {controller = "CommonWidget"})
     <hr />
-Widgets here. You decide.
+    Widgets here. You decide.
 }
