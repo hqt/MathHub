@@ -12,6 +12,7 @@ using MathHub.Web.Models.ProblemVM;
 using MathHub.Core.Config;
 using MathHub.Web.CustomAnnotation.ActionFilter;
 using WebMatrix.WebData;
+using MathHub.Core.Infrastructure;
 
 namespace MathHub.Web.Controllers
 {
@@ -21,15 +22,18 @@ namespace MathHub.Web.Controllers
         private IProblemQueryService _problemQueryService;
         private IProblemCommandService _problemCommandService;
         private ICommentCommandService _commentCommandService;
+        private IAuthenticationService _authenticationService;
 
         public ProblemController(
             IProblemQueryService problemQueryService,
             ICommentCommandService commentCommandService,
-            IProblemCommandService problemCommandService)
+            IProblemCommandService problemCommandService,
+            IAuthenticationService authenticationService)
         {
             _problemQueryService = problemQueryService;
             _commentCommandService = commentCommandService;
             _problemCommandService = problemCommandService;
+            _authenticationService = authenticationService;
         }
 
         // GET /Problem
@@ -80,16 +84,23 @@ namespace MathHub.Web.Controllers
         // POST /Problem/Create
         [Authorize]
         [HttpPost]
-        public virtual ActionResult Create(int userId, string title, string content, List<string> tags)
+        public virtual ActionResult Create(string title, string content, List<string> tags)
         {
+            if (!_authenticationService.IsLogin())
+            {
+                // not login yet. return error
+            }
+
+            // create new problem
             Problem p = new Problem();
-            p.UserId = userId;
+            p.UserId = _authenticationService.GetUserId();
             p.Title = title;
             p.Content = content;
 
             bool res = _problemCommandService.AddProblem(p);
             if (!res)
             {
+                // by some reason. cannot create problem
                 return null;
             }
             else

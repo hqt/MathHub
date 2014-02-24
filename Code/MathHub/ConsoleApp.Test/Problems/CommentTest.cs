@@ -43,7 +43,7 @@ namespace ConsoleApp.Test.Problems
 
             // retrieve comment
             // Get All Comments
-            IEnumerable<Comment> comments = problemQueryService.GetAllComments(problem.Id, 0, 0);
+            IEnumerable<Comment> comments = problemQueryService.GetAllComments(problem.Id, 0, 100);
             bool isExist = false;
             foreach (Comment comment in comments)
             {
@@ -60,7 +60,7 @@ namespace ConsoleApp.Test.Problems
             c.DateModified = DateTime.Now;
             res = problemCommandService.UpdateComment(c);
             //test update
-            comments = problemQueryService.GetAllComments(problem.Id, 0, 0);
+            comments = problemQueryService.GetAllComments(problem.Id, 0, 100);
             isExist = false;
             foreach (Comment comment in comments)
             {
@@ -76,7 +76,7 @@ namespace ConsoleApp.Test.Problems
             res = problemCommandService.DeleteComment(c);
             Assert.IsTrue(res);
             //test update
-            comments = problemQueryService.GetAllComments(problem.Id, 0, 0);
+            comments = problemQueryService.GetAllComments(problem.Id, 0, 100);
             isExist = false;
             foreach (Comment comment in comments)
             {
