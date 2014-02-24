@@ -8,11 +8,11 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-//using StackExchange.Profiling;
 using MathHub.Framework.Utils;
 using StructureMap;
 using WebMatrix.WebData;
 using AutoMapper;
+using StackExchange.Profiling;
 
 namespace MathHub.Web
 {
@@ -53,19 +53,19 @@ namespace MathHub.Web
             StructureMapConfiguration.Configure();
         }
 
-        //protected void Application_StartRequest()
-        //{
-        //    if (Request.IsLocal)
-        //    {
-        //        MiniProfiler.Start();
-        //    } 
-        //}
+        protected void Application_StartRequest()
+        {
+            if (Request.IsLocal)
+            {
+                MiniProfiler.Start();
+            }
+        }
 
-        //protected void Application_EndRequest()
-        //{
-        //    ObjectFactory.ReleaseAndDisposeAllHttpScopedObjects();
-        //    MiniProfiler.Stop();
-        //}
+        protected void Application_EndRequest()
+        {
+            ObjectFactory.ReleaseAndDisposeAllHttpScopedObjects();
+            MiniProfiler.Stop();
+        }
 
     }
 }

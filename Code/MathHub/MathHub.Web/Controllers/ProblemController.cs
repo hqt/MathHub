@@ -1,80 +1,123 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using MathHub.Core.Interfaces.Comments;
 using MathHub.Core.Interfaces.Problems;
 using MathHub.Entity.Entity;
 using MathHub.Framework.Controllers;
 using AutoMapper;
 using MathHub.Web.Models.ProblemVM;
 using MathHub.Core.Config;
+using MathHub.Web.CustomAnnotation.ActionFilter;
+using MathHub.Core.Infrastructure;
 
 namespace MathHub.Web.Controllers
 {
-    public class ProblemController : BaseController
+    public partial class ProblemController : BaseController
     {
+
         private IProblemQueryService _problemQueryService;
-        public ProblemController(IProblemQueryService problemQueryService)
+        private IProblemCommandService _problemCommandService;
+        private ICommentCommandService _commentCommandService;
+        private IAuthenticationService _authenticationService;
+
+        public ProblemController(
+            IProblemQueryService problemQueryService,
+            ICommentCommandService commentCommandService,
+            IProblemCommandService problemCommandService,
+            IAuthenticationService authenticationService)
         {
             _problemQueryService = problemQueryService;
+            _commentCommandService = commentCommandService;
+            _problemCommandService = problemCommandService;
+            _authenticationService = authenticationService;
         }
+
         // GET /Problem
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return RedirectToAction(MathHub.Core.Config.RouteDefaults.DEFAULT_PROBLEM_TAB);
         }
 
         // GET /Problem/Trending
-        public ActionResult Trending()
+        public virtual ActionResult Trending()
         {
             return View("Views/ListAllProblem");
         }
 
         // GET /Problem/Mytags
-        public ActionResult Mytags()
+        public virtual ActionResult Mytags()
         {
             return View("Views/ListAllProblem");
         }
 
         // GET /Problem/Unanswered
-        public ActionResult Unanswered()
+        public virtual ActionResult Unanswered()
         {
             return View("Views/ListAllProblem");
         }
 
         // GET /Problem/Newest
-        public ActionResult Newest()
+        public virtual ActionResult Newest()
         {
             IEnumerable<Problem> problems =
-                _problemQueryService.GetAllProblem(
-                Constant.DEFAULT_OFFSET, Constant.DEFAULT_PER_PAGE).Where(t => t.User.Id == 784);
-
-            //problems.ToList();          
+                _problemQueryService.GetNewestProblems(
+                Constant.DEFAULT_OFFSET, Constant.DEFAULT_PER_PAGE);
 
             ICollection<PreviewProblemVM> problemVms =
-                problems.AsEnumerable().Select(Mapper.Map<Problem, PreviewProblemVM>).ToList();
-
-
+                problems.Select(Mapper.Map<Problem, PreviewProblemVM>).ToList();
 
             return View("Views/ListAllProblem", problemVms);
         }
 
+
+        [Authorize]
         // GET /Problem/Create
-        public ActionResult Create()
+        public virtual ActionResult Create()
         {
             return View("Views/CreateProblem");
         }
 
+        // POST /Problem/Create
+        [Authorize]
+        [HttpPost]
+        public virtual ActionResult Create(string title, string content, List<string> tags)
+        {
+            if (!_authenticationService.IsLogin())
+            {
+                // not login yet. return error
+            }
+
+            // create new problem
+            Problem p = new Problem();
+            p.UserId = _authenticationService.GetUserId();
+            p.Title = title;
+            p.Content = content;
+
+            bool res = _problemCommandService.AddProblem(p);
+            if (!res)
+            {
+                // by some reason. cannot create problem
+                return null;
+            }
+            else
+            {
+                return Detail(p.Id);
+            }
+        }
+
         // GET /Problem/Detail/1
-        public ActionResult Detail(int? id)
+        public virtual ActionResult Detail(int? id)
         {
             // ViewBag.Problem = _rproblemService.GetProblemById(id);
             if (!id.HasValue)
             {
                 return RedirectToAction("Index");
             }
-            Problem targetProblem = _problemQueryService.GetProblemById((int)id);
-            targetProblem.Comments = _problemQueryService.GetAllComments(targetProblem.Id).ToList();
+            Problem targetProblem = _problemQueryService.GetProblemById((int)id);           
 
+            // Map from Model to ViewModel
             DetailProblemVM problemViewModel =
                 Mapper.Map<Problem, DetailProblemVM>(targetProblem);
 
@@ -82,23 +125,68 @@ namespace MathHub.Web.Controllers
             return View("Views/DetailProblem", problemViewModel);
         }
 
-
-        public ActionResult Answer(int Id)
+        [AjaxCallAF]
+        public virtual ActionResult Answer(int id, int offset)
         {
-            IEnumerable<Reply> answers = _problemQueryService.GetAllReply(Id, ReplyEnum.ANSWER).AsEnumerable();
+            IEnumerable<Reply> answers = _problemQueryService.GetAllReplies(
+                    id,
+                    ReplyEnum.ANSWER,
+                    offset,
+                    Constant.DEFAULT_PER_PAGE
+                ).AsEnumerable();
 
-           
             ICollection<AnswerItemVM> answerItemVms = answers.Select(Mapper.Map<Reply, AnswerItemVM>).ToList();
-            return PartialView("Partials/_AnswerList", answerItemVms);
+            AnswerListVM answerListVm = new AnswerListVM();
+            answerListVm.AnswerItemVms = answerItemVms;
+            return PartialView("Partials/_AnswerList", answerListVm);
         }
 
-        public ActionResult Hint(int Id)
+        [AjaxCallAF]
+        public virtual ActionResult Hint(int postId, int offset)
         {
-            IEnumerable<Reply> hints = _problemQueryService.GetAllReply(Id, ReplyEnum.HINT).AsEnumerable();
-            
-            
+            IEnumerable<Reply> hints = _problemQueryService.GetAllReplies(
+                    postId,
+                    ReplyEnum.HINT,
+                    offset,
+                    Constant.DEFAULT_PER_PAGE
+                ).AsEnumerable();
+
+            // Map list models to list viewmodels with lambda expression 
             ICollection<HintItemVM> hintItemVms = hints.Select(Mapper.Map<Reply, HintItemVM>).ToList();
-            return PartialView("Partials/_HintList", hintItemVms);
+            HintListVM hintListVm = new HintListVM();
+            hintListVm.HintItemVms = hintItemVms;
+            return PartialView("Partials/_HintList", hintListVm);
         }
+
+        [AjaxCallAF]
+        public virtual ActionResult Comment(int postId, int offset)
+        {
+            offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
+            int limit = offset < 0 ? int.MaxValue : Constant.DEFAULT_COMMENT_LOADING;
+
+            IEnumerable<Comment> comments = _problemQueryService.GetAllComments(
+                postId,
+                offset,
+                limit
+                );
+
+           // Map list models to list viewmodels with lambda expression 
+            ICollection<CommentItemVM> hintItemVms = comments.Select(Mapper.Map<Comment, CommentItemVM>).ToList();
+
+            CommentListVM commentListVm = new CommentListVM();
+
+            commentListVm.CommentItemVms = hintItemVms;
+            return PartialView("Partials/_CommentList", commentListVm);
+        }
+
+        [AjaxCallAF]
+        public bool AddComment(int postId, string comment, string type)
+        {
+            //if()
+            //_commentCommandService.AddCommentForPost()
+
+            return false;
+        }
+
     }
 }

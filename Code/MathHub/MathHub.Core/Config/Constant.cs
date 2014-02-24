@@ -20,6 +20,17 @@ namespace MathHub.Core.Config
         public const int DEFAULT_OFFSET = 0;
         public const int DEFAULT_PER_PAGE = 10;
         public const int DEFAULT_PER_WIDGET = 5;
+        public const int GET_ALL = int.MaxValue;
+
+        /* so. first loading 5 comments. after that load from 6th */
+        public const int DEFAULT_COMMENT_OFFSET = 6;
+        public const int DEFAULT_COMMENT_LOADING = 5;
+
+        public const int DEFAULT_REPLY_OFFSET = 6;
+        public const int DEFAULT_REPLY_LIMIT = 5;
+
+        public const int DEFAULT_HINT_OFFSET = 6;
+        public const int DEFAULT_HINT_LIMIT = 5;
     }
 
     public static class RouteDefaults

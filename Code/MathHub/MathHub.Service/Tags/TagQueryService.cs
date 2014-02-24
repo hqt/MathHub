@@ -12,17 +12,31 @@ namespace MathHub.Service.Tags
     public class TagQueryService : ITagQueryService
     {
         MathHubModelContainer ctx = new MathHubModelContainer();
- 
-        public List<string> GetAllTagsOfUser(int id)
+
+        public IEnumerable<string> GetAllTagsOfUser(int id)
         {
-            return ctx.FavoriteTags.Include(t => t.Tag).
-                Where(t => t.UserId == id).Select(t => t.Tag.Name).ToList();
+            return ctx.FavoriteTags
+                .Include(t => t.Tag)
+                .Where(t => t.UserId == id)
+                .Select(t => t.Tag.Name)
+                .AsEnumerable();
         }
 
-        public List<Tag> GetAllTagDetailOfUser(int id)
+        public IEnumerable<Tag> GetAllTagsDetailOfUser(int id)
         {
-            return ctx.FavoriteTags.Include(t => t.Tag).
-                Where(t => t.UserId == id).Select(t => t.Tag).ToList();
+            return ctx.FavoriteTags
+                .Include(t => t.Tag)
+                .Where(t => t.UserId == id)
+                .Select(t => t.Tag)
+                .AsEnumerable();
+        }
+
+
+        public IEnumerable<Tag> GetAllTagsStartWith(string str)
+        {
+            return ctx.Tags
+                .Where(t => t.Name.StartsWith(str) == true)
+                .AsEnumerable();
         }
     }
 }

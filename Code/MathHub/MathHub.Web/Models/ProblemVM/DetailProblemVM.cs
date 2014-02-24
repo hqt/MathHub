@@ -20,8 +20,9 @@ namespace MathHub.Web.Models.ProblemVM
         public int VoteDownNum { get; set; }
         public int AnswerNum { get; set; }
         public int HintNum { get; set; }
+        public int CommentNum { get; set; }
 
-        public ICollection<CommentItemVM> Comments { get; set; }
+        //public CommentListVM Comments { get; set; }
         public UserInfoVM UserInfo { get; set; }
 
 
