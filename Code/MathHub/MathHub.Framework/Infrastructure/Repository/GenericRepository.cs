@@ -166,8 +166,8 @@ namespace MathHub.Framework.Infrastructure.Repository
             }
         }
 
-        private bool Save()
-        {
+        private bool Save() 
+        {          
             return _ctx.SaveChanges() > 0;
         }
 

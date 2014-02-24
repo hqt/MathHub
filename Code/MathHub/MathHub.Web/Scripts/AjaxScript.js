@@ -1,7 +1,7 @@
-﻿function getCommentAjax(elementId ,postId, offset) {
+﻿function getCommentAjax(elementId, postId, offset) {
     var url = "/Problem/Comment/";
     $.post(url, { postId: postId, offset: offset }, function (data) {
-        $("#" + elementId).html($("#" + elementId).innerHTML + data);
+        $("#" + elementId).html($("#" + elementId).html() + data);
     });
 }
 

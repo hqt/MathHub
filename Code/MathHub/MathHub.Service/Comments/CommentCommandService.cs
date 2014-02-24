@@ -26,14 +26,14 @@ namespace MathHub.Service.Comments
         public bool AddCommentForReply(int replyId, Comment comment)
         {
             comment.ReplyId = replyId;
-            comment.MainPostId = 0;
+            //comment.MainPostId = 0;
             return commentRepository.Insert(comment);
         }
 
         public bool AddCommentForPost(int postId, Comment comment)
         {
             comment.MainPostId = postId;
-            comment.ReplyId = 0;
+            //comment.ReplyId = 0;
             return commentRepository.Insert(comment);
         }
     }
