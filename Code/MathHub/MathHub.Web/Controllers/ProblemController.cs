@@ -11,6 +11,7 @@ using MathHub.Web.Models.ProblemVM;
 using MathHub.Core.Config;
 using MathHub.Web.CustomAnnotation.ActionFilter;
 using MathHub.Core.Infrastructure;
+using System;
 
 namespace MathHub.Web.Controllers
 {
@@ -82,7 +83,7 @@ namespace MathHub.Web.Controllers
         // POST /Problem/Create
         [Authorize]
         [HttpPost]
-        public virtual ActionResult Create(string title, string content, List<string> tags)
+        public virtual ActionResult Create(CreateProblemVM problemVM)
         {
             if (!_authenticationService.IsLogin())
             {
@@ -92,8 +93,10 @@ namespace MathHub.Web.Controllers
             // create new problem
             Problem p = new Problem();
             p.UserId = _authenticationService.GetUserId();
-            p.Title = title;
-            p.Content = content;
+            p.Title = problemVM.Title;
+            p.Content = problemVM.Content;
+            p.DateCreated = DateTime.Now;
+            p.DateModified = DateTime.Now;
 
             bool res = _problemCommandService.AddProblem(p);
             if (!res)
