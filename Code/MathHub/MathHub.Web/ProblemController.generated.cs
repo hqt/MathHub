@@ -312,7 +312,7 @@ namespace MathHub.Web.Controllers
         partial void DetailOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int? id);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Detail(int? id)
+        public override System.Web.Mvc.ActionResult Detail(int id)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Detail);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);

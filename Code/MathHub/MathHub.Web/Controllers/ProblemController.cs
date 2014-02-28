@@ -117,18 +117,14 @@ namespace MathHub.Web.Controllers
         }
 
         // GET /Problem/Detail/1
-        public virtual ActionResult Detail(int? id)
+        public virtual ActionResult Detail(int id)
         {
-            // ViewBag.Problem = _rproblemService.GetProblemById(id);
-            if (!id.HasValue)
-            {
-                return RedirectToAction("Index");
-            }
-            Problem targetProblem = _problemQueryService.GetProblemById((int)id);
+            Problem targetProblem = _problemQueryService.GetProblemById(id);
 
             // Map from Model to ViewModel
             DetailProblemVM problemViewModel =
                 Mapper.Map<Problem, DetailProblemVM>(targetProblem);
+         
             problemViewModel.CommentPostVm = new CommentPostVM();
             problemViewModel.CommentPostVm.MainPostId = problemViewModel.Id;
             problemViewModel.CommentPostVm.Type = "problem";
