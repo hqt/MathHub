@@ -13,7 +13,6 @@ using MathHub.Core.Config;
 using MathHub.Web.CustomAnnotation.ActionFilter;
 using WebMatrix.WebData;
 using MathHub.Core.Infrastructure;
-using System;
 
 namespace MathHub.Web.Controllers
 {
@@ -76,6 +75,7 @@ namespace MathHub.Web.Controllers
 
 
         [Authorize]
+        [HttpGet]
         // GET /Problem/Create
         public virtual ActionResult Create()
         {
@@ -87,28 +87,32 @@ namespace MathHub.Web.Controllers
         [HttpPost]
         public virtual ActionResult Create(CreateProblemVM problemVM)
         {
-            if (!_authenticationService.IsLogin())
+            if (ModelState.IsValid)
             {
-                // not login yet. return error
-            }
-
-            // create new problem
-            Problem p = new Problem();
-            p.UserId = _authenticationService.GetUserId();
-            p.Title = problemVM.Title;
-            p.Content = problemVM.Content;
-            p.DateCreated = DateTime.Now;
-            p.DateModified = DateTime.Now;
-
-            bool res = _problemCommandService.AddProblem(p);
-            if (!res)
-            {
-                // by some reason. cannot create problem
-                return null;
+                // create new problem
+                Problem p = new Problem();
+                p.UserId = _authenticationService.GetUserId();
+                p.Title = problemVM.Title;
+                p.Content = problemVM.Content;
+                p.DateCreated = DateTime.Now;
+                p.DateModified = DateTime.Now;
+                bool res = _problemCommandService.AddProblem(p);
+                if (!res)
+                {
+                    // by some reason. cannot create problem
+                    ModelState.AddModelError("create_problem_exception", "This problem cannot be created. Try again later");
+                    return View(problemVM);
+                }
+                else
+                {
+                    return Detail(p.Id);
+                }
             }
             else
             {
-                return Detail(p.Id);
+                // if not ModelState valid
+                ModelState.AddModelError("model_state_invalid", "Current State is Invalid");
+                return View(problemVM);
             }
         }
 
