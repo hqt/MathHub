@@ -4,7 +4,7 @@
     Layout = "~/Views/Problem/Layouts/_ProblemCreateLayout.cshtml";
 }
 
-@using (Html.BeginForm("Create", "Problem", FormMethod.Post)) 
+@using (Html.BeginForm(MVC.Problem.Create(@Model), FormMethod.Post)) 
 { 
         @* Title *@
         @Html.LabelFor(m => m.Title) <br />
