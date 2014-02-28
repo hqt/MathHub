@@ -244,13 +244,16 @@
     <Compile Include="Models\CommonVM\UserInfoVM.cs" />
     <Compile Include="Models\ProblemVM\AnswerItemVM.cs" />
     <Compile Include="Models\ProblemVM\AnswerListVM.cs" />
+    <Compile Include="Models\ProblemVM\AnswerPostVM.cs" />
     <Compile Include="Models\ProblemVM\AskProblemVM.cs" />
     <Compile Include="Models\ProblemVM\CommentItemVM.cs" />
     <Compile Include="Models\ProblemVM\CommentListVM.cs" />
+    <Compile Include="Models\ProblemVM\CommentPostVM.cs" />
     <Compile Include="Models\ProblemVM\CreateProblemVM.cs" />
     <Compile Include="Models\ProblemVM\DetailProblemVM.cs" />
     <Compile Include="Models\ProblemVM\HintItemVM.cs" />
     <Compile Include="Models\ProblemVM\HintListVM.cs" />
+    <Compile Include="Models\ProblemVM\HintPostVM.cs" />
     <Compile Include="Models\ProblemVM\PreviewProblemVM.cs" />
     <Compile Include="ProblemController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
@@ -306,6 +309,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\MathHubScript.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\_references.js" />
     <None Include="T4MVC.tt.settings.xml" />
@@ -356,6 +360,9 @@
     <Content Include="Views\CommonWidget\_SameAuthorWidget.cshtml" />
     <Content Include="Views\CommonWidget\_RelatedBlogWidget.cshtml" />
     <Content Include="Views\CommonWidget\_YourActivityWidget.cshtml" />
+    <Content Include="Views\Problem\Partials\_AnswerPostForm.cshtml" />
+    <Content Include="Views\Problem\Partials\_CommentPostForm.cshtml" />
+    <Content Include="Views\Problem\Partials\_HintPostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
