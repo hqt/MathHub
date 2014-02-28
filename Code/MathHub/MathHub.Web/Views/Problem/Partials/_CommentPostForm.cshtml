@@ -1,6 +1,6 @@
 ﻿@model MathHub.Web.Models.ProblemVM.CommentPostVM
 
-    @using (Ajax.BeginForm("AddComment", "Problem", FormMethod.Post, null, 
+    @using (Html.BeginForm("AddComment", "Problem", FormMethod.Post, 
                             new { style = "display:none", id = "commentPostForm" }))
     {
         @Html.LabelFor(m => m.Content)
@@ -9,5 +9,5 @@
 
         @Html.HiddenFor(m => m.MainPostId)
         @Html.HiddenFor(m => m.Type)
-        <input type="submit" name="addComment" value="Send"/>
+        <input type="button" name="addComment" onclick="postComment('commentPostForm','problemComments', @Model.MainPostId, -1)" value="Send"/>
     }

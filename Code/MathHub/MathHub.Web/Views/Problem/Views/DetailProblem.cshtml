@@ -23,11 +23,12 @@
     <li>VoteDownNum: @Model.VoteDownNum </li>
     <li>AnswerNum: @Model.AnswerNum </li>
     <li>HintNum: @Model.HintNum </li>
+    <li>Comment num: @Model.CommentNum</li>
 </ul>
 
 <h3>Comments</h3>
 <div id="problemComments"></div>
-
+<div id="test"></div>
 <script type="text/javascript">
     $(document).ready(function () {
         getCommentAjax("problemComments", @Model.Id, 0);
@@ -44,7 +45,7 @@
 
 @Html.Partial("Partials/_CommentPostForm", Model.CommentPostVm)
 
-<button onclick="getCommentAjax('problemComments',@Model.Id)">View more comments</button>
+<button onclick="getCommentAjax('problemComments',@Model.Id, -1)">View more comments</button>
 
 
 <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
