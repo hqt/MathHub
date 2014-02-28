@@ -20,9 +20,9 @@ function getAnswerAjax(postId, offset) {
 }
 
 function postComment(formId, elementId, postId, offset) {
-    var postData = jQuery("#commentform").serializeArray();
-    var formURL = "Problem/AddComment";
-    jQuery.ajax(
+    var postData = jQuery("#commentPostForm").serializeArray();
+    var formURL = "http://localhost:8102/Problem/AddComment";
+    $.ajax(
         {
             url: formURL,
             type: "POST",
