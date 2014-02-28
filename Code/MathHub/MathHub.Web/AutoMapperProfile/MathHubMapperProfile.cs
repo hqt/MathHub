@@ -33,14 +33,19 @@ namespace MathHub.Web.AutoMapperProfile
             
             // Problem
             Mapper.CreateMap<Problem, PreviewProblemVM>();
+
             Mapper.CreateMap<Problem, DetailProblemVM>()
-                .ForMember(p => p.VoteUpNum,
+                .ForMember(p => p.PostVote,
                     m => m.MapFrom(
-                    s => ((IProblemQueryService)null).GetPostVoteUp(s.Id)
+                    s => ((IProblemQueryService)null).GetPostVote(s.Id)
                 ))
-                .ForMember(p => p.VoteDownNum,
+                .ForMember(p => p.PostSocial,
                     m => m.MapFrom(
-                    s => ((IProblemQueryService)null).GetPostVoteDown(s.Id)
+                    s => ((IProblemQueryService)null).GetPostSocialReport(s.Id)
+                ))
+                .ForMember(p => p.PostReply,
+                    m => m.MapFrom(
+                    s => ((IProblemQueryService)null).GetPostReplyReport(s.Id)
                 ));
 
             // Reply
