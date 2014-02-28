@@ -13,7 +13,6 @@ namespace MathHub.Core.Interfaces.MainPosts
     /// </summary>
     public interface IMainPostQueryService
     {
-        
         /// <summary>
         /// Tag
         /// </summary>
