@@ -7,11 +7,24 @@ using AutoMapper;
 
 namespace MathHub.Framework.Infrastructure.AutoMapper
 {
-    public class TupleMapperResolver : ValueResolver<Tuple<int,int,int>, Tuple<int,int,int>>  
+    public static class TupleMapperResolver 
     {
-        protected override Tuple<int, int, int> ResolveCore(Tuple<int, int, int> source)
+        public class TripleTuple : ValueResolver<Tuple<int, int, int>, Tuple<int, int, int>>
         {
-            return new Tuple<int, int, int>(source.Item1, source.Item2, source.Item3);
+            protected override Tuple<int, int, int> ResolveCore(Tuple<int, int, int> source)
+            {
+                return new Tuple<int, int, int>(source.Item1, source.Item2, source.Item3);
+            }
         }
+
+        public class DoubleTuple : ValueResolver<Tuple<int, int>, Tuple<int, int>>
+        {
+            protected override Tuple<int, int> ResolveCore(Tuple<int, int> source)
+            {
+                return new Tuple<int, int>(source.Item1, source.Item2);
+            }
+        }
+
+
     }
 }
