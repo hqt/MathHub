@@ -36,15 +36,15 @@ namespace MathHub.Web.AutoMapperProfile
             // Problem
             Mapper.CreateMap<Problem, PreviewProblemVM>();
 
-            Mapper.CreateMap<Problem, DetailProblemVM>()
-                .ForMember(
-                    p => p.PostVote,
-                    m => m
-                        //.MapFrom(s => ((IProblemQueryService)null).GetPostVote(s.Id))
-                        .ResolveUsing<TupleMapperResolver.DoubleTuple>()
-                        //.FromMember(s => new Tuple<int, int>(10, 10))
-                        .FromMember(s => ((IProblemQueryService)null).GetPostVote(s.Id))
-                );
+            //Mapper.CreateMap<Problem, DetailProblemVM>()
+            //    .ForMember(
+            //        p => p.PostVote,
+            //        m => m
+            //            //.MapFrom(s => ((IProblemQueryService)null).GetPostVote(s.Id))
+            //            .ResolveUsing<TupleMapperResolver.DoubleTuple>()
+            //            //.FromMember(s => new Tuple<int, int>(10, 10))
+            //            .FromMember(s => ((IProblemQueryService)null).GetPostVote(s.Id))
+            //    );
                 //.ForMember(p => p.PostSocial,
                 //    m => m.MapFrom(
                 //    s => ((IProblemQueryService)null).GetPostSocialReport(s.Id)

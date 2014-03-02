@@ -18,7 +18,7 @@
         @* Content *@
         @Html.LabelFor(m  => m.Content) <br />
         @Html.TextAreaFor(m => m.Content,
-                        new {id = "wwd-input", cols="92", rows="15"})
+                        new {@class="ckeditor", id = "ckeditor1", cols="92", rows="15"})
         @Html.ValidationMessageFor(m => m.Content) <br />
 
         @* Tag *@
