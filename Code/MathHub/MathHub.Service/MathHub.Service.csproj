@@ -55,6 +55,7 @@
     <Compile Include="Comments\CommentQueryService.cs" />
     <Compile Include="Discussions\DiscussionCommandService.cs" />
     <Compile Include="Discussions\DiscussionQueryService.cs" />
+    <Compile Include="MainPosts\MainPostCommandService.cs" />
     <Compile Include="MainPosts\MainPostQueryService.cs" />
     <Compile Include="Problems\ProblemCommandService.cs" />
     <Compile Include="Problems\ProblemQueryService.cs" />

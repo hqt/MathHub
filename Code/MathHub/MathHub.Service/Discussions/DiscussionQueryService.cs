@@ -73,6 +73,7 @@ namespace MathHub.Service.Discussions
         } 
         #endregion
 
+        #region Tag
         public List<Tag> GetAllPostTag(int postId)
         {
             return _mainPostQuerySerivce.GetAllPostTag(postId);
@@ -81,18 +82,24 @@ namespace MathHub.Service.Discussions
         public List<string> GetAllPostTagName(int postId)
         {
             return _mainPostQuerySerivce.GetAllPostTagName(postId);
-        }
+        } 
+        #endregion
 
+        #region Comment
         public IEnumerable<Comment> GetAllComments(int postId, int offset, int limit)
         {
             return _mainPostQuerySerivce.GetAllComments(postId, offset, limit);
-        }
+        } 
+        #endregion
 
+        #region Reply
         public IEnumerable<Reply> GetAllReplies(int postId, ReplyEnum type, int offset, int limit)
         {
             return _mainPostQuerySerivce.GetAllReplies(postId, ReplyEnum.DEFAULT, offset, limit);
-        }
+        } 
+        #endregion
 
+        #region Statistic
         public Tuple<int, int, int> GetPostSocialReport(int postId)
         {
             return _mainPostQuerySerivce.GetPostSocialReport(postId);
@@ -101,6 +108,7 @@ namespace MathHub.Service.Discussions
         public Tuple<int, int, int> GetPostReplyReport(int postId)
         {
             return _mainPostQuerySerivce.GetPostReplyReport(postId);
-        }
+        } 
+        #endregion
     }
 }

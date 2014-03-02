@@ -2,8 +2,11 @@
 	Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<script type="text/javascript" src ="/Scripts/ckeditor/ckeditor.js">
+@* import ckeditor javascript library *@
+<script type="text/javascript" src ="/Scripts/ckeditor/ckeditor.js"></script>
 
+@* config ckeditor*@
+<script type="text/javascript">
 	(function() {
 	'use strict';
 
@@ -48,7 +51,6 @@
 		var preOutput = pre.getOuterHtml().replace( /(?=<\/)/, output );
 		CKEDITOR.dom.element.createFromHtml( preOutput ).replace( pre );
 	} );
-
 	CKEDITOR.replace( 'editorCurrent', { height: 100 } );
 	CKEDITOR.replace( 'editorFull', {
 		// Reset toolbar settings, so full toolbar will be generated automatically.
@@ -128,8 +130,7 @@
 		return hash;
 	}
 
-})();
-
+})();
 </script>
 
 
