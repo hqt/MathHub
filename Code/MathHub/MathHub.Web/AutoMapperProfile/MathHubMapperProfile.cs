@@ -3,6 +3,8 @@ using AutoMapper;
 using MathHub.Core.Interfaces.Problems;
 using MathHub.Core.Interfaces.Users;
 using MathHub.Entity.Entity;
+using MathHub.Framework.Infrastructure.Repository;
+using MathHub.Service.Problems;
 using MathHub.Web.Models.CommonVM;
 using MathHub.Web.Models.ProblemVM;
 using Profile = AutoMapper.Profile;
@@ -18,7 +20,7 @@ namespace MathHub.Web.AutoMapperProfile
         /// </summary>
         protected override void Configure()
         {
-            
+           
             // Comment
             Mapper.CreateMap<Comment, CommentItemVM>();
 
@@ -44,15 +46,27 @@ namespace MathHub.Web.AutoMapperProfile
                         .ResolveUsing<TupleMapperResolver.DoubleTuple>()
                         //.FromMember(s => new Tuple<int, int>(10, 10))
                         .FromMember(s => ((IProblemQueryService)null).GetPostVote(s.Id))
+                )
+                .ForMember(p => p.PostSocial,
+                    //m => m.MapFrom(
+                    //s => ((IProblemQueryService)null).GetPostSocialReport(s.Id)
+                    m => m
+                        //.MapFrom(s => ((IProblemQueryService)null).GetPostVote(s.Id))
+                        .ResolveUsing<TupleMapperResolver.TripleTuple>()
+                        //.FromMember(s => new Tuple<int, int, int>(10, 10, 10))
+                        .FromMember(s => ((IProblemQueryService)null).GetPostSocialReport(s.Id))
+                )
+                .ForMember(p => p.PostReply,
+                    //m => m.MapFrom(
+                    //s => ((IProblemQueryService)null).GetPostReplyReport(s.Id)
+                        //m => m.MapFrom(
+                    //s => ((IProblemQueryService)null).GetPostSocialReport(s.Id)
+                    m => m
+                        //.MapFrom(s => ((IProblemQueryService)null).GetPostVote(s.Id))
+                        .ResolveUsing<TupleMapperResolver.TripleTuple>()
+                        //.FromMember(s => new Tuple<int, int, int>(10, 10, 10))
+                       .FromMember(s => ((IProblemQueryService)null).GetPostReplyReport(s.Id))
                 );
-                //.ForMember(p => p.PostSocial,
-                //    m => m.MapFrom(
-                //    s => ((IProblemQueryService)null).GetPostSocialReport(s.Id)
-                //))
-                //.ForMember(p => p.PostReply,
-                //    m => m.MapFrom(
-                //    s => ((IProblemQueryService)null).GetPostReplyReport(s.Id)
-                //)
 
             // Reply
             Mapper.CreateMap<Reply, AnswerItemVM>();

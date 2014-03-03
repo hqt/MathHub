@@ -30,8 +30,11 @@ namespace MathHub.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //
+            //Intialize Account Database
             WebSecurity.InitializeDatabaseConnection("DefaultConnection", "Users", "Id", "Username", autoCreateTables: true);
+
+            // intialize Interface and Concreted Class
+            StructureMapConfiguration.Configure();
 
             // Config AutoMapper by calling own initialize function
             var profileType = typeof(Profile);
@@ -42,6 +45,8 @@ namespace MathHub.Web
                 .Select(Activator.CreateInstance)
                 .Cast<Profile>();
 
+            
+
             // Initialize AutoMapper with each instance of the profiles found.
             Mapper.Initialize(a => profiles.ForEach(a.AddProfile));
             
@@ -49,8 +54,8 @@ namespace MathHub.Web
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new CustomRazorEngine());
 
-            // intialize Interface and Concreted Class
-            StructureMapConfiguration.Configure();
+            
+            
         }
 
         protected void Application_StartRequest()

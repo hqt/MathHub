@@ -71,7 +71,6 @@
     <Compile Include="Infrastructure\AutoMapper\AutoMapperConfiguration.cs" />
     <Compile Include="Infrastructure\AutoMapper\BaseFormatter.cs" />
     <Compile Include="Infrastructure\AutoMapper\BaseResolver.cs" />
-    <Compile Include="Infrastructure\AutoMapper\MathHubMapperProfile.cs" />
     <Compile Include="Infrastructure\AutoMapper\TupleMapperResolver.cs" />
     <Compile Include="Infrastructure\Data\DataReaderExtension.cs" />
     <Compile Include="Infrastructure\Logger.cs" />

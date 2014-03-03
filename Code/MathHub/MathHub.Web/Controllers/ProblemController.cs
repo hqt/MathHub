@@ -101,7 +101,7 @@ namespace MathHub.Web.Controllers
                 {
                     // by some reason. cannot create problem
                     ModelState.AddModelError("create_problem_exception", "This problem cannot be created. Try again later");
-                    return View(problemVM);
+                    return View("Views/CreateProblem",problemVM);
                 }
                 else
                 {
@@ -112,7 +112,7 @@ namespace MathHub.Web.Controllers
             {
                 // if not ModelState valid
                 ModelState.AddModelError("model_state_invalid", "Current State is Invalid");
-                return View(problemVM);
+                return View("Views/CreateProblem", problemVM);
             }
         }
 
