@@ -8,6 +8,7 @@ using MathHub.Web.Models.ProblemVM;
 using Profile = AutoMapper.Profile;
 using MathHub.Framework.Infrastructure.AutoMapper;
 using System;
+using StructureMap;
 
 namespace MathHub.Web.AutoMapperProfile
 {
@@ -21,39 +22,36 @@ namespace MathHub.Web.AutoMapperProfile
             
             // Comment
             Mapper.CreateMap<Comment, CommentItemVM>();
+            
+            // Problem
+            Mapper.CreateMap<Problem, PreviewProblemVM>();
+
+            Mapper.CreateMap<Problem, DetailProblemVM>()
+                .ForMember(
+                    p => p.PostVote,
+                    m => m
+                        .MapFrom(s => (ObjectFactory.GetInstance<IProblemQueryService>()).GetPostVote(s.Id))
+                )
+                .ForMember(p => p.PostSocial,
+                    m => m.MapFrom(
+                    s => (ObjectFactory.GetInstance<IProblemQueryService>()).GetPostSocialReport(s.Id)
+                ))
+                .ForMember(p => p.PostReply,
+                    m => m.MapFrom(
+                    s => (ObjectFactory.GetInstance<IProblemQueryService>()).GetPostReplyReport(s.Id)
+                ));
 
             // Profile
             Mapper.CreateMap<User, ProfileWidgetVM>()
                 .ForMember(p => p.Medal,
                     m => m.MapFrom(
-                    s => ((IUserQueryService)null).GetMedals(s.Id)
+                    s => (ObjectFactory.GetInstance<IUserQueryService>()).GetMedals(s.Id)
                 ))
                 .ForMember(p => p.Avatar,
                     m => m.MapFrom(
-                    s => ((IUserQueryService)null).GetLoginUserAvatar()
+                    s => (ObjectFactory.GetInstance<IUserQueryService>()).GetLoginUserAvatar()
                 ));
             
-            // Problem
-            Mapper.CreateMap<Problem, PreviewProblemVM>();
-
-            //Mapper.CreateMap<Problem, DetailProblemVM>()
-            //    .ForMember(
-            //        p => p.PostVote,
-            //        m => m
-            //            //.MapFrom(s => ((IProblemQueryService)null).GetPostVote(s.Id))
-            //            .ResolveUsing<TupleMapperResolver.DoubleTuple>()
-            //            //.FromMember(s => new Tuple<int, int>(10, 10))
-            //            .FromMember(s => ((IProblemQueryService)null).GetPostVote(s.Id))
-            //    );
-                //.ForMember(p => p.PostSocial,
-                //    m => m.MapFrom(
-                //    s => ((IProblemQueryService)null).GetPostSocialReport(s.Id)
-                //))
-                //.ForMember(p => p.PostReply,
-                //    m => m.MapFrom(
-                //    s => ((IProblemQueryService)null).GetPostReplyReport(s.Id)
-                //)
-
             // Reply
             Mapper.CreateMap<Reply, AnswerItemVM>();
             Mapper.CreateMap<Reply, HintItemVM>();
