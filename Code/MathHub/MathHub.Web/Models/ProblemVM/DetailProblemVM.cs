@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System;
 using MathHub.Entity.Entity;
 using MathHub.Web.Models.CommonVM;
 
@@ -13,16 +14,13 @@ namespace MathHub.Web.Models.ProblemVM
         public int UserId { get; set; }
         public string Title { get; set; }
 
-        public int FavoriteNum { get; set; }
-        public int ReportNum { get; set; }
-        public int ShareNum { get; set; }
-        public int VoteUpNum { get; set; }
-        public int VoteDownNum { get; set; }
-        public int AnswerNum { get; set; }
-        public int HintNum { get; set; }
-        public int CommentNum { get; set; }
+        public Tuple<int, int> PostVote { get; set; }
+        public int PostVoteUp { get; set; }
+        public Tuple<int, int, int> PostSocial { get; set; }
+        public Tuple<int, int, int> PostReply { get; set; }       
 
         //public CommentListVM Comments { get; set; }
+        public CommentPostVM CommentPostVm { get; set; }
         public UserInfoVM UserInfo { get; set; }
 
 

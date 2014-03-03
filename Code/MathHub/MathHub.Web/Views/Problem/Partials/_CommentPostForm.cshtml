@@ -1,9 +1,13 @@
 ﻿@model MathHub.Web.Models.ProblemVM.CommentPostVM
 
-    using (@Html.BeginForm("Comment", "Problem", FormMethod.Post, 
-                            new { script = "display:none", id = "commentPostForm" }))
+    @using (Html.BeginForm("AddComment", "Problem", FormMethod.Post, 
+                            new { style = "display:none", id = "commentPostForm" }))
     {
-        @Html.LabelFor(m => m.NewComment)
-        @Html.TextAreaFor(m => m.NewComment)
-        <input type="submit" name="addComment" value="Send"/>
+        @Html.LabelFor(m => m.Content)
+        @Html.TextAreaFor(m => m.Content)
+        @Html.ValidationMessageFor(m => m.Content)
+
+        @Html.HiddenFor(m => m.MainPostId)
+        @Html.HiddenFor(m => m.Type)
+        <input type="button" name="addComment" onclick="postComment('commentPostForm','problemComments', @Model.MainPostId, -1)" value="Send"/>
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -10,6 +11,7 @@ using AutoMapper;
 using MathHub.Web.Models.ProblemVM;
 using MathHub.Core.Config;
 using MathHub.Web.CustomAnnotation.ActionFilter;
+using WebMatrix.WebData;
 using MathHub.Core.Infrastructure;
 
 namespace MathHub.Web.Controllers
@@ -73,6 +75,7 @@ namespace MathHub.Web.Controllers
 
 
         [Authorize]
+        [HttpGet]
         // GET /Problem/Create
         public virtual ActionResult Create()
         {
@@ -81,46 +84,51 @@ namespace MathHub.Web.Controllers
 
         // POST /Problem/Create
         [Authorize]
-        [HttpPost]
-        public virtual ActionResult Create(string title, string content, List<string> tags)
+        [HttpPost, ValidateInput(false)]
+        public virtual ActionResult Create(CreateProblemVM problemVM)
         {
-            if (!_authenticationService.IsLogin())
+            if (ModelState.IsValid)
             {
-                // not login yet. return error
-            }
-
-            // create new problem
-            Problem p = new Problem();
-            p.UserId = _authenticationService.GetUserId();
-            p.Title = title;
-            p.Content = content;
-
-            bool res = _problemCommandService.AddProblem(p);
-            if (!res)
-            {
-                // by some reason. cannot create problem
-                return null;
+                // create new problem
+                Problem p = new Problem();
+                p.UserId = _authenticationService.GetUserId();
+                p.Title = problemVM.Title;
+                p.Content = problemVM.Content;
+                p.DateCreated = DateTime.Now;
+                p.DateModified = DateTime.Now;
+                bool res = _problemCommandService.AddProblem(p);
+                if (!res)
+                {
+                    // by some reason. cannot create problem
+                    ModelState.AddModelError("create_problem_exception", "This problem cannot be created. Try again later");
+                    return View(problemVM);
+                }
+                else
+                {
+                    return Detail(p.Id);
+                }
             }
             else
             {
-                return Detail(p.Id);
+                // if not ModelState valid
+                ModelState.AddModelError("model_state_invalid", "Current State is Invalid");
+                return View(problemVM);
             }
         }
 
         // GET /Problem/Detail/1
-        public virtual ActionResult Detail(int? id)
+        public virtual ActionResult Detail(int id)
         {
-            // ViewBag.Problem = _rproblemService.GetProblemById(id);
-            if (!id.HasValue)
-            {
-                return RedirectToAction("Index");
-            }
-            Problem targetProblem = _problemQueryService.GetProblemById((int)id);           
+            Problem targetProblem = _problemQueryService.GetProblemById(id);
+            var tuple = _problemQueryService.GetPostVote(targetProblem.Id);
 
             // Map from Model to ViewModel
             DetailProblemVM problemViewModel =
                 Mapper.Map<Problem, DetailProblemVM>(targetProblem);
-
+         
+            problemViewModel.CommentPostVm = new CommentPostVM();
+            problemViewModel.CommentPostVm.MainPostId = problemViewModel.Id;
+            problemViewModel.CommentPostVm.Type = "problem";
 
             return View("Views/DetailProblem", problemViewModel);
         }
@@ -170,7 +178,7 @@ namespace MathHub.Web.Controllers
                 limit
                 );
 
-           // Map list models to list viewmodels with lambda expression 
+            // Map list models to list viewmodels with lambda expression 
             ICollection<CommentItemVM> hintItemVms = comments.Select(Mapper.Map<Comment, CommentItemVM>).ToList();
 
             CommentListVM commentListVm = new CommentListVM();
@@ -179,14 +187,33 @@ namespace MathHub.Web.Controllers
             return PartialView("Partials/_CommentList", commentListVm);
         }
 
-        [AjaxCallAF]
-        public bool AddComment(int postId, string comment, string type)
+        
+        [Authorize]
+        public bool AddComment(CommentPostVM commentPostVm)
         {
-            //if()
-            //_commentCommandService.AddCommentForPost()
+            if (ModelState.IsValid)
+            {
+                Comment comment = new Comment();
+                comment.UserId = WebSecurity.CurrentUserId;
+                comment.DateCreated = DateTime.Now;
+                comment.Content = commentPostVm.Content;
 
+                switch (commentPostVm.Type)
+                {
+                    case "problem":
+                        //comment.MainPostId = commentPostVm.MainPostId;
+                        return _commentCommandService.AddCommentForPost((int)commentPostVm.MainPostId, comment);
+
+                    case "Reply":
+                        //comment.ReplyId = commentPostVm.ReplyId;
+                        return _commentCommandService.AddCommentForReply((int)comment.ReplyId, comment);
+
+                    default:
+                        return false;
+                }
+
+            }
             return false;
         }
-
     }
 }

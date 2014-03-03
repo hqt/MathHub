@@ -6,6 +6,8 @@ using MathHub.Entity.Entity;
 using MathHub.Web.Models.CommonVM;
 using MathHub.Web.Models.ProblemVM;
 using Profile = AutoMapper.Profile;
+using MathHub.Framework.Infrastructure.AutoMapper;
+using System;
 
 namespace MathHub.Web.AutoMapperProfile
 {
@@ -33,15 +35,24 @@ namespace MathHub.Web.AutoMapperProfile
             
             // Problem
             Mapper.CreateMap<Problem, PreviewProblemVM>();
-            Mapper.CreateMap<Problem, DetailProblemVM>()
-                .ForMember(p => p.VoteUpNum,
-                    m => m.MapFrom(
-                    s => ((IProblemQueryService)null).GetPostVoteUp(s.Id)
-                ))
-                .ForMember(p => p.VoteDownNum,
-                    m => m.MapFrom(
-                    s => ((IProblemQueryService)null).GetPostVoteDown(s.Id)
-                ));
+
+            //Mapper.CreateMap<Problem, DetailProblemVM>()
+            //    .ForMember(
+            //        p => p.PostVote,
+            //        m => m
+            //            //.MapFrom(s => ((IProblemQueryService)null).GetPostVote(s.Id))
+            //            .ResolveUsing<TupleMapperResolver.DoubleTuple>()
+            //            //.FromMember(s => new Tuple<int, int>(10, 10))
+            //            .FromMember(s => ((IProblemQueryService)null).GetPostVote(s.Id))
+            //    );
+                //.ForMember(p => p.PostSocial,
+                //    m => m.MapFrom(
+                //    s => ((IProblemQueryService)null).GetPostSocialReport(s.Id)
+                //))
+                //.ForMember(p => p.PostReply,
+                //    m => m.MapFrom(
+                //    s => ((IProblemQueryService)null).GetPostReplyReport(s.Id)
+                //)
 
             // Reply
             Mapper.CreateMap<Reply, AnswerItemVM>();

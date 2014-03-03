@@ -1,7 +1,7 @@
-﻿function getCommentAjax(elementId ,postId, offset) {
+﻿function getCommentAjax(elementId, postId, offset) {
     var url = "/Problem/Comment/";
     $.post(url, { postId: postId, offset: offset }, function (data) {
-        $("#" + elementId).html($("#" + elementId).innerHTML + data);
+        $("#" + elementId).html($("#" + elementId).html() + data);
     });
 }
 
@@ -20,9 +20,9 @@ function getAnswerAjax(postId, offset) {
 }
 
 function postComment(formId, elementId, postId, offset) {
-    var postData = jQuery("#commentform").serializeArray();
-    var formURL = "Problem/AddComment";
-    jQuery.ajax(
+    var postData = jQuery("#commentPostForm").serializeArray();
+    var formURL = "http://localhost:8102/Problem/AddComment";
+    $.ajax(
         {
             url: formURL,
             type: "POST",

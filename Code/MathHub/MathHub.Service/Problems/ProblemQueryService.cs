@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using MathHub.Core.Interfaces.Users;
 using MathHub.Core.Infrastructure.Repository;
 using MathHub.Core.Config;
+using MathHub.Core.Interfaces.MainPosts;
 
 namespace MathHub.Service.Problems
 {
@@ -17,17 +18,19 @@ namespace MathHub.Service.Problems
         #region Constructor
         MathHubModelContainer ctx;
         IUserQueryService _userQueryService;
+        IMainPostQueryService _mainPostQueryService;
 
         public ProblemQueryService(
             IMathHubDbContext mathHubDbContext,
-            IUserQueryService userQueryService)
+            IUserQueryService userQueryService,
+            IMainPostQueryService mainPostQueryService)
         {
 
             ctx = mathHubDbContext.GetDbContext();
             this._userQueryService = userQueryService;
+            this._mainPostQueryService = mainPostQueryService;
         } 
         #endregion
-
 
         #region Problem
         public IEnumerable<Problem> GetNewestProblems(int offSet, int limit)
@@ -53,35 +56,29 @@ namespace MathHub.Service.Problems
         #region Vote
         public int GetPostVoteUp(int postId)
         {
-            return ctx.Votes.Where(t => t.Type == VoteEnum.UPVOTE).Count(t => t.Post.Id == postId);
+            return _mainPostQueryService.GetPostVoteUp(postId);
         }
 
         public int GetPostVoteDown(int postId)
         {
-            return ctx.Votes.Where(t => t.Type == VoteEnum.UPVOTE).Count(t => t.Post.Id == postId);
+            return _mainPostQueryService.GetPostVoteDown(postId);
         }
 
         public Tuple<int, int> GetPostVote(int postId)
         {
-            int voteUp = ctx.Votes.Where(t => t.Type == VoteEnum.UPVOTE).Count(t => t.Post.Id == postId);
-            int voteDown = ctx.Votes.Where(t => t.Type == VoteEnum.DOWNVOTE).Count(t => t.Post.Id == postId);
-            return new Tuple<int, int>(voteUp, voteDown);
+            return _mainPostQueryService.GetPostVote(postId);
         } 
         #endregion
 
         #region Tag
         public List<Tag> GetAllPostTag(int postId)
         {
-            return ctx.PostTags
-                .Where(t => t.MainPostId == postId)
-                .Select(t => t.Tag).ToList();
+            return _mainPostQueryService.GetAllPostTag(postId);
         }
 
         public List<string> GetAllPostTagName(int postId)
         {
-            return ctx.PostTags
-                .Where(t => t.MainPostId == postId)
-                .Select(t => t.Tag.Name).ToList();
+            return _mainPostQueryService.GetAllPostTagName(postId);
         } 
         #endregion
 
@@ -99,19 +96,7 @@ namespace MathHub.Service.Problems
         #region Reply
         public IEnumerable<Reply> GetAllReplies(int postId, ReplyEnum type, int offset, int limit)
         {
-            if (offset == 0 && limit == 0)
-            {
-                return ctx.Posts.OfType<Reply>().Where(t => t.MainPostId == postId && t.Type == type);
-            }
-            else
-            {
-                return ctx.Posts
-                    .OfType<Reply>()
-                    .Where(t => t.MainPostId == postId && t.Type == type)
-                    .OrderBy(t => t.DateCreated)
-                    .Skip(offset)
-                    .Take(limit);
-            }
+            return _mainPostQueryService.GetAllReplies(postId, type, offset, limit);
         } 
         #endregion
 
@@ -155,6 +140,5 @@ namespace MathHub.Service.Problems
             return new Tuple<int, int, int>(comments, answers, hints);
         } 
         #endregion
-
     }
 }

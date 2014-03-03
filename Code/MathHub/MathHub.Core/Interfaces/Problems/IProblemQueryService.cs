@@ -16,10 +16,5 @@ namespace MathHub.Core.Interfaces.Problems
         IEnumerable<Problem> GetNewestProblems(int offSet, int limit);
         Problem GetProblemById(int id);
         IEnumerable<Problem> GetProblemsByUserId(int userId, int limit);
-
-        /// <summary>
-        /// Blog
-        /// </summary>
-        IEnumerable<Blog> GetRelatedBlogsByProblemId(int problemId, int limit);
     }
 }

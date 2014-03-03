@@ -13,46 +13,102 @@ namespace MathHub.Service.Discussions
 {
     public class DiscussionQueryService : IDiscussionQueryService
     {
+        #region Constructor
         MathHubModelContainer ctx;
-        IRepository<Discussion> discussionRepository;
+        IRepository<Discussion> _discussionRepository;
+        IMainPostQueryService _mainPostQuerySerivce;
 
         public DiscussionQueryService(
             IRepository<Discussion> discussionRepository,
-            IMathHubDbContext context)
+            IMathHubDbContext context,
+            IMainPostQueryService mainPostQuerySerivce)
         {
             this.ctx = context.GetDbContext();
-            this.discussionRepository = discussionRepository;
-        }
+            this._discussionRepository = discussionRepository;
+            this._mainPostQuerySerivce = mainPostQuerySerivce;
+        } 
+        #endregion
 
+        #region Tag
         public List<Tag> GetAllMainPostTag(int postId)
         {
-            throw new NotImplementedException();
-        }
+            return _mainPostQuerySerivce.GetAllPostTag(postId);
+        } 
+        #endregion
 
-        public List<string> GetAllMainPostTagName(int postId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public MainPost GetMainPostDetail(int postId)
-        {
-            throw new NotImplementedException();
-        }
-
-
+        #region Vote
         public int GetPostVoteUp(int postId)
         {
-            throw new NotImplementedException();
+            return _mainPostQuerySerivce.GetPostVoteUp(postId);
         }
 
         public int GetPostVoteDown(int postId)
         {
-            throw new NotImplementedException();
+            return _mainPostQuerySerivce.GetPostVoteDown(postId);
         }
 
         public Tuple<int, int> GetPostVote(int postId)
         {
-            throw new NotImplementedException();
+            return _mainPostQuerySerivce.GetPostVote(postId);
+        } 
+        #endregion
+
+        #region Discussion
+        public IEnumerable<Discussion> GetNewestDiscussions(int offSet, int limit)
+        {
+            return ctx.Posts.OfType<Discussion>()
+               .OrderByDescending(b => b.DateCreated)
+               .Skip(offSet)
+               .Take(limit);
         }
+
+        public Discussion GetDiscussionById(int id)
+        {
+            return ctx.Posts.OfType<Discussion>().FirstOrDefault(t => t.Id == id);
+        }
+
+        public IEnumerable<Discussion> GetDiscussionssByUserId(int userId, int limit)
+        {
+            return ctx.Posts.OfType<Discussion>().Where(p => p.UserId == userId).Take(limit);
+        } 
+        #endregion
+
+        #region Tag
+        public List<Tag> GetAllPostTag(int postId)
+        {
+            return _mainPostQuerySerivce.GetAllPostTag(postId);
+        }
+
+        public List<string> GetAllPostTagName(int postId)
+        {
+            return _mainPostQuerySerivce.GetAllPostTagName(postId);
+        } 
+        #endregion
+
+        #region Comment
+        public IEnumerable<Comment> GetAllComments(int postId, int offset, int limit)
+        {
+            return _mainPostQuerySerivce.GetAllComments(postId, offset, limit);
+        } 
+        #endregion
+
+        #region Reply
+        public IEnumerable<Reply> GetAllReplies(int postId, ReplyEnum type, int offset, int limit)
+        {
+            return _mainPostQuerySerivce.GetAllReplies(postId, ReplyEnum.DEFAULT, offset, limit);
+        } 
+        #endregion
+
+        #region Statistic
+        public Tuple<int, int, int> GetPostSocialReport(int postId)
+        {
+            return _mainPostQuerySerivce.GetPostSocialReport(postId);
+        }
+
+        public Tuple<int, int, int> GetPostReplyReport(int postId)
+        {
+            return _mainPostQuerySerivce.GetPostReplyReport(postId);
+        } 
+        #endregion
     }
 }

@@ -1,70 +1,82 @@
 ﻿@model MathHub.Web.Models.ProblemVM.DetailProblemVM
 @{
-	ViewBag.Title = "DetailProblem";
-	Layout = "~/Views/Problem/Layouts/_ProblemDetailLayout.cshtml";
+    ViewBag.Title = "DetailProblem";
+    Layout = "~/Views/Problem/Layouts/_ProblemDetailLayout.cshtml";
 }
 
 <h2>Detail Problem:</h2>
 
 <ul>
 
-	<li>Id: @Model.Id </li>
+    <li>Id: @Model.Id </li>
 
-	<li>Content: @Model.Content </li>
-	<li>DateCreated: @Model.DateCreated </li>
-	<li>DateModified: @Model.DateModified </li>
-	<li>UserId: @Model.UserId </li>
-	<li>Title: @Model.Title </li>
+    <li>Content: @Model.Content </li>
+    <li>DateCreated: @Model.DateCreated </li>
+    <li>DateModified: @Model.DateModified </li>
+    <li>UserId: @Model.UserId </li>
+    <li>Title: @Model.Title </li>
 
-	<li>FavoriteNum: @Model.FavoriteNum </li>
-	<li>ReportNum: @Model.FavoriteNum </li>
-	<li>ShareNum: @Model.ShareNum </li>
-	<li>VoteUpNum: @Model.VoteUpNum</li>
-	<li>VoteDownNum: @Model.VoteDownNum </li>
-	<li>AnswerNum: @Model.AnswerNum </li>
-	<li>HintNum: @Model.HintNum </li>
+    @*<li>FavoriteNum: @Model.PostSocial.Item1 </li>
+    <li>ReportNum: @Model.PostSocial.Item2 </li>
+    <li>ShareNum: @Model.PostSocial.Item3 </li>
+     <li>AnswerNum: @Model.PostReply.Item2 </li>
+    <li>HintNum: @Model.PostReply.Item3 </li>
+    <li>Comment num: @Model.PostReply.Item1</li>*@
+
+    <li>VoteUpNum: @Model.PostVote.Item1</li>
+    <li>VoteDownNum: @Model.PostVote.Item2 </li>
+    
+   
 </ul>
 
-@*<h3>Comments</h3>
+<h3>Comments</h3>
 <div id="problemComments"></div>
-@Html.Action("Comment","Problem", new {postId = Model.Id, offset = 0 })
-@if(Model.CommentNum > 5)
+<div id="test"></div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        getCommentAjax("problemComments", @Model.Id, 0);
+    });
+</script>
+
+@if(Model.PostReply.Item1 > 5)
 {
-	<button onclick="showCommentOnClick('problemComments', @Model.Id, 'commentPostForm')">Add / Show @Model.CommentNum more comments</button>
+	<button onclick="showCommentOnClick('problemComments', @Model.Id, 'commentPostForm')">Add / Show @Model.PostReply.Item1 more comments</button>
 }else
 {
 	<button onclick="showElementById('commentPostForm')">Add comments</button>
 }
 
-@Html.Partial("Partials/_CommentPostForm")
+@Html.Partial("Partials/_CommentPostForm", Model.CommentPostVm)
+
+@*<button onclick="getCommentAjax('problemComments',@Model.Id, -1)">View more comments</button>*@
+
 
 <div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
 	<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
-		<li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" 
-			role="tab" tabindex="0" aria-controls="tabs-1" 
-			aria-labelledby="ui-id-2" aria-selected="true">
-			<label onclick="getAnswerAjax(@Model.Id)" class="ui-tabs-anchor" 
-				role="presentation" tabindex="-1" id="ui-id-2">@Model.AnswerNum Answers</label>
-		</li>
-		<li class="ui-state-default ui-corner-top" 
-			role="tab" tabindex="-1" aria-controls="tabs-2" 
-			aria-labelledby="ui-id-3" aria-selected="false">
-			<label onclick="getHintAjax(@Model.Id)" class="ui-tabs-anchor" 
-				role="presentation" tabindex="-1" id="ui-id-3">@Model.HintNum Hints</label>
-		</li>		
+        <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" 
+            role="tab" tabindex="0" aria-controls="tabs-1" 
+            aria-labelledby="ui-id-2" aria-selected="true">
+            <label onclick="getAnswerAjax(@Model.Id)" class="ui-tabs-anchor" 
+                role="presentation" tabindex="-1" id="ui-id-2">@Model.PostReply.Item2 Answers</label>
+        </li>
+        <li class="ui-state-default ui-corner-top" 
+            role="tab" tabindex="-1" aria-controls="tabs-2" 
+            aria-labelledby="ui-id-3" aria-selected="false">
+            <label onclick="getHintAjax(@Model.Id)" class="ui-tabs-anchor" 
+                role="presentation" tabindex="-1" id="ui-id-3">@Model.PostReply.Item3 Hints</label>
+        </li>		
 	</ul>
-	<div id="tabs-1" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="true" aria-hidden="false" style="display: block;">
-		<div id="problemAnswers"></div>
-	</div>
-	<div id="tabs-2" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
-		<div id="problemHints"></div>
-	</div>	
+    <div id="tabs-1" aria-labelledby="ui-id-2" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="true" aria-hidden="false" style="display: block;">
+        <div id="problemAnswers"></div>
+    </div>
+    <div id="tabs-2" aria-labelledby="ui-id-3" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-expanded="false" aria-hidden="true" style="display: none;">
+        <div id="problemHints"></div>
+    </div>	
 </div>
-
 
 @section RightPanel
 {
-	@Html.Action("PostProblemWidget", new { controller = "CommonWidget" })
-	<hr />
-Widgets here. You decide.
-}*@
+    @Html.Action("PostProblemWidget", new {controller = "CommonWidget"})
+    <hr />
+    Widgets here. You decide.
+}

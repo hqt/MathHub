@@ -14,7 +14,7 @@ namespace MathHub.Core.Interfaces.MainPosts
         /// </summary>
         bool AddComment(int postId, Comment comment);
         bool AddReply(int postId, Reply reply);
-        bool AddTag(int problemId, string name);
+        bool AddTag(int postId, string name);
         bool AddListTag(int problemId, List<String> name);
 
         /// <summary>

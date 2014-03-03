@@ -1,26 +1,33 @@
-﻿@{
+﻿@model MathHub.Web.Models.ProblemVM.CreateProblemVM
+@{
     ViewBag.Title = "CreateProblem";
     Layout = "~/Views/Problem/Layouts/_ProblemCreateLayout.cshtml";
 }
 
-<form id="post-form" class="post-form" action="/problem/create" method="post">
+@using (Html.BeginForm(MVC.Problem.Create(@Model), FormMethod.Post)) 
+{ 
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
 
-    Title
-    <input  id="title" name="title" type="text" 
-            maxlength="300" tabindex="100" data-min-length="15" data-max-length="150" 
-            autocomplete="off" style="opacity: 0.4; z-index: 1; position: relative;" /> <br />
+        @* Title *@
+        @Html.LabelFor(m => m.Title) <br />
+        @Html.TextBoxFor(m => m.Title, 
+                    new { id = "title", style="opacity: 0.4; z-index: 1; position: relative;" }) 
+        @Html.ValidationMessageFor(m => m.Title) <br />
 
-    Question Content: <br />
-    <textarea   id="wmd-input" class="wmd-input processed" name="content" 
-                cols="92" rows="15" tabindex="101" data-min-length="">
-    </textarea> <br />
+        @* Content *@
+        @Html.LabelFor(m  => m.Content) <br />
+        @Html.TextAreaFor(m => m.Content,
+                        new {@class="ckeditor", id = "ckeditor1", cols="92", rows="15"})
+        @Html.ValidationMessageFor(m => m.Content) <br />
 
-    Tags: <br />
-    <input type="text" name="Tag" tabindex="103" style="width: 658px;">
+        @* Tag *@
+        @Html.LabelFor(m => m.Tag) <br />
+        @Html.TextBoxFor(m => m.Tag,
+                     new {style="width: 658px;" })
 
-    <input type="submit" value="Post"/>
-
-</form>
+        <input type="submit" value="Post"/>
+}
 
 @section RightPanel
 {
