@@ -1,6 +1,7 @@
 ﻿using MathHub.Core.Infrastructure;
 using MathHub.Core.Infrastructure.Interfaces.Repository;
 using MathHub.Core.Infrastructure.Repository;
+using MathHub.Core.Interfaces.MainPosts;
 using MathHub.Core.Interfaces.Problems;
 using MathHub.Entity.Entity;
 using System;
@@ -21,34 +22,25 @@ namespace MathHub.Service.Problems
         #region Constructor
         MathHubModelContainer ctx;
         IRepository<Problem> problemRepository;
-        IRepository<Comment> commentRepository;
-        IRepository<Reply> replyRepository;
-        IRepository<PostTag> postTagRepository;
-        IRepository<Tag> tagRepository;
+        IMainPostCommandService mainPostCommandService;
         ILogger logger;
 
         public ProblemCommandService(
             IMathHubDbContext MathHubDbContext,
             IRepository<Problem> problemRepository,
-            IRepository<Comment> commentRepository,
-            IRepository<Reply> replyRepository,
-            IRepository<PostTag> postTagRepository,
-            IRepository<Tag> tagRepository,
+            IMainPostCommandService mainPostCommandService,
             ILogger logger
             )
         {
             this.ctx = MathHubDbContext.GetDbContext();
             this.problemRepository = problemRepository;
-            this.replyRepository = replyRepository;
-            this.commentRepository = commentRepository;
-            this.postTagRepository = postTagRepository;
-            this.tagRepository = tagRepository;
+            this.mainPostCommandService = mainPostCommandService;
             this.logger = logger;
         } 
         #endregion
 
         #region Add
-        public bool AddProblem(Entity.Entity.Problem problem)
+        public bool AddProblem(Problem problem)
         {
             return problemRepository.Insert(problem);
 
@@ -56,38 +48,23 @@ namespace MathHub.Service.Problems
 
         public bool AddComment(int problemId, Comment comment)
         {
-            comment.MainPostId = problemId;
-            return commentRepository.Insert(comment);
+            return mainPostCommandService.AddComment(problemId, comment);
         }
 
         public bool AddReply(int problemId, Reply reply)
         {
-            reply.MainPostId = problemId;
-            return replyRepository.Insert(reply);
+            return mainPostCommandService.AddReply(problemId, reply);
         }
 
 
         public bool AddTag(int problemId, string name)
         {
-            // find tag id
-            int tagId = ctx.Tags.Where(t => t.Name == name).Select(t => t.Id).FirstOrDefault();
-            // not exist this tag in system. ignore
-            if (tagId == 0) return false;
-            // create new post tag
-            PostTag postTag = new PostTag();
-            // check if current problem id exist in system or not
-            int assertProblemId = ctx.Posts.OfType<Problem>()
-                .Where(t => t.Id == problemId).Select(t => t.Id).FirstOrDefault();
-            if (assertProblemId == 0) return false;
-            // create new post tag
-            postTag.TagId = tagId;
-            postTag.MainPostId = problemId;
-            return postTagRepository.Insert(postTag);   
+            return mainPostCommandService.AddTag(problemId, name);
         }
 
-        public bool AddListTag(int problemId, List<string> name)
+        public bool AddListTag(int problemId, List<string> names)
         {
-            throw new NotImplementedException();  
+            return mainPostCommandService.AddListTag(problemId, names); 
         }
         #endregion
 
@@ -99,19 +76,19 @@ namespace MathHub.Service.Problems
 
         public bool UpdateComment(Comment comment)
         {
-            return commentRepository.Update(comment);
+            return mainPostCommandService.UpdateComment(comment);
         }
 
         public bool UpdateReply(Reply reply)
         {
-            return replyRepository.Update(reply);
+            return mainPostCommandService.UpdateReply(reply);
         }
         #endregion
 
         #region Delete
         public bool DeleteComment(Comment comment)
         {
-            return commentRepository.Delete(comment);
+            return mainPostCommandService.DeleteComment(comment);
         }
 
         public bool DeleteProblem(Problem problem)
@@ -121,21 +98,12 @@ namespace MathHub.Service.Problems
 
         public bool DeleteTag(int postId, string tagName)
         {
-            // find tag id
-            int tagId = ctx.Tags.Where(t => t.Name == tagName).Select(t => t.Id).FirstOrDefault();
-            // does not exist current tag in system
-            if (tagId == 0) return false;
-            // find post tag
-            PostTag postTag = ctx.PostTags.FirstOrDefault(t => t.TagId == tagId && t.MainPostId == postId);
-            // does not exist current post tag (because postId wrong ?)
-            if (postTag == null) return false;
-            // delete
-            return postTagRepository.Delete(postTag);
+            return mainPostCommandService.DeleteTag(postId, tagName);
         }
 
         public bool DeleteReply(Reply reply)
         {
-            return replyRepository.Delete(reply);
+            return mainPostCommandService.DeleteReply(reply);
         }
         #endregion
     }

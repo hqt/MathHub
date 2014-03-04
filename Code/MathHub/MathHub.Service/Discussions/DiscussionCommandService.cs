@@ -12,6 +12,7 @@ namespace MathHub.Service.Discussions
 {
     public class DiscussionCommandService : IDiscussionCommandService
     {
+        #region Constructor
         MathHubModelContainer ctx;
         IRepository<Discussion> discussionRepository;
 
@@ -21,6 +22,22 @@ namespace MathHub.Service.Discussions
         {
             this.ctx = context.GetDbContext();
             this.discussionRepository = discussionRepository;
+        } 
+        #endregion
+
+        public bool AddDiscussion(Discussion discussion)
+        {
+            return discussionRepository.Insert(discussion);
+        }
+
+        public bool UpdateDiscusion(Discussion discussion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteDiscussion(Discussion discussion)
+        {
+            throw new NotImplementedException();
         }
     }
 }

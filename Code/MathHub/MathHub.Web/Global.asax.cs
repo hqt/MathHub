@@ -30,7 +30,15 @@ namespace MathHub.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+<<<<<<< HEAD
             //Intialize Account Database
+=======
+
+            // intialize Interface and Concreted Class
+            StructureMapConfiguration.Configure();
+
+            //
+>>>>>>> 7541e77590a77c2d69ec7a40878e99d02e453011
             WebSecurity.InitializeDatabaseConnection("DefaultConnection", "Users", "Id", "Username", autoCreateTables: true);
 
             // intialize Interface and Concreted Class
@@ -45,7 +53,11 @@ namespace MathHub.Web
                 .Select(Activator.CreateInstance)
                 .Cast<Profile>();
 
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 7541e77590a77c2d69ec7a40878e99d02e453011
 
             // Initialize AutoMapper with each instance of the profiles found.
             Mapper.Initialize(a => profiles.ForEach(a.AddProfile));
@@ -54,8 +66,11 @@ namespace MathHub.Web
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new CustomRazorEngine());
 
+<<<<<<< HEAD
             
             
+=======
+>>>>>>> 7541e77590a77c2d69ec7a40878e99d02e453011
         }
 
         protected void Application_StartRequest()

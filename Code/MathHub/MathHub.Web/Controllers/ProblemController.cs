@@ -84,7 +84,7 @@ namespace MathHub.Web.Controllers
 
         // POST /Problem/Create
         [Authorize]
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         public virtual ActionResult Create(CreateProblemVM problemVM)
         {
             if (ModelState.IsValid)
@@ -120,6 +120,7 @@ namespace MathHub.Web.Controllers
         public virtual ActionResult Detail(int id)
         {
             Problem targetProblem = _problemQueryService.GetProblemById(id);
+            var tuple = _problemQueryService.GetPostVote(targetProblem.Id);
 
             // Map from Model to ViewModel
             DetailProblemVM problemViewModel =

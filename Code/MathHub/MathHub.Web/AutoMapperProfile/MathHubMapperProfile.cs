@@ -38,6 +38,7 @@ namespace MathHub.Web.AutoMapperProfile
             // Problem
             Mapper.CreateMap<Problem, PreviewProblemVM>();
 
+<<<<<<< HEAD
             Mapper.CreateMap<Problem, DetailProblemVM>()
                 .ForMember(
                     p => p.PostVote,
@@ -67,6 +68,25 @@ namespace MathHub.Web.AutoMapperProfile
                         //.FromMember(s => new Tuple<int, int, int>(10, 10, 10))
                        .FromMember(s => ((IProblemQueryService)null).GetPostReplyReport(s.Id))
                 );
+=======
+            //Mapper.CreateMap<Problem, DetailProblemVM>()
+            //    .ForMember(
+            //        p => p.PostVote,
+            //        m => m
+            //            //.MapFrom(s => ((IProblemQueryService)null).GetPostVote(s.Id))
+            //            .ResolveUsing<TupleMapperResolver.DoubleTuple>()
+            //            //.FromMember(s => new Tuple<int, int>(10, 10))
+            //            .FromMember(s => ((IProblemQueryService)null).GetPostVote(s.Id))
+            //    );
+                //.ForMember(p => p.PostSocial,
+                //    m => m.MapFrom(
+                //    s => ((IProblemQueryService)null).GetPostSocialReport(s.Id)
+                //))
+                //.ForMember(p => p.PostReply,
+                //    m => m.MapFrom(
+                //    s => ((IProblemQueryService)null).GetPostReplyReport(s.Id)
+                //)
+>>>>>>> 7541e77590a77c2d69ec7a40878e99d02e453011
 
             // Reply
             Mapper.CreateMap<Reply, AnswerItemVM>();

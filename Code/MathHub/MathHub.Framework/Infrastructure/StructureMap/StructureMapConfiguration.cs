@@ -50,7 +50,7 @@ namespace MathHub.Framework.Infrastructure.StructureMap
                 /** intialize all service interface with its implementation */
                 // post
                 cfg.For<IMainPostQueryService>().Use<MainPostQueryService>();
-                // cfg.For<IMainPostCommandService>().Use<MainPostCommandService>();
+                cfg.For<IMainPostCommandService>().Use<MainPostCommandService>();
                 // blog
                 cfg.For<IBlogQueryService>().Use<BlogQueryService>();
                 cfg.For<IBlogCommandService>().Use<BlogCommandService>();
