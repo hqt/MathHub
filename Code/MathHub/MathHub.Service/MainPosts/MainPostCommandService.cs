@@ -18,6 +18,9 @@ namespace MathHub.Service.MainPosts
         IRepository<Comment> commentRepository;
         IRepository<Reply> replyRepository;
         IRepository<PostTag> postTagRepository;
+        IRepository<Share> shareRepository
+        IRepository<FavoritePost> favoritePostRepository;
+        IAuthenticationService authenticationService;
         ILogger logger;
 
         public MainPostCommandService(
@@ -25,12 +28,18 @@ namespace MathHub.Service.MainPosts
             IRepository<Comment> commentRepository,
             IRepository<Reply> replyRepository,
             IRepository<PostTag> postTagRepository,
+            IRepository<FavoritePost> favoritePostRepository,
+            IRepository<Share> shareRepository,
+            IAuthenticationService authenticationService,
             ILogger logger)
         {
             this.ctx = MathHubDbContext.GetDbContext();
             this.replyRepository = replyRepository;
             this.commentRepository = commentRepository;
             this.postTagRepository = postTagRepository;
+            this.authenticationService = authenticationService;
+            this.favoritePostRepository = favoritePostRepository;
+            this.shareRepository = shareRepository;
             this.logger = logger;
         }
         #endregion
@@ -110,18 +119,26 @@ namespace MathHub.Service.MainPosts
         }
         #endregion
 
-
         #region Modify
         public bool MarkPostAsFavorite(int postId)
         {
-            throw new NotImplementedException();
+            int userId = authenticationService.GetUserId();
+            FavoritePost fp = new FavoritePost();
+            fp.UserId = userId;
+            fp.MainPostId = postId;
+            return favoritePostRepository.Insert(fp);
         }
 
         public bool SharePost(int postId)
         {
-            throw new NotImplementedException();
+            int userId = authenticationService.GetUserId();
+            Share s = new Share();
+            s.DateCreated = DateTime.Now;
+            s.MainPostId = postId;
+            s.UserId = userId;
+            return shareRepository.Insert(s);
         }
 
-        #endregion    }
+        #endregion    
     }
 }
