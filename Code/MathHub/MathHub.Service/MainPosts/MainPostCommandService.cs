@@ -32,7 +32,7 @@ namespace MathHub.Service.MainPosts
             this.commentRepository = commentRepository;
             this.postTagRepository = postTagRepository;
             this.logger = logger;
-        } 
+        }
         #endregion
 
         #region Add
@@ -69,7 +69,7 @@ namespace MathHub.Service.MainPosts
         public bool AddListTag(int problemId, List<string> name)
         {
             throw new NotImplementedException();
-        } 
+        }
         #endregion
 
         #region Update
@@ -81,7 +81,7 @@ namespace MathHub.Service.MainPosts
         public bool UpdateReply(Reply reply)
         {
             return replyRepository.Update(reply);
-        } 
+        }
         #endregion
 
         #region Delete
@@ -107,7 +107,21 @@ namespace MathHub.Service.MainPosts
         public bool DeleteReply(Entity.Entity.Reply reply)
         {
             return replyRepository.Delete(reply);
-        } 
+        }
         #endregion
+
+
+        #region Modify
+        public bool MarkPostAsFavorite(int postId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool SharePost(int postId)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion    }
     }
 }

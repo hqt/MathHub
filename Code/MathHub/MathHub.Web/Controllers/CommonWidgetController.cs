@@ -43,7 +43,7 @@ namespace MathHub.Web.Controllers
 
         public virtual ActionResult FavoriteTagWidget()
         {
-            ICollection<Tag> tags = _userQueryService.getLoginUserFavoriteTag().ToList();
+            ICollection<Tag> tags = _userQueryService.GetLoginFavoriteTag().ToList();
             return PartialView("_FavoriteTagWidget", tags);
         }
 
@@ -112,7 +112,7 @@ namespace MathHub.Web.Controllers
 
         public virtual ActionResult SubscriptionWidget()
         {
-            ICollection<Subscription> subscriptions = _userQueryService.GetLoginUserSubcriptions().ToList();
+            ICollection<Subscription> subscriptions = _userQueryService.GetLoginAllSubscriptions().ToList();
             return PartialView("_SubscriptionWidget", subscriptions);
         }
 

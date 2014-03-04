@@ -10,6 +10,12 @@ namespace MathHub.Core.Interfaces.MainPosts
     public interface IMainPostCommandService
     {
         /// <summary>
+        /// Modify
+        /// </summary>
+        bool MarkPostAsFavorite(int postId);
+        bool SharePost(int postId);
+
+        /// <summary>
         /// Insert
         /// </summary>
         bool AddComment(int postId, Comment comment);

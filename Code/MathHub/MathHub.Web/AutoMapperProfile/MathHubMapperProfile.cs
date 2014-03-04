@@ -45,11 +45,11 @@ namespace MathHub.Web.AutoMapperProfile
             Mapper.CreateMap<User, ProfileWidgetVM>()
                 .ForMember(p => p.Medal,
                     m => m.MapFrom(
-                    s => (ObjectFactory.GetInstance<IUserQueryService>()).GetMedals(s.Id)
+                    s => (ObjectFactory.GetInstance<IUserQueryService>()).GetUserMedals(s.Id)
                 ))
                 .ForMember(p => p.Avatar,
                     m => m.MapFrom(
-                    s => (ObjectFactory.GetInstance<IUserQueryService>()).GetLoginUserAvatar()
+                    s => (ObjectFactory.GetInstance<IUserQueryService>()).GetLoginAvatar()
                 ));
             
             // Reply

@@ -67,6 +67,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="CustomAnnotation\BaseActionFilter.cs" />
     <Compile Include="CustomAnnotation\BaseValidationAtrribute.cs" />
+    <Compile Include="HTMLHelper\HtmlHelperExtensions.cs" />
     <Compile Include="Infrastructure\AutoMapper\AutoMappedWrapper.cs" />
     <Compile Include="Infrastructure\AutoMapper\AutoMapperConfiguration.cs" />
     <Compile Include="Infrastructure\AutoMapper\BaseFormatter.cs" />
@@ -99,9 +100,7 @@
     <Compile Include="Utils\StringUtils.cs" />
     <Compile Include="Utils\WebUtils.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="HTMLHelper\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
