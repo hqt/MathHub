@@ -18,7 +18,7 @@ namespace MathHub.Service.MainPosts
         IRepository<Comment> commentRepository;
         IRepository<Reply> replyRepository;
         IRepository<PostTag> postTagRepository;
-        IRepository<Share> shareRepository
+        IRepository<Share> shareRepository;
         IRepository<FavoritePost> favoritePostRepository;
         IAuthenticationService authenticationService;
         ILogger logger;
