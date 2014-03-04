@@ -1,0 +1,126 @@
+*, *:after, *:before {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+}
+
+header {
+	height: 50px;
+	background-color: #a73e2d;
+	box-shadow: 0 0 15px -5px rgba(0,0,0,0.5) inset;
+	cursor: default;
+}
+
+body {
+	background-image: url('../img/bg.jpg');
+	background-color: #f0f0f0;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.logo {
+	background-image: url('../img/logo.png');
+	background-repeat: no-repeat;
+	display: inline-block;
+	width: 200px;
+	height: 50px;
+	vertical-align: middle;
+}
+
+ul.navmenu {
+	display: inline-block;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+}
+
+ul.navmenu li {
+	display: inline-block;
+	color: white;
+	font-size: 12px;
+	padding: 7px 13px;
+	border-radius: 3px;
+	text-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+}
+ul.navmenu li.active {
+	background-color: rgba(0,0,0,0.3);
+}
+ul.navmenu li a {
+	color: white;
+	text-decoration: none;
+}
+
+.profile {
+	float: right;
+	height: 50px;
+}
+
+.useravatar {
+	margin: 9px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.useravatar img {
+	height: 32px;
+	width: 32px;
+}
+
+a.username {
+	color: white;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 14px;
+	text-decoration: none;
+}
+.notification {
+	display: inline-block;
+	margin-right: 10px;
+}
+.notification>span {
+	margin: 0 5px;
+	display: inline-block;
+	vertical-align: middle;
+	width: 17px;
+	height: 17px;
+	background-image: url('../img/notification.png');
+	background-repeat: no-repeat;
+	cursor: pointer;
+	opacity: 0.7;
+	position: relative;
+}
+.notification>span:hover {
+	opacity: 1;
+}
+.notification span.notif {
+	background-position: 0 0;
+}
+.notification span.notif.active {
+	background-position: 0 -17px;
+	opacity: 1;
+}
+.notification span.mess {
+	background-position: -17px 0;
+}
+.notification span.mess.active {
+	background-position: -17px -17px;
+	opacity: 1;
+}
+.notification>span .count {
+	background-color: white;
+	opacity: 1;
+	position: absolute;
+	font-size: 10px;
+	padding: 0 3px;
+	border-radius: 2px;
+	box-shadow: 0 1px 1px black;
+	right: -4px;
+	top: -6px;
+}
