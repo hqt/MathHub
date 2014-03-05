@@ -231,6 +231,7 @@
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CommonWidgetController.cs" />
+    <Compile Include="Controllers\DiscussionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProblemController.cs" />
     <Compile Include="CustomAnnotation\ActionFilter\AjaxCallAF.cs" />
@@ -242,6 +243,9 @@
     </Compile>
     <Compile Include="Models\CommonVM\ProfileWidgetVM.cs" />
     <Compile Include="Models\CommonVM\UserInfoVM.cs" />
+    <Compile Include="Models\DiscussionVM\CreateDiscussionVM.cs" />
+    <Compile Include="Models\DiscussionVM\DetailDiscussionVM.cs" />
+    <Compile Include="Models\DiscussionVM\PreviewDiscussionVM.cs" />
     <Compile Include="Models\ProblemVM\AnswerItemVM.cs" />
     <Compile Include="Models\ProblemVM\AnswerListVM.cs" />
     <Compile Include="Models\ProblemVM\AnswerPostVM.cs" />

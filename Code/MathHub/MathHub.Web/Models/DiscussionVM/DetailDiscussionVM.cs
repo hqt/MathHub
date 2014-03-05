@@ -1,11 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using MathHub.Web.Models.CommonVM;
+using MathHub.Web.Models.ProblemVM;
 using System;
-using MathHub.Entity.Entity;
-using MathHub.Web.Models.CommonVM;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 
-namespace MathHub.Web.Models.ProblemVM
+namespace MathHub.Web.Models.DiscussionVM
 {
-    public class DetailProblemVM
+    public class DetailDiscussionVM
     {
         public int Id { get; set; }
         public string Content { get; set; }
@@ -21,6 +23,5 @@ namespace MathHub.Web.Models.ProblemVM
         //public CommentListVM Comments { get; set; }
         public CommentPostVM CommentPostVm { get; set; }
         public UserInfoVM UserInfo { get; set; }
-
     }
 }

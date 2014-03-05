@@ -134,7 +134,7 @@ namespace MathHub.Web.Controllers
             return View("Views/DetailProblem", problemViewModel);
         }
 
-        [AjaxCallAF]
+        [AjaxCallActionFilter]
         public virtual ActionResult Answer(int id, int offset)
         {
             IEnumerable<Reply> answers = _problemQueryService.GetAllReplies(
@@ -150,7 +150,7 @@ namespace MathHub.Web.Controllers
             return PartialView("Partials/_AnswerList", answerListVm);
         }
 
-        [AjaxCallAF]
+        [AjaxCallActionFilter]
         public virtual ActionResult Hint(int postId, int offset)
         {
             IEnumerable<Reply> hints = _problemQueryService.GetAllReplies(
@@ -167,7 +167,7 @@ namespace MathHub.Web.Controllers
             return PartialView("Partials/_HintList", hintListVm);
         }
 
-        [AjaxCallAF]
+        [AjaxCallActionFilter]
         public virtual ActionResult Comment(int postId, int offset)
         {
             offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
