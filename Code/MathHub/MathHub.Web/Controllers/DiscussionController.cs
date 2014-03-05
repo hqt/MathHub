@@ -131,7 +131,7 @@ namespace MathHub.Web.Controllers
             DetailDiscussionVM discussionViewModel =
                 Mapper.Map<Discussion, DetailDiscussionVM>(targetDiscussion);
 
-            discussionViewModel.CommentPostVm = new MathHub.Web.Models.DiscussionVM.CommentPostVM();
+            discussionViewModel.CommentPostVm = new MathHub.Web.Models.DiscussionVM.DCommentPostVM();
             discussionViewModel.CommentPostVm.MainPostId = discussionViewModel.Id;
             discussionViewModel.CommentPostVm.Type = "discussion";
 
@@ -193,7 +193,7 @@ namespace MathHub.Web.Controllers
         //}
 
         [Authorize]
-        public bool AddComment(MathHub.Web.Models.DiscussionVM.CommentPostVM commentPostVm)
+        public bool AddComment(MathHub.Web.Models.DiscussionVM.DCommentPostVM commentPostVm)
         {
             if (ModelState.IsValid)
             {

@@ -21,7 +21,7 @@ namespace MathHub.Web.Models.DiscussionVM
         public Tuple<int, int, int> PostReply { get; set; }       
 
         //public CommentListVM Comments { get; set; }
-        public CommentPostVM CommentPostVm { get; set; }
+        public DCommentPostVM CommentPostVm { get; set; }
         public UserInfoVM UserInfo { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MathHub.Web.Models.DiscussionVM
 {
-    public class AnswerItemVM
+    public class DAnswerItemVM
     {
         public int Id { get; set; }
         public string Content { get; set; }

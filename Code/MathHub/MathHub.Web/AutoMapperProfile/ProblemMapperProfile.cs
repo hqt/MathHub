@@ -12,7 +12,7 @@ using StructureMap;
 
 namespace MathHub.Web.AutoMapperProfile
 {
-    class MathHubMapperProfile : Profile
+    class ProblemMapperProfile : Profile
     {
         /// <summary>
         /// Config profile for System AutoMapper
@@ -41,17 +41,6 @@ namespace MathHub.Web.AutoMapperProfile
                     s => (ObjectFactory.GetInstance<IProblemQueryService>()).GetPostReplyReport(s.Id)
                 ));
 
-            // Profile
-            Mapper.CreateMap<User, ProfileWidgetVM>()
-                .ForMember(p => p.Medal,
-                    m => m.MapFrom(
-                    s => (ObjectFactory.GetInstance<IUserQueryService>()).GetUserMedals(s.Id)
-                ))
-                .ForMember(p => p.Avatar,
-                    m => m.MapFrom(
-                    s => (ObjectFactory.GetInstance<IUserQueryService>()).GetLoginAvatar()
-                ));
-            
             // Reply
             Mapper.CreateMap<Reply, AnswerItemVM>();
             Mapper.CreateMap<Reply, HintItemVM>();

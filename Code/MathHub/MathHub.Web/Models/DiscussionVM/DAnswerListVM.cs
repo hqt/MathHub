@@ -6,11 +6,11 @@ using System.Web;
 
 namespace MathHub.Web.Models.DiscussionVM
 {
-    public class AnswerListVM
+    public class DAnswerListVM
     {
         [Required(ErrorMessage = "Answer cannot be empty.")]
         [Display(Name = "Add your answer")]
         public String NewAnswer { get; set; }
-        public ICollection<AnswerItemVM> AnswerItemVms { get; set; } 
+        public ICollection<DAnswerItemVM> AnswerItemVms { get; set; } 
     }
 }

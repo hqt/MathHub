@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MathHub.Web.Models.DiscussionVM
 {
-    public class CommentPostVM
+    public class DCommentPostVM
     {
         public int Id { get; set; }
 

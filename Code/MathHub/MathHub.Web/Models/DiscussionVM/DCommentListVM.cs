@@ -5,8 +5,8 @@ using System.Web;
 
 namespace MathHub.Web.Models.DiscussionVM
 {
-    public class CommentListVM
+    public class DCommentListVM
     {
-        public ICollection<CommentItemVM> CommentItemVms { get; set; }
+        public ICollection<DCommentItemVM> CommentItemVms { get; set; }
     }
 }
