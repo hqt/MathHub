@@ -16,7 +16,12 @@ header {
 body {
 	background-image: url('../img/bg.jpg');
 	background-color: #f0f0f0;
-	font-family: 'Noto Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	min-width: 1000px;
+}
+
+.spacer {
+	clear: both;
 }
 
 .container {
@@ -44,7 +49,7 @@ ul.navmenu {
 ul.navmenu li {
 	display: inline-block;
 	color: white;
-	font-size: 12px;
+	font-size: 13px;
 	padding: 7px 13px;
 	border-radius: 3px;
 	text-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
@@ -77,7 +82,7 @@ a.username {
 	color: white;
 	display: inline-block;
 	vertical-align: middle;
-	font-size: 14px;
+	font-size: 13px;
 	text-decoration: none;
 }
 .notification {
@@ -117,10 +122,78 @@ a.username {
 	background-color: white;
 	opacity: 1;
 	position: absolute;
-	font-size: 10px;
+	font-size: 8px;
+	font-weight: bold;
 	padding: 0 3px;
 	border-radius: 2px;
 	box-shadow: 0 1px 1px black;
 	right: -4px;
 	top: -6px;
+}
+
+section.content{
+	max-width: 1000px;
+	margin: 0 auto;
+	background-color: #f8f8f8;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+nav.content-left {
+	padding: 20px 10px;
+	float: left;
+	width: 20%;
+	border-right: 1px solid #e8dbdb;
+}
+nav.content-right {
+	padding: 20px 10px;
+	float: left;
+	width: 20%;
+	border-left: 1px solid #e8dbdb;
+}
+
+section.content-mid {
+	padding: 20px 10px;
+	float: left;
+	width: 60%;
+}
+
+span.silver.medal {
+	color: #f4e936;
+}
+
+span.gold.medal {
+	color: #cecece;
+}
+
+span.bronze.medal {
+	color: #e39a52;
+}
+
+span.medal {
+	font-size: 15px;
+}
+
+.profilewidget {
+	margin-left: 10px;
+	white-space: nowrap;
+}
+
+.avatarlink {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.profilewidget-name {
+	display: inline-block;
+vertical-align: middle;
+}
+
+.profilewidget-username {
+	text-decoration: none;
+	font-size: 14px;
+	color: black;
+	font-weight: bold;
+}
+
+.profilewidget-stats {
+	font-size: 11px;
 }
