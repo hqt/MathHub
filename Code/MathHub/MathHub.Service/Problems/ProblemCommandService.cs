@@ -106,5 +106,17 @@ namespace MathHub.Service.Problems
             return mainPostCommandService.DeleteReply(reply);
         }
         #endregion
+
+        #region Modify
+        public bool MarkPostAsFavorite(int postId)
+        {
+            return mainPostCommandService.MarkPostAsFavorite(postId);
+        }
+
+        public bool SharePost(int postId)
+        {
+            return mainPostCommandService.SharePost(postId);
+        } 
+        #endregion
     }
 }

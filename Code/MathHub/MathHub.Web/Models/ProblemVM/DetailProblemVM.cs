@@ -15,7 +15,6 @@ namespace MathHub.Web.Models.ProblemVM
         public string Title { get; set; }
 
         public Tuple<int, int> PostVote { get; set; }
-        public int PostVoteUp { get; set; }
         public Tuple<int, int, int> PostSocial { get; set; }
         public Tuple<int, int, int> PostReply { get; set; }       
 

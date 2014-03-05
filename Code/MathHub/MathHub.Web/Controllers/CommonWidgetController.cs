@@ -11,6 +11,7 @@ using MathHub.Core.Interfaces.Users;
 using MathHub.Entity.Entity;
 using MathHub.Web.Models.CommonVM;
 using WebMatrix.WebData;
+using StructureMap;
 
 namespace MathHub.Web.Controllers
 {
@@ -42,7 +43,7 @@ namespace MathHub.Web.Controllers
 
         public virtual ActionResult FavoriteTagWidget()
         {
-            ICollection<Tag> tags = _userQueryService.getLoginUserFavoriteTag().ToList();
+            ICollection<Tag> tags = _userQueryService.GetLoginFavoriteTag().ToList();
             return PartialView("_FavoriteTagWidget", tags);
         }
 
@@ -75,6 +76,18 @@ namespace MathHub.Web.Controllers
 
         public virtual ActionResult ProfileWidget()
         {
+
+            //// Profile
+            //Mapper.CreateMap<User, ProfileWidgetVM>()
+            //    .ForMember(p => p.Medal,
+            //        m => m.MapFrom(
+            //        s => ((IUserQueryService)null).GetMedals(s.Id)
+            //    ))
+            //    .ForMember(p => p.Avatar,
+            //        m => m.MapFrom(
+            //        s => ((IUserQueryService)null).GetLoginUserAvatar()
+            //    ));
+
             User user = _userQueryService.GetLoginUser();
             ProfileWidgetVM profileWidgetVm = Mapper.Map<User, ProfileWidgetVM>(user);
 
@@ -99,7 +112,7 @@ namespace MathHub.Web.Controllers
 
         public virtual ActionResult SubscriptionWidget()
         {
-            ICollection<Subscription> subscriptions = _userQueryService.GetLoginUserSubcriptions().ToList();
+            ICollection<Subscription> subscriptions = _userQueryService.GetLoginAllSubscriptions().ToList();
             return PartialView("_SubscriptionWidget", subscriptions);
         }
 

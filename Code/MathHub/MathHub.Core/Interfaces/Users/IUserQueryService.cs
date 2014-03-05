@@ -9,30 +9,46 @@ namespace MathHub.Core.Interfaces.Users
 {
     public interface IUserQueryService
     {
-        /// <summary>
-        /// User
-        /// </summary>
-        Profile GetUserProfile(int userId);
-        Tuple<int, int, int> GetMedals(int userId);
-        IEnumerable<String> getUserFavoriteTagName(int userId);
-        IEnumerable<Tag> getUserFavoriteTag(int userId);
-
-
-
-        /// <summary>
-        /// Login User
-        /// </summary>
-        IEnumerable<String> getLoginUserFavoriteTagName();
-        IEnumerable<Tag> getLoginUserFavoriteTag();
-        IEnumerable<Subscription> GetLoginUserSubcriptions();
-        string GetLoginUserAvatar();
         User GetLoginUser();
 
         /// <summary>
-        /// User
+        /// User Profile
         /// </summary>
         User GetUserById(int userId);
+        User GetLoginById();
 
+        string GetUseAvatar(int userId);
+        string GetLoginAvatar();
+
+        Profile GetUserProfile(int userId);
+        Profile GetLoginProfile();
+
+        Tuple<int, int, int> GetUserMedals(int userId);
+        Tuple<int, int, int> GetLoginMedals();
+
+        /// <summary>
+        /// Tag
+        /// </summary>
+        IEnumerable<String> GetUserFavoriteTagName(int userId);
+        IEnumerable<String> GetLoginFavoriteTagName();
+
+        IEnumerable<Tag> GetUserFavoriteTag(int userId);
+        IEnumerable<Tag> GetLoginFavoriteTag();
+
+        /// <summary>
+        /// Subscription
+        /// </summary>
+
+        IEnumerable<Subscription> GetUserAllSubscriptions(int followerId);
+        IEnumerable<Subscription> GetLoginAllSubscriptions();
+
+        int GetTotalUnseenSubscription(int follower, int following);
+        int GetLoginTotalUnseenSubscription(int following);
+
+        IEnumerable<int> GetFollowingIds(int follower);
+        IEnumerable<int> GetLoginFollowingIds();
         
+        IEnumerable<Tuple<int, int>> GetTotalUnseenSubscription(int follower);
+        IEnumerable<Tuple<int, int>> GetLoginTotalUnseenSubscription();
     }
 }
