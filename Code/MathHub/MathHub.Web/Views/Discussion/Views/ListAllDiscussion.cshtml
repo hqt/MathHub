@@ -31,9 +31,9 @@ These items are created by a loop of partial views:<br/>
 
 @section RightPanel
 {
-    @Html.Action("PostProblemWidget", new { controller = "CommonWidget" })
+    @Html.Action(MVC.CommonWidget.PostDiscussionWidget())
     <hr/>
-    @Html.Action("MySubscriptionWidget", new { controller = "CommonWidget" })
+    @Html.Action(MVC.CommonWidget.MySubscriptionWidget())
     <hr/>
-    @Html.Action("NewBlogWidget", new { controller = "CommonWidget" })
+    @Html.Action(MVC.CommonWidget.NewBlogWidget())
 }
