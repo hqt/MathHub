@@ -1,0 +1,17 @@
+﻿@model MathHub.Web.Models.DiscussionVM.PreviewDiscussionVM
+
+@Html.ActionLink("Discussion item " + Model.Title, MVC.Discussion.Detail(@Model.Id)) <br/>
+<ul>
+    <li>Id:@Html.Raw(@Model.Id) </li>
+    <li>Content: @Html.Raw(@Model.Content) </li>
+    <li>DateCreated: @Model.DateCreated </li>
+    <li>DateModified: @Model.DateModified </li>
+    <li>UserId: @Model.UserId </li>
+    <li>Title: @Html.Raw(@Model.Title) </li>
+    <li>FavoriteNum: @Model.FavoriteNum </li>
+    <li>ReportNum: @Model.FavoriteNum </li>
+    <li>ShareNum: @Model.ShareNum </li>
+    <li>VoteUpNum: @Model.VoteUpNum</li>
+    <li>VoteDownNum: @Model.VoteDownNum </li>
+    <li>AnswerNum: @Model.AnswerNum </li>
+</ul>

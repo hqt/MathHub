@@ -12,12 +12,15 @@ using MathHub.Entity.Entity;
 using MathHub.Web.Models.CommonVM;
 using WebMatrix.WebData;
 using StructureMap;
+using MathHub.Framework.Controllers;
 
 namespace MathHub.Web.Controllers
 {
     [ChildActionOnly]
-    public partial class CommonWidgetController : Controller
+    public partial class CommonWidgetController : BaseController
     {
+
+        #region Constructor
         private IUserQueryService _userQueryService;
         private IBlogQueryService _blogQueryService;
         private IProblemQueryService _problemQueryService;
@@ -29,16 +32,59 @@ namespace MathHub.Web.Controllers
             _userQueryService = userQueryService;
             _blogQueryService = blogQueryService;
             _problemQueryService = problemQueryService;
+        } 
+        #endregion
+
+        #region Blog Widget
+        public virtual ActionResult NewBlogWidget()
+        {
+            ICollection<Blog> blogs = _blogQueryService.GetNewBlogs(Constant.DEFAULT_PER_WIDGET).ToList();
+            return PartialView("_NewBlogWidget", blogs);
         }
 
-        public virtual ActionResult HeaderWidget()
+        public virtual ActionResult PostBlogWidget()
         {
-            return PartialView("_HeaderWidget");
+            return PartialView("_PostBlogWidget");
         }
 
-        public virtual ActionResult FooterWidget()
+        public virtual ActionResult BlogPostGuide()
         {
-            return PartialView("_FooterWidget");
+            return PartialView("_BlogPostGuide");
+        }
+        #endregion
+
+        #region Problem Widget
+        public virtual ActionResult PostProblemWidget()
+        {
+            return PartialView("_PostProblemWidget");
+        }
+
+        public virtual ActionResult ProblemPostGuide()
+        {
+            return PartialView("_ProblemPostGuide");
+        } 
+        #endregion
+
+        #region Discussion Widget
+        public virtual ActionResult PostDiscussionWidget()
+        {
+            return PartialView("_PostDiscussionWidget");
+        }
+
+        public virtual ActionResult DiscussionPostGuide()
+        {
+            return PartialView("_DiscussionPostGuide");
+        } 
+        #endregion
+
+        #region User Widget
+        public virtual ActionResult ProfileWidget()
+        {
+
+            User user = _userQueryService.GetLoginUser();
+            ProfileWidgetVM profileWidgetVm = Mapper.Map<User, ProfileWidgetVM>(user);
+
+            return PartialView("_ProfileWidget", profileWidgetVm);
         }
 
         public virtual ActionResult FavoriteTagWidget()
@@ -54,46 +100,23 @@ namespace MathHub.Web.Controllers
 
         public virtual ActionResult MySubscriptionWidget()
         {
-            
+
             return PartialView("_MySubscriptionWidget");
         }
 
-        public virtual ActionResult NewBlogWidget()
+        public virtual ActionResult SubscriptionWidget()
         {
-            ICollection<Blog> blogs = _blogQueryService.GetNewBlogs(Constant.DEFAULT_PER_WIDGET).ToList();
-            return PartialView("_NewBlogWidget", blogs);
+            ICollection<Subscription> subscriptions = _userQueryService.GetLoginAllSubscriptions().ToList();
+            return PartialView("_SubscriptionWidget", subscriptions);
         }
 
-        public virtual ActionResult PostProblemWidget()
+        public virtual ActionResult YourActivityWidget()
         {
-            return PartialView("_PostProblemWidget");
+            return PartialView("_YourActivityWidget");
         }
+        #endregion
 
-        public virtual ActionResult ProblemPostGuide()
-        {
-            return PartialView("_ProblemPostGuide");
-        }
-
-        public virtual ActionResult ProfileWidget()
-        {
-
-            //// Profile
-            //Mapper.CreateMap<User, ProfileWidgetVM>()
-            //    .ForMember(p => p.Medal,
-            //        m => m.MapFrom(
-            //        s => ((IUserQueryService)null).GetMedals(s.Id)
-            //    ))
-            //    .ForMember(p => p.Avatar,
-            //        m => m.MapFrom(
-            //        s => ((IUserQueryService)null).GetLoginUserAvatar()
-            //    ));
-
-            User user = _userQueryService.GetLoginUser();
-            ProfileWidgetVM profileWidgetVm = Mapper.Map<User, ProfileWidgetVM>(user);
-
-            return PartialView("_ProfileWidget", profileWidgetVm);
-        }
-
+        #region Common Widget
         public virtual ActionResult RelatedBlogWidget()
         {
             return PartialView("_RelatedBlogWidget");
@@ -110,17 +133,16 @@ namespace MathHub.Web.Controllers
             return PartialView("_SameAuthorWidget", problems);
         }
 
-        public virtual ActionResult SubscriptionWidget()
+        public virtual ActionResult HeaderWidget()
         {
-            ICollection<Subscription> subscriptions = _userQueryService.GetLoginAllSubscriptions().ToList();
-            return PartialView("_SubscriptionWidget", subscriptions);
+            return PartialView("_HeaderWidget");
         }
 
-        public virtual ActionResult YourActivityWidget()
+        public virtual ActionResult FooterWidget()
         {
-            return PartialView("_YourActivityWidget");
-        }
-
+            return PartialView("_FooterWidget");
+        } 
+        #endregion
 
     }
 }

@@ -4,7 +4,8 @@
     ViewBag.Title = "ListAllDiscussion";
     Layout = "~/Views/Discussion/Layouts/_DiscussionListLayout.cshtml";
 }
-@*<h2>ListAllDiscussion</h2>
+
+<h2>ListAllDiscussion</h2>
 These items are created by a loop of partial views:<br/>
 @{
     
@@ -12,20 +13,20 @@ These items are created by a loop of partial views:<br/>
     {
         @Html.Partial("Partials/_DiscussionItem", discussion);
     }
-}*@
+}
 
 
 
 @section LeftPanel
 {
     
-    @Html.Action("ProfileWidget", new { controller = "CommonWidget" })
+    @Html.Action(MVC.CommonWidget.ProfileWidget())
     <hr/>
-    @Html.Action("FavoriteTagWidget", new { controller = "CommonWidget" })
+    @Html.Action(MVC.CommonWidget.FavoriteTagWidget())
     <hr/>
-    @Html.Action("GroupWidget", new { controller = "CommonWidget" })
+    @Html.Action(MVC.CommonWidget.GroupWidget())
     <hr/>
-    @Html.Action("SubscriptionWidget", new { controller = "CommonWidget" })
+    @Html.Action(MVC.CommonWidget.SubscriptionWidget())
 }
 
 @section RightPanel

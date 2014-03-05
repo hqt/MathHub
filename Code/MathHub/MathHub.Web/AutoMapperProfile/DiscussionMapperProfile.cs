@@ -22,9 +22,9 @@ namespace MathHub.Web.AutoMapperProfile
             Mapper.CreateMap<Comment, DCommentItemVM>();
             
             // Discussion
-            Mapper.CreateMap<Problem, PreviewDiscussionVM>();
+            Mapper.CreateMap<Discussion, PreviewDiscussionVM>();
 
-            Mapper.CreateMap<Problem, DetailDiscussionVM>()
+            Mapper.CreateMap<Discussion, DetailDiscussionVM>()
                 .ForMember(
                     p => p.PostVote,
                     m => m

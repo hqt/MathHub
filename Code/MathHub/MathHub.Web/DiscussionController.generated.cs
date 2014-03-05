@@ -47,6 +47,18 @@ namespace MathHub.Web.Controllers
         {
             return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Detail);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Reply()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Reply);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult Comment()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Comment);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public DiscussionController Actions { get { return MVC.Discussion; } }
@@ -70,6 +82,8 @@ namespace MathHub.Web.Controllers
             public readonly string Newest = "Newest";
             public readonly string Create = "Create";
             public readonly string Detail = "Detail";
+            public readonly string Reply = "Reply";
+            public readonly string Comment = "Comment";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -82,6 +96,8 @@ namespace MathHub.Web.Controllers
             public const string Newest = "Newest";
             public const string Create = "Create";
             public const string Detail = "Detail";
+            public const string Reply = "Reply";
+            public const string Comment = "Comment";
         }
 
 
@@ -100,6 +116,24 @@ namespace MathHub.Web.Controllers
         public class ActionParamsClass_Detail
         {
             public readonly string id = "id";
+        }
+        static readonly ActionParamsClass_Reply s_params_Reply = new ActionParamsClass_Reply();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Reply ReplyParams { get { return s_params_Reply; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Reply
+        {
+            public readonly string id = "id";
+            public readonly string offset = "offset";
+        }
+        static readonly ActionParamsClass_Comment s_params_Comment = new ActionParamsClass_Comment();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_Comment CommentParams { get { return s_params_Comment; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_Comment
+        {
+            public readonly string postId = "postId";
+            public readonly string offset = "offset";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -121,13 +155,13 @@ namespace MathHub.Web.Controllers
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
                 public class _ViewNamesClass
                 {
-                    public readonly string DiscussionCreateLayout = "DiscussionCreateLayout";
-                    public readonly string DiscussionDetailLayout = "DiscussionDetailLayout";
-                    public readonly string DiscussionListLayout = "DiscussionListLayout";
+                    public readonly string _DiscussionCreateLayout = "_DiscussionCreateLayout";
+                    public readonly string _DiscussionDetailLayout = "_DiscussionDetailLayout";
+                    public readonly string _DiscussionListLayout = "_DiscussionListLayout";
                 }
-                public readonly string DiscussionCreateLayout = "~/Views/Discussion/Layouts/DiscussionCreateLayout.cshtml";
-                public readonly string DiscussionDetailLayout = "~/Views/Discussion/Layouts/DiscussionDetailLayout.cshtml";
-                public readonly string DiscussionListLayout = "~/Views/Discussion/Layouts/DiscussionListLayout.cshtml";
+                public readonly string _DiscussionCreateLayout = "~/Views/Discussion/Layouts/_DiscussionCreateLayout.cshtml";
+                public readonly string _DiscussionDetailLayout = "~/Views/Discussion/Layouts/_DiscussionDetailLayout.cshtml";
+                public readonly string _DiscussionListLayout = "~/Views/Discussion/Layouts/_DiscussionListLayout.cshtml";
             }
             static readonly _PartialsClass s_Partials = new _PartialsClass();
             public _PartialsClass Partials { get { return s_Partials; } }
@@ -138,7 +172,9 @@ namespace MathHub.Web.Controllers
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
                 public class _ViewNamesClass
                 {
+                    public readonly string _DiscussionItem = "_DiscussionItem";
                 }
+                public readonly string _DiscussionItem = "~/Views/Discussion/Partials/_DiscussionItem.cshtml";
             }
             static readonly _ViewsClass s_Views = new _ViewsClass();
             public _ViewsClass Views { get { return s_Views; } }
@@ -252,6 +288,32 @@ namespace MathHub.Web.Controllers
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Detail);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
             DetailOverride(callInfo, id);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ReplyOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id, int offset);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Reply(int id, int offset)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Reply);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "offset", offset);
+            ReplyOverride(callInfo, id, offset);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void CommentOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int postId, int offset);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult Comment(int postId, int offset)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Comment);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "postId", postId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "offset", offset);
+            CommentOverride(callInfo, postId, offset);
             return callInfo;
         }
 

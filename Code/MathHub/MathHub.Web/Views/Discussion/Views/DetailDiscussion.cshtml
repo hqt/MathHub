@@ -1,6 +1,6 @@
 ﻿@model MathHub.Web.Models.DiscussionVM.DetailDiscussionVM
 @{
-	ViewBag.Title = "DetailProblem";
+	ViewBag.Title = "DetailDiscussion";
 	Layout = "~/Views/Discussion/Layouts/_DiscussionDetailLayout.cshtml";
 }
 
@@ -76,7 +76,7 @@
 
 @section RightPanel
 {
-	@Html.Action("PostProblemWidget", new {controller = "CommonWidget"})
+	@Html.Action(MVC.CommonWidget.PostDiscussionWidget())
 	<hr />
 	Widgets here. You decide.
 }

@@ -221,20 +221,35 @@
     <Compile Include="AccountController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="AdminController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="AutoMapperProfile\MathHubMapperProfile.cs" />
+    <Compile Include="AutoMapperProfile\AdminMapperProfile.cs" />
+    <Compile Include="AutoMapperProfile\BlogMapperProfile.cs" />
+    <Compile Include="AutoMapperProfile\CommonMapperProfile.cs" />
+    <Compile Include="AutoMapperProfile\DiscussionMapperProfile.cs" />
+    <Compile Include="AutoMapperProfile\ProblemMapperProfile.cs" />
+    <Compile Include="BlogController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="CommonWidgetController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CommonWidgetController.cs" />
     <Compile Include="Controllers\DiscussionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProblemController.cs" />
     <Compile Include="CustomAnnotation\ActionFilter\AjaxCallAF.cs" />
+    <Compile Include="DiscussionController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -243,13 +258,16 @@
     </Compile>
     <Compile Include="Models\CommonVM\ProfileWidgetVM.cs" />
     <Compile Include="Models\CommonVM\UserInfoVM.cs" />
+    <Compile Include="Models\DiscussionVM\DAnswerItemVM.cs" />
+    <Compile Include="Models\DiscussionVM\DAnswerListVM.cs" />
+    <Compile Include="Models\DiscussionVM\DCommentItemVM.cs" />
+    <Compile Include="Models\DiscussionVM\DCommentListVM.cs" />
+    <Compile Include="Models\DiscussionVM\DCommentPostVM.cs" />
     <Compile Include="Models\DiscussionVM\CreateDiscussionVM.cs" />
     <Compile Include="Models\DiscussionVM\DetailDiscussionVM.cs" />
     <Compile Include="Models\DiscussionVM\PreviewDiscussionVM.cs" />
     <Compile Include="Models\ProblemVM\AnswerItemVM.cs" />
     <Compile Include="Models\ProblemVM\AnswerListVM.cs" />
-    <Compile Include="Models\ProblemVM\AnswerPostVM.cs" />
-    <Compile Include="Models\ProblemVM\AskProblemVM.cs" />
     <Compile Include="Models\ProblemVM\CommentItemVM.cs" />
     <Compile Include="Models\ProblemVM\CommentListVM.cs" />
     <Compile Include="Models\ProblemVM\CommentPostVM.cs" />
@@ -2749,10 +2767,28 @@
     <Content Include="Views\Problem\Partials\_AnswerPostForm.cshtml" />
     <Content Include="Views\Problem\Partials\_CommentPostForm.cshtml" />
     <Content Include="Views\Problem\Partials\_HintPostForm.cshtml" />
+    <Content Include="Views\Discussion\Views\CreateDiscussion.cshtml" />
+    <Content Include="Views\Discussion\Views\DetailDiscussion.cshtml" />
+    <Content Include="Views\Discussion\Views\ListAllDiscussion.cshtml" />
+    <Content Include="Views\Discussion\Layouts\_DiscussionCreateLayout.cshtml" />
+    <Content Include="Views\Discussion\Layouts\_DiscussionDetailLayout.cshtml" />
+    <Content Include="Views\Discussion\Layouts\_DiscussionListLayout.cshtml" />
+    <Content Include="Views\CommonWidget\_NewDiscussionWidget.cshtml" />
+    <Content Include="Views\CommonWidget\_PostDiscussionWidget.cshtml" />
+    <Content Include="Views\Discussion\Partials\_DiscussionItem.cshtml" />
+    <Content Include="Views\Discussion\Partials\_CommentPostForm.cshtml" />
+    <Content Include="Views\CommonWidget\_NewProblemWidget.cshtml" />
+    <Content Include="Views\CommonWidget\_PostBlogWidget.cshtml" />
+    <Content Include="Views\CommonWidget\_DiscussionPostGuide.cshtml" />
+    <Content Include="Views\CommonWidget\_BlogPostGuide.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="CustomAnnotation\ValidationAttribute\" />
+    <Folder Include="Models\AdminVM\" />
+    <Folder Include="Models\BlogVM\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Blog\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

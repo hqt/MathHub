@@ -131,69 +131,52 @@ namespace MathHub.Web.Controllers
             DetailDiscussionVM discussionViewModel =
                 Mapper.Map<Discussion, DetailDiscussionVM>(targetDiscussion);
 
-            discussionViewModel.CommentPostVm = new MathHub.Web.Models.DiscussionVM.DCommentPostVM();
+            discussionViewModel.CommentPostVm = new DCommentPostVM();
             discussionViewModel.CommentPostVm.MainPostId = discussionViewModel.Id;
             discussionViewModel.CommentPostVm.Type = "discussion";
 
             return View("Views/DetailDiscussion", discussionViewModel);
         }
 
-        //[AjaxCallActionFilter]
-        //public virtual ActionResult Answer(int id, int offset)
-        //{
-        //    IEnumerable<Reply> answers = _problemQueryService.GetAllReplies(
-        //            id,
-        //            ReplyEnum.ANSWER,
-        //            offset,
-        //            Constant.DEFAULT_PER_PAGE
-        //        ).AsEnumerable();
+        [AjaxCallActionFilter]
+        public virtual ActionResult Reply(int id, int offset)
+        {
+            IEnumerable<Reply> replies = _discussionQueryService.GetAllReplies(
+                    id,
+                    ReplyEnum.DEFAULT,
+                    offset,
+                    Constant.DEFAULT_PER_PAGE
+                ).AsEnumerable();
 
-        //    ICollection<AnswerItemVM> answerItemVms = answers.Select(Mapper.Map<Reply, AnswerItemVM>).ToList();
-        //    AnswerListVM answerListVm = new AnswerListVM();
-        //    answerListVm.AnswerItemVms = answerItemVms;
-        //    return PartialView("Partials/_AnswerList", answerListVm);
-        //}
+            ICollection<AnswerItemVM> answerItemVms = replies.Select(Mapper.Map<Reply, AnswerItemVM>).ToList();
+            AnswerListVM answerListVm = new AnswerListVM();
+            answerListVm.AnswerItemVms = answerItemVms;
+            return PartialView("Partials/_AnswerList", answerListVm);
+        }
 
-        //[AjaxCallActionFilter]
-        //public virtual ActionResult Hint(int postId, int offset)
-        //{
-        //    IEnumerable<Reply> hints = _problemQueryService.GetAllReplies(
-        //            postId,
-        //            ReplyEnum.HINT,
-        //            offset,
-        //            Constant.DEFAULT_PER_PAGE
-        //        ).AsEnumerable();
+        [AjaxCallActionFilter]
+        public virtual ActionResult Comment(int postId, int offset)
+        {
+            offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
+            int limit = offset < 0 ? int.MaxValue : Constant.DEFAULT_COMMENT_LOADING;
 
-        //    // Map list models to list viewmodels with lambda expression 
-        //    ICollection<HintItemVM> hintItemVms = hints.Select(Mapper.Map<Reply, HintItemVM>).ToList();
-        //    HintListVM hintListVm = new HintListVM();
-        //    hintListVm.HintItemVms = hintItemVms;
-        //    return PartialView("Partials/_HintList", hintListVm);
-        //}
+            IEnumerable<Comment> comments = _discussionQueryService.GetAllComments(
+                postId,
+                offset,
+                limit
+                );
 
-        //[AjaxCallActionFilter]
-        //public virtual ActionResult Comment(int postId, int offset)
-        //{
-        //    offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
-        //    int limit = offset < 0 ? int.MaxValue : Constant.DEFAULT_COMMENT_LOADING;
+            // Map list models to list viewmodels with lambda expression 
+            ICollection<CommentItemVM> hintItemVms = comments.Select(Mapper.Map<Comment, CommentItemVM>).ToList();
 
-        //    IEnumerable<Comment> comments = _problemQueryService.GetAllComments(
-        //        postId,
-        //        offset,
-        //        limit
-        //        );
+            CommentListVM commentListVm = new CommentListVM();
 
-        //    // Map list models to list viewmodels with lambda expression 
-        //    ICollection<CommentItemVM> hintItemVms = comments.Select(Mapper.Map<Comment, CommentItemVM>).ToList();
-
-        //    CommentListVM commentListVm = new CommentListVM();
-
-        //    commentListVm.CommentItemVms = hintItemVms;
-        //    return PartialView("Partials/_CommentList", commentListVm);
-        //}
+            commentListVm.CommentItemVms = hintItemVms;
+            return PartialView("Partials/_CommentList", commentListVm);
+        }
 
         [Authorize]
-        public bool AddComment(MathHub.Web.Models.DiscussionVM.DCommentPostVM commentPostVm)
+        public bool AddComment(DCommentPostVM commentPostVm)
         {
             if (ModelState.IsValid)
             {
