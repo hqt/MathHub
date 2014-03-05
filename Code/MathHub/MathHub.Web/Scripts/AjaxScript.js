@@ -19,7 +19,7 @@ function getAnswerAjax(postId, offset) {
     });
 }
 
-function postComment(formId, elementId, postId, offset) {
+function postComment(formId, elementId, postId, commentDivId) {
     var postData = jQuery("#commentPostForm").serializeArray();
     var formURL = "http://localhost:8102/Problem/AddComment";
     $.ajax(
@@ -29,7 +29,8 @@ function postComment(formId, elementId, postId, offset) {
             data: postData,
             success: function (data) {
                 if (data) {
-                    getCommentAjax(elementId, postId, offset);
+                    $("#" + commentDivId).append(postData[0].value + "<br/>");
+                    $("#" + formId).children("textarea").val("");                
                 } else {
 
                 }

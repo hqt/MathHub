@@ -96,6 +96,7 @@
     <Compile Include="Utils\ReflectionUtils.cs" />
     <Compile Include="Utils\SecurityUtils.cs" />
     <Compile Include="Utils\StringUtils.cs" />
+    <Compile Include="Utils\WebUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="HTMLHelper\" />

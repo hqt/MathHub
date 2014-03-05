@@ -9,5 +9,5 @@
 
         @Html.HiddenFor(m => m.MainPostId)
         @Html.HiddenFor(m => m.Type)
-        <input type="button" name="addComment" onclick="postComment('commentPostForm','problemComments', @Model.MainPostId, -1)" value="Send"/>
+        <input type="button" name="addComment" onclick="postComment('commentPostForm','problemComments', @Model.MainPostId, 'problemComments')" value="Send"/>
     }

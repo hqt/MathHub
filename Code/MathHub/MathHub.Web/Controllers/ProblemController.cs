@@ -120,11 +120,12 @@ namespace MathHub.Web.Controllers
         public virtual ActionResult Detail(int id)
         {
             Problem targetProblem = _problemQueryService.GetProblemById(id);
-            var tuple = _problemQueryService.GetPostVote(targetProblem.Id);
 
             // Map from Model to ViewModel
             DetailProblemVM problemViewModel =
                 Mapper.Map<Problem, DetailProblemVM>(targetProblem);
+
+            // problemViewModel.PostVote = tuple;
          
             problemViewModel.CommentPostVm = new CommentPostVM();
             problemViewModel.CommentPostVm.MainPostId = problemViewModel.Id;
@@ -169,8 +170,9 @@ namespace MathHub.Web.Controllers
         [AjaxCallAF]
         public virtual ActionResult Comment(int postId, int offset)
         {
-            offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
             int limit = offset < 0 ? int.MaxValue : Constant.DEFAULT_COMMENT_LOADING;
+            offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
+            
 
             IEnumerable<Comment> comments = _problemQueryService.GetAllComments(
                 postId,

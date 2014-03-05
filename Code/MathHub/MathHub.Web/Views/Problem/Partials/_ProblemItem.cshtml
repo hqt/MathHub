@@ -8,12 +8,12 @@
                  "Detail", new {controller = "Problem", id = Model.Id})<br/>
 <ul>
 
-    <li>Id: @Model.Id </li>
-    <li>Content: @Model.Content </li>
+    <li>Id:@Html.Raw(@Model.Id) </li>
+    <li>Content: @Html.Raw(@Model.Content) </li>
     <li>DateCreated: @Model.DateCreated </li>
     <li>DateModified: @Model.DateModified </li>
     <li>UserId: @Model.UserId </li>
-    <li>Title: @Model.Title </li>
+    <li>Title: @Html.Raw(@Model.Title) </li>
     <li>FavoriteNum: @Model.FavoriteNum </li>
     <li>ReportNum: @Model.FavoriteNum </li>
     <li>ShareNum: @Model.ShareNum </li>

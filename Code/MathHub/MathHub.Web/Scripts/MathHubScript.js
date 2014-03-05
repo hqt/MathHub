@@ -6,7 +6,17 @@ function hideElementById(id) {
     $("#" + id).hide();
 }
 
-function showCommentOnClick(showId, postId, formId) {
-    getCommentAjax(showId, postId, -1);
+function showAndHideElementsById(showId, hideId) {
+    $("#" + showId).show();
+    $("#" + hideId).hide();
+}
+
+function getValueById(id) {
+    return $("#" + id).val();
+}
+
+function showCommentOnClick(showId, postId, formId, hideId) {
+    getCommentAjax(showId, postId, 5);
     showElementById(formId);
+    hideElementById(hideId);
 }

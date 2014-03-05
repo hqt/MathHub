@@ -40,12 +40,12 @@
 
 @if(Model.PostReply.Item1 > 5)
 {
-	<button onclick="showCommentOnClick('problemComments', @Model.Id, 'commentPostForm')">Add / Show @Model.PostReply.Item1 more comments</button>
+	<button id="addPostComment" onclick="showCommentOnClick('problemComments', @Model.Id, 'commentPostForm', 'addPostComment')">Add / Show @{int num = Model.PostReply.Item1 - 5; } @num more comments</button>
 }else
 {
-	<button onclick="showElementById('commentPostForm')">Add comments</button>
+	<button id="addPostComment" onclick="showAndHideElementsById('commentPostForm', 'addPostComment')">Add comments</button>
 }
-
+@*@Html.Hidden("commentNum", @Model.PostReply.Item1, new {id="commentNum"});*@
 @Html.Partial("Partials/_CommentPostForm", Model.CommentPostVm)
 
 @*<button onclick="getCommentAjax('problemComments',@Model.Id, -1)">View more comments</button>*@
