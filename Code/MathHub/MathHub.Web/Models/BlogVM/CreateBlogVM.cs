@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace MathHub.Web.Models.ProblemVM
+namespace MathHub.Web.Models.BlogVM
 {
-    public class AnswerPostVM
+    public class CreateBlogVM
     {
         public int Id { get; set; }
 
@@ -17,4 +17,3 @@ namespace MathHub.Web.Models.ProblemVM
         public Nullable<int> MainPostId { get; set; }
     }
 }
-

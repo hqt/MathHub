@@ -1,0 +1,11 @@
+﻿@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@* import ckeditor javascript library *@
+<script type="text/javascript" src ="/Scripts/ckeditor/ckeditor.js"></script>
+
+<div class="grid_9">
+@RenderBody()
+</div>
+<nav class="grid_3 rightpanel">@RenderSection("RightPanel", true)</nav>

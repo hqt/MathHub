@@ -63,39 +63,47 @@ namespace MathHub.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass
         {
-            public readonly string HeaderWidget = "HeaderWidget";
-            public readonly string FooterWidget = "FooterWidget";
+            public readonly string NewBlogWidget = "NewBlogWidget";
+            public readonly string PostBlogWidget = "PostBlogWidget";
+            public readonly string BlogPostGuide = "BlogPostGuide";
+            public readonly string PostProblemWidget = "PostProblemWidget";
+            public readonly string ProblemPostGuide = "ProblemPostGuide";
+            public readonly string PostDiscussionWidget = "PostDiscussionWidget";
+            public readonly string DiscussionPostGuide = "DiscussionPostGuide";
+            public readonly string ProfileWidget = "ProfileWidget";
             public readonly string FavoriteTagWidget = "FavoriteTagWidget";
             public readonly string GroupWidget = "GroupWidget";
             public readonly string MySubscriptionWidget = "MySubscriptionWidget";
-            public readonly string NewBlogWidget = "NewBlogWidget";
-            public readonly string PostProblemWidget = "PostProblemWidget";
-            public readonly string ProblemPostGuide = "ProblemPostGuide";
-            public readonly string ProfileWidget = "ProfileWidget";
+            public readonly string SubscriptionWidget = "SubscriptionWidget";
+            public readonly string YourActivityWidget = "YourActivityWidget";
             public readonly string RelatedBlogWidget = "RelatedBlogWidget";
             public readonly string RelatedTagWidget = "RelatedTagWidget";
             public readonly string SameAuthorWidget = "SameAuthorWidget";
-            public readonly string SubscriptionWidget = "SubscriptionWidget";
-            public readonly string YourActivityWidget = "YourActivityWidget";
+            public readonly string HeaderWidget = "HeaderWidget";
+            public readonly string FooterWidget = "FooterWidget";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants
         {
-            public const string HeaderWidget = "HeaderWidget";
-            public const string FooterWidget = "FooterWidget";
+            public const string NewBlogWidget = "NewBlogWidget";
+            public const string PostBlogWidget = "PostBlogWidget";
+            public const string BlogPostGuide = "BlogPostGuide";
+            public const string PostProblemWidget = "PostProblemWidget";
+            public const string ProblemPostGuide = "ProblemPostGuide";
+            public const string PostDiscussionWidget = "PostDiscussionWidget";
+            public const string DiscussionPostGuide = "DiscussionPostGuide";
+            public const string ProfileWidget = "ProfileWidget";
             public const string FavoriteTagWidget = "FavoriteTagWidget";
             public const string GroupWidget = "GroupWidget";
             public const string MySubscriptionWidget = "MySubscriptionWidget";
-            public const string NewBlogWidget = "NewBlogWidget";
-            public const string PostProblemWidget = "PostProblemWidget";
-            public const string ProblemPostGuide = "ProblemPostGuide";
-            public const string ProfileWidget = "ProfileWidget";
+            public const string SubscriptionWidget = "SubscriptionWidget";
+            public const string YourActivityWidget = "YourActivityWidget";
             public const string RelatedBlogWidget = "RelatedBlogWidget";
             public const string RelatedTagWidget = "RelatedTagWidget";
             public const string SameAuthorWidget = "SameAuthorWidget";
-            public const string SubscriptionWidget = "SubscriptionWidget";
-            public const string YourActivityWidget = "YourActivityWidget";
+            public const string HeaderWidget = "HeaderWidget";
+            public const string FooterWidget = "FooterWidget";
         }
 
 
@@ -123,6 +131,8 @@ namespace MathHub.Web.Controllers
                 public readonly string _HeaderWidget = "_HeaderWidget";
                 public readonly string _MySubscriptionWidget = "_MySubscriptionWidget";
                 public readonly string _NewBlogWidget = "_NewBlogWidget";
+                public readonly string _NewDiscussionWidget = "_NewDiscussionWidget";
+                public readonly string _PostDiscussionWidget = "_PostDiscussionWidget";
                 public readonly string _PostProblemWidget = "_PostProblemWidget";
                 public readonly string _ProblemPostGuide = "_ProblemPostGuide";
                 public readonly string _ProfileWidget = "_ProfileWidget";
@@ -138,6 +148,8 @@ namespace MathHub.Web.Controllers
             public readonly string _HeaderWidget = "~/Views/CommonWidget/_HeaderWidget.cshtml";
             public readonly string _MySubscriptionWidget = "~/Views/CommonWidget/_MySubscriptionWidget.cshtml";
             public readonly string _NewBlogWidget = "~/Views/CommonWidget/_NewBlogWidget.cshtml";
+            public readonly string _NewDiscussionWidget = "~/Views/CommonWidget/_NewDiscussionWidget.cshtml";
+            public readonly string _PostDiscussionWidget = "~/Views/CommonWidget/_PostDiscussionWidget.cshtml";
             public readonly string _PostProblemWidget = "~/Views/CommonWidget/_PostProblemWidget.cshtml";
             public readonly string _ProblemPostGuide = "~/Views/CommonWidget/_ProblemPostGuide.cshtml";
             public readonly string _ProfileWidget = "~/Views/CommonWidget/_ProfileWidget.cshtml";
@@ -155,24 +167,90 @@ namespace MathHub.Web.Controllers
         public T4MVC_CommonWidgetController() : base(Dummy.Instance) { }
 
         [NonAction]
-        partial void HeaderWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void NewBlogWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult HeaderWidget()
+        public override System.Web.Mvc.ActionResult NewBlogWidget()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.HeaderWidget);
-            HeaderWidgetOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.NewBlogWidget);
+            NewBlogWidgetOverride(callInfo);
             return callInfo;
         }
 
         [NonAction]
-        partial void FooterWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void PostBlogWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult FooterWidget()
+        public override System.Web.Mvc.ActionResult PostBlogWidget()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.FooterWidget);
-            FooterWidgetOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.PostBlogWidget);
+            PostBlogWidgetOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void BlogPostGuideOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult BlogPostGuide()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.BlogPostGuide);
+            BlogPostGuideOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void PostProblemWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult PostProblemWidget()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.PostProblemWidget);
+            PostProblemWidgetOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ProblemPostGuideOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult ProblemPostGuide()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ProblemPostGuide);
+            ProblemPostGuideOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void PostDiscussionWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult PostDiscussionWidget()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.PostDiscussionWidget);
+            PostDiscussionWidgetOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void DiscussionPostGuideOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult DiscussionPostGuide()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.DiscussionPostGuide);
+            DiscussionPostGuideOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void ProfileWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult ProfileWidget()
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ProfileWidget);
+            ProfileWidgetOverride(callInfo);
             return callInfo;
         }
 
@@ -210,46 +288,24 @@ namespace MathHub.Web.Controllers
         }
 
         [NonAction]
-        partial void NewBlogWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void SubscriptionWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult NewBlogWidget()
+        public override System.Web.Mvc.ActionResult SubscriptionWidget()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.NewBlogWidget);
-            NewBlogWidgetOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SubscriptionWidget);
+            SubscriptionWidgetOverride(callInfo);
             return callInfo;
         }
 
         [NonAction]
-        partial void PostProblemWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void YourActivityWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult PostProblemWidget()
+        public override System.Web.Mvc.ActionResult YourActivityWidget()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.PostProblemWidget);
-            PostProblemWidgetOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void ProblemPostGuideOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult ProblemPostGuide()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ProblemPostGuide);
-            ProblemPostGuideOverride(callInfo);
-            return callInfo;
-        }
-
-        [NonAction]
-        partial void ProfileWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
-
-        [NonAction]
-        public override System.Web.Mvc.ActionResult ProfileWidget()
-        {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.ProfileWidget);
-            ProfileWidgetOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.YourActivityWidget);
+            YourActivityWidgetOverride(callInfo);
             return callInfo;
         }
 
@@ -288,24 +344,24 @@ namespace MathHub.Web.Controllers
         }
 
         [NonAction]
-        partial void SubscriptionWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void HeaderWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult SubscriptionWidget()
+        public override System.Web.Mvc.ActionResult HeaderWidget()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.SubscriptionWidget);
-            SubscriptionWidgetOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.HeaderWidget);
+            HeaderWidgetOverride(callInfo);
             return callInfo;
         }
 
         [NonAction]
-        partial void YourActivityWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
+        partial void FooterWidgetOverride(T4MVC_System_Web_Mvc_ActionResult callInfo);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult YourActivityWidget()
+        public override System.Web.Mvc.ActionResult FooterWidget()
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.YourActivityWidget);
-            YourActivityWidgetOverride(callInfo);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.FooterWidget);
+            FooterWidgetOverride(callInfo);
             return callInfo;
         }
 

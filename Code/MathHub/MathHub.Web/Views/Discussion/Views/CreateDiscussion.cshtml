@@ -1,10 +1,10 @@
-﻿@model MathHub.Web.Models.ProblemVM.CreateProblemVM
+﻿@model MathHub.Web.Models.DiscussionVM.CreateDiscussionVM
 @{
     ViewBag.Title = "CreateProblem";
-    Layout = "~/Views/Problem/Layouts/_ProblemCreateLayout.cshtml";
+    Layout = "~/Views/Discussion/Layouts/_DiscussionCreateLayout.cshtml";
 }
 
-@using (Html.BeginForm(MVC.Problem.Create(@Model), FormMethod.Post)) 
+@using (Html.BeginForm(MVC.Discussion.Create(@Model), FormMethod.Post)) 
 { 
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true)
@@ -31,5 +31,5 @@
 
 @section RightPanel
 {
-    @Html.Action(MVC.CommonWidget.ProblemPostGuide())
+    @Html.Action(MVC.CommonWidget.DiscussionPostGuide())
 }

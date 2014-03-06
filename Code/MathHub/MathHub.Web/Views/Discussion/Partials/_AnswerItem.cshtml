@@ -1,0 +1,7 @@
+﻿@model MathHub.Web.Models.ProblemVM.AnswerItemVM
+
+Answer Item @Model.Content<br/>
+
+<h3>Comments</h3>
+<div id="@Model.Id + 'Comments'"></div>
+<button onclick="getCommentAjax(@Model.Id + 'Comments',@Model.Id)">View more comments</button>

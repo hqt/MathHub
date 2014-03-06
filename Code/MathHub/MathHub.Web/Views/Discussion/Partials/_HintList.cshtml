@@ -1,0 +1,9 @@
+﻿@model MathHub.Web.Models.ProblemVM.HintListVM
+@{
+    foreach (MathHub.Web.Models.ProblemVM.HintItemVM hintItemVm in Model.HintItemVms)
+    {
+        @Html.Partial("Partials/_HintItem", hintItemVm);
+    }
+    
+
+}

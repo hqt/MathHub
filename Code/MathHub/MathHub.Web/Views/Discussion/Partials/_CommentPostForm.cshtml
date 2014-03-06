@@ -1,0 +1,13 @@
+﻿@model MathHub.Web.Models.DiscussionVM.DCommentPostVM
+
+    @using (Html.BeginForm("AddComment", "Problem", FormMethod.Post, 
+                            new { style = "display:none", id = "commentPostForm" }))
+    {
+        @Html.LabelFor(m => m.Content)
+        @Html.TextAreaFor(m => m.Content)
+        @Html.ValidationMessageFor(m => m.Content)
+
+        @Html.HiddenFor(m => m.MainPostId)
+        @Html.HiddenFor(m => m.Type)
+        <input type="button" name="addComment" onclick="postComment('commentPostForm','problemComments', @Model.MainPostId, -1)" value="Send"/>
+    }

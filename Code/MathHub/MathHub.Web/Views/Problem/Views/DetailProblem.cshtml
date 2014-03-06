@@ -1,31 +1,31 @@
 ﻿@model MathHub.Web.Models.ProblemVM.DetailProblemVM
 @{
-    ViewBag.Title = "DetailProblem";
-    Layout = "~/Views/Problem/Layouts/_ProblemDetailLayout.cshtml";
+	ViewBag.Title = "DetailProblem";
+	Layout = "~/Views/Problem/Layouts/_ProblemDetailLayout.cshtml";
 }
 
 <h2>Detail Problem:</h2>
 
 <ul>
 
-    <li>Id: @Model.Id </li>
+	<li>Id: @Model.Id </li>
 
-    <li>Content: @Model.Content </li>
-    <li>DateCreated: @Model.DateCreated </li>
-    <li>DateModified: @Model.DateModified </li>
-    <li>UserId: @Model.UserId </li>
-    <li>Title: @Model.Title </li>
+	<li>Content: @Model.Content </li>
+	<li>DateCreated: @Model.DateCreated </li>
+	<li>DateModified: @Model.DateModified </li>
+	<li>UserId: @Model.UserId </li>
+	<li>Title: @Model.Title </li>
 
-    @*<li>FavoriteNum: @Model.PostSocial.Item1 </li>
-    <li>ReportNum: @Model.PostSocial.Item2 </li>
-    <li>ShareNum: @Model.PostSocial.Item3 </li>
-     <li>AnswerNum: @Model.PostReply.Item2 </li>
-    <li>HintNum: @Model.PostReply.Item3 </li>
-    <li>Comment num: @Model.PostReply.Item1</li>*@
+	@*<li>FavoriteNum: @Model.PostSocial.Item1 </li>
+	<li>ReportNum: @Model.PostSocial.Item2 </li>
+	<li>ShareNum: @Model.PostSocial.Item3 </li>
+	 <li>AnswerNum: @Model.PostReply.Item2 </li>
+	<li>HintNum: @Model.PostReply.Item3 </li>
+	<li>Comment num: @Model.PostReply.Item1</li>*@
 
-    <li>VoteUpNum: @Model.PostVote.Item1</li>
-    <li>VoteDownNum: @Model.PostVote.Item2 </li>
-    
+	<li>VoteUpNum: @Model.PostVote.Item1</li>
+	<li>VoteDownNum: @Model.PostVote.Item2 </li>
+	
    
 </ul>
 
@@ -64,6 +64,7 @@
       <div id="problemHints"></div>
       @Html.Partial("Partials/_HintPostForm", Model.HintPostVm)
   </div>
+
 </div>
  
 <script>
@@ -72,7 +73,7 @@
 
 @section RightPanel
 {
-    @Html.Action("PostProblemWidget", new {controller = "CommonWidget"})
-    <hr />
-    Widgets here. You decide.
+	@Html.Action("PostProblemWidget", new {controller = "CommonWidget"})
+	<hr />
+	Widgets here. You decide.
 }

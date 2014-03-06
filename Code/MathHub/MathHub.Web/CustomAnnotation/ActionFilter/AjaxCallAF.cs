@@ -7,7 +7,7 @@ using MathHub.Framework.CustomAnnotation;
 
 namespace MathHub.Web.CustomAnnotation.ActionFilter
 {
-    public class AjaxCallAF : BaseActionFilter
+    public class AjaxCallActionFilter : BaseActionFilter
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {

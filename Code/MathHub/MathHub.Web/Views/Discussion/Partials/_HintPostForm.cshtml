@@ -1,0 +1,12 @@
+﻿@model MathHub.Web.Models.ProblemVM.HintPostVM
+
+    @using (Html.BeginForm("AddHint", "Problem", FormMethod.Post, 
+                            new {id = "hintPostForm" }))
+    {
+        @Html.LabelFor(m => m.Content)
+        @Html.TextAreaFor(m => m.Content)
+        @Html.ValidationMessageFor(m => m.Content)
+
+        @Html.HiddenFor(m => m.MainPostId)
+        <input type="button" name="addHint" onclick="postHint('hintPostForm', @Model.MainPostId, 'problemHints')" value="Send"/>
+    }

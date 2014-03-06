@@ -26,8 +26,11 @@ public static partial class MVC
 {
     public static MathHub.Web.Controllers.AccountController Account = new MathHub.Web.Controllers.T4MVC_AccountController();
     public static MathHub.Web.Controllers.CommonWidgetController CommonWidget = new MathHub.Web.Controllers.T4MVC_CommonWidgetController();
+    public static MathHub.Web.Controllers.DiscussionController Discussion = new MathHub.Web.Controllers.T4MVC_DiscussionController();
     public static MathHub.Web.Controllers.HomeController Home = new MathHub.Web.Controllers.T4MVC_HomeController();
     public static MathHub.Web.Controllers.ProblemController Problem = new MathHub.Web.Controllers.T4MVC_ProblemController();
+    public static T4MVC.AdminController Admin = new T4MVC.AdminController();
+    public static T4MVC.BlogController Blog = new T4MVC.BlogController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 

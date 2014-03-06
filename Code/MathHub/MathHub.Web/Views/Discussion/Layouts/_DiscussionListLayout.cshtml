@@ -1,0 +1,9 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<nav class="grid_3 leftpanel">@RenderSection("LeftPanel", true)</nav>
+<div class="grid_6">
+@RenderBody()
+</div>
+<nav class="grid_3 rightpanel">@RenderSection("RightPanel", true)</nav>

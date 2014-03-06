@@ -12,7 +12,7 @@ using StructureMap;
 
 namespace MathHub.Web.AutoMapperProfile
 {
-    class MathHubMapperProfile : Profile
+    class ProblemMapperProfile : Profile
     {
         /// <summary>
         /// Config profile for System AutoMapper
