@@ -131,14 +131,20 @@ namespace MathHub.Web.Controllers
             problemViewModel.CommentPostVm.MainPostId = problemViewModel.Id;
             problemViewModel.CommentPostVm.Type = "problem";
 
+            problemViewModel.AnswerPostVm = new AnswerPostVM();
+            problemViewModel.AnswerPostVm.MainPostId = problemViewModel.Id;
+
+            problemViewModel.HintPostVm = new HintPostVM();
+            problemViewModel.HintPostVm.MainPostId = problemViewModel.Id;
+
             return View("Views/DetailProblem", problemViewModel);
         }
 
         [AjaxCallAF]
-        public virtual ActionResult Answer(int id, int offset)
+        public virtual ActionResult Answer(int postId, int offset)
         {
             IEnumerable<Reply> answers = _problemQueryService.GetAllReplies(
-                    id,
+                    postId,
                     ReplyEnum.ANSWER,
                     offset,
                     Constant.DEFAULT_PER_PAGE
@@ -216,6 +222,43 @@ namespace MathHub.Web.Controllers
 
             }
             return false;
+        }
+
+        [Authorize]
+        public bool AddAnswer(AnswerPostVM answerPostVm)
+        {
+            if(ModelState.IsValid)
+            {
+                Reply reply = new Reply();
+                reply.Content = answerPostVm.Content;
+                reply.UserId = WebSecurity.CurrentUserId;
+                reply.DateCreated = DateTime.Now;
+                reply.Type = ReplyEnum.ANSWER;
+
+                return _problemCommandService.AddReply((int)answerPostVm.MainPostId, reply);
+            }else
+            {
+                return false;
+            }
+        }
+
+        [Authorize]
+        public bool AddHint(HintPostVM hintPostVm)
+        {
+            if (ModelState.IsValid)
+            {
+                Reply reply = new Reply();
+                reply.Content = hintPostVm.Content;
+                reply.UserId = WebSecurity.CurrentUserId;
+                reply.DateCreated = DateTime.Now;
+                reply.Type = ReplyEnum.HINT;
+
+                return _problemCommandService.AddReply((int)hintPostVm.MainPostId, reply);
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

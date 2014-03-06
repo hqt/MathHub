@@ -16,7 +16,7 @@ function getValueById(id) {
 }
 
 function showCommentOnClick(showId, postId, formId, hideId) {
-    getCommentAjax(showId, postId, 5);
+    getCommentAjax(showId, postId, -1);
     showElementById(formId);
     hideElementById(hideId);
 }

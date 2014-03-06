@@ -5,10 +5,5 @@
         @Html.Partial("Partials/_AnswerItem", answer);
     }
     
-     using (@Html.BeginForm("Answer", "Problem", FormMethod.Post, null))
-    {
-        @Html.LabelFor(m => m.NewAnswer)
-        @Html.TextAreaFor(m => m.NewAnswer)
-        <input type="submit" name="addAnswer" value="Send"/>
-    }
+    
 }

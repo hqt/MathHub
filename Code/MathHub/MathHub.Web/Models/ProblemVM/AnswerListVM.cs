@@ -11,6 +11,6 @@ namespace MathHub.Web.Models.ProblemVM
         [Required(ErrorMessage = "Answer cannot be empty.")]
         [Display(Name = "Add your answer")]
         public String NewAnswer { get; set; }
-        public ICollection<AnswerItemVM> AnswerItemVms { get; set; } 
+        public ICollection<AnswerItemVM> AnswerItemVms { get; set; }
     }
 }

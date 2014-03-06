@@ -1,1 +1,12 @@
-﻿
+﻿@model MathHub.Web.Models.ProblemVM.AnswerPostVM
+
+    @using (Html.BeginForm("AddAnswer", "Problem", FormMethod.Post, 
+                            new {id = "answerPostForm" }))
+    {
+        @Html.LabelFor(m => m.Content)
+        @Html.TextAreaFor(m => m.Content)
+        @Html.ValidationMessageFor(m => m.Content)
+
+        @Html.HiddenFor(m => m.MainPostId)
+        <input type="button" name="addAnswer" onclick="postAnswer('answerPostForm', @Model.MainPostId, 'problemAnswers')" value="Send"/>
+    }

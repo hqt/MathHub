@@ -5,10 +5,5 @@
         @Html.Partial("Partials/_HintItem", hintItemVm);
     }
     
-       using (@Html.BeginForm("Hint", "Problem", FormMethod.Post, null))
-    {
-        @Html.LabelFor(m => m.NewHint)
-        @Html.TextAreaFor(m => m.NewHint)
-        <input type="submit" name="addHint" value="Send"/>
-    }
+
 }

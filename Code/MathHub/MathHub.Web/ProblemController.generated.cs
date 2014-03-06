@@ -131,7 +131,7 @@ namespace MathHub.Web.Controllers
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_Answer
         {
-            public readonly string id = "id";
+            public readonly string postId = "postId";
             public readonly string offset = "offset";
         }
         static readonly ActionParamsClass_Hint s_params_Hint = new ActionParamsClass_Hint();
@@ -191,18 +191,24 @@ namespace MathHub.Web.Controllers
                 {
                     public readonly string _AnswerItem = "_AnswerItem";
                     public readonly string _AnswerList = "_AnswerList";
+                    public readonly string _AnswerPostForm = "_AnswerPostForm";
                     public readonly string _CommentItem = "_CommentItem";
                     public readonly string _CommentList = "_CommentList";
+                    public readonly string _CommentPostForm = "_CommentPostForm";
                     public readonly string _HintItem = "_HintItem";
                     public readonly string _HintList = "_HintList";
+                    public readonly string _HintPostForm = "_HintPostForm";
                     public readonly string _ProblemItem = "_ProblemItem";
                 }
                 public readonly string _AnswerItem = "~/Views/Problem/Partials/_AnswerItem.cshtml";
                 public readonly string _AnswerList = "~/Views/Problem/Partials/_AnswerList.cshtml";
+                public readonly string _AnswerPostForm = "~/Views/Problem/Partials/_AnswerPostForm.cshtml";
                 public readonly string _CommentItem = "~/Views/Problem/Partials/_CommentItem.cshtml";
                 public readonly string _CommentList = "~/Views/Problem/Partials/_CommentList.cshtml";
+                public readonly string _CommentPostForm = "~/Views/Problem/Partials/_CommentPostForm.cshtml";
                 public readonly string _HintItem = "~/Views/Problem/Partials/_HintItem.cshtml";
                 public readonly string _HintList = "~/Views/Problem/Partials/_HintList.cshtml";
+                public readonly string _HintPostForm = "~/Views/Problem/Partials/_HintPostForm.cshtml";
                 public readonly string _ProblemItem = "~/Views/Problem/Partials/_ProblemItem.cshtml";
             }
             static readonly _ViewsClass s_Views = new _ViewsClass();
@@ -309,7 +315,7 @@ namespace MathHub.Web.Controllers
         }
 
         [NonAction]
-        partial void DetailOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int? id);
+        partial void DetailOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id);
 
         [NonAction]
         public override System.Web.Mvc.ActionResult Detail(int id)
@@ -321,15 +327,15 @@ namespace MathHub.Web.Controllers
         }
 
         [NonAction]
-        partial void AnswerOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int id, int offset);
+        partial void AnswerOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int postId, int offset);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Answer(int id, int offset)
+        public override System.Web.Mvc.ActionResult Answer(int postId, int offset)
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Answer);
-            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "id", id);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "postId", postId);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "offset", offset);
-            AnswerOverride(callInfo, id, offset);
+            AnswerOverride(callInfo, postId, offset);
             return callInfo;
         }
 

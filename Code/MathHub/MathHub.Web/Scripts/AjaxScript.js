@@ -19,9 +19,9 @@ function getAnswerAjax(postId, offset) {
     });
 }
 
-function postComment(formId, elementId, postId, commentDivId) {
+function postComment(formId, postId, commentDivId) {
     var postData = jQuery("#commentPostForm").serializeArray();
-    var formURL = "http://localhost:8102/Problem/AddComment";
+    var formURL = "/Problem/AddComment";
     $.ajax(
         {
             url: formURL,
@@ -40,5 +40,54 @@ function postComment(formId, elementId, postId, commentDivId) {
             }
             
         });  
+    return false;
+}
+
+
+function postAnswer(formId, postId, answerDivId) {
+    var postData = jQuery("#answerPostForm").serializeArray();
+    var formURL = "/Problem/AddAnswer";
+    $.ajax(
+        {
+            url: formURL,
+            type: "POST",
+            data: postData,
+            success: function (data) {
+                if (data) {
+                    $("#" + answerDivId).append(postData[0].value + "<br/>");
+                    $("#" + formId).children("textarea").val("");
+                } else {
+
+                }
+            },
+            error: function () {
+
+            }
+
+        });
+    return false;
+}
+
+function postHint(formId, postId, hintDivId) {
+    var postData = jQuery("#hintPostForm").serializeArray();
+    var formURL = "/Problem/AddHint";
+    $.ajax(
+        {
+            url: formURL,
+            type: "POST",
+            data: postData,
+            success: function (data) {
+                if (data) {
+                    $("#" + hintDivId).append(postData[0].value + "<br/>");
+                    $("#" + formId).children("textarea").val("");
+                } else {
+
+                }
+            },
+            error: function () {
+
+            }
+
+        });
     return false;
 }

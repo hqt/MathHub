@@ -23,7 +23,7 @@ namespace MathHub.Core.Config
         public const int GET_ALL = int.MaxValue;
 
         /* so. first loading 5 comments. after that load from 6th */
-        public const int DEFAULT_COMMENT_OFFSET = 6;
+        public const int DEFAULT_COMMENT_OFFSET = 5;
         public const int DEFAULT_COMMENT_LOADING = 5;
 
         public const int DEFAULT_REPLY_OFFSET = 6;

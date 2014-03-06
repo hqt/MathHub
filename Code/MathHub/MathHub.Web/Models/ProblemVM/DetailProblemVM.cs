@@ -20,6 +20,8 @@ namespace MathHub.Web.Models.ProblemVM
 
         //public CommentListVM Comments { get; set; }
         public CommentPostVM CommentPostVm { get; set; }
+        public AnswerPostVM AnswerPostVm { get; set; }
+        public HintPostVM HintPostVm { get; set; }
         public UserInfoVM UserInfo { get; set; }
 
 
