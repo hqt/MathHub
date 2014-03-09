@@ -246,7 +246,7 @@
     <Compile Include="Controllers\DiscussionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProblemController.cs" />
-    <Compile Include="CustomAnnotation\ActionFilter\AjaxCallAF.cs" />
+    <Compile Include="CustomAnnotation\ActionFilter\AjaxCallActionFilter.cs" />
     <Compile Include="DiscussionController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -2789,8 +2789,8 @@
     <Content Include="Views\CommonWidget\_PostBlogWidget.cshtml" />
     <Content Include="Views\CommonWidget\_DiscussionPostGuide.cshtml" />
     <Content Include="Views\CommonWidget\_BlogPostGuide.cshtml" />
-    <Content Include="Views\Discussion\Partials\_AnswerList.cshtml" />
     <Content Include="Views\Discussion\Partials\_AnswerItem.cshtml" />
+    <Content Include="Views\Discussion\Partials\_AnswerList.cshtml" />
     <Content Include="Views\Discussion\Partials\_AnswerPostForm.cshtml" />
     <Content Include="Views\Discussion\Partials\_CommentItem.cshtml" />
     <Content Include="Views\Discussion\Partials\_CommentList.cshtml" />
@@ -2804,6 +2804,13 @@
     <Folder Include="Models\AdminVM\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Blog\" />
+    <Folder Include="Views\Admin\Layouts\" />
+    <Folder Include="Views\Admin\Partials\" />
+    <Folder Include="Views\Admin\Views\" />
+    <Folder Include="Views\Blog\Layouts\" />
+    <Folder Include="Views\Blog\Partials\" />
+    <Folder Include="Views\Blog\Views\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -7,6 +7,9 @@ using MathHub.Framework.CustomAnnotation;
 
 namespace MathHub.Web.CustomAnnotation.ActionFilter
 {
+    /// <summary>
+    /// Check if currently call is AJAX request or not
+    /// </summary>
     public class AjaxCallActionFilter : BaseActionFilter
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)

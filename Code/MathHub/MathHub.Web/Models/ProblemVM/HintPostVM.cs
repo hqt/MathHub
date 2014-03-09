@@ -10,8 +10,8 @@ namespace MathHub.Web.Models.ProblemVM
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Comment cannot be empty.")]
-        [Display(Name = "Add your comment")]
+        [Required(ErrorMessage = "Hint cannot be empty.")]
+        [Display(Name = "Add your Hint")]
         public string Content { get; set; }
 
         public Nullable<int> MainPostId { get; set; }
