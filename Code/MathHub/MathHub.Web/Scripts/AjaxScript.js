@@ -24,10 +24,11 @@ function getAnswerAjax(postId, offset) {
 }
 
 /*
-    parameters :
+    parameters          :
         formId          :   post form (include postId, content ... to send to server). 
                             after send success, reset again all field to empty
-        commentDivId    :   location to append data
+        commentDivId    :   location to append comment
+    return              :   data return back is a partial view of comment view model
 */
 function postComment(formId, commentDivId) {
     var postData = jQuery("#" + formId).serializeArray();
@@ -54,8 +55,15 @@ function postComment(formId, commentDivId) {
     return false;
 }
 
-function postAnswer(formId, postId, answerDivId) {
-    var postData = jQuery("#answerPostForm").serializeArray();
+/*
+    parameters          :
+        formId          :   post form (include postId, content ... to send to server). 
+                            after send success, reset again all field to empty
+        answerDivId     :   location to append answer
+    return              :   data return back is a partial view of answer view model
+*/
+function postAnswer(formId, answerDivId) {
+    var postData = jQuery("#" + formId).serializeArray();
     var formURL = "/Problem/AddAnswer";
     $.ajax(
         {
@@ -64,7 +72,8 @@ function postAnswer(formId, postId, answerDivId) {
             data: postData,
             success: function (data) {
                 if (data) {
-                    $("#" + answerDivId).append(postData[0].value + "<br/>");
+                    // $("#" + answerDivId).append(postData[0].value + "<br/>");
+                    $("#" + answerDivId).append(data + "<br/>");
                     $("#" + formId).children("textarea").val("");
                 } else {
 
@@ -78,8 +87,15 @@ function postAnswer(formId, postId, answerDivId) {
     return false;
 }
 
-function postHint(formId, postId, hintDivId) {
-    var postData = jQuery("#hintPostForm").serializeArray();
+/*
+    parameters          :
+        formId          :   post form (include postId, content ... to send to server). 
+                            after send success, reset again all field to empty
+        hintDivId       :   location to append Hint
+    return              :   data return back is a partial view of answer view model
+*/
+function postHint(formId, hintDivId) {
+    var postData = jQuery("#" + formId).serializeArray();
     var formURL = "/Problem/AddHint";
     $.ajax(
         {
@@ -88,7 +104,8 @@ function postHint(formId, postId, hintDivId) {
             data: postData,
             success: function (data) {
                 if (data) {
-                    $("#" + hintDivId).append(postData[0].value + "<br/>");
+                    // $("#" + hintDivId).append(postData[0].value + "<br/>");
+                    $("#" + hintDivId).append(data + "<br/>");
                     $("#" + formId).children("textarea").val("");
                 } else {
 

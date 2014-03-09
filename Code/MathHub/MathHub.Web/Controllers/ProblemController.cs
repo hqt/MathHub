@@ -195,7 +195,6 @@ namespace MathHub.Web.Controllers
             commentListVm.CommentItemVms = hintItemVms;
             return PartialView("Partials/_CommentList", commentListVm);
         }
-
         
         [Authorize]
         public ActionResult AddComment(CommentPostVM commentPostVm)
@@ -234,7 +233,7 @@ namespace MathHub.Web.Controllers
         }
 
         [Authorize]
-        public bool AddAnswer(AnswerPostVM answerPostVm)
+        public ActionResult AddAnswer(AnswerPostVM answerPostVm)
         {
             if(ModelState.IsValid)
             {
@@ -244,15 +243,23 @@ namespace MathHub.Web.Controllers
                 reply.DateCreated = DateTime.Now;
                 reply.Type = ReplyEnum.ANSWER;
 
-                return _problemCommandService.AddReply((int)answerPostVm.MainPostId, reply);
-            }else
-            {
-                return false;
+                bool res =  _problemCommandService.AddReply((int)answerPostVm.MainPostId, reply);
+                if (res)
+                {
+                    AnswerItemVM answerItemVm = Mapper.Map<Reply, AnswerItemVM>(reply);
+                    return PartialView("Partials/_AnswerItem", answerItemVm);
+                }
+                else
+                {
+                    return null;
+                }
             }
+            // Model State is not valid
+            return null;
         }
 
         [Authorize]
-        public bool AddHint(HintPostVM hintPostVm)
+        public ActionResult AddHint(HintPostVM hintPostVm)
         {
             if (ModelState.IsValid)
             {
@@ -262,12 +269,19 @@ namespace MathHub.Web.Controllers
                 reply.DateCreated = DateTime.Now;
                 reply.Type = ReplyEnum.HINT;
 
-                return _problemCommandService.AddReply((int)hintPostVm.MainPostId, reply);
+                bool res =  _problemCommandService.AddReply((int)hintPostVm.MainPostId, reply);
+                if (res)
+                {
+                    HintItemVM hintItemVm = Mapper.Map<Reply, HintItemVM>(reply);
+                    return PartialView("Partials/_AnswerItem", hintItemVm);
+                }
+                else
+                {
+                    return null;
+                }
             }
-            else
-            {
-                return false;
-            }
+            // Model State is not valid
+            return null;
         }
     }
 }

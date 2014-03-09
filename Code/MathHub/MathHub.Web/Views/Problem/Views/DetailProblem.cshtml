@@ -47,10 +47,29 @@
 	<button id="add-question-comment" onclick="showAndHideElementsById('comment-post-form', 'add-question-comment')">Add comments</button>
 }
 
-@*@Html.Hidden("commentNum", @Model.PostReply.Item1, new {id="commentNum"});*@
 @Html.Partial("Partials/_CommentPostForm", Model.CommentPostVm)
 
-@*<button onclick="getCommentAjax('problemComments',@Model.Id, -1)">View more comments</button>*@
+@* Answer / Hint Detail *@
+
+<div id="reply-tabs">
+  <ul>
+	  @* tab 1 : tab answer. all div with id=fragment-1 will appear under this tab  *@
+	<li onclick="getAnswerAjax(@Model.Id, 0)"><a href="#fragment-1"><span>@Model.PostReply.Item2 Answers</span></a></li>
+	  @* tab 2 : tab reply.  all div with id=fragment-2 will appear under this tab *@
+	<li onclick="getHintAjax(@Model.Id, 0)"><a href="#fragment-2"><span>@Model.PostReply.Item3 Hints</span></a></li>
+  </ul>
+
+	@* ajax loading answer content *@
+  <div id="fragment-1">
+	  <div id="problem-answers"></div>
+	  @Html.Partial("Partials/_AnswerPostForm", Model.AnswerPostVm)
+  </div>
+	@* ajax loading answe reply content *@
+  <div id="fragment-2">
+	  <div id="problem-hints"></div>
+	  @Html.Partial("Partials/_HintPostForm", Model.HintPostVm)
+  </div>
+</div>
 
 @section RightPanel
 {
