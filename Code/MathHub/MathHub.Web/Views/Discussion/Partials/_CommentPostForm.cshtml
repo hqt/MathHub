@@ -1,7 +1,8 @@
-﻿@model MathHub.Web.Models.DiscussionVM.DCommentPostVM
+﻿@* form to post a comment (of a question/reply ...) to server *@
+@model MathHub.Web.Models.DiscussionVM.DCommentPostVM
 
     @using (Html.BeginForm("AddComment", "Problem", FormMethod.Post, 
-                            new { style = "display:none", id = "commentPostForm" }))
+                            new { style = "display:none", id = "comment-post-form" }))
     {
         @Html.LabelFor(m => m.Content)
         @Html.TextAreaFor(m => m.Content)
