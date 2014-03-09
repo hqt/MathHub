@@ -2802,6 +2802,8 @@
     <Folder Include="App_Data\" />
     <Folder Include="CustomAnnotation\ValidationAttribute\" />
     <Folder Include="Models\AdminVM\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Blog\" />
     <Folder Include="Views\Admin\Layouts\" />
     <Folder Include="Views\Admin\Partials\" />
     <Folder Include="Views\Admin\Views\" />

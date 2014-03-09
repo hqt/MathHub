@@ -19,6 +19,9 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	min-width: 1000px;
 }
+a {
+	color: inherit;
+}
 
 .spacer {
 	clear: both;
@@ -138,7 +141,7 @@ section.content{
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 nav.content-left {
-	padding: 20px 10px;
+	padding: 20px 0px 20px 20px;
 	float: left;
 	width: 20%;
 	border-right: 1px solid #e8dbdb;
@@ -196,4 +199,76 @@ vertical-align: middle;
 
 .profilewidget-stats {
 	font-size: 11px;
+}
+
+.widget {
+	margin: 22px 0px 22px 10px;
+	white-space: nowrap;
+}
+
+.widget-header {
+	margin-bottom: 5px;
+	font-size: 11px;
+	color: #999898;
+}
+
+.widget-header a{
+	text-decoration: none;
+
+}
+
+.widget-list {
+	margin-top: 0px;
+	padding-left: 0px;
+}
+
+.widget-list a{
+	text-decoration: none;
+	font-size: 12px;
+}
+
+.widget-list li{
+	position: relative;
+	padding-left: 10px;
+	line-height: 19px;
+}
+
+.widget-list li:hover{
+	background-color: rgba(241, 150, 150, 0.1);
+}
+
+.widget-list img{
+	margin-right: 5px;
+	margin-bottom: 2px;
+}
+
+.widget-item-count {
+	margin-top: 2px;
+	position: absolute;
+	right: 7px;
+	top: 0px;
+	background-color: #d4adad; 
+	text-align: center;
+	font-size: 10px;
+	color: #fff;
+	height: 16px;
+	padding: 2px 5px 2px 5px;
+	line-height: 13px;
+}
+
+.favoritetags {
+	white-space: normal;
+}
+
+.tag {
+	border: solid 1px #c4adad;
+	padding: 1px 5px 2px 17px;
+	font-size: 10px;
+	border-radius: 3px;
+	line-height: 20px;
+	background-image: url("../img/circle.png");
+	background-color: #efdfdf;
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	margin-right: 2px;
 }
