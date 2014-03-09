@@ -256,6 +256,13 @@
     <Compile Include="HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BlogVM\BAnswerItemVM.cs" />
+    <Compile Include="Models\BlogVM\BAnswerListVM.cs" />
+    <Compile Include="Models\BlogVM\BCommentItemVM.cs" />
+    <Compile Include="Models\BlogVM\BCommentListVM.cs" />
+    <Compile Include="Models\BlogVM\CreateBlogVM.cs" />
+    <Compile Include="Models\BlogVM\DetailBlogVM.cs" />
+    <Compile Include="Models\BlogVM\PreviewBlogVM.cs" />
     <Compile Include="Models\CommonVM\ProfileWidgetVM.cs" />
     <Compile Include="Models\CommonVM\UserInfoVM.cs" />
     <Compile Include="Models\DiscussionVM\DAnswerItemVM.cs" />
@@ -268,6 +275,7 @@
     <Compile Include="Models\DiscussionVM\PreviewDiscussionVM.cs" />
     <Compile Include="Models\ProblemVM\AnswerItemVM.cs" />
     <Compile Include="Models\ProblemVM\AnswerListVM.cs" />
+    <Compile Include="Models\ProblemVM\AnswerPostVM.cs" />
     <Compile Include="Models\ProblemVM\CommentItemVM.cs" />
     <Compile Include="Models\ProblemVM\CommentListVM.cs" />
     <Compile Include="Models\ProblemVM\CommentPostVM.cs" />
@@ -2781,12 +2789,19 @@
     <Content Include="Views\CommonWidget\_PostBlogWidget.cshtml" />
     <Content Include="Views\CommonWidget\_DiscussionPostGuide.cshtml" />
     <Content Include="Views\CommonWidget\_BlogPostGuide.cshtml" />
+    <Content Include="Views\Discussion\Partials\_AnswerList.cshtml" />
+    <Content Include="Views\Discussion\Partials\_AnswerItem.cshtml" />
+    <Content Include="Views\Discussion\Partials\_AnswerPostForm.cshtml" />
+    <Content Include="Views\Discussion\Partials\_CommentItem.cshtml" />
+    <Content Include="Views\Discussion\Partials\_CommentList.cshtml" />
+    <Content Include="Views\Discussion\Partials\_HintItem.cshtml" />
+    <Content Include="Views\Discussion\Partials\_HintList.cshtml" />
+    <Content Include="Views\Discussion\Partials\_HintPostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="CustomAnnotation\ValidationAttribute\" />
     <Folder Include="Models\AdminVM\" />
-    <Folder Include="Models\BlogVM\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Blog\" />
   </ItemGroup>
