@@ -5,12 +5,13 @@
     <div style="float: left; padding: 5px; margin-right: 10px; font-weight: bold; font-size: 16px;">
         <a href="/" style="color: white !important">MathHub.VN</a>
     </div>
+    @* link to Problem / Discussion / Blog *@
     <div style="float: left; padding: 5px; background-color: white; color: black">
-        @Html.ActionLink("Problem", "Index", new {controller = "Problem"}) 
+        @Html.ActionLink("Problem", MVC.Problem.Index()) 
         / 
-        Discussion
+        @Html.ActionLink("Discussion", MVC.Discussion.Index()) 
         / 
-        Blog
+        Blog 
     </div>
     <div style="float: right">@if (Request.IsAuthenticated) {
     <text>

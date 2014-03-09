@@ -6,10 +6,14 @@
 
 <script type="text/javascript">
 	$(document).ready(function () {
-		// load comments
+	    // use jquery to make tabs
+	    $("#reply-tabs").tabs();
+	    // load comments
 		getCommentAjax("problem-comments", @Model.Id, 0);
-		// use jquery to make tabs
-		$("#reply-tabs").tabs();
+	    // load hints
+	    getHintAjax('problem-hints', @Model.Id, 0)
+	    // load answers
+	    getAnswerAjax('problem-answers', @Model.Id, 0)
 	});
 </script>
 
@@ -54,9 +58,9 @@
 <div id="reply-tabs">
   <ul>
 	  @* tab 1 : tab answer. all div with id=fragment-1 will appear under this tab  *@
-	<li onclick="getAnswerAjax(@Model.Id, 0)"><a href="#fragment-1"><span>@Model.PostReply.Item2 Answers</span></a></li>
+	<li onclick="getAnswerAjax('problem-answers', @Model.Id, 0)"><a href="#fragment-1"><span>@Model.PostReply.Item2 Answers</span></a></li>
 	  @* tab 2 : tab reply.  all div with id=fragment-2 will appear under this tab *@
-	<li onclick="getHintAjax(@Model.Id, 0)"><a href="#fragment-2"><span>@Model.PostReply.Item3 Hints</span></a></li>
+	<li onclick="getHintAjax('problem-hints', @Model.Id, 0)"><a href="#fragment-2"><span>@Model.PostReply.Item3 Hints</span></a></li>
   </ul>
 
 	@* ajax loading answer content *@
