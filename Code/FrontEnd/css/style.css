@@ -222,15 +222,17 @@ vertical-align: middle;
 	padding-left: 0px;
 }
 
-.widget-list a{
+.widget-list a.listitem {
 	text-decoration: none;
 	font-size: 12px;
+	display: block;
 }
 
 .widget-list li{
 	position: relative;
 	padding-left: 10px;
 	line-height: 19px;
+	margin-bottom: 3px;
 }
 
 .widget-list li:hover{
@@ -263,12 +265,108 @@ vertical-align: middle;
 .tag {
 	border: solid 1px #c4adad;
 	padding: 1px 5px 2px 17px;
-	font-size: 10px;
+	font-size: 11px;
 	border-radius: 3px;
-	line-height: 20px;
+	line-height: 26px;
 	background-image: url("../img/circle.png");
 	background-color: #efdfdf;
 	background-repeat: no-repeat;
 	background-position: 5px center;
 	margin-right: 2px;
+}
+
+.widget-taglist a {
+	text-decoration: none;
+}
+
+.widget-taglist a:hover {
+	background-color: #FAF4F4;
+}
+
+.widget-welcomebox {
+	background-color: #ecebeb;
+	border: 1px solid #e2e2e2;
+	border-radius: 3px;
+	padding: 10px;
+}
+
+.widget-welcomebox h2 {
+	color: #a73e2d;
+	font-size: 20px;
+	text-align: center;
+	margin: 0;
+}
+
+.widget-welcomebox p {
+	font-size: 12px;
+	text-align: center;
+	color: #333333;
+	margin: 5px 0;
+}
+
+.flat3d-button {
+	text-decoration: none;
+	background-color: #b25555;
+	padding: 10px 15px;
+	font-size: 13px;
+	color: white;
+	margin: 10px;
+	display: inline-block;
+	text-align: center;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.46);
+	border-radius: 4px;
+	box-shadow: 0 2px 0 #872d2d;
+}
+
+.flat3d-button:hover {
+	background-color: #C76B6B;
+}
+
+.flat3d-button:active {
+	padding: 11px 15px 11px 15px;
+	box-shadow: 0 0 0 #872d2d;
+
+	margin: 10px 10px 8px 10px;
+}
+
+
+.widget-button .flat3d-button {
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.widget-wraplist a {
+	text-decoration: none;
+	font-size: 13px;
+}
+
+.widget-wraplist {
+	margin: 0;
+	white-space: normal;
+	padding: 0;
+}
+
+.widget-wraplist li {
+	margin: 10px 0;
+}
+
+.widget-wraplist a:hover {
+	text-decoration: underline;
+}
+
+.widget-wraplist a {
+	line-height: 18px;
+	font-size: 13px;
+	display: inline-block;
+}
+
+.vote-count {
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.14);
+	padding: 0px 3px;
+	min-width: 19px;
+	font-size: 12px;
+	text-align: center;
+	margin-right: 3px;
 }
