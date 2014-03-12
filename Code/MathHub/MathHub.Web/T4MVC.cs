@@ -26,8 +26,11 @@ public static partial class MVC
 {
     public static MathHub.Web.Controllers.AccountController Account = new MathHub.Web.Controllers.T4MVC_AccountController();
     public static MathHub.Web.Controllers.CommonWidgetController CommonWidget = new MathHub.Web.Controllers.T4MVC_CommonWidgetController();
+    public static MathHub.Web.Controllers.DiscussionController Discussion = new MathHub.Web.Controllers.T4MVC_DiscussionController();
     public static MathHub.Web.Controllers.HomeController Home = new MathHub.Web.Controllers.T4MVC_HomeController();
     public static MathHub.Web.Controllers.ProblemController Problem = new MathHub.Web.Controllers.T4MVC_ProblemController();
+    public static T4MVC.AdminController Admin = new T4MVC.AdminController();
+    public static T4MVC.BlogController Blog = new T4MVC.BlogController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
 }
 
@@ -72,8 +75,3560 @@ namespace Links
         public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
         public static readonly string _references_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/_references.min.js") ? Url("_references.min.js") : Url("_references.js");
         public static readonly string AjaxScript_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/AjaxScript.min.js") ? Url("AjaxScript.min.js") : Url("AjaxScript.js");
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public static class ckeditor {
+            private const string URLPATH = "~/Scripts/ckeditor";
+            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            public static readonly string build_config_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/build-config.min.js") ? Url("build-config.min.js") : Url("build-config.js");
+            public static readonly string ckeditor_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ckeditor.min.js") ? Url("ckeditor.min.js") : Url("ckeditor.js");
+            public static readonly string config_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/config.min.js") ? Url("config.min.js") : Url("config.js");
+            public static readonly string contents_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/contents.min.css") ? Url("contents.min.css") : Url("contents.css");
+                 
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class core {
+                private const string URLPATH = "~/Scripts/ckeditor/core";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string _bootstrap_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/_bootstrap.min.js") ? Url("_bootstrap.min.js") : Url("_bootstrap.js");
+                public static readonly string ckeditor_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ckeditor.min.js") ? Url("ckeditor.min.js") : Url("ckeditor.js");
+                public static readonly string ckeditor_base_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ckeditor_base.min.js") ? Url("ckeditor_base.min.js") : Url("ckeditor_base.js");
+                public static readonly string ckeditor_basic_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ckeditor_basic.min.js") ? Url("ckeditor_basic.min.js") : Url("ckeditor_basic.js");
+                public static readonly string command_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/command.min.js") ? Url("command.min.js") : Url("command.js");
+                public static readonly string commanddefinition_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/commanddefinition.min.js") ? Url("commanddefinition.min.js") : Url("commanddefinition.js");
+                public static readonly string config_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/config.min.js") ? Url("config.min.js") : Url("config.js");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class creators {
+                    private const string URLPATH = "~/Scripts/ckeditor/core/creators";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string inline_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/inline.min.js") ? Url("inline.min.js") : Url("inline.js");
+                    public static readonly string themedui_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/themedui.min.js") ? Url("themedui.min.js") : Url("themedui.js");
+                }
+            
+                public static readonly string dataprocessor_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/dataprocessor.min.js") ? Url("dataprocessor.min.js") : Url("dataprocessor.js");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class dom {
+                    private const string URLPATH = "~/Scripts/ckeditor/core/dom";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string comment_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/comment.min.js") ? Url("comment.min.js") : Url("comment.js");
+                    public static readonly string document_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/document.min.js") ? Url("document.min.js") : Url("document.js");
+                    public static readonly string documentfragment_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/documentfragment.min.js") ? Url("documentfragment.min.js") : Url("documentfragment.js");
+                    public static readonly string domobject_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/domobject.min.js") ? Url("domobject.min.js") : Url("domobject.js");
+                    public static readonly string element_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/element.min.js") ? Url("element.min.js") : Url("element.js");
+                    public static readonly string elementpath_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/elementpath.min.js") ? Url("elementpath.min.js") : Url("elementpath.js");
+                    public static readonly string event_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/event.min.js") ? Url("event.min.js") : Url("event.js");
+                    public static readonly string iterator_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/iterator.min.js") ? Url("iterator.min.js") : Url("iterator.js");
+                    public static readonly string node_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/node.min.js") ? Url("node.min.js") : Url("node.js");
+                    public static readonly string nodelist_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nodelist.min.js") ? Url("nodelist.min.js") : Url("nodelist.js");
+                    public static readonly string range_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/range.min.js") ? Url("range.min.js") : Url("range.js");
+                    public static readonly string rangelist_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/rangelist.min.js") ? Url("rangelist.min.js") : Url("rangelist.js");
+                    public static readonly string text_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/text.min.js") ? Url("text.min.js") : Url("text.js");
+                    public static readonly string walker_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/walker.min.js") ? Url("walker.min.js") : Url("walker.js");
+                    public static readonly string window_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/window.min.js") ? Url("window.min.js") : Url("window.js");
+                }
+            
+                public static readonly string dom_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/dom.min.js") ? Url("dom.min.js") : Url("dom.js");
+                public static readonly string dtd_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/dtd.min.js") ? Url("dtd.min.js") : Url("dtd.js");
+                public static readonly string editable_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/editable.min.js") ? Url("editable.min.js") : Url("editable.js");
+                public static readonly string editor_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/editor.min.js") ? Url("editor.min.js") : Url("editor.js");
+                public static readonly string editor_basic_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/editor_basic.min.js") ? Url("editor_basic.min.js") : Url("editor_basic.js");
+                public static readonly string env_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/env.min.js") ? Url("env.min.js") : Url("env.js");
+                public static readonly string event_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/event.min.js") ? Url("event.min.js") : Url("event.js");
+                public static readonly string eventInfo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eventInfo.min.js") ? Url("eventInfo.min.js") : Url("eventInfo.js");
+                public static readonly string filter_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/filter.min.js") ? Url("filter.min.js") : Url("filter.js");
+                public static readonly string focusmanager_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/focusmanager.min.js") ? Url("focusmanager.min.js") : Url("focusmanager.js");
+                public static readonly string htmldataprocessor_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/htmldataprocessor.min.js") ? Url("htmldataprocessor.min.js") : Url("htmldataprocessor.js");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class htmlparser {
+                    private const string URLPATH = "~/Scripts/ckeditor/core/htmlparser";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string basicwriter_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/basicwriter.min.js") ? Url("basicwriter.min.js") : Url("basicwriter.js");
+                    public static readonly string cdata_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cdata.min.js") ? Url("cdata.min.js") : Url("cdata.js");
+                    public static readonly string comment_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/comment.min.js") ? Url("comment.min.js") : Url("comment.js");
+                    public static readonly string element_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/element.min.js") ? Url("element.min.js") : Url("element.js");
+                    public static readonly string filter_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/filter.min.js") ? Url("filter.min.js") : Url("filter.js");
+                    public static readonly string fragment_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fragment.min.js") ? Url("fragment.min.js") : Url("fragment.js");
+                    public static readonly string node_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/node.min.js") ? Url("node.min.js") : Url("node.js");
+                    public static readonly string text_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/text.min.js") ? Url("text.min.js") : Url("text.js");
+                }
+            
+                public static readonly string htmlparser_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/htmlparser.min.js") ? Url("htmlparser.min.js") : Url("htmlparser.js");
+                public static readonly string keystrokehandler_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/keystrokehandler.min.js") ? Url("keystrokehandler.min.js") : Url("keystrokehandler.js");
+                public static readonly string lang_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lang.min.js") ? Url("lang.min.js") : Url("lang.js");
+                public static readonly string loader_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/loader.min.js") ? Url("loader.min.js") : Url("loader.js");
+                public static readonly string plugindefinition_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugindefinition.min.js") ? Url("plugindefinition.min.js") : Url("plugindefinition.js");
+                public static readonly string plugins_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugins.min.js") ? Url("plugins.min.js") : Url("plugins.js");
+                public static readonly string resourcemanager_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/resourcemanager.min.js") ? Url("resourcemanager.min.js") : Url("resourcemanager.js");
+                public static readonly string scriptloader_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/scriptloader.min.js") ? Url("scriptloader.min.js") : Url("scriptloader.js");
+                public static readonly string selection_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/selection.min.js") ? Url("selection.min.js") : Url("selection.js");
+                public static readonly string skin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/skin.min.js") ? Url("skin.min.js") : Url("skin.js");
+                public static readonly string style_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/style.min.js") ? Url("style.min.js") : Url("style.js");
+                public static readonly string template_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/template.min.js") ? Url("template.min.js") : Url("template.js");
+                public static readonly string tools_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tools.min.js") ? Url("tools.min.js") : Url("tools.js");
+                public static readonly string ui_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ui.min.js") ? Url("ui.min.js") : Url("ui.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class lang {
+                private const string URLPATH = "~/Scripts/ckeditor/lang";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string _translationstatus_txt = Url("_translationstatus.txt");
+                public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class plugins {
+                private const string URLPATH = "~/Scripts/ckeditor/plugins";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class a11yhelp {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/a11yhelp";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dialogs {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/a11yhelp/dialogs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string a11yhelp_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/a11yhelp.min.js") ? Url("a11yhelp.min.js") : Url("a11yhelp.js");
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class lang {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/a11yhelp/dialogs/lang";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string _translationstatus_txt = Url("_translationstatus.txt");
+                            public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                            public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                            public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                            public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                            public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                            public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                            public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                            public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                            public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                            public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                            public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                            public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                            public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                            public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                            public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                            public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                            public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                            public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                            public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                            public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                            public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                            public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                            public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                            public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                            public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                            public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                            public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                            public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                            public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                            public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                            public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                            public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                            public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                            public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                            public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                            public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                            public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                            public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                            public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                            public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                            public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                            public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                            public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                            public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                            public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                            public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                            public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                            public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                            public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                            public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                            public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                            public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                            public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                            public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                            public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                        }
+                    
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class about {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/about";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dialogs {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/about/dialogs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string about_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/about.min.js") ? Url("about.min.js") : Url("about.js");
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/about/dialogs/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string logo_ckeditor_png = Url("logo_ckeditor.png");
+                        }
+                    
+                        public static readonly string logo_ckeditor_png = Url("logo_ckeditor.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/about/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string about_png = Url("about.png");
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/about/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string about_png = Url("about.png");
+                        }
+                    
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/about/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class basicstyles {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/basicstyles";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/basicstyles/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string bold_png = Url("bold.png");
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/basicstyles/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string bold_png = Url("bold.png");
+                            public static readonly string italic_png = Url("italic.png");
+                            public static readonly string strike_png = Url("strike.png");
+                            public static readonly string subscript_png = Url("subscript.png");
+                            public static readonly string superscript_png = Url("superscript.png");
+                            public static readonly string underline_png = Url("underline.png");
+                        }
+                    
+                        public static readonly string italic_png = Url("italic.png");
+                        public static readonly string strike_png = Url("strike.png");
+                        public static readonly string subscript_png = Url("subscript.png");
+                        public static readonly string superscript_png = Url("superscript.png");
+                        public static readonly string underline_png = Url("underline.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/basicstyles/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class bidi {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/bidi";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/bidi/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string bidiltr_png = Url("bidiltr.png");
+                        public static readonly string bidirtl_png = Url("bidirtl.png");
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/bidi/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string bidiltr_png = Url("bidiltr.png");
+                            public static readonly string bidirtl_png = Url("bidirtl.png");
+                        }
+                    
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/bidi/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class blockquote {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/blockquote";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/blockquote/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string blockquote_png = Url("blockquote.png");
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/blockquote/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string blockquote_png = Url("blockquote.png");
+                        }
+                    
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/blockquote/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class button {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/button";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/button/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class clipboard {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/clipboard";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dev {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/clipboard/dev";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string clipboard_html = Url("clipboard.html");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dialogs {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/clipboard/dialogs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string paste_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/paste.min.js") ? Url("paste.min.js") : Url("paste.js");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/clipboard/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string copy_rtl_png = Url("copy-rtl.png");
+                        public static readonly string copy_png = Url("copy.png");
+                        public static readonly string cut_rtl_png = Url("cut-rtl.png");
+                        public static readonly string cut_png = Url("cut.png");
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/clipboard/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string copy_rtl_png = Url("copy-rtl.png");
+                            public static readonly string copy_png = Url("copy.png");
+                            public static readonly string cut_rtl_png = Url("cut-rtl.png");
+                            public static readonly string cut_png = Url("cut.png");
+                            public static readonly string paste_rtl_png = Url("paste-rtl.png");
+                            public static readonly string paste_png = Url("paste.png");
+                        }
+                    
+                        public static readonly string paste_rtl_png = Url("paste-rtl.png");
+                        public static readonly string paste_png = Url("paste.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/clipboard/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class colorbutton {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/colorbutton";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/colorbutton/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string bgcolor_png = Url("bgcolor.png");
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/colorbutton/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string bgcolor_png = Url("bgcolor.png");
+                            public static readonly string textcolor_png = Url("textcolor.png");
+                        }
+                    
+                        public static readonly string textcolor_png = Url("textcolor.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/colorbutton/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class colordialog {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/colordialog";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dialogs {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/colordialog/dialogs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string colordialog_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/colordialog.min.js") ? Url("colordialog.min.js") : Url("colordialog.js");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/colordialog/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class contextmenu {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/contextmenu";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/contextmenu/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class dialog {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/dialog";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string dialogDefinition_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/dialogDefinition.min.js") ? Url("dialogDefinition.min.js") : Url("dialogDefinition.js");
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class samples {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/dialog/samples";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class assets {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/dialog/samples/assets";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string my_dialog_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/my_dialog.min.js") ? Url("my_dialog.min.js") : Url("my_dialog.js");
+                        }
+                    
+                        public static readonly string dialog_html = Url("dialog.html");
+                    }
+                
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class dialogadvtab {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/dialogadvtab";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class dialogui {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/dialogui";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class div {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/div";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dialogs {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/div/dialogs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string div_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/div.min.js") ? Url("div.min.js") : Url("div.js");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/div/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string creatediv_png = Url("creatediv.png");
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/div/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string creatediv_png = Url("creatediv.png");
+                        }
+                    
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/div/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class elementspath {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/elementspath";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/elementspath/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class enterkey {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/enterkey";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class samples {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/enterkey/samples";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string enterkey_html = Url("enterkey.html");
+                    }
+                
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class entities {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/entities";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class fakeobjects {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/fakeobjects";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class images {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/fakeobjects/images";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string spacer_gif = Url("spacer.gif");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/fakeobjects/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class filebrowser {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/filebrowser";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class find {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/find";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dialogs {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/find/dialogs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string find_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/find.min.js") ? Url("find.min.js") : Url("find.js");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/find/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string find_rtl_png = Url("find-rtl.png");
+                        public static readonly string find_png = Url("find.png");
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/find/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string find_rtl_png = Url("find-rtl.png");
+                            public static readonly string find_png = Url("find.png");
+                            public static readonly string replace_png = Url("replace.png");
+                        }
+                    
+                        public static readonly string replace_png = Url("replace.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/find/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class flash {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/flash";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dialogs {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/flash/dialogs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string flash_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/flash.min.js") ? Url("flash.min.js") : Url("flash.js");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/flash/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string flash_png = Url("flash.png");
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/flash/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string flash_png = Url("flash.png");
+                        }
+                    
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class images {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/flash/images";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string placeholder_png = Url("placeholder.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/flash/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class floatingspace {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/floatingspace";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class floatpanel {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/floatpanel";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class font {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/font";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/font/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class format {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/format";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/format/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class forms {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/forms";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dialogs {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/forms/dialogs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string button_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/button.min.js") ? Url("button.min.js") : Url("button.js");
+                        public static readonly string checkbox_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/checkbox.min.js") ? Url("checkbox.min.js") : Url("checkbox.js");
+                        public static readonly string form_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/form.min.js") ? Url("form.min.js") : Url("form.js");
+                        public static readonly string hiddenfield_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hiddenfield.min.js") ? Url("hiddenfield.min.js") : Url("hiddenfield.js");
+                        public static readonly string radio_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/radio.min.js") ? Url("radio.min.js") : Url("radio.js");
+                        public static readonly string select_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/select.min.js") ? Url("select.min.js") : Url("select.js");
+                        public static readonly string textarea_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/textarea.min.js") ? Url("textarea.min.js") : Url("textarea.js");
+                        public static readonly string textfield_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/textfield.min.js") ? Url("textfield.min.js") : Url("textfield.js");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/forms/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string button_png = Url("button.png");
+                        public static readonly string checkbox_png = Url("checkbox.png");
+                        public static readonly string form_png = Url("form.png");
+                        public static readonly string hiddenfield_png = Url("hiddenfield.png");
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/forms/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string button_png = Url("button.png");
+                            public static readonly string checkbox_png = Url("checkbox.png");
+                            public static readonly string form_png = Url("form.png");
+                            public static readonly string hiddenfield_png = Url("hiddenfield.png");
+                            public static readonly string imagebutton_png = Url("imagebutton.png");
+                            public static readonly string radio_png = Url("radio.png");
+                            public static readonly string select_rtl_png = Url("select-rtl.png");
+                            public static readonly string select_png = Url("select.png");
+                            public static readonly string textarea_rtl_png = Url("textarea-rtl.png");
+                            public static readonly string textarea_png = Url("textarea.png");
+                            public static readonly string textfield_rtl_png = Url("textfield-rtl.png");
+                            public static readonly string textfield_png = Url("textfield.png");
+                        }
+                    
+                        public static readonly string imagebutton_png = Url("imagebutton.png");
+                        public static readonly string radio_png = Url("radio.png");
+                        public static readonly string select_rtl_png = Url("select-rtl.png");
+                        public static readonly string select_png = Url("select.png");
+                        public static readonly string textarea_rtl_png = Url("textarea-rtl.png");
+                        public static readonly string textarea_png = Url("textarea.png");
+                        public static readonly string textfield_rtl_png = Url("textfield-rtl.png");
+                        public static readonly string textfield_png = Url("textfield.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class images {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/forms/images";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string hiddenfield_gif = Url("hiddenfield.gif");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/forms/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class horizontalrule {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/horizontalrule";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/horizontalrule/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/horizontalrule/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string horizontalrule_png = Url("horizontalrule.png");
+                        }
+                    
+                        public static readonly string horizontalrule_png = Url("horizontalrule.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/horizontalrule/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class htmlwriter {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/htmlwriter";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class samples {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/htmlwriter/samples";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class assets {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/htmlwriter/samples/assets";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                            public static class outputforflash {
+                                private const string URLPATH = "~/Scripts/ckeditor/plugins/htmlwriter/samples/assets/outputforflash";
+                                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                                public static readonly string outputforflash_fla = Url("outputforflash.fla");
+                                public static readonly string outputforflash_swf = Url("outputforflash.swf");
+                                public static readonly string swfobject_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/swfobject.min.js") ? Url("swfobject.min.js") : Url("swfobject.js");
+                            }
+                        
+                        }
+                    
+                        public static readonly string outputforflash_html = Url("outputforflash.html");
+                        public static readonly string outputhtml_html = Url("outputhtml.html");
+                    }
+                
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class iframe {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/iframe";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dialogs {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/iframe/dialogs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string iframe_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/iframe.min.js") ? Url("iframe.min.js") : Url("iframe.js");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/iframe/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/iframe/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string iframe_png = Url("iframe.png");
+                        }
+                    
+                        public static readonly string iframe_png = Url("iframe.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class images {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/iframe/images";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string placeholder_png = Url("placeholder.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/iframe/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class liststyle {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/liststyle";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dialogs {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/liststyle/dialogs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string liststyle_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/liststyle.min.js") ? Url("liststyle.min.js") : Url("liststyle.js");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/liststyle/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class magicline {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/magicline";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dev {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/magicline/dev";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string magicline_html = Url("magicline.html");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class images {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/magicline/images";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/magicline/images/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string icon_png = Url("icon.png");
+                        }
+                    
+                        public static readonly string icon_png = Url("icon.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/magicline/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class samples {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/magicline/samples";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string magicline_html = Url("magicline.html");
+                    }
+                
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class maximize {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/maximize";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/maximize/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/maximize/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string maximize_png = Url("maximize.png");
+                        }
+                    
+                        public static readonly string maximize_png = Url("maximize.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/maximize/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class menu {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/menu";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class menubutton {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/menubutton";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class specialchar {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/specialchar";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dialogs {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/specialchar/dialogs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class lang {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/specialchar/dialogs/lang";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string _translationstatus_txt = Url("_translationstatus.txt");
+                            public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                            public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                            public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                            public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                            public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                            public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                            public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                            public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                            public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                            public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                            public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                            public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                            public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                            public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                            public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                            public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                            public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                            public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                            public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                            public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                            public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                            public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                            public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                            public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                            public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                            public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                            public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                            public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                            public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                            public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                            public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                            public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                            public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                            public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                            public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                            public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                            public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                            public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                            public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                            public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                            public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                            public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                            public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                            public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                            public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                        }
+                    
+                        public static readonly string specialchar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/specialchar.min.js") ? Url("specialchar.min.js") : Url("specialchar.js");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/specialchar/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/specialchar/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string specialchar_png = Url("specialchar.png");
+                        }
+                    
+                        public static readonly string specialchar_png = Url("specialchar.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/specialchar/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string _translationstatus_txt = Url("_translationstatus.txt");
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class stylescombo {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/stylescombo";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/stylescombo/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class tab {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/tab";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class table {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/table";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dialogs {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/table/dialogs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string table_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/table.min.js") ? Url("table.min.js") : Url("table.js");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/table/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/table/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string table_png = Url("table.png");
+                        }
+                    
+                        public static readonly string table_png = Url("table.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/table/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class tabletools {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/tabletools";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dialogs {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/tabletools/dialogs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string tableCell_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tableCell.min.js") ? Url("tableCell.min.js") : Url("tableCell.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class templates {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/templates";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dialogs {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/templates/dialogs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string templates_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/templates.min.css") ? Url("templates.min.css") : Url("templates.css");
+                             
+                        public static readonly string templates_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/templates.min.js") ? Url("templates.min.js") : Url("templates.js");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/templates/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/templates/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string templates_rtl_png = Url("templates-rtl.png");
+                            public static readonly string templates_png = Url("templates.png");
+                        }
+                    
+                        public static readonly string templates_rtl_png = Url("templates-rtl.png");
+                        public static readonly string templates_png = Url("templates.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/templates/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class templates_ {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/templates/templates";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string default_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/default.min.js") ? Url("default.min.js") : Url("default.js");
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class images {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/templates/templates/images";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string template1_gif = Url("template1.gif");
+                            public static readonly string template2_gif = Url("template2.gif");
+                            public static readonly string template3_gif = Url("template3.gif");
+                        }
+                    
+                    }
+                
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class toolbar {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/toolbar";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/toolbar/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class samples {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/toolbar/samples";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string toolbar_html = Url("toolbar.html");
+                    }
+                
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class undo {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/undo";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/undo/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/undo/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string redo_rtl_png = Url("redo-rtl.png");
+                            public static readonly string redo_png = Url("redo.png");
+                            public static readonly string undo_rtl_png = Url("undo-rtl.png");
+                            public static readonly string undo_png = Url("undo.png");
+                        }
+                    
+                        public static readonly string redo_rtl_png = Url("redo-rtl.png");
+                        public static readonly string redo_png = Url("redo.png");
+                        public static readonly string undo_rtl_png = Url("undo-rtl.png");
+                        public static readonly string undo_png = Url("undo.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/undo/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string id_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/id.min.js") ? Url("id.min.js") : Url("id.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string si_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/si.min.js") ? Url("si.min.js") : Url("si.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sq_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sq.min.js") ? Url("sq.min.js") : Url("sq.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class wsc {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/wsc";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class dialogs {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/wsc/dialogs";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string ciframe_html = Url("ciframe.html");
+                        public static readonly string tmp_html = Url("tmp.html");
+                        public static readonly string tmpFrameset_html = Url("tmpFrameset.html");
+                        public static readonly string wsc_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/wsc.min.css") ? Url("wsc.min.css") : Url("wsc.css");
+                             
+                        public static readonly string wsc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/wsc.min.js") ? Url("wsc.min.js") : Url("wsc.js");
+                        public static readonly string wsc_ie_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/wsc_ie.min.js") ? Url("wsc_ie.min.js") : Url("wsc_ie.js");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/wsc/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                        public static class hidpi {
+                            private const string URLPATH = "~/Scripts/ckeditor/plugins/wsc/icons/hidpi";
+                            public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                            public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                            public static readonly string spellchecker_png = Url("spellchecker.png");
+                        }
+                    
+                        public static readonly string spellchecker_png = Url("spellchecker.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class lang {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/wsc/lang";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string af_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/af.min.js") ? Url("af.min.js") : Url("af.js");
+                        public static readonly string ar_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ar.min.js") ? Url("ar.min.js") : Url("ar.js");
+                        public static readonly string bg_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bg.min.js") ? Url("bg.min.js") : Url("bg.js");
+                        public static readonly string bn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bn.min.js") ? Url("bn.min.js") : Url("bn.js");
+                        public static readonly string bs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/bs.min.js") ? Url("bs.min.js") : Url("bs.js");
+                        public static readonly string ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ca.min.js") ? Url("ca.min.js") : Url("ca.js");
+                        public static readonly string cs_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cs.min.js") ? Url("cs.min.js") : Url("cs.js");
+                        public static readonly string cy_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/cy.min.js") ? Url("cy.min.js") : Url("cy.js");
+                        public static readonly string da_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/da.min.js") ? Url("da.min.js") : Url("da.js");
+                        public static readonly string de_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/de.min.js") ? Url("de.min.js") : Url("de.js");
+                        public static readonly string el_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/el.min.js") ? Url("el.min.js") : Url("el.js");
+                        public static readonly string en_au_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-au.min.js") ? Url("en-au.min.js") : Url("en-au.js");
+                        public static readonly string en_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-ca.min.js") ? Url("en-ca.min.js") : Url("en-ca.js");
+                        public static readonly string en_gb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en-gb.min.js") ? Url("en-gb.min.js") : Url("en-gb.js");
+                        public static readonly string en_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/en.min.js") ? Url("en.min.js") : Url("en.js");
+                        public static readonly string eo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eo.min.js") ? Url("eo.min.js") : Url("eo.js");
+                        public static readonly string es_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/es.min.js") ? Url("es.min.js") : Url("es.js");
+                        public static readonly string et_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/et.min.js") ? Url("et.min.js") : Url("et.js");
+                        public static readonly string eu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/eu.min.js") ? Url("eu.min.js") : Url("eu.js");
+                        public static readonly string fa_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fa.min.js") ? Url("fa.min.js") : Url("fa.js");
+                        public static readonly string fi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fi.min.js") ? Url("fi.min.js") : Url("fi.js");
+                        public static readonly string fo_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fo.min.js") ? Url("fo.min.js") : Url("fo.js");
+                        public static readonly string fr_ca_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr-ca.min.js") ? Url("fr-ca.min.js") : Url("fr-ca.js");
+                        public static readonly string fr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/fr.min.js") ? Url("fr.min.js") : Url("fr.js");
+                        public static readonly string gl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gl.min.js") ? Url("gl.min.js") : Url("gl.js");
+                        public static readonly string gu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/gu.min.js") ? Url("gu.min.js") : Url("gu.js");
+                        public static readonly string he_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/he.min.js") ? Url("he.min.js") : Url("he.js");
+                        public static readonly string hi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hi.min.js") ? Url("hi.min.js") : Url("hi.js");
+                        public static readonly string hr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hr.min.js") ? Url("hr.min.js") : Url("hr.js");
+                        public static readonly string hu_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/hu.min.js") ? Url("hu.min.js") : Url("hu.js");
+                        public static readonly string is_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/is.min.js") ? Url("is.min.js") : Url("is.js");
+                        public static readonly string it_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/it.min.js") ? Url("it.min.js") : Url("it.js");
+                        public static readonly string ja_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ja.min.js") ? Url("ja.min.js") : Url("ja.js");
+                        public static readonly string ka_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ka.min.js") ? Url("ka.min.js") : Url("ka.js");
+                        public static readonly string km_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/km.min.js") ? Url("km.min.js") : Url("km.js");
+                        public static readonly string ko_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ko.min.js") ? Url("ko.min.js") : Url("ko.js");
+                        public static readonly string ku_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ku.min.js") ? Url("ku.min.js") : Url("ku.js");
+                        public static readonly string lt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lt.min.js") ? Url("lt.min.js") : Url("lt.js");
+                        public static readonly string lv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/lv.min.js") ? Url("lv.min.js") : Url("lv.js");
+                        public static readonly string mk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mk.min.js") ? Url("mk.min.js") : Url("mk.js");
+                        public static readonly string mn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mn.min.js") ? Url("mn.min.js") : Url("mn.js");
+                        public static readonly string ms_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ms.min.js") ? Url("ms.min.js") : Url("ms.js");
+                        public static readonly string nb_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nb.min.js") ? Url("nb.min.js") : Url("nb.js");
+                        public static readonly string nl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/nl.min.js") ? Url("nl.min.js") : Url("nl.js");
+                        public static readonly string no_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/no.min.js") ? Url("no.min.js") : Url("no.js");
+                        public static readonly string pl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pl.min.js") ? Url("pl.min.js") : Url("pl.js");
+                        public static readonly string pt_br_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt-br.min.js") ? Url("pt-br.min.js") : Url("pt-br.js");
+                        public static readonly string pt_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pt.min.js") ? Url("pt.min.js") : Url("pt.js");
+                        public static readonly string ro_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ro.min.js") ? Url("ro.min.js") : Url("ro.js");
+                        public static readonly string ru_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ru.min.js") ? Url("ru.min.js") : Url("ru.js");
+                        public static readonly string sk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sk.min.js") ? Url("sk.min.js") : Url("sk.js");
+                        public static readonly string sl_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sl.min.js") ? Url("sl.min.js") : Url("sl.js");
+                        public static readonly string sr_latn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr-latn.min.js") ? Url("sr-latn.min.js") : Url("sr-latn.js");
+                        public static readonly string sr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sr.min.js") ? Url("sr.min.js") : Url("sr.js");
+                        public static readonly string sv_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sv.min.js") ? Url("sv.min.js") : Url("sv.js");
+                        public static readonly string th_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/th.min.js") ? Url("th.min.js") : Url("th.js");
+                        public static readonly string tr_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/tr.min.js") ? Url("tr.min.js") : Url("tr.js");
+                        public static readonly string ug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/ug.min.js") ? Url("ug.min.js") : Url("ug.js");
+                        public static readonly string uk_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/uk.min.js") ? Url("uk.min.js") : Url("uk.js");
+                        public static readonly string vi_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/vi.min.js") ? Url("vi.min.js") : Url("vi.js");
+                        public static readonly string zh_cn_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh-cn.min.js") ? Url("zh-cn.min.js") : Url("zh-cn.js");
+                        public static readonly string zh_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/zh.min.js") ? Url("zh.min.js") : Url("zh.js");
+                    }
+                
+                    public static readonly string LICENSE_md = Url("LICENSE.md");
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                    public static readonly string README_md = Url("README.md");
+                }
+            
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class wysiwygarea {
+                    private const string URLPATH = "~/Scripts/ckeditor/plugins/wysiwygarea";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string plugin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/plugin.min.js") ? Url("plugin.min.js") : Url("plugin.js");
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class samples {
+                        private const string URLPATH = "~/Scripts/ckeditor/plugins/wysiwygarea/samples";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string fullpage_html = Url("fullpage.html");
+                    }
+                
+                }
+            
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class samples {
+                private const string URLPATH = "~/Scripts/ckeditor/samples";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string ajax_html = Url("ajax.html");
+                public static readonly string api_html = Url("api.html");
+                public static readonly string appendto_html = Url("appendto.html");
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class assets {
+                    private const string URLPATH = "~/Scripts/ckeditor/samples/assets";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class inlineall {
+                        private const string URLPATH = "~/Scripts/ckeditor/samples/assets/inlineall";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string logo_png = Url("logo.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class outputxhtml {
+                        private const string URLPATH = "~/Scripts/ckeditor/samples/assets/outputxhtml";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string outputxhtml_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/outputxhtml.min.css") ? Url("outputxhtml.min.css") : Url("outputxhtml.css");
+                             
+                    }
+                
+                    public static readonly string posteddata_php = Url("posteddata.php");
+                    public static readonly string sample_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sample.min.css") ? Url("sample.min.css") : Url("sample.css");
+                         
+                    public static readonly string sample_jpg = Url("sample.jpg");
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class uilanguages {
+                        private const string URLPATH = "~/Scripts/ckeditor/samples/assets/uilanguages";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string languages_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/languages.min.js") ? Url("languages.min.js") : Url("languages.js");
+                    }
+                
+                }
+            
+                public static readonly string datafiltering_html = Url("datafiltering.html");
+                public static readonly string divreplace_html = Url("divreplace.html");
+                public static readonly string index_html = Url("index.html");
+                public static readonly string inlineall_html = Url("inlineall.html");
+                public static readonly string inlinebycode_html = Url("inlinebycode.html");
+                public static readonly string inlinetextarea_html = Url("inlinetextarea.html");
+                public static readonly string jquery_html = Url("jquery.html");
+                public static readonly string readonly_html = Url("readonly.html");
+                public static readonly string replacebyclass_html = Url("replacebyclass.html");
+                public static readonly string replacebycode_html = Url("replacebycode.html");
+                public static readonly string sample_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sample.min.css") ? Url("sample.min.css") : Url("sample.css");
+                     
+                public static readonly string sample_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/sample.min.js") ? Url("sample.min.js") : Url("sample.js");
+                public static readonly string sample_posteddata_php = Url("sample_posteddata.php");
+                public static readonly string tabindex_html = Url("tabindex.html");
+                public static readonly string uicolor_html = Url("uicolor.html");
+                public static readonly string uilanguages_html = Url("uilanguages.html");
+                public static readonly string xhtmlstyle_html = Url("xhtmlstyle.html");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class skins {
+                private const string URLPATH = "~/Scripts/ckeditor/skins";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                public static class kama {
+                    private const string URLPATH = "~/Scripts/ckeditor/skins/kama";
+                    public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                    public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                    public static readonly string colorpanel_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/colorpanel.min.css") ? Url("colorpanel.min.css") : Url("colorpanel.css");
+                         
+                    public static readonly string dialog_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/dialog.min.css") ? Url("dialog.min.css") : Url("dialog.css");
+                         
+                    public static readonly string dialog_ie_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/dialog_ie.min.css") ? Url("dialog_ie.min.css") : Url("dialog_ie.css");
+                         
+                    public static readonly string dialog_ie7_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/dialog_ie7.min.css") ? Url("dialog_ie7.min.css") : Url("dialog_ie7.css");
+                         
+                    public static readonly string dialog_ie8_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/dialog_ie8.min.css") ? Url("dialog_ie8.min.css") : Url("dialog_ie8.css");
+                         
+                    public static readonly string dialog_iequirks_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/dialog_iequirks.min.css") ? Url("dialog_iequirks.min.css") : Url("dialog_iequirks.css");
+                         
+                    public static readonly string dialog_opera_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/dialog_opera.min.css") ? Url("dialog_opera.min.css") : Url("dialog_opera.css");
+                         
+                    public static readonly string editor_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/editor.min.css") ? Url("editor.min.css") : Url("editor.css");
+                         
+                    public static readonly string editor_ie_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/editor_ie.min.css") ? Url("editor_ie.min.css") : Url("editor_ie.css");
+                         
+                    public static readonly string editor_ie7_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/editor_ie7.min.css") ? Url("editor_ie7.min.css") : Url("editor_ie7.css");
+                         
+                    public static readonly string editor_ie8_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/editor_ie8.min.css") ? Url("editor_ie8.min.css") : Url("editor_ie8.css");
+                         
+                    public static readonly string editor_iequirks_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/editor_iequirks.min.css") ? Url("editor_iequirks.min.css") : Url("editor_iequirks.css");
+                         
+                    public static readonly string elementspath_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/elementspath.min.css") ? Url("elementspath.min.css") : Url("elementspath.css");
+                         
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class icons {
+                        private const string URLPATH = "~/Scripts/ckeditor/skins/kama/icons";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string about_png = Url("about.png");
+                        public static readonly string anchor_rtl_png = Url("anchor-rtl.png");
+                        public static readonly string anchor_png = Url("anchor.png");
+                        public static readonly string bgcolor_png = Url("bgcolor.png");
+                        public static readonly string bidiltr_png = Url("bidiltr.png");
+                        public static readonly string bidirtl_png = Url("bidirtl.png");
+                        public static readonly string blockquote_png = Url("blockquote.png");
+                        public static readonly string bold_png = Url("bold.png");
+                        public static readonly string bulletedlist_rtl_png = Url("bulletedlist-rtl.png");
+                        public static readonly string bulletedlist_png = Url("bulletedlist.png");
+                        public static readonly string button_png = Url("button.png");
+                        public static readonly string checkbox_png = Url("checkbox.png");
+                        public static readonly string copy_rtl_png = Url("copy-rtl.png");
+                        public static readonly string copy_png = Url("copy.png");
+                        public static readonly string creatediv_png = Url("creatediv.png");
+                        public static readonly string cut_rtl_png = Url("cut-rtl.png");
+                        public static readonly string cut_png = Url("cut.png");
+                        public static readonly string docprops_rtl_png = Url("docprops-rtl.png");
+                        public static readonly string docprops_png = Url("docprops.png");
+                        public static readonly string find_rtl_png = Url("find-rtl.png");
+                        public static readonly string find_png = Url("find.png");
+                        public static readonly string flash_png = Url("flash.png");
+                        public static readonly string form_png = Url("form.png");
+                        public static readonly string hiddenfield_png = Url("hiddenfield.png");
+                        public static readonly string horizontalrule_png = Url("horizontalrule.png");
+                        public static readonly string icons_png = Url("icons.png");
+                        public static readonly string iframe_png = Url("iframe.png");
+                        public static readonly string image_png = Url("image.png");
+                        public static readonly string imagebutton_png = Url("imagebutton.png");
+                        public static readonly string indent_rtl_png = Url("indent-rtl.png");
+                        public static readonly string indent_png = Url("indent.png");
+                        public static readonly string italic_png = Url("italic.png");
+                        public static readonly string justifyblock_png = Url("justifyblock.png");
+                        public static readonly string justifycenter_png = Url("justifycenter.png");
+                        public static readonly string justifyleft_png = Url("justifyleft.png");
+                        public static readonly string justifyright_png = Url("justifyright.png");
+                        public static readonly string link_png = Url("link.png");
+                        public static readonly string maximize_png = Url("maximize.png");
+                        public static readonly string newpage_rtl_png = Url("newpage-rtl.png");
+                        public static readonly string newpage_png = Url("newpage.png");
+                        public static readonly string numberedlist_rtl_png = Url("numberedlist-rtl.png");
+                        public static readonly string numberedlist_png = Url("numberedlist.png");
+                        public static readonly string outdent_rtl_png = Url("outdent-rtl.png");
+                        public static readonly string outdent_png = Url("outdent.png");
+                        public static readonly string pagebreak_rtl_png = Url("pagebreak-rtl.png");
+                        public static readonly string pagebreak_png = Url("pagebreak.png");
+                        public static readonly string paste_rtl_png = Url("paste-rtl.png");
+                        public static readonly string paste_png = Url("paste.png");
+                        public static readonly string pastefromword_rtl_png = Url("pastefromword-rtl.png");
+                        public static readonly string pastefromword_png = Url("pastefromword.png");
+                        public static readonly string pastetext_rtl_png = Url("pastetext-rtl.png");
+                        public static readonly string pastetext_png = Url("pastetext.png");
+                        public static readonly string placeholder_png = Url("placeholder.png");
+                        public static readonly string preview_rtl_png = Url("preview-rtl.png");
+                        public static readonly string preview_png = Url("preview.png");
+                        public static readonly string print_png = Url("print.png");
+                        public static readonly string radio_png = Url("radio.png");
+                        public static readonly string redo_rtl_png = Url("redo-rtl.png");
+                        public static readonly string redo_png = Url("redo.png");
+                        public static readonly string removeformat_png = Url("removeformat.png");
+                        public static readonly string replace_png = Url("replace.png");
+                        public static readonly string save_png = Url("save.png");
+                        public static readonly string scayt_png = Url("scayt.png");
+                        public static readonly string select_rtl_png = Url("select-rtl.png");
+                        public static readonly string select_png = Url("select.png");
+                        public static readonly string selectall_png = Url("selectall.png");
+                        public static readonly string showblocks_rtl_png = Url("showblocks-rtl.png");
+                        public static readonly string showblocks_png = Url("showblocks.png");
+                        public static readonly string smiley_png = Url("smiley.png");
+                        public static readonly string source_rtl_png = Url("source-rtl.png");
+                        public static readonly string source_png = Url("source.png");
+                        public static readonly string specialchar_png = Url("specialchar.png");
+                        public static readonly string spellchecker_png = Url("spellchecker.png");
+                        public static readonly string strike_png = Url("strike.png");
+                        public static readonly string subscript_png = Url("subscript.png");
+                        public static readonly string superscript_png = Url("superscript.png");
+                        public static readonly string table_png = Url("table.png");
+                        public static readonly string templates_rtl_png = Url("templates-rtl.png");
+                        public static readonly string templates_png = Url("templates.png");
+                        public static readonly string textarea_rtl_png = Url("textarea-rtl.png");
+                        public static readonly string textarea_png = Url("textarea.png");
+                        public static readonly string textcolor_png = Url("textcolor.png");
+                        public static readonly string textfield_png = Url("textfield.png");
+                        public static readonly string underline_png = Url("underline.png");
+                        public static readonly string undo_rtl_png = Url("undo-rtl.png");
+                        public static readonly string undo_png = Url("undo.png");
+                        public static readonly string unlink_png = Url("unlink.png");
+                    }
+                
+                    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+                    public static class images {
+                        private const string URLPATH = "~/Scripts/ckeditor/skins/kama/images";
+                        public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                        public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                        public static readonly string dialog_sides_gif = Url("dialog_sides.gif");
+                        public static readonly string dialog_sides_png = Url("dialog_sides.png");
+                        public static readonly string dialog_sides_rtl_png = Url("dialog_sides_rtl.png");
+                        public static readonly string mini_gif = Url("mini.gif");
+                        public static readonly string sprites_png = Url("sprites.png");
+                        public static readonly string sprites_ie6_png = Url("sprites_ie6.png");
+                        public static readonly string toolbar_start_gif = Url("toolbar_start.gif");
+                    }
+                
+                    public static readonly string mainui_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/mainui.min.css") ? Url("mainui.min.css") : Url("mainui.css");
+                         
+                    public static readonly string menu_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/menu.min.css") ? Url("menu.min.css") : Url("menu.css");
+                         
+                    public static readonly string panel_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/panel.min.css") ? Url("panel.min.css") : Url("panel.css");
+                         
+                    public static readonly string presets_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/presets.min.css") ? Url("presets.min.css") : Url("presets.css");
+                         
+                    public static readonly string readme_md = Url("readme.md");
+                    public static readonly string reset_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/reset.min.css") ? Url("reset.min.css") : Url("reset.css");
+                         
+                    public static readonly string richcombo_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/richcombo.min.css") ? Url("richcombo.min.css") : Url("richcombo.css");
+                         
+                    public static readonly string skin_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/skin.min.js") ? Url("skin.min.js") : Url("skin.js");
+                    public static readonly string toolbar_css = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/toolbar.min.css") ? Url("toolbar.min.css") : Url("toolbar.css");
+                         
+                }
+            
+            }
+        
+            public static readonly string styles_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/styles.min.js") ? Url("styles.min.js") : Url("styles.js");
+        }
+    
+        public static readonly string jquery_1_10_2_intellisense_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.10.2.intellisense.min.js") ? Url("jquery-1.10.2.intellisense.min.js") : Url("jquery-1.10.2.intellisense.js");
+        public static readonly string jquery_1_10_2_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery-1.10.2.min.js") ? Url("jquery-1.10.2.min.js") : Url("jquery-1.10.2.js");
+        public static readonly string jquery_1_10_2_min_js = Url("jquery-1.10.2.min.js");
+        public static readonly string jquery_1_10_2_min_map = Url("jquery-1.10.2.min.map");
+        public static readonly string jquery_validate_vsdoc_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate-vsdoc.min.js") ? Url("jquery.validate-vsdoc.min.js") : Url("jquery.validate-vsdoc.js");
+        public static readonly string jquery_validate_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.min.js") ? Url("jquery.validate.min.js") : Url("jquery.validate.js");
+        public static readonly string jquery_validate_min_js = Url("jquery.validate.min.js");
+        public static readonly string jquery_validate_unobtrusive_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.validate.unobtrusive.min.js") ? Url("jquery.validate.unobtrusive.min.js") : Url("jquery.validate.unobtrusive.js");
+        public static readonly string jquery_validate_unobtrusive_min_js = Url("jquery.validate.unobtrusive.min.js");
         public static readonly string knockout_2_1_0_debug_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/knockout-2.1.0.debug.min.js") ? Url("knockout-2.1.0.debug.min.js") : Url("knockout-2.1.0.debug.js");
         public static readonly string knockout_2_1_0_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/knockout-2.1.0.min.js") ? Url("knockout-2.1.0.min.js") : Url("knockout-2.1.0.js");
+        public static readonly string MathHubScript_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/MathHubScript.min.js") ? Url("MathHubScript.min.js") : Url("MathHubScript.js");
         public static readonly string modernizr_2_5_3_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/modernizr-2.5.3.min.js") ? Url("modernizr-2.5.3.min.js") : Url("modernizr-2.5.3.js");
     }
 

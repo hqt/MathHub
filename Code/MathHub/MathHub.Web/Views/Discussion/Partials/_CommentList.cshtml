@@ -1,0 +1,9 @@
+﻿@using MathHub.Web.Models.ProblemVM
+@model CommentListVM
+@{
+    foreach(CommentItemVM comment in Model.CommentItemVms)
+    {
+        @Html.Partial("Partials/_CommentItem", comment)
+    }
+    
+}

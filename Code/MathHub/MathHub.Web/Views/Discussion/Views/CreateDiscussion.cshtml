@@ -1,0 +1,35 @@
+﻿@model MathHub.Web.Models.DiscussionVM.CreateDiscussionVM
+@{
+    ViewBag.Title = "CreateProblem";
+    Layout = "~/Views/Discussion/Layouts/_DiscussionCreateLayout.cshtml";
+}
+
+@using (Html.BeginForm(MVC.Discussion.Create(@Model), FormMethod.Post)) 
+{ 
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        @* Title *@
+        @Html.LabelFor(m => m.Title) <br />
+        @Html.TextBoxFor(m => m.Title, 
+                    new { id = "title", style="opacity: 0.4; z-index: 1; position: relative;" }) 
+        @Html.ValidationMessageFor(m => m.Title) <br />
+
+        @* Content *@
+        @Html.LabelFor(m  => m.Content) <br />
+        @Html.TextAreaFor(m => m.Content,
+                        new {@class="ckeditor", id = "ckeditor1", cols="92", rows="15"})
+        @Html.ValidationMessageFor(m => m.Content) <br />
+
+        @* Tag *@
+        @Html.LabelFor(m => m.Tag) <br />
+        @Html.TextBoxFor(m => m.Tag,
+                     new {style="width: 658px;" })
+
+        <input type="submit" value="Post"/>
+}
+
+@section RightPanel
+{
+    @Html.Action(MVC.CommonWidget.DiscussionPostGuide())
+}

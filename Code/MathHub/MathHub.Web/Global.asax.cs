@@ -50,7 +50,7 @@ namespace MathHub.Web
 
             // Initialize AutoMapper with each instance of the profiles found.
             Mapper.Initialize(a => profiles.ForEach(a.AddProfile));
-            
+
             // Using Custom ViewEngine
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new CustomRazorEngine());

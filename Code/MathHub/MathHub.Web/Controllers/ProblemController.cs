@@ -101,7 +101,7 @@ namespace MathHub.Web.Controllers
                 {
                     // by some reason. cannot create problem
                     ModelState.AddModelError("create_problem_exception", "This problem cannot be created. Try again later");
-                    return View(problemVM);
+                    return View("Views/CreateProblem",problemVM);
                 }
                 else
                 {
@@ -112,7 +112,7 @@ namespace MathHub.Web.Controllers
             {
                 // if not ModelState valid
                 ModelState.AddModelError("model_state_invalid", "Current State is Invalid");
-                return View(problemVM);
+                return View("Views/CreateProblem", problemVM);
             }
         }
 
@@ -131,14 +131,21 @@ namespace MathHub.Web.Controllers
             problemViewModel.CommentPostVm.MainPostId = problemViewModel.Id;
             problemViewModel.CommentPostVm.Type = "problem";
 
+            problemViewModel.AnswerPostVm = new AnswerPostVM();
+            problemViewModel.AnswerPostVm.MainPostId = problemViewModel.Id;
+
+            problemViewModel.HintPostVm = new HintPostVM();
+            problemViewModel.HintPostVm.MainPostId = problemViewModel.Id;
+
             return View("Views/DetailProblem", problemViewModel);
         }
 
-        [AjaxCallAF]
-        public virtual ActionResult Answer(int id, int offset)
+
+        [AjaxCallActionFilter]
+        public virtual ActionResult Answer(int postId, int offset)
         {
             IEnumerable<Reply> answers = _problemQueryService.GetAllReplies(
-                    id,
+                    postId,
                     ReplyEnum.ANSWER,
                     offset,
                     Constant.DEFAULT_PER_PAGE
@@ -150,7 +157,7 @@ namespace MathHub.Web.Controllers
             return PartialView("Partials/_AnswerList", answerListVm);
         }
 
-        [AjaxCallAF]
+        [AjaxCallActionFilter]
         public virtual ActionResult Hint(int postId, int offset)
         {
             IEnumerable<Reply> hints = _problemQueryService.GetAllReplies(
@@ -167,11 +174,12 @@ namespace MathHub.Web.Controllers
             return PartialView("Partials/_HintList", hintListVm);
         }
 
-        [AjaxCallAF]
+        [AjaxCallActionFilter]
         public virtual ActionResult Comment(int postId, int offset)
         {
-            offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
             int limit = offset < 0 ? int.MaxValue : Constant.DEFAULT_COMMENT_LOADING;
+            offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
+            
 
             IEnumerable<Comment> comments = _problemQueryService.GetAllComments(
                 postId,
@@ -187,10 +195,9 @@ namespace MathHub.Web.Controllers
             commentListVm.CommentItemVms = hintItemVms;
             return PartialView("Partials/_CommentList", commentListVm);
         }
-
         
         [Authorize]
-        public bool AddComment(CommentPostVM commentPostVm)
+        public ActionResult AddComment(CommentPostVM commentPostVm)
         {
             if (ModelState.IsValid)
             {
@@ -199,22 +206,82 @@ namespace MathHub.Web.Controllers
                 comment.DateCreated = DateTime.Now;
                 comment.Content = commentPostVm.Content;
 
+                bool res = false;
                 switch (commentPostVm.Type)
                 {
                     case "problem":
                         //comment.MainPostId = commentPostVm.MainPostId;
-                        return _commentCommandService.AddCommentForPost((int)commentPostVm.MainPostId, comment);
-
+                        res =  _commentCommandService.AddCommentForPost((int)commentPostVm.MainPostId, comment);
+                        break;
                     case "Reply":
                         //comment.ReplyId = commentPostVm.ReplyId;
-                        return _commentCommandService.AddCommentForReply((int)comment.ReplyId, comment);
-
-                    default:
-                        return false;
+                        res = _commentCommandService.AddCommentForReply((int)comment.ReplyId, comment);
+                        break;
                 }
-
+                if (res)
+                {
+                    CommentItemVM commentItemVm = Mapper.Map<Comment, CommentItemVM>(comment);
+                    return PartialView("Partials/_CommentItem", commentItemVm);
+                }
+                else
+                {
+                    return null;
+                }
             }
-            return false;
+            // state is not valid
+            return null;
+        }
+
+        [Authorize]
+        public ActionResult AddAnswer(AnswerPostVM answerPostVm)
+        {
+            if(ModelState.IsValid)
+            {
+                Reply reply = new Reply();
+                reply.Content = answerPostVm.Content;
+                reply.UserId = WebSecurity.CurrentUserId;
+                reply.DateCreated = DateTime.Now;
+                reply.Type = ReplyEnum.ANSWER;
+
+                bool res =  _problemCommandService.AddReply((int)answerPostVm.MainPostId, reply);
+                if (res)
+                {
+                    AnswerItemVM answerItemVm = Mapper.Map<Reply, AnswerItemVM>(reply);
+                    return PartialView("Partials/_AnswerItem", answerItemVm);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            // Model State is not valid
+            return null;
+        }
+
+        [Authorize]
+        public ActionResult AddHint(HintPostVM hintPostVm)
+        {
+            if (ModelState.IsValid)
+            {
+                Reply reply = new Reply();
+                reply.Content = hintPostVm.Content;
+                reply.UserId = WebSecurity.CurrentUserId;
+                reply.DateCreated = DateTime.Now;
+                reply.Type = ReplyEnum.HINT;
+
+                bool res =  _problemCommandService.AddReply((int)hintPostVm.MainPostId, reply);
+                if (res)
+                {
+                    HintItemVM hintItemVm = Mapper.Map<Reply, HintItemVM>(reply);
+                    return PartialView("Partials/_AnswerItem", hintItemVm);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            // Model State is not valid
+            return null;
         }
     }
 }

@@ -12,17 +12,17 @@ using StructureMap;
 
 namespace MathHub.Web.AutoMapperProfile
 {
-    class MathHubMapperProfile : Profile
+    class ProblemMapperProfile : Profile
     {
         /// <summary>
         /// Config profile for System AutoMapper
         /// </summary>
         protected override void Configure()
         {
-            
+
             // Comment
             Mapper.CreateMap<Comment, CommentItemVM>();
-            
+
             // Problem
             Mapper.CreateMap<Problem, PreviewProblemVM>();
 
@@ -51,7 +51,7 @@ namespace MathHub.Web.AutoMapperProfile
                     m => m.MapFrom(
                     s => (ObjectFactory.GetInstance<IUserQueryService>()).GetLoginAvatar()
                 ));
-            
+
             // Reply
             Mapper.CreateMap<Reply, AnswerItemVM>();
             Mapper.CreateMap<Reply, HintItemVM>();

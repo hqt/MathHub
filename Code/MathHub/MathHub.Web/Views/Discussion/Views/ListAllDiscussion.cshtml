@@ -1,0 +1,39 @@
+﻿@using MathHub.Web.Models.DiscussionVM
+@model ICollection<PreviewDiscussionVM>
+@{
+    ViewBag.Title = "ListAllDiscussion";
+    Layout = "~/Views/Discussion/Layouts/_DiscussionListLayout.cshtml";
+}
+
+<h2>ListAllDiscussion</h2>
+These items are created by a loop of partial views:<br/>
+@{
+    
+    foreach (PreviewDiscussionVM discussion in Model)
+    {
+        @Html.Partial("Partials/_DiscussionItem", discussion);
+    }
+}
+
+
+
+@section LeftPanel
+{
+    
+    @Html.Action(MVC.CommonWidget.ProfileWidget())
+    <hr/>
+    @Html.Action(MVC.CommonWidget.FavoriteTagWidget())
+    <hr/>
+    @Html.Action(MVC.CommonWidget.GroupWidget())
+    <hr/>
+    @Html.Action(MVC.CommonWidget.SubscriptionWidget())
+}
+
+@section RightPanel
+{
+    @Html.Action(MVC.CommonWidget.PostDiscussionWidget())
+    <hr/>
+    @Html.Action(MVC.CommonWidget.MySubscriptionWidget())
+    <hr/>
+    @Html.Action(MVC.CommonWidget.NewBlogWidget())
+}
