@@ -172,9 +172,27 @@ namespace MathHub.Web.Controllers
                 public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
                 public class _ViewNamesClass
                 {
+                    public readonly string _AnswerItem = "_AnswerItem";
+                    public readonly string _AnswerList = "_AnswerList";
+                    public readonly string _AnswerPostForm = "_AnswerPostForm";
+                    public readonly string _CommentItem = "_CommentItem";
+                    public readonly string _CommentList = "_CommentList";
+                    public readonly string _CommentPostForm = "_CommentPostForm";
                     public readonly string _DiscussionItem = "_DiscussionItem";
+                    public readonly string _HintItem = "_HintItem";
+                    public readonly string _HintList = "_HintList";
+                    public readonly string _HintPostForm = "_HintPostForm";
                 }
+                public readonly string _AnswerItem = "~/Views/Discussion/Partials/_AnswerItem.cshtml";
+                public readonly string _AnswerList = "~/Views/Discussion/Partials/_AnswerList.cshtml";
+                public readonly string _AnswerPostForm = "~/Views/Discussion/Partials/_AnswerPostForm.cshtml";
+                public readonly string _CommentItem = "~/Views/Discussion/Partials/_CommentItem.cshtml";
+                public readonly string _CommentList = "~/Views/Discussion/Partials/_CommentList.cshtml";
+                public readonly string _CommentPostForm = "~/Views/Discussion/Partials/_CommentPostForm.cshtml";
                 public readonly string _DiscussionItem = "~/Views/Discussion/Partials/_DiscussionItem.cshtml";
+                public readonly string _HintItem = "~/Views/Discussion/Partials/_HintItem.cshtml";
+                public readonly string _HintList = "~/Views/Discussion/Partials/_HintList.cshtml";
+                public readonly string _HintPostForm = "~/Views/Discussion/Partials/_HintPostForm.cshtml";
             }
             static readonly _ViewsClass s_Views = new _ViewsClass();
             public _ViewsClass Views { get { return s_Views; } }

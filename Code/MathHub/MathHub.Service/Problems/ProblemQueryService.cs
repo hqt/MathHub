@@ -84,14 +84,16 @@ namespace MathHub.Service.Problems
         #endregion
 
         #region Comment
-        public IEnumerable<Comment> GetAllComments(int postId, int offset, int limit)
+        public IEnumerable<Comment> GetAllReplyComments(int replyId, int offset, int limit)
         {
-            return ctx.Posts
-               .OfType<Comment>()
-               .Where(t => t.MainPostId == postId)
-               .OrderBy(t => t.DateCreated)
-               .Skip(offset).Take(limit);
+            return _mainPostQueryService.GetAllReplyComments(replyId, offset, limit);
         }
+
+        public IEnumerable<Comment> GetAllMainPostComments(int mainPostId, int offset, int limit)
+        {
+            return _mainPostQueryService.GetAllMainPostComments(mainPostId, offset, limit);
+        }
+
         #endregion
 
         #region Reply

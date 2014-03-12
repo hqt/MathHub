@@ -13,6 +13,7 @@ using MathHub.Core.Config;
 using MathHub.Web.CustomAnnotation.ActionFilter;
 using WebMatrix.WebData;
 using MathHub.Core.Infrastructure;
+using MathHub.Web.Models.CommonVM;
 
 namespace MathHub.Web.Controllers
 {
@@ -129,7 +130,7 @@ namespace MathHub.Web.Controllers
          
             problemViewModel.CommentPostVm = new CommentPostVM();
             problemViewModel.CommentPostVm.MainPostId = problemViewModel.Id;
-            problemViewModel.CommentPostVm.Type = "problem";
+            problemViewModel.CommentPostVm.Type = CommentEnum.QUESTION;
 
             problemViewModel.AnswerPostVm = new AnswerPostVM();
             problemViewModel.AnswerPostVm.MainPostId = problemViewModel.Id;
@@ -139,7 +140,6 @@ namespace MathHub.Web.Controllers
 
             return View("Views/DetailProblem", problemViewModel);
         }
-
 
         [AjaxCallActionFilter]
         public virtual ActionResult Answer(int postId, int offset)
@@ -175,29 +175,54 @@ namespace MathHub.Web.Controllers
         }
 
         [AjaxCallActionFilter]
-        public virtual ActionResult Comment(int postId, int offset)
+        public virtual ActionResult GetReplyComments(int postId, int offset)
         {
             int limit = offset < 0 ? int.MaxValue : Constant.DEFAULT_COMMENT_LOADING;
             offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
             
 
-            IEnumerable<Comment> comments = _problemQueryService.GetAllComments(
+            IEnumerable<Comment> comments = _problemQueryService.GetAllReplyComments(
                 postId,
                 offset,
                 limit
                 );
 
             // Map list models to list viewmodels with lambda expression 
-            ICollection<CommentItemVM> hintItemVms = comments.Select(Mapper.Map<Comment, CommentItemVM>).ToList();
+            ICollection<CommentItemVM> commentItemVms = comments
+                .Select(Mapper.Map<Comment, CommentItemVM>)
+                //.Each(c => c.Type = Models.CommonVM.CommentEnum.ANSWER)
+                .ToList();
 
             CommentListVM commentListVm = new CommentListVM();
 
-            commentListVm.CommentItemVms = hintItemVms;
+            commentListVm.CommentItemVms = commentItemVms;
+            return PartialView("Partials/_CommentList", commentListVm);
+        }
+
+        [AjaxCallActionFilter]
+        public virtual ActionResult GetQuestionComments(int postId, int offset)
+        {
+            int limit = offset < 0 ? int.MaxValue : Constant.DEFAULT_COMMENT_LOADING;
+            offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
+
+
+            IEnumerable<Comment> comments = _problemQueryService.GetAllMainPostComments(
+                postId,
+                offset,
+                limit
+                );
+
+            // Map list models to list viewmodels with lambda expression 
+            ICollection<CommentItemVM> commentItemVms = comments.Select(Mapper.Map<Comment, CommentItemVM>).ToList();
+
+            CommentListVM commentListVm = new CommentListVM();
+
+            commentListVm.CommentItemVms = commentItemVms;
             return PartialView("Partials/_CommentList", commentListVm);
         }
         
         [Authorize]
-        public ActionResult AddComment(CommentPostVM commentPostVm)
+        public virtual ActionResult AddComment(CommentPostVM commentPostVm)
         {
             if (ModelState.IsValid)
             {
@@ -207,16 +232,18 @@ namespace MathHub.Web.Controllers
                 comment.Content = commentPostVm.Content;
 
                 bool res = false;
-                switch (commentPostVm.Type)
+                switch (commentPostVm.Type) 
                 {
-                    case "problem":
+                    case CommentEnum.QUESTION:
                         //comment.MainPostId = commentPostVm.MainPostId;
                         res =  _commentCommandService.AddCommentForPost((int)commentPostVm.MainPostId, comment);
                         break;
-                    case "Reply":
+                    case CommentEnum.REPLY:
                         //comment.ReplyId = commentPostVm.ReplyId;
                         res = _commentCommandService.AddCommentForReply((int)comment.ReplyId, comment);
                         break;
+                    default:
+                        return null;
                 }
                 if (res)
                 {
@@ -233,7 +260,7 @@ namespace MathHub.Web.Controllers
         }
 
         [Authorize]
-        public ActionResult AddAnswer(AnswerPostVM answerPostVm)
+        public virtual ActionResult AddAnswer(AnswerPostVM answerPostVm)
         {
             if(ModelState.IsValid)
             {
@@ -259,7 +286,7 @@ namespace MathHub.Web.Controllers
         }
 
         [Authorize]
-        public ActionResult AddHint(HintPostVM hintPostVm)
+        public virtual ActionResult AddHint(HintPostVM hintPostVm)
         {
             if (ModelState.IsValid)
             {

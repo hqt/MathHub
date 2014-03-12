@@ -125,6 +125,8 @@ namespace MathHub.Web.Controllers
             public _ViewNamesClass ViewNames { get { return s_ViewNames; } }
             public class _ViewNamesClass
             {
+                public readonly string _BlogPostGuide = "_BlogPostGuide";
+                public readonly string _DiscussionPostGuide = "_DiscussionPostGuide";
                 public readonly string _FavoriteTagWidget = "_FavoriteTagWidget";
                 public readonly string _FooterWidget = "_FooterWidget";
                 public readonly string _GroupWidget = "_GroupWidget";
@@ -132,6 +134,8 @@ namespace MathHub.Web.Controllers
                 public readonly string _MySubscriptionWidget = "_MySubscriptionWidget";
                 public readonly string _NewBlogWidget = "_NewBlogWidget";
                 public readonly string _NewDiscussionWidget = "_NewDiscussionWidget";
+                public readonly string _NewProblemWidget = "_NewProblemWidget";
+                public readonly string _PostBlogWidget = "_PostBlogWidget";
                 public readonly string _PostDiscussionWidget = "_PostDiscussionWidget";
                 public readonly string _PostProblemWidget = "_PostProblemWidget";
                 public readonly string _ProblemPostGuide = "_ProblemPostGuide";
@@ -142,6 +146,8 @@ namespace MathHub.Web.Controllers
                 public readonly string _SubscriptionWidget = "_SubscriptionWidget";
                 public readonly string _YourActivityWidget = "_YourActivityWidget";
             }
+            public readonly string _BlogPostGuide = "~/Views/CommonWidget/_BlogPostGuide.cshtml";
+            public readonly string _DiscussionPostGuide = "~/Views/CommonWidget/_DiscussionPostGuide.cshtml";
             public readonly string _FavoriteTagWidget = "~/Views/CommonWidget/_FavoriteTagWidget.cshtml";
             public readonly string _FooterWidget = "~/Views/CommonWidget/_FooterWidget.cshtml";
             public readonly string _GroupWidget = "~/Views/CommonWidget/_GroupWidget.cshtml";
@@ -149,6 +155,8 @@ namespace MathHub.Web.Controllers
             public readonly string _MySubscriptionWidget = "~/Views/CommonWidget/_MySubscriptionWidget.cshtml";
             public readonly string _NewBlogWidget = "~/Views/CommonWidget/_NewBlogWidget.cshtml";
             public readonly string _NewDiscussionWidget = "~/Views/CommonWidget/_NewDiscussionWidget.cshtml";
+            public readonly string _NewProblemWidget = "~/Views/CommonWidget/_NewProblemWidget.cshtml";
+            public readonly string _PostBlogWidget = "~/Views/CommonWidget/_PostBlogWidget.cshtml";
             public readonly string _PostDiscussionWidget = "~/Views/CommonWidget/_PostDiscussionWidget.cshtml";
             public readonly string _PostProblemWidget = "~/Views/CommonWidget/_PostProblemWidget.cshtml";
             public readonly string _ProblemPostGuide = "~/Views/CommonWidget/_ProblemPostGuide.cshtml";

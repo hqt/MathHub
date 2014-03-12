@@ -160,7 +160,7 @@ namespace MathHub.Web.Controllers
             offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
             int limit = offset < 0 ? int.MaxValue : Constant.DEFAULT_COMMENT_LOADING;
 
-            IEnumerable<Comment> comments = _discussionQueryService.GetAllComments(
+            IEnumerable<Comment> comments = _discussionQueryService.GetAllReplyComments(
                 postId,
                 offset,
                 limit

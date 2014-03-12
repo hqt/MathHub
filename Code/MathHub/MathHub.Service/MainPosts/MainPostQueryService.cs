@@ -56,14 +56,22 @@ namespace MathHub.Service.MainPosts
         #endregion
 
         #region Comment
-        public IEnumerable<Comment> GetAllComments(int postId, int offset, int limit)
+        public IEnumerable<Comment> GetAllReplyComments(int replyId, int offset, int limit)
         {
             return ctx.Posts
                .OfType<Comment>()
-               .Where(t => t.MainPostId == postId)
+               .Where(t => t.ReplyId == replyId)
                .OrderBy(t => t.DateCreated)
                .Skip(offset).Take(limit);
-        } 
+        }
+        public IEnumerable<Comment> GetAllMainPostComments(int mainPostId, int offset, int limit)
+        {
+            return ctx.Posts
+               .OfType<Comment>()
+               .Where(t => t.MainPostId == mainPostId)
+               .OrderBy(t => t.DateCreated)
+               .Skip(offset).Take(limit);
+        }
         #endregion
 
         #region Reply
@@ -107,7 +115,5 @@ namespace MathHub.Service.MainPosts
             return new Tuple<int, int, int>(comments, answers, hints);
         } 
         #endregion
-
-
     }
 }

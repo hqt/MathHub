@@ -263,6 +263,7 @@
     <Compile Include="Models\BlogVM\CreateBlogVM.cs" />
     <Compile Include="Models\BlogVM\DetailBlogVM.cs" />
     <Compile Include="Models\BlogVM\PreviewBlogVM.cs" />
+    <Compile Include="Models\CommonVM\CommentEnum.cs" />
     <Compile Include="Models\CommonVM\ProfileWidgetVM.cs" />
     <Compile Include="Models\CommonVM\UserInfoVM.cs" />
     <Compile Include="Models\DiscussionVM\DAnswerItemVM.cs" />
@@ -2802,8 +2803,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="CustomAnnotation\ValidationAttribute\" />
     <Folder Include="Models\AdminVM\" />
-    <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Blog\" />
     <Folder Include="Views\Admin\Layouts\" />
     <Folder Include="Views\Admin\Partials\" />
     <Folder Include="Views\Admin\Views\" />

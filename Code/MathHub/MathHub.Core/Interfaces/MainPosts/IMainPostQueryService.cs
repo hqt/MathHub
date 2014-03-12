@@ -22,7 +22,8 @@ namespace MathHub.Core.Interfaces.MainPosts
         /// <summary>
         /// Comment
         /// </summary>
-        IEnumerable<Comment> GetAllComments(int postId, int offset, int limit);
+        IEnumerable<Comment> GetAllReplyComments(int replyId, int offset, int limit);
+        IEnumerable<Comment> GetAllMainPostComments(int mainPostId, int offset, int limit);
 
         /// <summary>
         /// Vote
