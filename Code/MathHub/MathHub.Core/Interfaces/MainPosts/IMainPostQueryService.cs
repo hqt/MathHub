@@ -35,15 +35,16 @@ namespace MathHub.Core.Interfaces.MainPosts
         /// <summary>
         /// Reply
         /// </summary>
-        IEnumerable<Reply> GetAllReplies(int postId, ReplyEnum type, int offset, int limit);
+        IEnumerable<Reply> GetAllReplies(int mainPostId, ReplyEnum type, int offset, int limit);
 
         /// <summary>
         /// statistic : count all fields
         /// </summary>
 
         /** favorite - report - share */
-        Tuple<int, int, int> GetPostSocialReport(int postId);
+        Tuple<int, int, int> GetPostSocialReport(int mainPostId);
+        int GetFavoriteNum(int mainPostId);
         /** comment - answer - hint */
-        Tuple<int, int, int> GetPostReplyReport(int postId);
+        Tuple<int, int, int> GetPostReplyReport(int mainPostId);
     }
 }

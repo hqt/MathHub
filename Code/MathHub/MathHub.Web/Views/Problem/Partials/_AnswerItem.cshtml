@@ -2,7 +2,7 @@
 
 <script type="text/javascript">
 	$(document).ready(function () {
-		// load comments of this answer
+		// load comments of reply
 		getReplyComments('reply-comments-@Model.Id', @Model.Id, 0);
 	});
 </script>
@@ -30,6 +30,5 @@ Answer Item @Model.Content<br/>
 		onclick="showAndHideElementsById('comment-post-form-@Model.Id', 'add-reply-comment')">Add comments</button>
 }
 
-@*@Html.Partial("Partials/_CommentProblemPostForm", @Model.CommentPostVm)*@
-
+@Html.Partial("Partials/_CommentReplyPostForm", @Model.CommentPostVm)
 <br />

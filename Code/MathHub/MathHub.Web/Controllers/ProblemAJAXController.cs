@@ -28,7 +28,18 @@ namespace MathHub.Web.Controllers
                     Constant.DEFAULT_PER_PAGE
                 ).AsEnumerable();
 
-            ICollection<AnswerItemVM> answerItemVms = answers.Select(Mapper.Map<Reply, AnswerItemVM>).ToList();
+            ICollection<AnswerItemVM> answerItemVms = answers
+                .Select(Mapper.Map<Reply, AnswerItemVM>)
+                .ToList();
+
+            // this mapping must be have
+            // if not. strange error will be appear at AutoMapper
+            foreach (AnswerItemVM am in answerItemVms) {
+                am.CommentPostVm = new CommentPostVM();
+                am.CommentPostVm.ReplyId = am.Id;
+                am.CommentPostVm.Type = EnumCommentType.REPLY;
+            }
+
             AnswerListVM answerListVm = new AnswerListVM();
             answerListVm.AnswerItemVms = answerItemVms;
             return PartialView("Partials/_AnswerList", answerListVm);
@@ -46,6 +57,16 @@ namespace MathHub.Web.Controllers
 
             // Map list models to list viewmodels with lambda expression 
             ICollection<HintItemVM> hintItemVms = hints.Select(Mapper.Map<Reply, HintItemVM>).ToList();
+
+            // this mapping must be have
+            // if not. strange error will be appear at AutoMapper
+            foreach (HintItemVM am in hintItemVms)
+            {
+                am.CommentPostVm = new CommentPostVM();
+                am.CommentPostVm.ReplyId = am.Id;
+                am.CommentPostVm.Type = EnumCommentType.REPLY;
+            }
+
             HintListVM hintListVm = new HintListVM();
             hintListVm.HintItemVms = hintItemVms;
             return PartialView("Partials/_HintList", hintListVm);
@@ -130,7 +151,7 @@ namespace MathHub.Web.Controllers
                         break;
                     case EnumCommentType.REPLY:
                         //comment.ReplyId = commentPostVm.ReplyId;
-                        res = _commentCommandService.AddCommentForReply((int)comment.ReplyId, comment);
+                        res = _commentCommandService.AddCommentForReply((int)commentPostVm.ReplyId, comment);
                         break;
                     default:
                         return null;

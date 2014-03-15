@@ -42,6 +42,12 @@ namespace MathHub.Web.AutoMapperProfile
                     s => (ObjectFactory.GetInstance<IProblemQueryService>()).GetPostReplyReport(s.Id)
                 ));
 
+            // Answer
+            Mapper.CreateMap<Reply, AnswerItemVM>();
+            
+            // Hint
+            Mapper.CreateMap<Reply, HintItemVM>();
+
             // Profile
             Mapper.CreateMap<User, ProfileWidgetVM>()
                 .ForMember(p => p.Medal,
@@ -53,9 +59,6 @@ namespace MathHub.Web.AutoMapperProfile
                     s => (ObjectFactory.GetInstance<IUserQueryService>()).GetLoginAvatar()
                 ));
 
-            // Reply
-            Mapper.CreateMap<Reply, AnswerItemVM>();
-            Mapper.CreateMap<Reply, HintItemVM>();
         }
     }
 }

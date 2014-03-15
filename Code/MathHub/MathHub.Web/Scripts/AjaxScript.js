@@ -30,6 +30,22 @@ function getQuestionComments(elementId, postId, offset) {
 }
 
 /*
+    Explain             :   generic method to get list of data and append to elementId
+    parameters        
+        url             :   url to be get data
+        elementId       :   where to append content after loading
+        postId          :   id of post.
+        offset          :   number of items will load (0 : will be system default)
+    return              :   partial view of list of CommentItem ViewModel
+    original author     :   Huynh Quang Thao
+*/
+function getData(url, elementId, postId, offset) {
+    $.post(url, { postId: postId, offset: offset }, function (data) {
+        $("#" + elementId).html($("#" + elementId).html() + data);
+    });
+}
+
+/*
     Explain             :   Get more reply comments and append to elementId
     parameters          :
         elementId       :   where to append content after loading
