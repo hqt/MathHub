@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MathHub.Web.Models.CommonVM
 {
-    public enum CommentEnum : int
+    public enum EnumCommentType : int
     {
         QUESTION = 1,
         REPLY = 2,

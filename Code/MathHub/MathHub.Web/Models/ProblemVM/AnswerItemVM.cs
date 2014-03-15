@@ -15,6 +15,7 @@ namespace MathHub.Web.Models.ProblemVM
         public int UserId { get; set; }
         public string UserUsername { get; set; }
 
+        public CommentPostVM CommentPostVm { get; set; }
         public int VoteUpNum { get; set; }
         public int VoteDownNum { get; set; }
         public int ReportNum { get; set; }        

@@ -20,6 +20,7 @@ namespace MathHub.Web.Controllers
     public partial class ProblemController : BaseController
     {
 
+        #region Constructor
         private IProblemQueryService _problemQueryService;
         private IProblemCommandService _problemCommandService;
         private ICommentCommandService _commentCommandService;
@@ -36,7 +37,9 @@ namespace MathHub.Web.Controllers
             _problemCommandService = problemCommandService;
             _authenticationService = authenticationService;
         }
+        #endregion
 
+        #region GET Problem
         // GET /Problem
         public virtual ActionResult Index()
         {
@@ -74,7 +77,6 @@ namespace MathHub.Web.Controllers
             return View("Views/ListAllProblem", problemVms);
         }
 
-
         [Authorize]
         [HttpGet]
         // GET /Problem/Create
@@ -83,6 +85,33 @@ namespace MathHub.Web.Controllers
             return View("Views/CreateProblem");
         }
 
+        // GET /Problem/Detail/1
+        public virtual ActionResult Detail(int id)
+        {
+            Problem targetProblem = _problemQueryService.GetProblemById(id);
+
+            // Map from Model to ViewModel
+            DetailProblemVM problemViewModel =
+                Mapper.Map<Problem, DetailProblemVM>(targetProblem);
+
+            // problemViewModel.PostVote = tuple;
+
+            problemViewModel.CommentPostVm = new CommentPostVM();
+            problemViewModel.CommentPostVm.MainPostId = problemViewModel.Id;
+            problemViewModel.CommentPostVm.Type = EnumCommentType.QUESTION;
+
+            problemViewModel.AnswerPostVm = new AnswerPostVM();
+            problemViewModel.AnswerPostVm.MainPostId = problemViewModel.Id;
+
+            problemViewModel.HintPostVm = new HintPostVM();
+            problemViewModel.HintPostVm.MainPostId = problemViewModel.Id;
+
+            return View("Views/DetailProblem", problemViewModel);
+        }
+
+        #endregion
+
+        #region POST Problem
         // POST /Problem/Create
         [Authorize]
         [HttpPost, ValidateInput(false)]
@@ -102,7 +131,7 @@ namespace MathHub.Web.Controllers
                 {
                     // by some reason. cannot create problem
                     ModelState.AddModelError("create_problem_exception", "This problem cannot be created. Try again later");
-                    return View("Views/CreateProblem",problemVM);
+                    return View("Views/CreateProblem", problemVM);
                 }
                 else
                 {
@@ -115,200 +144,7 @@ namespace MathHub.Web.Controllers
                 ModelState.AddModelError("model_state_invalid", "Current State is Invalid");
                 return View("Views/CreateProblem", problemVM);
             }
-        }
-
-        // GET /Problem/Detail/1
-        public virtual ActionResult Detail(int id)
-        {
-            Problem targetProblem = _problemQueryService.GetProblemById(id);
-
-            // Map from Model to ViewModel
-            DetailProblemVM problemViewModel =
-                Mapper.Map<Problem, DetailProblemVM>(targetProblem);
-
-            // problemViewModel.PostVote = tuple;
-         
-            problemViewModel.CommentPostVm = new CommentPostVM();
-            problemViewModel.CommentPostVm.MainPostId = problemViewModel.Id;
-            problemViewModel.CommentPostVm.Type = CommentEnum.QUESTION;
-
-            problemViewModel.AnswerPostVm = new AnswerPostVM();
-            problemViewModel.AnswerPostVm.MainPostId = problemViewModel.Id;
-
-            problemViewModel.HintPostVm = new HintPostVM();
-            problemViewModel.HintPostVm.MainPostId = problemViewModel.Id;
-
-            return View("Views/DetailProblem", problemViewModel);
-        }
-
-        [AjaxCallActionFilter]
-        public virtual ActionResult Answer(int postId, int offset)
-        {
-            IEnumerable<Reply> answers = _problemQueryService.GetAllReplies(
-                    postId,
-                    ReplyEnum.ANSWER,
-                    offset,
-                    Constant.DEFAULT_PER_PAGE
-                ).AsEnumerable();
-
-            ICollection<AnswerItemVM> answerItemVms = answers.Select(Mapper.Map<Reply, AnswerItemVM>).ToList();
-            AnswerListVM answerListVm = new AnswerListVM();
-            answerListVm.AnswerItemVms = answerItemVms;
-            return PartialView("Partials/_AnswerList", answerListVm);
-        }
-
-        [AjaxCallActionFilter]
-        public virtual ActionResult Hint(int postId, int offset)
-        {
-            IEnumerable<Reply> hints = _problemQueryService.GetAllReplies(
-                    postId,
-                    ReplyEnum.HINT,
-                    offset,
-                    Constant.DEFAULT_PER_PAGE
-                ).AsEnumerable();
-
-            // Map list models to list viewmodels with lambda expression 
-            ICollection<HintItemVM> hintItemVms = hints.Select(Mapper.Map<Reply, HintItemVM>).ToList();
-            HintListVM hintListVm = new HintListVM();
-            hintListVm.HintItemVms = hintItemVms;
-            return PartialView("Partials/_HintList", hintListVm);
-        }
-
-        [AjaxCallActionFilter]
-        public virtual ActionResult GetReplyComments(int postId, int offset)
-        {
-            int limit = offset < 0 ? int.MaxValue : Constant.DEFAULT_COMMENT_LOADING;
-            offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
-            
-
-            IEnumerable<Comment> comments = _problemQueryService.GetAllReplyComments(
-                postId,
-                offset,
-                limit
-                );
-
-            // Map list models to list viewmodels with lambda expression 
-            ICollection<CommentItemVM> commentItemVms = comments
-                .Select(Mapper.Map<Comment, CommentItemVM>)
-                //.Each(c => c.Type = Models.CommonVM.CommentEnum.ANSWER)
-                .ToList();
-
-            CommentListVM commentListVm = new CommentListVM();
-
-            commentListVm.CommentItemVms = commentItemVms;
-            return PartialView("Partials/_CommentList", commentListVm);
-        }
-
-        [AjaxCallActionFilter]
-        public virtual ActionResult GetQuestionComments(int postId, int offset)
-        {
-            int limit = offset < 0 ? int.MaxValue : Constant.DEFAULT_COMMENT_LOADING;
-            offset = offset < 0 ? Constant.DEFAULT_COMMENT_OFFSET : offset;
-
-
-            IEnumerable<Comment> comments = _problemQueryService.GetAllMainPostComments(
-                postId,
-                offset,
-                limit
-                );
-
-            // Map list models to list viewmodels with lambda expression 
-            ICollection<CommentItemVM> commentItemVms = comments.Select(Mapper.Map<Comment, CommentItemVM>).ToList();
-
-            CommentListVM commentListVm = new CommentListVM();
-
-            commentListVm.CommentItemVms = commentItemVms;
-            return PartialView("Partials/_CommentList", commentListVm);
-        }
-        
-        [Authorize]
-        public virtual ActionResult AddComment(CommentPostVM commentPostVm)
-        {
-            if (ModelState.IsValid)
-            {
-                Comment comment = new Comment();
-                comment.UserId = WebSecurity.CurrentUserId;
-                comment.DateCreated = DateTime.Now;
-                comment.Content = commentPostVm.Content;
-
-                bool res = false;
-                switch (commentPostVm.Type) 
-                {
-                    case CommentEnum.QUESTION:
-                        //comment.MainPostId = commentPostVm.MainPostId;
-                        res =  _commentCommandService.AddCommentForPost((int)commentPostVm.MainPostId, comment);
-                        break;
-                    case CommentEnum.REPLY:
-                        //comment.ReplyId = commentPostVm.ReplyId;
-                        res = _commentCommandService.AddCommentForReply((int)comment.ReplyId, comment);
-                        break;
-                    default:
-                        return null;
-                }
-                if (res)
-                {
-                    CommentItemVM commentItemVm = Mapper.Map<Comment, CommentItemVM>(comment);
-                    return PartialView("Partials/_CommentItem", commentItemVm);
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            // state is not valid
-            return null;
-        }
-
-        [Authorize]
-        public virtual ActionResult AddAnswer(AnswerPostVM answerPostVm)
-        {
-            if(ModelState.IsValid)
-            {
-                Reply reply = new Reply();
-                reply.Content = answerPostVm.Content;
-                reply.UserId = WebSecurity.CurrentUserId;
-                reply.DateCreated = DateTime.Now;
-                reply.Type = ReplyEnum.ANSWER;
-
-                bool res =  _problemCommandService.AddReply((int)answerPostVm.MainPostId, reply);
-                if (res)
-                {
-                    AnswerItemVM answerItemVm = Mapper.Map<Reply, AnswerItemVM>(reply);
-                    return PartialView("Partials/_AnswerItem", answerItemVm);
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            // Model State is not valid
-            return null;
-        }
-
-        [Authorize]
-        public virtual ActionResult AddHint(HintPostVM hintPostVm)
-        {
-            if (ModelState.IsValid)
-            {
-                Reply reply = new Reply();
-                reply.Content = hintPostVm.Content;
-                reply.UserId = WebSecurity.CurrentUserId;
-                reply.DateCreated = DateTime.Now;
-                reply.Type = ReplyEnum.HINT;
-
-                bool res =  _problemCommandService.AddReply((int)hintPostVm.MainPostId, reply);
-                if (res)
-                {
-                    HintItemVM hintItemVm = Mapper.Map<Reply, HintItemVM>(reply);
-                    return PartialView("Partials/_AnswerItem", hintItemVm);
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            // Model State is not valid
-            return null;
-        }
+        } 
+        #endregion
     }
 }

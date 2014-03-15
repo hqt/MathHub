@@ -15,7 +15,7 @@ namespace MathHub.Web.Models.ProblemVM
         [Required(ErrorMessage = "Comment cannot be empty.")]
         [Display(Name = "Add your comment")]
         public string Content { get; set; }
-        public CommentEnum Type { get; set; }
+        public EnumCommentType Type { get; set; }
         public Nullable<int> ReplyId { get; set; }
         public Nullable<int> MainPostId { get; set; }
     }

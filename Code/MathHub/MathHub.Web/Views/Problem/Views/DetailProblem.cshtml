@@ -42,23 +42,28 @@
 @* ajax insert comment here to problem-comments *@
 <div id="problem-comments"></div>
 
-@*  function showCommentOnClick(showId, postId, formId, hideId) *@
-@*  function showAndHideElementsById(showId, hideId) *@
+@*  when click "Get More Comments" will appears all comments and a post form to post comment for question *@
 @if(Model.PostReply.Item1 > 5)
 {
-	<button id="add-question-comment" onclick="showCommentOnClick('problem-comments', @Model.Id, 'comment-post-form', 'add-question-comment')">
+	// hide `add comment`, load more comments and appear post form
+	// function showCommentOnClick(commentListId, postId, formId, hideId)
+	<button id="add-question-comment" onclick="showCommentOnClick('problem-comments', @Model.Id, 'comment-post-form-@Model.Id', 'add-question-comment')">
 		Add / Show @{int num = Model.PostReply.Item1 - 5; } @num more comments
 	</button>
 }else
 {
-	<button id="add-question-comment" onclick="showAndHideElementsById('comment-post-form', 'add-question-comment')">Add comments</button>
+	// hide `add comment` button and show post form
+	// function showAndHideElementsById(showId, hideId)
+	<button id="add-question-comment" onclick="showAndHideElementsById('comment-post-form-@Model.Id', 'add-question-comment')">
+		Add comments</button>
 }
 
-@Html.Partial("Partials/_CommentPostForm", Model.CommentPostVm)
+@Html.Partial("Partials/_CommentProblemPostForm", Model.CommentPostVm)
 
 @* Answer / Hint Detail *@
 
 <div id="reply-tabs">
+	@* tab panel *@
   <ul>
 	  @* tab 1 : tab answer. all div with id=fragment-1 will appear under this tab  *@
 	<li id="number-replies" value = @Model.PostReply.Item2 onclick="getAnswerAjax('problem-answers', @Model.Id, 0)"><a href="#fragment-1">
@@ -73,7 +78,7 @@
 	  <div id="problem-answers"></div>
 	  @Html.Partial("Partials/_AnswerPostForm", Model.AnswerPostVm)
   </div>
-	@* ajax loading answe reply content *@
+	@* ajax loading reply content *@
   <div id="fragment-2">
 	  <div id="problem-hints"></div>
 	  @Html.Partial("Partials/_HintPostForm", Model.HintPostVm)

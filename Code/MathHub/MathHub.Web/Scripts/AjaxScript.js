@@ -2,7 +2,7 @@
 /*jslint browser: true*/
 /*global $, jQuery, alert*/
 
-/* 
+/*
     @Author : Huynh Quang Thao
     edit 1 : add strict mode for javascript. Reference link : http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/
     edit 2 : add comment option to by-pass jslint check
@@ -38,7 +38,7 @@ function getQuestionComments(elementId, postId, offset) {
     return              :   partial view of list of CommentItem ViewModel
     original author     :   Huynh Quang Thao
 */
-function getReplyCommentsAjax(elementId, postId, offset) {
+function getReplyComments(elementId, postId, offset) {
     var url = "/Problem/GetReplyComments/";
     $.post(url, { postId: postId, offset: offset }, function (data) {
         $("#" + elementId).html($("#" + elementId).html() + data);
@@ -78,7 +78,7 @@ function getAnswerAjax(formId, postId, offset) {
 }
 
 /*
-    Explain             :
+    Explain             :   post a comment in Problem Category (include comment for Reply or comment for Question)
     parameters          :
         formId          :   post form (include postId, content ... to send to server). 
                             after send success, reset again all field to empty
@@ -99,7 +99,6 @@ function postComment(formId, commentDivId) {
                     //$("#" + commentDivId).append(postData[0].value + "<br/>");
                     $("#" + commentDivId).append(data + "<br/>");
                     $("#" + formId).children("textarea").val("");
-                    alert(data);
                 } else {
 
                 }

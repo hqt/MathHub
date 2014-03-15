@@ -21,7 +21,8 @@ namespace MathHub.Web.AutoMapperProfile
         {
 
             // Comment
-            Mapper.CreateMap<Comment, CommentItemVM>();
+            Mapper.CreateMap<Comment, CommentItemVM>()
+                .ForMember(c => c.Type, o => o.Ignore());
 
             // Problem
             Mapper.CreateMap<Problem, PreviewProblemVM>();

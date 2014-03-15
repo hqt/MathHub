@@ -17,7 +17,7 @@ namespace MathHub.Web.Models.ProblemVM
         public int UserId { get; set; }
         public Nullable<int> ReplyId { get; set; }
         public Nullable<int> MainPostId { get; set; }
-        public CommentEnum Type { get; set; }
+        public EnumCommentType Type { get; set; }
         public int VoteUpNum { get; set; }
         public string UserUsername { get; set; }
         
