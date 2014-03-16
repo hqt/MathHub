@@ -141,7 +141,28 @@ namespace MathHub.Service.Problems
             int answers = ctx.Posts.OfType<Reply>().Count(r => r.MainPostId == postId && r.Type == ReplyEnum.ANSWER);
             int hints = ctx.Posts.OfType<Reply>().Count(r => r.MainPostId == postId && r.Type == ReplyEnum.HINT);
             return new Tuple<int, int, int>(comments, answers, hints);
-        } 
+        }
+
+        public int CountFavorite(int mainPostId)
+        {
+            return _mainPostQueryService.CountFavorite(mainPostId);
+        }
+
+
+        public int CountReplyComment(int postId)
+        {
+            return _mainPostQueryService.CountReplyComment(postId);
+        }
+
+        public int CountQuestionComment(int postId)
+        {
+            return _mainPostQueryService.CountQuestionComment(postId);
+        }
+
+        public int CountReport(int postId)
+        {
+            return _mainPostQueryService.CountReport(postId);
+        }
         #endregion
     }
 }

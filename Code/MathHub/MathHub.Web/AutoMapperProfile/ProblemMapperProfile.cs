@@ -43,22 +43,18 @@ namespace MathHub.Web.AutoMapperProfile
                 ));
 
             // Answer
-            Mapper.CreateMap<Reply, AnswerItemVM>();
+            Mapper.CreateMap<Reply, AnswerItemVM>()
+                .ForMember(r => r.CommentNum,
+                    m => m.MapFrom(
+                    s => (ObjectFactory.GetInstance<IProblemQueryService>()).CountReplyComment(s.Id)
+                ));
             
             // Hint
-            Mapper.CreateMap<Reply, HintItemVM>();
-
-            // Profile
-            Mapper.CreateMap<User, ProfileWidgetVM>()
-                .ForMember(p => p.Medal,
+            Mapper.CreateMap<Reply, HintItemVM>()
+                 .ForMember(r => r.CommentNum,
                     m => m.MapFrom(
-                    s => (ObjectFactory.GetInstance<IUserQueryService>()).GetUserMedals(s.Id)
-                ))
-                .ForMember(p => p.Avatar,
-                    m => m.MapFrom(
-                    s => (ObjectFactory.GetInstance<IUserQueryService>()).GetLoginAvatar()
+                    s => (ObjectFactory.GetInstance<IProblemQueryService>()).CountReplyComment(s.Id)
                 ));
-
         }
     }
 }

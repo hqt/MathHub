@@ -94,12 +94,13 @@ namespace MathHub.Web.Controllers
             DetailProblemVM problemViewModel =
                 Mapper.Map<Problem, DetailProblemVM>(targetProblem);
 
-            // problemViewModel.PostVote = tuple;
 
             problemViewModel.CommentPostVm = new CommentPostVM();
             problemViewModel.CommentPostVm.MainPostId = problemViewModel.Id;
             problemViewModel.CommentPostVm.Type = EnumCommentType.QUESTION;
 
+            // this mapping must be have
+            // if nott. strange error will appear at ViewModel in View
             problemViewModel.AnswerPostVm = new AnswerPostVM();
             problemViewModel.AnswerPostVm.MainPostId = problemViewModel.Id;
 

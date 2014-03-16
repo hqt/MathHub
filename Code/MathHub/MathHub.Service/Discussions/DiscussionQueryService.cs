@@ -113,7 +113,27 @@ namespace MathHub.Service.Discussions
         public Tuple<int, int, int> GetPostReplyReport(int postId)
         {
             return _mainPostQuerySerivce.GetPostReplyReport(postId);
-        } 
+        }
+
+        public int CountFavorite(int mainPostId)
+        {
+            return _mainPostQuerySerivce.CountFavorite(mainPostId);
+        }
+
+        public int CountReplyComment(int postId)
+        {
+            return _mainPostQuerySerivce.CountReplyComment(postId);
+        }
+
+        public int CountQuestionComment(int postId)
+        {
+            return _mainPostQuerySerivce.CountQuestionComment(postId);
+        }
+
+        public int CountReport(int postId)
+        {
+            return _mainPostQuerySerivce.CountReport(postId);
+        }
         #endregion
     }
 }

@@ -241,6 +241,8 @@
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BlogAJAXController.cs" />
+    <Compile Include="Controllers\DiscussionAJAXController.cs" />
     <Compile Include="Controllers\ProblemAJAXController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\CommonWidgetController.cs" />

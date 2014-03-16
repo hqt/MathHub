@@ -33,7 +33,7 @@ namespace MathHub.Web.Controllers
                 .ToList();
 
             // this mapping must be have
-            // if not. strange error will be appear at AutoMapper
+            // if not. strange error will be appear at ViewModel in View
             foreach (AnswerItemVM am in answerItemVms) {
                 am.CommentPostVm = new CommentPostVM();
                 am.CommentPostVm.ReplyId = am.Id;
@@ -59,7 +59,7 @@ namespace MathHub.Web.Controllers
             ICollection<HintItemVM> hintItemVms = hints.Select(Mapper.Map<Reply, HintItemVM>).ToList();
 
             // this mapping must be have
-            // if not. strange error will be appear at AutoMapper
+            // if not. strange error will be appear at ViewModel in View
             foreach (HintItemVM am in hintItemVms)
             {
                 am.CommentPostVm = new CommentPostVM();
