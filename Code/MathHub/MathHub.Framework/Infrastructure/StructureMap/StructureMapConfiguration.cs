@@ -5,7 +5,9 @@ using MathHub.Core.Interfaces.Blogs;
 using MathHub.Core.Interfaces.Comments;
 using MathHub.Core.Interfaces.Discussions;
 using MathHub.Core.Interfaces.MainPosts;
+using MathHub.Core.Interfaces.Posts;
 using MathHub.Core.Interfaces.Problems;
+using MathHub.Core.Interfaces.Resources;
 using MathHub.Core.Interfaces.Systems;
 using MathHub.Core.Interfaces.Tags;
 using MathHub.Core.Interfaces.Users;
@@ -16,7 +18,9 @@ using MathHub.Service.Blogs;
 using MathHub.Service.Comments;
 using MathHub.Service.Discussions;
 using MathHub.Service.MainPosts;
+using MathHub.Service.Posts;
 using MathHub.Service.Problems;
+using MathHub.Service.Resources;
 using MathHub.Service.Systems;
 using MathHub.Service.Tags;
 using MathHub.Service.Users;
@@ -49,6 +53,9 @@ namespace MathHub.Framework.Infrastructure.StructureMap
 
                 /** intialize all service interface with its implementation */
                 // post
+                cfg.For<IPostQueryService>().Use<PostQueryService>();
+                cfg.For<IPostCommandService>().Use<PostCommandService>();
+                // main post
                 cfg.For<IMainPostQueryService>().Use<MainPostQueryService>();
                 cfg.For<IMainPostCommandService>().Use<MainPostCommandService>();
                 // blog
@@ -66,6 +73,9 @@ namespace MathHub.Framework.Infrastructure.StructureMap
                 // tag
                 cfg.For<ITagQueryService>().Use<TagQueryService>();
                 cfg.For<ITagCommandService>().Use<TagCommandService>();
+                // resource
+                cfg.For<IResourceQueryService>().Use<ResourceQueryService>();
+                cfg.For<IResourceCommandService>().Use<ResourceCommandService>();
                 
                 /** infrastructure */
                 // using same Context for One Request

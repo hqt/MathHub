@@ -84,14 +84,16 @@ namespace MathHub.Service.Problems
         #endregion
 
         #region Comment
-        public IEnumerable<Comment> GetAllComments(int postId, int offset, int limit)
+        public IEnumerable<Comment> GetAllReplyComments(int replyId, int offset, int limit)
         {
-            return ctx.Posts
-               .OfType<Comment>()
-               .Where(t => t.MainPostId == postId)
-               .OrderBy(t => t.DateCreated)
-               .Skip(offset).Take(limit);
+            return _mainPostQueryService.GetAllReplyComments(replyId, offset, limit);
         }
+
+        public IEnumerable<Comment> GetAllMainPostComments(int mainPostId, int offset, int limit)
+        {
+            return _mainPostQueryService.GetAllMainPostComments(mainPostId, offset, limit);
+        }
+
         #endregion
 
         #region Reply
@@ -139,7 +141,28 @@ namespace MathHub.Service.Problems
             int answers = ctx.Posts.OfType<Reply>().Count(r => r.MainPostId == postId && r.Type == ReplyEnum.ANSWER);
             int hints = ctx.Posts.OfType<Reply>().Count(r => r.MainPostId == postId && r.Type == ReplyEnum.HINT);
             return new Tuple<int, int, int>(comments, answers, hints);
-        } 
+        }
+
+        public int CountFavorite(int mainPostId)
+        {
+            return _mainPostQueryService.CountFavorite(mainPostId);
+        }
+
+
+        public int CountReplyComment(int postId)
+        {
+            return _mainPostQueryService.CountReplyComment(postId);
+        }
+
+        public int CountQuestionComment(int postId)
+        {
+            return _mainPostQueryService.CountQuestionComment(postId);
+        }
+
+        public int CountReport(int postId)
+        {
+            return _mainPostQueryService.CountReport(postId);
+        }
         #endregion
     }
 }

@@ -1,5 +1,6 @@
 ﻿using MathHub.Core.Infrastructure.Repository;
 using MathHub.Core.Interfaces.MainPosts;
+using MathHub.Core.Interfaces.Posts;
 using MathHub.Entity.Entity;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,14 @@ namespace MathHub.Service.MainPosts
     {
         #region Constructor
         MathHubModelContainer ctx;
+        IPostQueryService _postQueryService;
 
-        public MainPostQueryService(IMathHubDbContext mathHubDbContext)
+        public MainPostQueryService(
+            IMathHubDbContext mathHubDbContext,
+            IPostQueryService postQueryService)
         {
             this.ctx = mathHubDbContext.GetDbContext();
+            this._postQueryService = postQueryService;
         } 
         #endregion
 
@@ -39,31 +44,29 @@ namespace MathHub.Service.MainPosts
         #region Vote
         public int GetPostVoteUp(int postId)
         {
-            return ctx.Votes.Where(t => t.Type == VoteEnum.UPVOTE).Count(t => t.Post.Id == postId);
+            return _postQueryService.GetPostVoteUp(postId);
         }
 
         public int GetPostVoteDown(int postId)
         {
-            return ctx.Votes.Where(t => t.Type == VoteEnum.UPVOTE).Count(t => t.Post.Id == postId);
+            return _postQueryService.GetPostVoteDown(postId);
         }
 
         public Tuple<int, int> GetPostVote(int postId)
         {
-            int voteUp = ctx.Votes.Where(t => t.Type == VoteEnum.UPVOTE).Count(t => t.Post.Id == postId);
-            int voteDown = ctx.Votes.Where(t => t.Type == VoteEnum.DOWNVOTE).Count(t => t.Post.Id == postId);
-            return new Tuple<int, int>(voteUp, voteDown);
+            return _postQueryService.GetPostVote(postId);
         } 
         #endregion
 
         #region Comment
-        public IEnumerable<Comment> GetAllComments(int postId, int offset, int limit)
+        public IEnumerable<Comment> GetAllReplyComments(int replyId, int offset, int limit)
         {
-            return ctx.Posts
-               .OfType<Comment>()
-               .Where(t => t.MainPostId == postId)
-               .OrderBy(t => t.DateCreated)
-               .Skip(offset).Take(limit);
-        } 
+            return _postQueryService.GetAllReplyComments(replyId, offset, limit);
+        }
+        public IEnumerable<Comment> GetAllMainPostComments(int mainPostId, int offset, int limit)
+        {
+            return _postQueryService.GetAllMainPostComments(mainPostId, offset, limit);
+        }
         #endregion
 
         #region Reply
@@ -85,7 +88,7 @@ namespace MathHub.Service.MainPosts
         } 
         #endregion
 
-        #region Post
+        #region Statistic
         public MainPost GetMainPostDetail(int postId)
         {
             throw new NotImplementedException();
@@ -105,9 +108,27 @@ namespace MathHub.Service.MainPosts
             int answers = ctx.Posts.OfType<Reply>().Count(r => r.MainPostId == postId && r.Type == ReplyEnum.ANSWER);
             int hints = ctx.Posts.OfType<Reply>().Count(r => r.MainPostId == postId && r.Type == ReplyEnum.HINT);
             return new Tuple<int, int, int>(comments, answers, hints);
-        } 
+        }
+
+        public int CountReplyComment(int postId)
+        {
+            return _postQueryService.CountReplyComment(postId);
+        }
+
+        public int CountQuestionComment(int postId)
+        {
+            return _postQueryService.CountQuestionComment(postId);
+        }
+
+        public int CountReport(int postId)
+        {
+            return _postQueryService.CountReport(postId);
+        }
+
+        public int CountFavorite(int mainPostId)
+        {
+            return ctx.FavoritePosts.Count(f => f.MainPostId == mainPostId);
+        }
         #endregion
-
-
     }
 }

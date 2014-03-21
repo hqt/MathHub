@@ -15,7 +15,13 @@ namespace MathHub.Web.Models.ProblemVM
         public string Title { get; set; }
 
         public Tuple<int, int> PostVote { get; set; }
+        /// <summary>
+        /// favorite - report - share
+        /// </summary>
         public Tuple<int, int, int> PostSocial { get; set; }
+        /// <summary>
+        ///  comment - answer - hint 
+        /// </summary>
         public Tuple<int, int, int> PostReply { get; set; }       
 
         //public CommentListVM Comments { get; set; }

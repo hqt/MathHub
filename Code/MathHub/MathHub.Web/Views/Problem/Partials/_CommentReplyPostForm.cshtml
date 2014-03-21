@@ -1,0 +1,17 @@
+﻿@model MathHub.Web.Models.ProblemVM.CommentPostVM
+
+    @using (Html.BeginForm("AddComment", "Problem", FormMethod.Post,  
+        new {style = "display:none", id = "comment-post-form-" + @Model.ReplyId}))
+    {
+        @Html.LabelFor(m => m.Content)
+        @Html.TextAreaFor(m => m.Content)
+        @Html.ValidationMessageFor(m => m.Content)
+
+        @Html.HiddenFor(m => m.ReplyId)
+        @Html.HiddenFor(m => m.Type)
+
+        @* function postComment(formId, commentDivId) *@
+        @* post form - form to append data *@
+        <input type="button" name="add-comment" 
+            onclick="postComment('comment-post-form-@Model.ReplyId', 'reply-comments-@Model.ReplyId')" value="Send"/>
+    }

@@ -1,4 +1,5 @@
-﻿using MathHub.Entity.Entity;
+﻿using MathHub.Core.Interfaces.Posts;
+using MathHub.Entity.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace MathHub.Core.Interfaces.MainPosts
     /// generic interface
     /// this interface will be inherited by Problem/Blog/Discussion interface
     /// </summary>
-    public interface IMainPostQueryService
+    public interface IMainPostQueryService : IPostQueryService
     {
         /// <summary>
         /// Tag
@@ -20,29 +21,18 @@ namespace MathHub.Core.Interfaces.MainPosts
         List<String> GetAllPostTagName(int postId);
 
         /// <summary>
-        /// Comment
-        /// </summary>
-        IEnumerable<Comment> GetAllComments(int postId, int offset, int limit);
-
-        /// <summary>
-        /// Vote
-        /// </summary>
-        int GetPostVoteUp(int postId);
-        int GetPostVoteDown(int postId);
-        Tuple<int, int> GetPostVote(int postId);
-
-        /// <summary>
         /// Reply
         /// </summary>
-        IEnumerable<Reply> GetAllReplies(int postId, ReplyEnum type, int offset, int limit);
+        IEnumerable<Reply> GetAllReplies(int mainPostId, ReplyEnum type, int offset, int limit);
 
         /// <summary>
         /// statistic : count all fields
         /// </summary>
 
         /** favorite - report - share */
-        Tuple<int, int, int> GetPostSocialReport(int postId);
+        Tuple<int, int, int> GetPostSocialReport(int mainPostId);
+        int CountFavorite(int mainPostId);
         /** comment - answer - hint */
-        Tuple<int, int, int> GetPostReplyReport(int postId);
+        Tuple<int, int, int> GetPostReplyReport(int mainPostId);
     }
 }

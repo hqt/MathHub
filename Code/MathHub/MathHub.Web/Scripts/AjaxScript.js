@@ -2,7 +2,7 @@
 /*jslint browser: true*/
 /*global $, jQuery, alert*/
 
-/* 
+/*
     @Author : Huynh Quang Thao
     edit 1 : add strict mode for javascript. Reference link : http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/
     edit 2 : add comment option to by-pass jslint check
@@ -20,9 +20,42 @@
         offset          :   number of items will load (0 : will be system default)
     return              :   partial view of list of CommentItem ViewModel
     original author     :   Nguyen Ngoc Thanh Hai
+    Modified author     :   Huynh Quang Thao : Change function name from getComment() to getQuestionComments()
 */
-function getCommentAjax(elementId, postId, offset) {
-    var url = "/Problem/Comment/";
+function getQuestionComments(elementId, postId, offset) {
+    var url = "/Problem/GetQuestionComments/";
+    $.post(url, { postId: postId, offset: offset }, function (data) {
+        $("#" + elementId).html($("#" + elementId).html() + data);
+    });
+}
+
+/*
+    Explain             :   generic method to get list of data and append to elementId
+    parameters        
+        url             :   url to be get data
+        elementId       :   where to append content after loading
+        postId          :   id of post.
+        offset          :   number of items will load (0 : will be system default)
+    return              :   partial view of list of CommentItem ViewModel
+    original author     :   Huynh Quang Thao
+*/
+function getData(url, elementId, postId, offset) {
+    $.post(url, { postId: postId, offset: offset }, function (data) {
+        $("#" + elementId).html($("#" + elementId).html() + data);
+    });
+}
+
+/*
+    Explain             :   Get more reply comments and append to elementId
+    parameters          :
+        elementId       :   where to append content after loading
+        postId          :   id of post.
+        offset          :   number of items will load (0 : will be system default)
+    return              :   partial view of list of CommentItem ViewModel
+    original author     :   Huynh Quang Thao
+*/
+function getReplyComments(elementId, postId, offset) {
+    var url = "/Problem/GetReplyComments/";
     $.post(url, { postId: postId, offset: offset }, function (data) {
         $("#" + elementId).html($("#" + elementId).html() + data);
     });
@@ -61,7 +94,7 @@ function getAnswerAjax(formId, postId, offset) {
 }
 
 /*
-    Explain             :
+    Explain             :   post a comment in Problem Category (include comment for Reply or comment for Question)
     parameters          :
         formId          :   post form (include postId, content ... to send to server). 
                             after send success, reset again all field to empty
@@ -81,7 +114,7 @@ function postComment(formId, commentDivId) {
                 if (data) {
                     //$("#" + commentDivId).append(postData[0].value + "<br/>");
                     $("#" + commentDivId).append(data + "<br/>");
-                    $("#" + formId).children("textarea").val("");                
+                    $("#" + formId).children("textarea").val("");
                 } else {
 
                 }
@@ -149,6 +182,41 @@ function postHint(formId, hintDivId) {
                 if (data) {
                     // $("#" + hintDivId).append(postData[0].value + "<br/>");
                     $("#" + hintDivId).append(data + "<br/>");
+                    $("#" + formId).children("textarea").val("");
+                } else {
+
+                }
+            },
+            error: function () {
+
+            }
+
+        });
+    return false;
+}
+
+/*
+    Explain             :   Edit a comment. If change successful, change content at client side
+    parameters          :
+        formId          :   post form (include postId, content ... to send to server). 
+                            after send success, reset again all field to empty
+        commentDivId    :   location to append comment
+    return              :   data return back is a partial view of comment view model
+    original author     :   Huynh Quang Thao
+    status              :   Underdevelopment
+*/
+function editComment(formId, commentDivId) {
+    var postData = jQuery("#" + formId).serializeArray();
+    var formURL = "/Problem/AddComment";
+    $.ajax(
+        {
+            url: formURL,
+            type: "POST",
+            data: postData,
+            success: function (data) {
+                if (data) {
+                    //$("#" + commentDivId).append(postData[0].value + "<br/>");
+                    $("#" + commentDivId).append(data + "<br/>");
                     $("#" + formId).children("textarea").val("");
                 } else {
 

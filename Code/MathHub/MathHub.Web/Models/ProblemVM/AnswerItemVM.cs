@@ -7,7 +7,6 @@ namespace MathHub.Web.Models.ProblemVM
 {
     public class AnswerItemVM
     {
-        
         public int Id { get; set; }
         public string Content { get; set; }
         public System.DateTime DateCreated { get; set; }
@@ -15,6 +14,7 @@ namespace MathHub.Web.Models.ProblemVM
         public int UserId { get; set; }
         public string UserUsername { get; set; }
 
+        public CommentPostVM CommentPostVm { get; set; }
         public int VoteUpNum { get; set; }
         public int VoteDownNum { get; set; }
         public int ReportNum { get; set; }        

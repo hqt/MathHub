@@ -61,9 +61,33 @@ namespace MathHub.Web.Controllers
         }
         [NonAction]
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public virtual System.Web.Mvc.ActionResult Comment()
+        public virtual System.Web.Mvc.ActionResult GetReplyComments()
         {
-            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Comment);
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetReplyComments);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult GetQuestionComments()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetQuestionComments);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult AddComment()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddComment);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult AddAnswer()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddAnswer);
+        }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.ActionResult AddHint()
+        {
+            return new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddHint);
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -90,7 +114,11 @@ namespace MathHub.Web.Controllers
             public readonly string Detail = "Detail";
             public readonly string Answer = "Answer";
             public readonly string Hint = "Hint";
-            public readonly string Comment = "Comment";
+            public readonly string GetReplyComments = "GetReplyComments";
+            public readonly string GetQuestionComments = "GetQuestionComments";
+            public readonly string AddComment = "AddComment";
+            public readonly string AddAnswer = "AddAnswer";
+            public readonly string AddHint = "AddHint";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -105,7 +133,11 @@ namespace MathHub.Web.Controllers
             public const string Detail = "Detail";
             public const string Answer = "Answer";
             public const string Hint = "Hint";
-            public const string Comment = "Comment";
+            public const string GetReplyComments = "GetReplyComments";
+            public const string GetQuestionComments = "GetQuestionComments";
+            public const string AddComment = "AddComment";
+            public const string AddAnswer = "AddAnswer";
+            public const string AddHint = "AddHint";
         }
 
 
@@ -143,14 +175,47 @@ namespace MathHub.Web.Controllers
             public readonly string postId = "postId";
             public readonly string offset = "offset";
         }
-        static readonly ActionParamsClass_Comment s_params_Comment = new ActionParamsClass_Comment();
+        static readonly ActionParamsClass_GetReplyComments s_params_GetReplyComments = new ActionParamsClass_GetReplyComments();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_Comment CommentParams { get { return s_params_Comment; } }
+        public ActionParamsClass_GetReplyComments GetReplyCommentsParams { get { return s_params_GetReplyComments; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_Comment
+        public class ActionParamsClass_GetReplyComments
         {
             public readonly string postId = "postId";
             public readonly string offset = "offset";
+        }
+        static readonly ActionParamsClass_GetQuestionComments s_params_GetQuestionComments = new ActionParamsClass_GetQuestionComments();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_GetQuestionComments GetQuestionCommentsParams { get { return s_params_GetQuestionComments; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_GetQuestionComments
+        {
+            public readonly string postId = "postId";
+            public readonly string offset = "offset";
+        }
+        static readonly ActionParamsClass_AddComment s_params_AddComment = new ActionParamsClass_AddComment();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_AddComment AddCommentParams { get { return s_params_AddComment; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_AddComment
+        {
+            public readonly string commentPostVm = "commentPostVm";
+        }
+        static readonly ActionParamsClass_AddAnswer s_params_AddAnswer = new ActionParamsClass_AddAnswer();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_AddAnswer AddAnswerParams { get { return s_params_AddAnswer; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_AddAnswer
+        {
+            public readonly string answerPostVm = "answerPostVm";
+        }
+        static readonly ActionParamsClass_AddHint s_params_AddHint = new ActionParamsClass_AddHint();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_AddHint AddHintParams { get { return s_params_AddHint; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_AddHint
+        {
+            public readonly string hintPostVm = "hintPostVm";
         }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -353,15 +418,64 @@ namespace MathHub.Web.Controllers
         }
 
         [NonAction]
-        partial void CommentOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int postId, int offset);
+        partial void GetReplyCommentsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int postId, int offset);
 
         [NonAction]
-        public override System.Web.Mvc.ActionResult Comment(int postId, int offset)
+        public override System.Web.Mvc.ActionResult GetReplyComments(int postId, int offset)
         {
-            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Comment);
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetReplyComments);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "postId", postId);
             ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "offset", offset);
-            CommentOverride(callInfo, postId, offset);
+            GetReplyCommentsOverride(callInfo, postId, offset);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void GetQuestionCommentsOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, int postId, int offset);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult GetQuestionComments(int postId, int offset)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.GetQuestionComments);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "postId", postId);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "offset", offset);
+            GetQuestionCommentsOverride(callInfo, postId, offset);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddCommentOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, MathHub.Web.Models.ProblemVM.CommentPostVM commentPostVm);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult AddComment(MathHub.Web.Models.ProblemVM.CommentPostVM commentPostVm)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddComment);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "commentPostVm", commentPostVm);
+            AddCommentOverride(callInfo, commentPostVm);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddAnswerOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, MathHub.Web.Models.ProblemVM.AnswerPostVM answerPostVm);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult AddAnswer(MathHub.Web.Models.ProblemVM.AnswerPostVM answerPostVm)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddAnswer);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "answerPostVm", answerPostVm);
+            AddAnswerOverride(callInfo, answerPostVm);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void AddHintOverride(T4MVC_System_Web_Mvc_ActionResult callInfo, MathHub.Web.Models.ProblemVM.HintPostVM hintPostVm);
+
+        [NonAction]
+        public override System.Web.Mvc.ActionResult AddHint(MathHub.Web.Models.ProblemVM.HintPostVM hintPostVm)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.AddHint);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "hintPostVm", hintPostVm);
+            AddHintOverride(callInfo, hintPostVm);
             return callInfo;
         }
 

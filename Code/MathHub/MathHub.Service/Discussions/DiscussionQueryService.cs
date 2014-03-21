@@ -86,10 +86,15 @@ namespace MathHub.Service.Discussions
         #endregion
 
         #region Comment
-        public IEnumerable<Comment> GetAllComments(int postId, int offset, int limit)
+        public IEnumerable<Comment> GetAllReplyComments(int replyId, int offset, int limit)
         {
-            return _mainPostQuerySerivce.GetAllComments(postId, offset, limit);
-        } 
+            return _mainPostQuerySerivce.GetAllReplyComments(replyId, offset, limit);
+        }
+
+        public IEnumerable<Comment> GetAllMainPostComments(int mainPostId, int offset, int limit)
+        {
+            return _mainPostQuerySerivce.GetAllMainPostComments(mainPostId, offset, limit);
+        }
         #endregion
 
         #region Reply
@@ -108,7 +113,27 @@ namespace MathHub.Service.Discussions
         public Tuple<int, int, int> GetPostReplyReport(int postId)
         {
             return _mainPostQuerySerivce.GetPostReplyReport(postId);
-        } 
+        }
+
+        public int CountFavorite(int mainPostId)
+        {
+            return _mainPostQuerySerivce.CountFavorite(mainPostId);
+        }
+
+        public int CountReplyComment(int postId)
+        {
+            return _mainPostQuerySerivce.CountReplyComment(postId);
+        }
+
+        public int CountQuestionComment(int postId)
+        {
+            return _mainPostQuerySerivce.CountQuestionComment(postId);
+        }
+
+        public int CountReport(int postId)
+        {
+            return _mainPostQuerySerivce.CountReport(postId);
+        }
         #endregion
     }
 }

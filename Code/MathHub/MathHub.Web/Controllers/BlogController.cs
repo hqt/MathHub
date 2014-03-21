@@ -37,7 +37,7 @@ namespace MathHub.Web.Controllers
         }
         
         // GET: /Blog/
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return null;
         }

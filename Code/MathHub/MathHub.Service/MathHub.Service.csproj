@@ -57,9 +57,13 @@
     <Compile Include="Discussions\DiscussionQueryService.cs" />
     <Compile Include="MainPosts\MainPostCommandService.cs" />
     <Compile Include="MainPosts\MainPostQueryService.cs" />
+    <Compile Include="Posts\PostCommandService.cs" />
+    <Compile Include="Posts\PostQueryService.cs" />
     <Compile Include="Problems\ProblemCommandService.cs" />
     <Compile Include="Problems\ProblemQueryService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ResourceCommandService.cs" />
+    <Compile Include="Resources\ResourceQueryService.cs" />
     <Compile Include="Systems\PermissionCommandService.cs" />
     <Compile Include="Systems\PermissionQueryService.cs" />
     <Compile Include="Tags\TagCommandService.cs" />

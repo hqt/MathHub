@@ -21,7 +21,8 @@ namespace MathHub.Web.AutoMapperProfile
         {
 
             // Comment
-            Mapper.CreateMap<Comment, CommentItemVM>();
+            Mapper.CreateMap<Comment, CommentItemVM>()
+                .ForMember(c => c.Type, o => o.Ignore());
 
             // Problem
             Mapper.CreateMap<Problem, PreviewProblemVM>();
@@ -41,20 +42,19 @@ namespace MathHub.Web.AutoMapperProfile
                     s => (ObjectFactory.GetInstance<IProblemQueryService>()).GetPostReplyReport(s.Id)
                 ));
 
-            // Profile
-            Mapper.CreateMap<User, ProfileWidgetVM>()
-                .ForMember(p => p.Medal,
+            // Answer
+            Mapper.CreateMap<Reply, AnswerItemVM>()
+                .ForMember(r => r.CommentNum,
                     m => m.MapFrom(
-                    s => (ObjectFactory.GetInstance<IUserQueryService>()).GetUserMedals(s.Id)
-                ))
-                .ForMember(p => p.Avatar,
-                    m => m.MapFrom(
-                    s => (ObjectFactory.GetInstance<IUserQueryService>()).GetLoginAvatar()
+                    s => (ObjectFactory.GetInstance<IProblemQueryService>()).CountReplyComment(s.Id)
                 ));
-
-            // Reply
-            Mapper.CreateMap<Reply, AnswerItemVM>();
-            Mapper.CreateMap<Reply, HintItemVM>();
+            
+            // Hint
+            Mapper.CreateMap<Reply, HintItemVM>()
+                 .ForMember(r => r.CommentNum,
+                    m => m.MapFrom(
+                    s => (ObjectFactory.GetInstance<IProblemQueryService>()).CountReplyComment(s.Id)
+                ));
         }
     }
 }

@@ -60,10 +60,14 @@
     <Compile Include="Interfaces\Discussions\IDiscussionQueryService.cs" />
     <Compile Include="Interfaces\MainPosts\IMainPostCommandService.cs" />
     <Compile Include="Interfaces\MainPosts\IMainPostQueryService.cs" />
+    <Compile Include="Interfaces\Posts\IPostCommandService.cs" />
+    <Compile Include="Interfaces\Posts\IPostQueryService.cs" />
     <Compile Include="Interfaces\Problems\IProblemCommandService.cs" />
     <Compile Include="Interfaces\Problems\IProblemQueryService.cs" />
     <Compile Include="Interfaces\Repository\IDBContext.cs" />
     <Compile Include="Interfaces\Repository\IRepository.cs" />
+    <Compile Include="Interfaces\Resources\IResourceCommandService.cs" />
+    <Compile Include="Interfaces\Resources\IResourceQueryService.cs" />
     <Compile Include="Interfaces\Systems\IPermissionCommandService.cs" />
     <Compile Include="Interfaces\Systems\IPermissionQueryService.cs" />
     <Compile Include="Interfaces\Tags\ITagCommandService.cs" />
